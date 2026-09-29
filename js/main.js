@@ -7,7 +7,7 @@
 
   // Pulsante newsletter
   document.querySelectorAll("[data-news]").forEach(function (a) {
-    if (S.newsletterUrl) { a.href = S.newsletterUrl; a.removeAttribute("aria-disabled"); }
+    if (S.newsletterUrl) { a.href = S.newsletterUrl; a.rel = "noopener"; a.removeAttribute("aria-disabled"); }
     else { a.setAttribute("aria-disabled", "true"); a.setAttribute("tabindex", "-1"); a.textContent = "Iscrizioni in apertura"; }
   });
 
