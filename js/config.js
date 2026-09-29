@@ -5,7 +5,7 @@
    ============================================================ */
 window.SITE = {
   // Link alla pagina di iscrizione alla newsletter (MailerLite). "" = iscrizioni in apertura.
-  newsletterUrl: "",
+  newsletterUrl: "https://davide-fek7ym.subscribepage.io",
   books: {
     bug:   { amazon: "", altriStore: "" },   // altriStore: pagina StreetLib/Kobo/Apple
     oblio: { amazon: "", altriStore: "" }
