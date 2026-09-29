@@ -1,0 +1,49 @@
+name: Pubblica su Instagram
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"      # ogni 30 minuti; GitHub può ritardare di qualche minuto
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Solo controlli, non pubblicare"
+        type: boolean
+        default: true
+      post_id:
+        description: "ID di un post da forzare (vuoto = prossimo in calendario)"
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pubblica
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          DRY: ${{ github.event.inputs.dry_run }}
+          POST_ID: ${{ github.event.inputs.post_id }}
+        run: |
+          args=""
+          [ "$DRY" = "true" ] && args="$args --dry-run"
+          [ -n "$POST_ID" ] && args="$args --id $POST_ID"
+          python3 social/publish.py $args
+      - name: Salva lo stato
+        run: |
+          if [ -n "$(git status --porcelain social/published.json)" ]; then
+            git config user.name "social-bot"
+            git config user.email "social-bot@users.noreply.github.com"
+            git add social/published.json
+            git commit -m "social: aggiorna stato pubblicazioni"
+            git pull --rebase -q
+            git push
+          fi

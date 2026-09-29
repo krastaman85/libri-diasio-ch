@@ -1,0 +1,56 @@
+# Strategia social D. Iasio, budget 0
+
+Account: Instagram `@d.iasio.libri` + Pagina Facebook "D. Iasio". Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1 (link in bio → `libri.diasio.ch`).
+
+## Calendario: giorni e orari
+
+3 post a settimana per 8 settimane (24 post), dal 4 ottobre al 26 novembre 2026.
+
+| Slot | Perché |
+|---|---|
+| **Domenica 20:00** | Sera di lettura e tempo libero. Qui vanno le domande da commentare e le copertine. |
+| **Martedì 19:30** | Fascia serale infrasettimanale, la più frequentata dopo cena. |
+| **Giovedì 12:30** | Pausa pranzo: pubblico che lavora (tech, aziende, giornalismo). |
+
+Evitati: venerdì e sabato sera (pubblico fuori casa, poca lettura), mattine presto.
+Ora locale Roma/Zurigo. Il 25 ottobre torna l'ora solare: gli orari restano gli stessi.
+Non sono dati verificati sul tuo pubblico. Sono le fasce che di solito funzionano in Italia per contenuti di lettura. Dopo 3 settimane, in Insights → Pubblico → Orari più attivi, si sistemano le fasce.
+
+## Segmenti di pubblico e cosa dire a ciascuno
+
+| Segmento | Post che lo raggiungono | Hashtag chiave |
+|---|---|---|
+| Lettori noir/thriller (core) | 09, 23 | #noir #thriller #narrativaitaliana |
+| Fantascienza, distopia, fan di serie tipo Black Mirror | 02, 08, 15, 21 | #distopia #fantascienza #blackmirror |
+| Tech, privacy, app e IA | 03, 06, 08, 11, 14, 24 | #privacy #tecnologia #intelligenzaartificiale |
+| Mondo del lavoro e delle aziende | 05, 20, 21, 24 | #mondodellavoro #satira |
+| Giornalismo e inchieste | 03, 12 | #giornalismo #inchiesta |
+| Vita di condominio (relatable) | 01, 10, 18 | #condominio #vicinidicasa |
+| Psicologia, memoria, lutto (tono rispettoso) | 04, 17 | #memoria #psicologia |
+| Lettori digitali (ebook, Kindle, lettura gratuita) | 07, 13 | #ebook #kindle #epub #leggeregratis |
+| Appassionati di serie e formati a puntate | 07, 13, 16, 19 | (tag dedicati sopra) |
+| Bookstagram (copertine, community) | 04, 10, 16, 19 | #bookstagram #libriconsigliati |
+| Ticino e Svizzera italiana | 22 (+ ogni post ha il link .ch) | #ticino #svizzeraitaliana |
+| Lettori italiani ovunque | tutti | #narrativaitaliana |
+
+Ogni post ha 5 hashtag (Instagram ne consiglia pochi e mirati) e una didascalia diversa: niente testi copiati tra post.
+
+## Fuori da Instagram (stessi contenuti, zero costi)
+
+- **Facebook:** in Business Suite spunta anche la Pagina, il post esce su entrambi. Poi condividi in gruppi di lettura italiani e ticinesi (leggi le regole di ogni gruppo).
+- **Threads e Bluesky:** stesse citazioni, testo breve. Gratuiti, e Threads si collega a Instagram.
+- **Goodreads e aNobii:** crea la scheda autore e i due libri. Tanto lavoro, poco pubblico, ma i lettori seri cercano lì.
+- **Reddit (r/libri, r/scrittura, r/Italia):** un post utile ogni tanto, non spam. Meglio come discussione sulla trama o sul processo di scrittura.
+- **LinkedIn:** i post 03, 05, 20, 24 (lavoro, tech) funzionano anche lì, come tuo profilo.
+- **Stories Instagram:** ogni giorno di post, condividi il post nelle Stories con un adesivo domanda o sondaggio. È manuale.
+- **Copie di lettura:** scrivi a 10-20 bookstagrammer e booktoker di noir e thriller e offri il PDF. Sono la via più rapida alle prime recensioni.
+
+## Cosa non è automatico
+
+Rispondere ai commenti nella prima ora (peso alto per l'algoritmo), Stories quotidiane, DM di ringraziamento.
+
+## Limiti onesti
+
+- Le grafiche statiche hanno meno portata di Reel e caroselli. Nel secondo mese conviene aggiungere 1-2 Reel a settimana (teaser da 15 secondi con le stesse citazioni).
+- Con un account nuovo, la crescita è lenta. Mira al numero di iscritti in newsletter, non ai follower.
+- Se le copertine sono generate con IA, va dichiarato nelle impostazioni dei contenuti.
