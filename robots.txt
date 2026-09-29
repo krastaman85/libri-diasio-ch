@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /privacy/
+Disallow: /grazie/
 Sitemap: https://libri.diasio.ch/sitemap.xml
