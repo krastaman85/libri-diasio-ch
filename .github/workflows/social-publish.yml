@@ -30,6 +30,8 @@ jobs:
       - name: Pubblica
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: "1377129402146055"
           DRY: ${{ github.event.inputs.dry_run }}
           POST_ID: ${{ github.event.inputs.post_id }}
         run: |
@@ -38,6 +40,7 @@ jobs:
           [ -n "$POST_ID" ] && args="$args --id $POST_ID"
           python3 social/publish.py $args
       - name: Salva lo stato
+        if: always()
         run: |
           if [ -n "$(git status --porcelain social/published.json)" ]; then
             git config user.name "social-bot"
