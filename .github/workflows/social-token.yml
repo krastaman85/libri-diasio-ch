@@ -1,0 +1,31 @@
+name: Rinnova token Instagram
+
+# Il token a lunga durata scade dopo ~60 giorni. Questo job lo rinnova ogni mese.
+# Serve il Secret SECRETS_PAT (token GitHub a grana fine, solo questo repo,
+# permesso "Secrets: Read and write") per salvare il token rinnovato.
+# Senza SECRETS_PAT il job fallisce e ti avvisa: rinnova a mano.
+
+on:
+  schedule:
+    - cron: "17 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Rinnova e salva
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.SECRETS_PAT }}
+        run: |
+          [ -n "$GH_TOKEN" ] || { echo "::error::Manca il Secret SECRETS_PAT: rinnova il token a mano (vedi social/README.md)"; exit 1; }
+          resp=$(curl -fsS "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_ACCESS_TOKEN")
+          new=$(printf '%s' "$resp" | python3 -c 'import json,sys; print(json.load(sys.stdin)["access_token"])')
+          echo "::add-mask::$new"
+          printf '%s' "$new" | gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY"
+          echo "Token rinnovato."
