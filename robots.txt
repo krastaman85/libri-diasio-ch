@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /privacy/
+Sitemap: https://libri.diasio.ch/sitemap.xml
