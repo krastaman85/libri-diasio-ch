@@ -29,3 +29,7 @@ ffmpeg -i renders/r01-bug-cognato.mp4 -c:v libx264 -preset slow -crf 23 -pix_fmt
 - Font e copertine sono locali (`assets/`); GSAP è incluso (`assets/js/gsap.min.js`), nessuna dipendenza da CDN.
 - L'audio (`assets/audio/bed.mp3`) è sintetizzato con FFmpeg (drone e un colpo grave all'arrivo della copertina): originale, senza diritti di terzi.
 - Zone sicure per Instagram: il testo sta tra y=150 e y=1650; il bordo inferiore resta libero per l'interfaccia dei Reel.
+
+## Audio: come si rigenera
+
+La traccia ssets/audio/bed.mp3 nasce da ssets/audio/bed.filter (grafo FFmpeg): pad di accordi sui medi (udibile da telefono), battito lieve che sfuma prima della rivelazione, salita di rumore rosa, un istante di vuoto e un colpo grave con attacco morbido a 7,75 s. Livello fisso (nessuna normalizzazione dinamica, che causava scatti) con compressore dolce. Obiettivo: totale ~ -15 dB, sopra 300 Hz ~ -23 dB, nessun salto di livello > 10 dB.
