@@ -23,6 +23,15 @@
       "miniatura_ms": 14500
     },
     {
+      "id": "p00-presentazione",
+      "quando": "2026-09-30T12:30",
+      "segmento": "Presentazione dell’autore + tutti",
+      "immagine": "social/img/p00-presentazione.jpg",
+      "didascalia": "Ciao, sono D. Iasio. Scrivo romanzi noir e thriller.\nPer ora escono a puntate, una sera alla volta: Il Bug della Trasparenza (noir sociale, otto puntate) e L’Economia dell’Oblio (thriller psicologico, sei). Spero presto di poterli offrire interi negli store.\nQui trovi estratti, dietro le quinte e le date delle prossime puntate. La Puntata 1 di entrambi è gratis, in PDF o EPUB, senza iscrizione: link in bio.\n#noir #thrillerpsicologico #narrativaitaliana #romanzi #autoreemergente",
+      "didascalia_fb": "Ciao, sono D. Iasio. Scrivo romanzi noir e thriller.\nPer ora escono a puntate, una sera alla volta: Il Bug della Trasparenza (noir sociale, otto puntate) e L’Economia dell’Oblio (thriller psicologico, sei). Spero presto di poterli offrire interi negli store.\nQui trovi estratti, dietro le quinte e le date delle prossime puntate. La Puntata 1 di entrambi è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#noir #thrillerpsicologico #narrativaitaliana",
+      "alt": "Le copertine dei due romanzi, Il Bug della Trasparenza e L’Economia dell’Oblio, con la scritta «Ciao, sono D. Iasio. Scrivo romanzi.»"
+    },
+    {
       "id": "r01-bug-cognato",
       "tipo": "reel",
       "quando": "2026-10-01T19:30",
