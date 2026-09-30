@@ -70,3 +70,17 @@ Per popolare i profili prima della prima grafica (domenica 4 ottobre), il calend
 
 I Reel escono in giorni diversi dalle grafiche (domenica, martedì, giovedì) per non sovrapporsi. Su Instagram i Reel raggiungono anche chi non ti segue: sono il canale di scoperta, le grafiche servono ai follower.
 Da fare a mano (non automatizzabile): rispondere ai commenti, condividere ogni Reel nelle Stories, creare le Storie in evidenza ("Puntata 1", "I libri", "Newsletter").
+
+## Estensione a dicembre e nuovi formati (aggiunta del 30 settembre)
+
+Il calendario arriva al 31 dicembre 2026 e alterna tre formati, per non far somigliare tutti i post:
+
+| Formato | Quando | Perché |
+|---|---|---|
+| **Reel** (r07-r23, 13 s) | mercoledì 19:30 e sabato 12:30, dal 21 ottobre al 16 dicembre | Canale di scoperta: raggiungono anche chi non ti segue. Ogni citazione è testuale dalla Puntata 1. |
+| **Caroselli** (6 di 5-7 slide) | domenica 20:00 (29/11, 6/12, 13/12, 20/12, 27/12) e giovedì 3 dicembre 12:30 | Chi scorre resta di più sul post, e il salvataggio pesa nell'algoritmo. Temi: il listino di Levia, «Bug o Oblio?», l'assemblea, il Pettine, il regalo di Natale, la Puntata 1 in tre passi. |
+| **Grafiche singole** (9) | martedì 19:30 e giovedì 12:30 | Frasi nuove dalla Puntata 1, un fascicolo, un dialogo, gli auguri e il buon anno con invito alla newsletter. |
+
+Le citazioni di novembre-dicembre non ripetono quelle di ottobre: sono ricavate dal testo delle due Puntata 1 (`download/*.epub`). Dopo il 16 dicembre non ci sono Reel: le feste hanno meno attenzione e le uscite restano sulle grafiche.
+
+Da fare a mano, come sempre: rispondere ai commenti, Stories, DM di ringraziamento. I caroselli con una domanda (3 dicembre) rendono di più se rispondi nella prima ora.

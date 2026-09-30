@@ -11,6 +11,9 @@ Uso:
   publish.py                 pubblica al massimo 1 post scaduto per piattaforma
   publish.py --dry-run       controlla token, immagine e didascalia senza pubblicare
   publish.py --id 03-...     forza un post preciso (test), ignorando data e finestra
+
+Tipi di post in calendar.json: immagine (campo "immagine"), "tipo": "reel" (campo "video"),
+"tipo": "carosello" (campo "immagini": da 2 a 10 file JPEG).
 """
 import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
@@ -110,9 +113,46 @@ def is_reel(p):
     return p.get("tipo") == "reel"
 
 
+def is_carousel(p):
+    return p.get("tipo") == "carosello"
+
+
+def media_urls(p):
+    """URL pubblici dei file del post (uno solo, tranne nei caroselli)."""
+    if is_reel(p):
+        return [f"{SITE}/{p['video']}"]
+    if is_carousel(p):
+        return [f"{SITE}/{x}" for x in p["immagini"]]
+    return [f"{SITE}/{p['immagine']}"]
+
+
+def wait_container(cid, token, tries, wait):
+    for _ in range(tries):
+        st = call(IG_API, "GET", cid, token, {"fields": "status_code"}).get("status_code")
+        if st == "FINISHED":
+            return
+        if st in ("ERROR", "EXPIRED"):
+            raise ApiError(f"container {cid} in stato {st}")
+        time.sleep(wait)
+    raise ApiError(f"container {cid} non pronto in tempo")
+
+
 def publish_instagram(p, media_url, token):
     me = call(IG_API, "GET", "me", token, {"fields": "user_id,username"})
     uid = me.get("user_id") or me.get("id")
+    if is_carousel(p):
+        # un contenitore per slide, poi un contenitore CAROUSEL che le raccoglie (2-10 slide)
+        kids = []
+        for url in media_url:
+            k = call(IG_API, "POST", f"{uid}/media", token, {"image_url": url, "is_carousel_item": "true"})["id"]
+            wait_container(k, token, 20, 3)
+            kids.append(k)
+        params = {"media_type": "CAROUSEL", "children": ",".join(kids), "caption": p["didascalia"]}
+        cid = call(IG_API, "POST", f"{uid}/media", token, params)["id"]
+        wait_container(cid, token, 20, 3)
+        media = call(IG_API, "POST", f"{uid}/media_publish", token, {"creation_id": cid})["id"]
+        link = call(IG_API, "GET", media, token, {"fields": "permalink"}).get("permalink", "")
+        return {"media_id": media, "link": link}
     if is_reel(p):
         params = {"media_type": "REELS", "video_url": media_url, "caption": p["didascalia"], "share_to_feed": "true"}
         if p.get("miniatura_ms") is not None:      # fotogramma usato come miniatura (millisecondi)
@@ -123,15 +163,7 @@ def publish_instagram(p, media_url, token):
         tries, wait = 20, 3
     c = call(IG_API, "POST", f"{uid}/media", token, params)
     cid = c["id"]
-    for _ in range(tries):
-        st = call(IG_API, "GET", cid, token, {"fields": "status_code"}).get("status_code")
-        if st == "FINISHED":
-            break
-        if st in ("ERROR", "EXPIRED"):
-            raise ApiError(f"container {cid} in stato {st}")
-        time.sleep(wait)
-    else:
-        raise ApiError(f"container {cid} non pronto in tempo")
+    wait_container(cid, token, tries, wait)
     media = call(IG_API, "POST", f"{uid}/media_publish", token, {"creation_id": cid})["id"]
     link = call(IG_API, "GET", media, token, {"fields": "permalink"}).get("permalink", "")
     return {"media_id": media, "link": link}
@@ -139,6 +171,14 @@ def publish_instagram(p, media_url, token):
 
 def publish_facebook(p, media_url, token, page_id):
     text = p.get("didascalia_fb") or p["didascalia"]
+    if is_carousel(p):
+        # Facebook: le foto vengono caricate non pubblicate e poi allegate a un solo post di Pagina
+        ids = [call(FB_API, "POST", f"{page_id}/photos", token, {"url": url, "published": "false"})["id"] for url in media_url]
+        r = call(FB_API, "POST", f"{page_id}/feed", token,
+                 {"message": text, "attached_media": json.dumps([{"media_fbid": i} for i in ids])})
+        post_id = r.get("id")
+        return {"post_id": post_id, "link": f"https://www.facebook.com/{post_id}"}
+    media_url = media_url[0] if isinstance(media_url, list) else media_url
     if is_reel(p):
         # su Facebook ogni video pubblicato in Pagina è un Reel
         r = call(FB_API, "POST", f"{page_id}/videos", token,
@@ -203,11 +243,14 @@ def main():
     if not p:
         print("Nessun post da pubblicare adesso.")
         return
-    kind = "reel" if is_reel(p) else "immagine"
-    image_url = f"{SITE}/{p['video'] if is_reel(p) else p['immagine']}"
-    print(f"Post: {p['id']} ({kind}, {p['segmento']}) su {', '.join(todo)} → {image_url}")
-    if not media_ok(image_url, "video/" if is_reel(p) else "image/jpeg"):
-        sys.exit(f"File non raggiungibile o di tipo sbagliato: {image_url} (il sito è aggiornato?)")
+    kind = "reel" if is_reel(p) else "carosello" if is_carousel(p) else "immagine"
+    urls = media_urls(p)
+    print(f"Post: {p['id']} ({kind}, {p['segmento']}) su {', '.join(todo)} → {', '.join(urls)}")
+    if is_carousel(p) and not 2 <= len(urls) <= 10:
+        sys.exit(f"Un carosello ha da 2 a 10 slide: {p['id']} ne ha {len(urls)}.")
+    for u in urls:
+        if not media_ok(u, "video/" if is_reel(p) else "image/jpeg"):
+            sys.exit(f"File non raggiungibile o di tipo sbagliato: {u} (il sito è aggiornato?)")
     if a.dry_run:
         print("Dry run riuscito: token validi, file raggiungibile. Non pubblico.")
         return
@@ -215,9 +258,9 @@ def main():
     for plat in todo:
         try:
             if plat == "instagram":
-                res = publish_instagram(p, image_url, os.environ["IG_ACCESS_TOKEN"])
+                res = publish_instagram(p, urls if is_carousel(p) else urls[0], os.environ["IG_ACCESS_TOKEN"])
             else:
-                res = publish_facebook(p, image_url, fb_token(), os.environ["FB_PAGE_ID"])
+                res = publish_facebook(p, urls if is_carousel(p) else urls[0], fb_token(), os.environ["FB_PAGE_ID"])
             res["ora_utc"] = now.isoformat(timespec="seconds")
             entry(state, p["id"])[plat] = res
             print(f"Pubblicato su {plat}: {res['link']}")

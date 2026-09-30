@@ -1,6 +1,6 @@
 # Pubblicazione automatica su Instagram e Facebook
 
-Account Instagram `@d.iasio.libri` e Pagina Facebook "D. Iasio". 24 grafiche programmate dal 4 ottobre al 26 novembre 2026 e 6 Reel dal 1° al 14 ottobre (vedi `STRATEGIA.md`).
+Account Instagram `@d.iasio.libri` e Pagina Facebook "D. Iasio". Calendario dal 30 settembre al 31 dicembre 2026: Reel, grafiche singole e caroselli (vedi `STRATEGIA.md`).
 
 Contenuto della cartella: `calendar.json` (calendario), `img/` (grafiche), `video/` (Reel), `publish.py` (pubblicazione), `tools/` (generatori delle grafiche), `kit/` (Goodreads, aNobii, contatore visite), `reels-src/` (progetto HyperFrames dei Reel: una composizione con variabili, un file `vars/*.json` per Reel).
 
@@ -9,6 +9,7 @@ Contenuto della cartella: `calendar.json` (calendario), `img/` (grafiche), `vide
 - `calendar.json`: data/ora (ora di Roma), immagine, didascalia e testo alternativo di ogni post.
 - `publish.py`: ogni 30 minuti (workflow `social-publish`) pubblica al massimo **un** post scaduto e non ancora pubblicato, tramite l'API Instagram con Instagram Login. L'immagine viene letta da `https://libri.diasio.ch/social/img/...`, quindi il sito deve essere già aggiornato.
 - **Reel:** voci con `"tipo": "reel"` e `"video": "social/video/....mp4"`; facoltativo `"miniatura_ms"` sceglie il fotogramma della miniatura su Instagram (senza, prende il primo: quasi nero). Su Instagram escono come Reel (anche nel feed), su Facebook come video/Reel di Pagina. Sono MP4 H.264 1080×1920, max 90 secondi.
+- **Caroselli:** voci con `"tipo": "carosello"` e `"immagini": [...]` (da 2 a 10 JPEG 1080×1350, nell'ordine di scorrimento). Su Instagram escono come carosello, su Facebook come un solo post con più foto.
 - `published.json`: stato (pubblicato, link, oppure saltato). Il workflow lo salva con un commit.
 - Un post in ritardo di oltre 12 ore viene **saltato**, non pubblicato fuori orario.
 - Il cron di GitHub può ritardare di qualche minuto: la pubblicazione avviene entro l'ora prevista + qualche minuto.
@@ -35,7 +36,11 @@ L'ID dell'account Instagram non serve come Secret: lo script lo ricava dal token
 
 Meta for Developers → app "Libri Diasio Social" → Casi d'uso → API con Instagram Login → Genera token, e aggiorna il Secret `IG_ACCESS_TOKEN`. Il rinnovo automatico (`social-token`, il 1° di ogni mese) usa `graph.instagram.com/refresh_access_token`.
 
-## Rigenerare le grafiche
+## Caroselli e grafiche di novembre-dicembre
+
+`social/tools/carousels.py` contiene testi e slide (le citazioni sono testuali dalle Puntate 1). Da `social/tools`: `python carousel.py` rende le slide con Chromium (stesso stile e font dei Reel; `pip install playwright`, poi `playwright install chromium` oppure `CHROMIUM_PATH=/percorso/chrome`), `python carousel.py --calendar` aggiunge le voci a `calendar.json`. I Reel r07-r23 si aggiungono con `python reels_calendar.py` (render con `reels-src/render-all.sh`). Test con API simulate: `python3 -m unittest social/test_publish.py`.
+
+## Rigenerare le grafiche del 4 ottobre-26 novembre
 
 `cd social/tools && python generate.py` (serve Pillow e i font di Windows: Arial Narrow Bold, Georgia, Consolas). I testi sono in `tools/posts.py`; poi aggiorna `calendar.json`.
 
