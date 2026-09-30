@@ -1,3 +1,16 @@
 {
-  "pubblicati": {}
+  "pubblicati": {
+    "r00-benvenuto": {
+      "instagram": {
+        "media_id": "17972026374157975",
+        "link": "https://www.instagram.com/reel/Dd55bqbDNC1/",
+        "ora_utc": "2026-09-30T08:23:13+00:00"
+      },
+      "facebook": {
+        "post_id": "1415509463282200",
+        "link": "https://www.facebook.com/1415509463282200",
+        "ora_utc": "2026-09-30T08:23:13+00:00"
+      }
+    }
+  }
 }
