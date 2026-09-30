@@ -8,7 +8,7 @@ Contenuto della cartella: `calendar.json` (calendario), `img/` (grafiche), `vide
 
 - `calendar.json`: data/ora (ora di Roma), immagine, didascalia e testo alternativo di ogni post.
 - `publish.py`: ogni 30 minuti (workflow `social-publish`) pubblica al massimo **un** post scaduto e non ancora pubblicato, tramite l'API Instagram con Instagram Login. L'immagine viene letta da `https://libri.diasio.ch/social/img/...`, quindi il sito deve essere già aggiornato.
-- **Reel:** voci con `"tipo": "reel"` e `"video": "social/video/....mp4"`. Su Instagram escono come Reel (anche nel feed), su Facebook come video/Reel di Pagina. Sono MP4 H.264 1080×1920, max 90 secondi.
+- **Reel:** voci con `"tipo": "reel"` e `"video": "social/video/....mp4"`; facoltativo `"miniatura_ms"` sceglie il fotogramma della miniatura su Instagram (senza, prende il primo: quasi nero). Su Instagram escono come Reel (anche nel feed), su Facebook come video/Reel di Pagina. Sono MP4 H.264 1080×1920, max 90 secondi.
 - `published.json`: stato (pubblicato, link, oppure saltato). Il workflow lo salva con un commit.
 - Un post in ritardo di oltre 12 ore viene **saltato**, non pubblicato fuori orario.
 - Il cron di GitHub può ritardare di qualche minuto: la pubblicazione avviene entro l'ora prevista + qualche minuto.
