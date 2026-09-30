@@ -115,6 +115,8 @@ def publish_instagram(p, media_url, token):
     uid = me.get("user_id") or me.get("id")
     if is_reel(p):
         params = {"media_type": "REELS", "video_url": media_url, "caption": p["didascalia"], "share_to_feed": "true"}
+        if p.get("miniatura_ms") is not None:      # fotogramma usato come miniatura (millisecondi)
+            params["thumb_offset"] = str(int(p["miniatura_ms"]))
         tries, wait = 60, 5          # i video richiedono più tempo di elaborazione
     else:
         params = {"image_url": media_url, "caption": p["didascalia"], "alt_text": p.get("alt", "")}
