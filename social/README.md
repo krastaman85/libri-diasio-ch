@@ -1,11 +1,14 @@
 # Pubblicazione automatica su Instagram e Facebook
 
-Account Instagram `@d.iasio.libri` e Pagina Facebook "D. Iasio". 24 post programmati dal 4 ottobre al 26 novembre 2026 (vedi `STRATEGIA.md`).
+Account Instagram `@d.iasio.libri` e Pagina Facebook "D. Iasio". 24 grafiche programmate dal 4 ottobre al 26 novembre 2026 e 6 Reel dal 1° al 14 ottobre (vedi `STRATEGIA.md`).
+
+Contenuto della cartella: `calendar.json` (calendario), `img/` (grafiche), `video/` (Reel), `publish.py` (pubblicazione), `tools/` (generatori delle grafiche), `kit/` (Goodreads, aNobii, contatore visite), `reels-src/` (progetto HyperFrames dei Reel: una composizione con variabili, un file `vars/*.json` per Reel).
 
 ## Come funziona
 
 - `calendar.json`: data/ora (ora di Roma), immagine, didascalia e testo alternativo di ogni post.
 - `publish.py`: ogni 30 minuti (workflow `social-publish`) pubblica al massimo **un** post scaduto e non ancora pubblicato, tramite l'API Instagram con Instagram Login. L'immagine viene letta da `https://libri.diasio.ch/social/img/...`, quindi il sito deve essere già aggiornato.
+- **Reel:** voci con `"tipo": "reel"` e `"video": "social/video/....mp4"`. Su Instagram escono come Reel (anche nel feed), su Facebook come video/Reel di Pagina. Sono MP4 H.264 1080×1920, max 90 secondi.
 - `published.json`: stato (pubblicato, link, oppure saltato). Il workflow lo salva con un commit.
 - Un post in ritardo di oltre 12 ore viene **saltato**, non pubblicato fuori orario.
 - Il cron di GitHub può ritardare di qualche minuto: la pubblicazione avviene entro l'ora prevista + qualche minuto.
