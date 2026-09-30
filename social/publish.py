@@ -42,11 +42,13 @@ def call(base, method, path, token, params=None):
         raise ApiError(f"{method} {path}: HTTP {e.code} {e.read().decode('utf-8', 'replace')}")
 
 
-def image_ok(url):
+def media_ok(url, content_type):
+    """True se l'URL risponde 200 con un Content-Type che contiene `content_type`
+    (es. "image/jpeg" per le immagini, "video/" per i Reel)."""
     req = urllib.request.Request(url, method="HEAD")
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
-            return r.status == 200 and "image/jpeg" in r.headers.get("Content-Type", "")
+            return r.status == 200 and content_type in r.headers.get("Content-Type", "")
     except Exception:
         return False
 
@@ -89,7 +91,7 @@ def pick(cal, state, plats, now, forced):
         return p, plats
     tz = ZoneInfo(cal.get("fuso", "Europe/Rome"))
     late = timedelta(hours=cal.get("max_ritardo_ore", 12))
-    for p in cal["post"]:
+    for p in sorted(cal["post"], key=lambda x: x["quando"]):
         todo = pending(p, state, plats)
         if not todo:
             continue
@@ -104,19 +106,28 @@ def pick(cal, state, plats, now, forced):
     return None, []
 
 
-def publish_instagram(p, image_url, token):
+def is_reel(p):
+    return p.get("tipo") == "reel"
+
+
+def publish_instagram(p, media_url, token):
     me = call(IG_API, "GET", "me", token, {"fields": "user_id,username"})
     uid = me.get("user_id") or me.get("id")
-    c = call(IG_API, "POST", f"{uid}/media", token,
-             {"image_url": image_url, "caption": p["didascalia"], "alt_text": p.get("alt", "")})
+    if is_reel(p):
+        params = {"media_type": "REELS", "video_url": media_url, "caption": p["didascalia"], "share_to_feed": "true"}
+        tries, wait = 60, 5          # i video richiedono più tempo di elaborazione
+    else:
+        params = {"image_url": media_url, "caption": p["didascalia"], "alt_text": p.get("alt", "")}
+        tries, wait = 20, 3
+    c = call(IG_API, "POST", f"{uid}/media", token, params)
     cid = c["id"]
-    for _ in range(20):
+    for _ in range(tries):
         st = call(IG_API, "GET", cid, token, {"fields": "status_code"}).get("status_code")
         if st == "FINISHED":
             break
         if st in ("ERROR", "EXPIRED"):
             raise ApiError(f"container {cid} in stato {st}")
-        time.sleep(3)
+        time.sleep(wait)
     else:
         raise ApiError(f"container {cid} non pronto in tempo")
     media = call(IG_API, "POST", f"{uid}/media_publish", token, {"creation_id": cid})["id"]
@@ -124,10 +135,15 @@ def publish_instagram(p, image_url, token):
     return {"media_id": media, "link": link}
 
 
-def publish_facebook(p, image_url, token, page_id):
-    r = call(FB_API, "POST", f"{page_id}/photos", token,
-             {"url": image_url, "caption": p.get("didascalia_fb") or p["didascalia"],
-              "alt_text_custom": p.get("alt", ""), "published": "true"})
+def publish_facebook(p, media_url, token, page_id):
+    text = p.get("didascalia_fb") or p["didascalia"]
+    if is_reel(p):
+        # su Facebook ogni video pubblicato in Pagina è un Reel
+        r = call(FB_API, "POST", f"{page_id}/videos", token,
+                 {"file_url": media_url, "description": text, "published": "true"})
+    else:
+        r = call(FB_API, "POST", f"{page_id}/photos", token,
+                 {"url": media_url, "caption": text, "alt_text_custom": p.get("alt", ""), "published": "true"})
     post_id = r.get("post_id") or r.get("id")
     return {"post_id": post_id, "link": f"https://www.facebook.com/{post_id}"}
 
@@ -185,12 +201,13 @@ def main():
     if not p:
         print("Nessun post da pubblicare adesso.")
         return
-    image_url = f"{SITE}/{p['immagine']}"
-    print(f"Post: {p['id']} ({p['segmento']}) su {', '.join(todo)} → {image_url}")
-    if not image_ok(image_url):
-        sys.exit(f"Immagine non raggiungibile o non JPEG: {image_url} (il sito è aggiornato?)")
+    kind = "reel" if is_reel(p) else "immagine"
+    image_url = f"{SITE}/{p['video'] if is_reel(p) else p['immagine']}"
+    print(f"Post: {p['id']} ({kind}, {p['segmento']}) su {', '.join(todo)} → {image_url}")
+    if not media_ok(image_url, "video/" if is_reel(p) else "image/jpeg"):
+        sys.exit(f"File non raggiungibile o di tipo sbagliato: {image_url} (il sito è aggiornato?)")
     if a.dry_run:
-        print("Dry run riuscito: token validi, immagine raggiungibile. Non pubblico.")
+        print("Dry run riuscito: token validi, file raggiungibile. Non pubblico.")
         return
 
     for plat in todo:

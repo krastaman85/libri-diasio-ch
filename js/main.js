@@ -5,6 +5,15 @@
   // Anno nel footer
   document.querySelectorAll("[data-year]").forEach(function (e) { e.textContent = new Date().getFullYear(); });
 
+  // Statistiche visite: GoatCounter, senza cookie né dati personali. Attive solo se configurate.
+  if (S.analytics && /^[a-z0-9-]+$/.test(S.analytics.goatcounter || "")) {
+    var gc = document.createElement("script");
+    gc.async = true;
+    gc.src = "https://gc.zgo.at/count.js";
+    gc.setAttribute("data-goatcounter", "https://" + S.analytics.goatcounter + ".goatcounter.com/count");
+    document.head.appendChild(gc);
+  }
+
   // Pulsante newsletter
   document.querySelectorAll("[data-news]").forEach(function (a) {
     if (S.newsletterUrl) { a.href = S.newsletterUrl; a.rel = "noopener"; a.removeAttribute("aria-disabled"); }

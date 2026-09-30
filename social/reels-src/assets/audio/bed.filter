@@ -1,0 +1,11 @@
+[0]volume=0.14[a0];
+[1]volume=0.18[a1];
+[2]volume=0.28[a2];
+[3]volume=0.26[a3];
+[4]volume=0.22,tremolo=f=0.4:d=0.5[a4];
+[5]volume=0.18[a5];
+[a0][a1][a2][a3][a4][a5]amix=inputs=6:normalize=0,lowpass=f=2600,tremolo=f=0.18:d=0.25,afade=t=in:st=0:d=2,volume='if(lt(t,7.75),1+0.7*clip((t-5.4)/2.35,0,1),1+0.7*exp(-4*(t-7.75)))':eval=frame[pad];
+[6]lowpass=f=1400,volume='0.32*if(lt(t,6.2),1,if(lt(t,7.4),1-(t-6.2)/1.2,if(lt(t,9),0,min(1,(t-9)/1))))':eval=frame[pulse];
+[7]highpass=f=500,lowpass=f=4200,volume='0.55*if(lt(t,5.4),0,if(lt(t,7.6),pow((t-5.4)/2.2,2),max(0,1-(t-7.6)/0.15)))':eval=frame[swell];
+[8]volume=1.0[hit];
+[pad][pulse][swell][hit]amix=inputs=4:normalize=0,afade=t=out:st=11:d=2[out]

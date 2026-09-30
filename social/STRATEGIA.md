@@ -54,3 +54,19 @@ Rispondere ai commenti nella prima ora (peso alto per l'algoritmo), Stories quot
 - Le grafiche statiche hanno meno portata di Reel e caroselli. Nel secondo mese conviene aggiungere 1-2 Reel a settimana (teaser da 15 secondi con le stesse citazioni).
 - Con un account nuovo, la crescita è lenta. Mira al numero di iscritti in newsletter, non ai follower.
 - Se le copertine sono generate con IA, va dichiarato nelle impostazioni dei contenuti.
+
+## Reel e pre-lancio (aggiunta del 30 settembre)
+
+Per popolare i profili prima della prima grafica (domenica 4 ottobre), il calendario ha 6 Reel da 13 secondi con le stesse citazioni:
+
+| Reel | Quando (ora di Roma) | Libro |
+|---|---|---|
+| r01-bug-cognato | giovedì 1 ottobre, 19:30 | Il Bug della Trasparenza |
+| r02-oblio-costo | venerdì 2 ottobre, 12:30 | L'Economia dell'Oblio |
+| r03-bug-chiavi | sabato 3 ottobre, 12:30 | Il Bug della Trasparenza |
+| r04-oblio-bitcoin | mercoledì 7 ottobre, 19:30 | L'Economia dell'Oblio |
+| r05-bug-rimossa | sabato 10 ottobre, 12:30 | Il Bug della Trasparenza |
+| r06-oblio-igiene | mercoledì 14 ottobre, 19:30 | L'Economia dell'Oblio |
+
+I Reel escono in giorni diversi dalle grafiche (domenica, martedì, giovedì) per non sovrapporsi. Su Instagram i Reel raggiungono anche chi non ti segue: sono il canale di scoperta, le grafiche servono ai follower.
+Da fare a mano (non automatizzabile): rispondere ai commenti, condividere ogni Reel nelle Stories, creare le Storie in evidenza ("Puntata 1", "I libri", "Newsletter").
