@@ -1,5 +1,7 @@
 # Contatore visite rispettoso della privacy: GoatCounter
 
+**Stato: attivo dal 2026-09-30** (codice del sito `diasio`, dashboard `https://diasio.goatcounter.com`). CSP e Privacy (punto 12) aggiornate. Le sezioni sotto descrivono la procedura, utile se cambi codice o dominio.
+
 **Perché GoatCounter:** gratuito per uso non commerciale, open source, **nessun cookie**, nessun tracciamento tra siti, nessuna profilazione. Conta pagine viste, provenienza (referrer, campagne `?ref=`/`utm_`), paese, dispositivo e browser in forma aggregata. Non c'è il banner dei cookie.
 Alternative (a pagamento): Plausible, Fathom. Cloudflare Web Analytics è gratuito ma richiede di passare per Cloudflare.
 
