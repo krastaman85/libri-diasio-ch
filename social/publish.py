@@ -51,6 +51,17 @@ def image_ok(url):
         return False
 
 
+def fb_token():
+    """FB_PAGE_TOKEN può essere un token di Pagina o un token utente a lunga durata:
+    nel secondo caso ricava il token della Pagina (che serve per pubblicare)."""
+    tok, page = os.environ["FB_PAGE_TOKEN"], os.environ["FB_PAGE_ID"]
+    try:
+        r = call(FB_API, "GET", page, tok, {"fields": "access_token"})
+        return r.get("access_token") or tok
+    except ApiError:
+        return tok
+
+
 def platforms():
     out = []
     if os.environ.get("IG_ACCESS_TOKEN", "").strip():
@@ -129,13 +140,19 @@ def check_tokens(plats):
         pg = call(FB_API, "GET", os.environ["FB_PAGE_ID"], os.environ["FB_PAGE_TOKEN"], {"fields": "name"})
         print(f"Facebook: Pagina «{pg.get('name')}»")
         try:
-            dbg = call(FB_API, "GET", "debug_token", os.environ["FB_PAGE_TOKEN"],
+            eff = fb_token()
+            dbg = call(FB_API, "GET", "debug_token", eff, {"input_token": eff}).get("data", {})
+            src = call(FB_API, "GET", "debug_token", os.environ["FB_PAGE_TOKEN"],
                        {"input_token": os.environ["FB_PAGE_TOKEN"]}).get("data", {})
+            se = src.get("expires_at", 0)
+            print(f"Facebook: token salvato di tipo {src.get('type', '?')}, "
+                  + ("non scade" if not se else "scade il " + datetime.fromtimestamp(se, timezone.utc).strftime("%Y-%m-%d")))
+            print(f"Facebook: permessi {', '.join(dbg.get('scopes', []))}")
             exp = dbg.get("expires_at", 0)
             when = "non scade" if not exp else "scade il " + datetime.fromtimestamp(exp, timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
             print(f"Facebook: token {dbg.get('type', '?')}, valido={dbg.get('is_valid')}, {when}")
             if exp:
-                print("::warning::Il token della Pagina ha una scadenza: rigeneralo da un token utente a lunga durata.")
+                print("::warning::Il token effettivo della Pagina ha una scadenza.")
         except ApiError as e:
             print(f"Facebook: scadenza non verificabile ({str(e)[:120]})")
 
@@ -181,7 +198,7 @@ def main():
             if plat == "instagram":
                 res = publish_instagram(p, image_url, os.environ["IG_ACCESS_TOKEN"])
             else:
-                res = publish_facebook(p, image_url, os.environ["FB_PAGE_TOKEN"], os.environ["FB_PAGE_ID"])
+                res = publish_facebook(p, image_url, fb_token(), os.environ["FB_PAGE_ID"])
             res["ora_utc"] = now.isoformat(timespec="seconds")
             entry(state, p["id"])[plat] = res
             print(f"Pubblicato su {plat}: {res['link']}")
