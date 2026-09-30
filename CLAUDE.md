@@ -20,7 +20,7 @@ Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget
 - Workflow: `social-publish` (ogni 30 minuti; pubblica al massimo un post scaduto, salta quelli in ritardo di oltre 12 ore) e `social-token` (rinnovo mensile del token). Secret: `IG_ACCESS_TOKEN`, `FB_PAGE_TOKEN`, `SECRETS_PAT` (facoltativo).
 
 ## Calendario social (fino al 31/12/2026)
-84 voci: Reel r00-r23 (mer 19:30 e sab 12:30), grafiche (dom 20:00, mar 19:30, gio 12:30), 6 caroselli (dom 20:00), 13 Storie (lunedì 18:30), 6 post di testo solo Facebook (venerdì 18:00). Tipi in `calendar.json`: immagine, `reel`, `carosello`, `storia`, `testo`; campo `piattaforme` per limitare a una sola.
+84 voci: Reel r00-r06 (30/09-14/10, date sparse) e r07-r23 (mer 19:30 e sab 12:30), grafiche (dom 20:00, mar 19:30, gio 12:30), 6 caroselli (dom 20:00), 13 Storie (lunedì 18:30), 6 post di testo solo Facebook (venerdì 18:00). Tipi in `calendar.json`: immagine, `reel`, `carosello`, `storia`, `testo`; campo `piattaforme` per limitare a una sola.
 Già pubblicati: r00 (eliminato a mano dall'app), r00b (30/09, miniatura sulle copertine), p00 presentazione (30/09 12:01, IG e FB). Prossimo: Reel r01 il 1 ottobre alle 19:30.
 **Mai provati con l'API reale:** carosello (primo il 29/11), Storia (primo il 5/10), post di testo (primo il 9/10). I dry run sono riusciti. Controllare il primo di ognuno appena esce.
 
