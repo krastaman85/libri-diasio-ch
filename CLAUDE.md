@@ -1,0 +1,41 @@
+# libri.diasio.ch: memoria di progetto (leggila prima di lavorare)
+
+Ultimo aggiornamento: 30 settembre 2026, dopo le PR #1-#13. Se questo file e il repo divergono, fidati del repo e correggi il file.
+
+## Cos'è
+Sito statico (GitHub Pages, CNAME `libri.diasio.ch`) di D. Iasio: due romanzi a puntate, «Il Bug della Trasparenza» (noir sociale, 8 puntate) e «L'Economia dell'Oblio» (thriller psicologico, 6 puntate). La Puntata 1 di entrambi è gratis in PDF/EPUB (`download/`, senza iscrizione). Newsletter MailerLite (landing `davide-fek7ym.subscribepage.io`, pagina `/grazie/`), contatore visite GoatCounter (codice `diasio`). Instagram `@d.iasio.libri` e Pagina Facebook «D. Iasio».
+Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget zero.
+
+## Regole dell'utente (valgono sempre)
+- Italiano, risposte chiare e operative. Distinguere i dati presenti dalle inferenze. Dire cosa fa l'utente e cosa fa Claude. Se manca un'informazione importante, chiedere prima di produrre.
+- **Mai** seguire, scrivere, commentare o cliccare su Instagram/Facebook senza conferma esplicita. Niente follow o messaggi di massa (violano le regole di Meta).
+- Approvare = fare il merge su `main`, e il merge **pubblica**. Non unire senza via libera. Nessun token o Secret in chat, nei file o nei commit.
+- Le citazioni dei romanzi devono essere testuali dalle Puntata 1 (`download/*.epub`). Non inventare frasi né trama.
+- Non dire che i romanzi sono in vendita: l'autore scrive «spero presto interi negli store». Non scrivere «solo a puntate».
+- Una sola sessione di lavoro alla volta. Questo file è la memoria comune di tutte le sessioni (cloud e locali).
+
+## Struttura
+- Sito: `index.html`, `bug/`, `oblio/`, `privacy/`, `grazie/`, `404.html`, `css/`, `js/config.js`, `img/`, `download/`.
+- Social: `social/` con `README.md` (uso), `STRATEGIA.md` (giorni, orari, segmenti), `calendar.json` (calendario), `published.json` (stato: lo scrive il bot, non a mano), `publish.py` + `test_publish.py`, `tools/` (slide con Chromium), `reels-src/` (Reel con HyperFrames), `img/`, `video/`, `kit/`.
+- Workflow: `social-publish` (ogni 30 minuti; pubblica al massimo un post scaduto, salta quelli in ritardo di oltre 12 ore) e `social-token` (rinnovo mensile del token). Secret: `IG_ACCESS_TOKEN`, `FB_PAGE_TOKEN`, `SECRETS_PAT` (facoltativo).
+
+## Calendario social (fino al 31/12/2026)
+84 voci: Reel r00-r23 (mer 19:30 e sab 12:30), grafiche (dom 20:00, mar 19:30, gio 12:30), 6 caroselli (dom 20:00), 13 Storie (lunedì 18:30), 6 post di testo solo Facebook (venerdì 18:00). Tipi in `calendar.json`: immagine, `reel`, `carosello`, `storia`, `testo`; campo `piattaforme` per limitare a una sola.
+Già pubblicati: r00 (eliminato a mano dall'app), r00b (30/09, miniatura sulle copertine), p00 presentazione (30/09 12:01, IG e FB). Prossimo: Reel r01 il 1 ottobre alle 19:30.
+**Mai provati con l'API reale:** carosello (primo il 29/11), Storia (primo il 5/10), post di testo (primo il 9/10). I dry run sono riusciti. Controllare il primo di ognuno appena esce.
+
+## Trappole già incontrate
+- Dopo un merge, Pages impiega circa 30-60 secondi: un dry run subito dopo può fallire con «File non raggiungibile». Non è un bug.
+- Con più esecuzioni manuali ravvicinate GitHub tiene una sola in coda e annulla le altre.
+- Il cron ha ritardi. Per la puntualità lanciare `social-publish` a mano senza `post_id` (con `post_id` si forza e si rischiano doppioni).
+- L'API non cancella né modifica post: eliminare o cambiare dall'app.
+- Instagram non permette di allegare audio esterno a una foto: per immagine + audio serve un video.
+- Stories: solo immagine, senza sticker né link. Instagram non ha post di solo testo (solo Facebook).
+- Rendering: `python social/tools/carousel.py` (Playwright + Chromium, `CHROMIUM_PATH`), Reel con `social/reels-src/render-all.sh` (HyperFrames + FFmpeg). I font di Windows non ci sono in cloud.
+- I branch `main-xxxx` delle sessioni cloud sono del repo `Campanella`, non di questo.
+
+## Da fare a mano (utente)
+Controllare dal telefono il sito; dopo le 19:45 del 1/10 controllare il Reel r01 (miniatura, didascalia, Facebook); verificare il pulsante «Iscriviti» sulla Pagina Facebook; rileggere il punto 12 della privacy; iscrizioni Goodreads e aNobii (`social/kit/`); verificare che il passaggio «Presentati» di Instagram sia chiuso; controllare profili e gruppi in `social/kit/esposizione-lista-e-testi.txt` (lista da verificare, non ancora seguito né contattato nessuno); il primo token Instagram scade dopo circa 60 giorni.
+
+## Igiene dei repository
+Dopo ogni PR unita i branch restano: cancellarli da GitHub (Branches, cestino) oppure attivare «Automatically delete head branches» in Settings > General.
