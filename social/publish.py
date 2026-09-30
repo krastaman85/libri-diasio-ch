@@ -128,6 +128,16 @@ def check_tokens(plats):
     if "facebook" in plats:
         pg = call(FB_API, "GET", os.environ["FB_PAGE_ID"], os.environ["FB_PAGE_TOKEN"], {"fields": "name"})
         print(f"Facebook: Pagina «{pg.get('name')}»")
+        try:
+            dbg = call(FB_API, "GET", "debug_token", os.environ["FB_PAGE_TOKEN"],
+                       {"input_token": os.environ["FB_PAGE_TOKEN"]}).get("data", {})
+            exp = dbg.get("expires_at", 0)
+            when = "non scade" if not exp else "scade il " + datetime.fromtimestamp(exp, timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+            print(f"Facebook: token {dbg.get('type', '?')}, valido={dbg.get('is_valid')}, {when}")
+            if exp:
+                print("::warning::Il token della Pagina ha una scadenza: rigeneralo da un token utente a lunga durata.")
+        except ApiError as e:
+            print(f"Facebook: scadenza non verificabile ({str(e)[:120]})")
 
 
 def main():
