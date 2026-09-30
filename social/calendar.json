@@ -4,6 +4,15 @@
   "max_ritardo_ore": 12,
   "post": [
     {
+      "id": "r00-benvenuto",
+      "tipo": "reel",
+      "quando": "2026-09-30T10:45",
+      "segmento": "Reel · Benvenuto, presentazione del progetto",
+      "video": "social/video/r00-benvenuto.mp4",
+      "didascalia": "Benvenuto. Due domande, due romanzi.\n\nE se il tuo condominio leggesse i tuoi pensieri? È Il Bug della Trasparenza, noir sociale in otto puntate.\nE se il dolore si potesse vendere? È L'Economia dell'Oblio, thriller psicologico in sei puntate.\n\nEscono a puntate, una sera alla volta. La Puntata 1 di entrambi è gratis in PDF ed EPUB, senza iscrizione: link in bio.\nQui trovi estratti, dietro le quinte e le date delle prossime puntate. Si comincia adesso.\n\n#noir #thriller #thrillerpsicologico #narrativaitaliana #romanziapuntate",
+      "didascalia_fb": "Benvenuto. Due domande, due romanzi.\n\nE se il tuo condominio leggesse i tuoi pensieri? È Il Bug della Trasparenza, noir sociale in otto puntate.\nE se il dolore si potesse vendere? È L'Economia dell'Oblio, thriller psicologico in sei puntate.\n\nEscono a puntate, una sera alla volta. La Puntata 1 di entrambi è gratis in PDF ed EPUB, senza iscrizione:\nhttps://libri.diasio.ch/\nQui trovi estratti, dietro le quinte e le date delle prossime puntate. Si comincia adesso.\n\n#noir #thriller #narrativaitaliana"
+    },
+    {
       "id": "r01-bug-cognato",
       "tipo": "reel",
       "quando": "2026-10-01T19:30",

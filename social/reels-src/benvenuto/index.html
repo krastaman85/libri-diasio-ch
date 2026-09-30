@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/js/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Oswald"; font-weight: 700; src: url("assets/fonts/Oswald-700.woff2") format("woff2"); }
+      @font-face { font-family: "Oswald"; font-weight: 500; src: url("assets/fonts/Oswald-500.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: normal; src: url("assets/fonts/SourceSerif4-400.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: italic; src: url("assets/fonts/SourceSerif4-400i.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 600; font-style: normal; src: url("assets/fonts/SourceSerif4-600.woff2") format("woff2"); }
+
+      :root { --bg: #0a0f18; --ink: #eef1f5; --muted: #a7b2c2; --line: #22324a; --accent: #f0a24a; --accent-ink: #1a1206; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; color: var(--ink); font-family: "Source Serif 4", Georgia, serif; }
+
+      #scene { position: absolute; inset: 0; }
+      #glow { position: absolute; left: 50%; top: 30%; width: 1500px; height: 1500px; margin-left: -750px; margin-top: -750px; border-radius: 50%;
+              background: radial-gradient(circle, rgba(240,162,74,.28) 0%, rgba(120,72,24,.15) 38%, rgba(10,15,24,0) 68%); }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(10,15,24,0) 40%, rgba(5,8,14,.72) 100%); }
+
+      #brand { position: absolute; left: 90px; top: 150px; font-family: "Oswald", sans-serif; font-weight: 700; font-size: 46px; letter-spacing: .28em; text-transform: uppercase; }
+      #brand span { color: var(--accent); }
+      #brand-rule { position: absolute; left: 90px; top: 226px; width: 96px; height: 6px; background: var(--accent); transform-origin: left center; }
+
+      .qwrap { position: absolute; left: 90px; right: 90px; top: 560px; height: 760px; display: flex; flex-direction: column; justify-content: center; }
+      .kicker { font-family: "Oswald", sans-serif; font-weight: 500; font-size: 34px; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-bottom: 44px; }
+      .q { display: flex; flex-wrap: wrap; column-gap: .28em; row-gap: .12em; font-style: italic; font-size: 104px; line-height: 1.14; color: var(--ink); }
+      .q .w { display: inline-block; will-change: transform, opacity, filter; }
+      .q .w.em { color: var(--accent); }
+      .book { margin-top: 56px; font-family: "Oswald", sans-serif; font-weight: 500; font-size: 32px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+      .book::before { content: ""; display: inline-block; width: 56px; height: 3px; background: var(--accent); vertical-align: middle; margin-right: 22px; }
+
+      #stack { position: absolute; left: 90px; right: 90px; top: 640px; display: flex; flex-direction: column; gap: 18px; }
+      #stack .l { font-family: "Oswald", sans-serif; font-weight: 700; font-size: 132px; line-height: 1.02; text-transform: uppercase; letter-spacing: .02em; }
+      #stack .l.a { color: var(--accent); }
+      #stack .sub { margin-top: 26px; font-family: "Source Serif 4", serif; font-style: italic; font-size: 44px; color: var(--muted); }
+
+      #reveal { position: absolute; inset: 0; }
+      .cv { position: absolute; top: 300px; width: 420px; height: 626px; }
+      .cv img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; box-shadow: 0 34px 100px rgba(0,0,0,.65), 0 0 0 2px var(--line), 0 0 120px rgba(240,162,74,.2); }
+      #cv1 { left: 90px; }
+      #cv2 { right: 90px; }
+      .ct { position: absolute; top: 962px; width: 420px; text-align: center; font-family: "Oswald", sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; text-transform: uppercase; }
+      .ct small { display: block; margin-top: 12px; font-weight: 500; font-size: 22px; letter-spacing: .1em; white-space: nowrap; color: var(--accent); }
+      #ct1 { left: 90px; }
+      #ct2 { right: 90px; }
+      #hello { position: absolute; left: 90px; right: 90px; top: 1130px; text-align: center; font-style: italic; font-size: 50px; line-height: 1.2; color: var(--ink); white-space: nowrap; }
+      #hello b { color: var(--accent); font-weight: 400; }
+      #cta { position: absolute; left: 90px; right: 90px; top: 1330px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+      #pill { white-space: nowrap; padding: 30px 56px; border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-family: "Oswald", sans-serif; font-weight: 700; font-size: 44px; letter-spacing: .08em; text-transform: uppercase; box-shadow: 0 18px 60px rgba(240,162,74,.35); }
+      #url { font-size: 36px; color: var(--muted); }
+      #url b { color: var(--ink); font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="17" data-width="1080" data-height="1920">
+      <audio id="bed" src="assets/audio/intro.mp3" data-start="0" data-duration="17" data-track-index="10" data-volume="0.7"></audio>
+      <section id="scene">
+        <div id="glow"></div>
+        <div id="vignette"></div>
+        <div id="brand">D<span>.</span> IASIO</div>
+        <div id="brand-rule"></div>
+
+        <div class="qwrap" id="q1">
+          <div class="kicker">Prima domanda</div>
+          <div class="q" data-text="E se il tuo condominio leggesse i tuoi pensieri?" data-em="pensieri?"></div>
+          <div class="book">Il Bug della Trasparenza</div>
+        </div>
+        <div class="qwrap" id="q2">
+          <div class="kicker">Seconda domanda</div>
+          <div class="q" data-text="E se il dolore si potesse vendere?" data-em="dolore"></div>
+          <div class="book">L’Economia dell’Oblio</div>
+        </div>
+
+        <div id="stack">
+          <div class="l">Due romanzi.</div>
+          <div class="l a">A puntate.</div>
+          <div class="l">Una sera<br>alla volta.</div>
+          <div class="sub">Noir e thriller psicologico, scritti da D. Iasio.</div>
+        </div>
+
+        <div id="reveal">
+          <div class="cv" id="cv1"><img src="assets/img/cover-bug.jpg" alt="" /></div>
+          <div class="cv" id="cv2"><img src="assets/img/cover-oblio.jpg" alt="" /></div>
+          <div class="ct" id="ct1">Il Bug della Trasparenza<small>Noir sociale · 8 puntate</small></div>
+          <div class="ct" id="ct2">L’Economia dell’Oblio<small>Thriller psicologico · 6 puntate</small></div>
+          <div id="hello">Benvenuto. <b>Le storie cominciano qui.</b></div>
+          <div id="cta">
+            <div id="pill">Leggi la Puntata 1 gratis</div>
+            <div id="url">PDF ed EPUB · <b>libri.diasio.ch</b></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const norm = (s) => s.toLowerCase().replace(/[^a-zàèéìòù’']/gi, "");
+      const tl = gsap.timeline({ paused: true });
+
+      // Apertura
+      tl.fromTo("#glow", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 2.4, ease: "power2.out" }, 0);
+      tl.to("#glow", { scale: 1.12, duration: 14.6, ease: "sine.inOut" }, 2.4);
+      tl.fromTo("#brand", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 0.15);
+      tl.fromTo("#brand-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 0.45);
+
+      // Le due domande: [contenitore, entrata parole, uscita]
+      const scenes = [["#q1", 0.7, 4.1], ["#q2", 5.3, 8.3]];
+      scenes.forEach(([sel, t0, exitAt]) => {
+        const wrap = document.querySelector(sel);
+        const qEl = wrap.querySelector(".q");
+        const emph = qEl.getAttribute("data-em").toLowerCase().split(",").map((s) => s.trim());
+        const words = qEl.getAttribute("data-text").split(/\s+/);
+        words.forEach((w) => {
+          const s = document.createElement("span");
+          s.className = "w" + (emph.includes(w.toLowerCase().replace(/^\W+|\W+$/g, "")) || emph.includes(w.toLowerCase()) ? " em" : "");
+          s.textContent = w;
+          qEl.appendChild(s);
+        });
+        tl.fromTo(wrap.querySelector(".kicker"), { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, t0 - 0.4);
+        const step = 0.19;
+        const ws = qEl.querySelectorAll(".w");
+        ws.forEach((el, i) => {
+          const t = t0 + 0.2 + i * step;
+          tl.fromTo(el, { opacity: 0, y: 46, filter: "blur(14px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out" }, t);
+          if (el.classList.contains("em")) {
+            tl.fromTo(el, { textShadow: "0 0 0px rgba(240,162,74,0)" }, { textShadow: "0 0 34px rgba(240,162,74,.75)", duration: 0.5, ease: "power2.out", yoyo: true, repeat: 1 }, t + 0.35);
+          }
+        });
+        const qEnd = t0 + 0.2 + (ws.length - 1) * step + 0.55;
+        tl.fromTo(wrap.querySelector(".book"), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, qEnd + 0.15);
+        tl.to(wrap, { opacity: 0, y: -60, filter: "blur(10px)", duration: 0.6, ease: "power2.in" }, exitAt);
+      });
+
+      // Due romanzi. A puntate. Una sera alla volta.
+      const ls = document.querySelectorAll("#stack .l");
+      ls.forEach((el, i) => tl.fromTo(el, { opacity: 0, x: -70, filter: "blur(10px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.7, ease: "power4.out" }, 9.0 + i * 0.7));
+      tl.fromTo("#stack .sub", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 11.0);
+      tl.to("#stack", { opacity: 0, y: -60, filter: "blur(10px)", duration: 0.6, ease: "power2.in" }, 12.0);
+
+      // Copertine e invito (colpo grave a 12.6 s)
+      const rv = 12.6;
+      tl.fromTo("#cv1", { opacity: 0, y: 200, rotationX: 26, scale: 0.86, transformPerspective: 1100 }, { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 1.0, ease: "power4.out" }, rv);
+      tl.fromTo("#cv2", { opacity: 0, y: 200, rotationX: 26, scale: 0.86, transformPerspective: 1100 }, { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 1.0, ease: "power4.out" }, rv + 0.18);
+      tl.to("#cv1", { y: -12, duration: 3.4, ease: "sine.inOut" }, rv + 1.2);
+      tl.to("#cv2", { y: -12, duration: 3.4, ease: "sine.inOut" }, rv + 1.3);
+      tl.fromTo("#ct1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, rv + 0.7);
+      tl.fromTo("#ct2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, rv + 0.85);
+      tl.fromTo("#hello", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, rv + 1.4);
+      tl.fromTo("#cta", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, rv + 1.9);
+      tl.fromTo("#pill", { scale: 1 }, { scale: 1.05, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: 3 }, rv + 2.6);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
