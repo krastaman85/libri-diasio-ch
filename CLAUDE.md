@@ -39,3 +39,17 @@ Controllare dal telefono il sito; dopo le 19:45 del 1/10 controllare il Reel r01
 
 ## Igiene dei repository
 Dopo ogni PR unita i branch restano: cancellarli da GitHub (Branches, cestino) oppure attivare «Automatically delete head branches» in Settings > General.
+
+## Mappa dei progetti dell'account (un progetto = un repository = una sessione)
+Non mescolare i progetti: apri la sessione con **solo** il repository che serve e dai un titolo «Progetto – argomento». Ogni repository ha il suo `CLAUDE.md`.
+
+| Repository | Cosa | Online (dai file dei repo) | Visibilità |
+|---|---|---|---|
+| `libri-diasio-ch` | sito dei romanzi e pubblicazione social | libri.diasio.ch (GitHub Pages) | pubblico |
+| `gerla` | app della spesa e dei menu | gerla.diasio.ch (GitHub Pages) | pubblico |
+| `Campanella` | piattaforma scuola-famiglia (Expo + Supabase) | campanella-nine.vercel.app (Vercel) | privato |
+| `Bussola` | servizio digitale per padri single in Ticino | risulta bussola-dd85.vercel.app (Vercel) | privato |
+| `NewCalendar` | calendario diritti di visita con PDF (PWA) | da verificare (README: GitHub Pages) | privato |
+| `davide-diasio-portfolio` | sito portfolio | diasio.ch (da verificare dove è ospitato) | privato |
+
+Cartelle locali: restano dove sono. In particolare non spostare la cartella di Bussola senza sistemare `../bussola-spaziale` (prototipo locale citato nel suo README). Rischio noto: git dentro OneDrive può dare file bloccati o duplicati.
