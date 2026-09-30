@@ -13,7 +13,9 @@ Uso:
   publish.py --id 03-...     forza un post preciso (test), ignorando data e finestra
 
 Tipi di post in calendar.json: immagine (campo "immagine"), "tipo": "reel" (campo "video"),
-"tipo": "carosello" (campo "immagini": da 2 a 10 file JPEG).
+"tipo": "carosello" (campo "immagini": da 2 a 10 file JPEG), "tipo": "storia" (campo "immagine": JPEG 1080x1920,
+senza didascalia), "tipo": "testo" (solo Facebook: "didascalia" + "link" facoltativo, anteprima automatica).
+Il campo facoltativo "piattaforme": ["instagram"] o ["facebook"] limita un post a una sola piattaforma.
 """
 import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
@@ -84,7 +86,8 @@ def pending(post, state, plats):
     done = state["pubblicati"].get(post["id"], {})
     if done.get("saltato"):
         return []
-    return [p for p in plats if p not in done]
+    allowed = post.get("piattaforme") or (["facebook"] if is_text(post) else plats)
+    return [p for p in plats if p in allowed and p not in done]
 
 
 def pick(cal, state, plats, now, forced):
@@ -117,8 +120,18 @@ def is_carousel(p):
     return p.get("tipo") == "carosello"
 
 
+def is_story(p):
+    return p.get("tipo") == "storia"
+
+
+def is_text(p):
+    return p.get("tipo") == "testo"
+
+
 def media_urls(p):
     """URL pubblici dei file del post (uno solo, tranne nei caroselli)."""
+    if is_text(p):
+        return []
     if is_reel(p):
         return [f"{SITE}/{p['video']}"]
     if is_carousel(p):
@@ -140,6 +153,13 @@ def wait_container(cid, token, tries, wait):
 def publish_instagram(p, media_url, token):
     me = call(IG_API, "GET", "me", token, {"fields": "user_id,username"})
     uid = me.get("user_id") or me.get("id")
+    if is_story(p):
+        # Storia con una sola immagine 1080x1920 (niente didascalia, sticker o link: l'API non li supporta)
+        cid = call(IG_API, "POST", f"{uid}/media", token, {"media_type": "STORIES", "image_url": media_url})["id"]
+        wait_container(cid, token, 20, 3)
+        media = call(IG_API, "POST", f"{uid}/media_publish", token, {"creation_id": cid})["id"]
+        link = call(IG_API, "GET", media, token, {"fields": "permalink"}).get("permalink", "")
+        return {"media_id": media, "link": link}
     if is_carousel(p):
         # un contenitore per slide, poi un contenitore CAROUSEL che le raccoglie (2-10 slide)
         kids = []
@@ -170,6 +190,17 @@ def publish_instagram(p, media_url, token):
 
 
 def publish_facebook(p, media_url, token, page_id):
+    if is_text(p):
+        params = {"message": p["didascalia_fb"] if p.get("didascalia_fb") else p["didascalia"]}
+        if p.get("link"):
+            params["link"] = p["link"]
+        r = call(FB_API, "POST", f"{page_id}/feed", token, params)
+        return {"post_id": r.get("id"), "link": f"https://www.facebook.com/{r.get('id')}"}
+    if is_story(p):
+        photo = call(FB_API, "POST", f"{page_id}/photos", token, {"url": media_url, "published": "false"})["id"]
+        r = call(FB_API, "POST", f"{page_id}/photo_stories", token, {"photo_id": photo})
+        post_id = r.get("post_id") or r.get("id") or photo
+        return {"post_id": post_id, "link": f"https://www.facebook.com/{post_id}"}
     text = p.get("didascalia_fb") or p["didascalia"]
     if is_carousel(p):
         # Facebook: le foto vengono caricate non pubblicate e poi allegate a un solo post di Pagina
@@ -243,7 +274,7 @@ def main():
     if not p:
         print("Nessun post da pubblicare adesso.")
         return
-    kind = "reel" if is_reel(p) else "carosello" if is_carousel(p) else "immagine"
+    kind = "reel" if is_reel(p) else "carosello" if is_carousel(p) else "storia" if is_story(p) else "testo" if is_text(p) else "immagine"
     urls = media_urls(p)
     print(f"Post: {p['id']} ({kind}, {p['segmento']}) su {', '.join(todo)} → {', '.join(urls)}")
     if is_carousel(p) and not 2 <= len(urls) <= 10:
@@ -260,7 +291,7 @@ def main():
             if plat == "instagram":
                 res = publish_instagram(p, urls if is_carousel(p) else urls[0], os.environ["IG_ACCESS_TOKEN"])
             else:
-                res = publish_facebook(p, urls if is_carousel(p) else urls[0], fb_token(), os.environ["FB_PAGE_ID"])
+                res = publish_facebook(p, urls if is_carousel(p) else (urls[0] if urls else None), fb_token(), os.environ["FB_PAGE_ID"])
             res["ora_utc"] = now.isoformat(timespec="seconds")
             entry(state, p["id"])[plat] = res
             print(f"Pubblicato su {plat}: {res['link']}")

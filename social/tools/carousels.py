@@ -11,7 +11,18 @@ def single(id, when, book, seg, slide, caption, tags, alt, theme=None):
     return dict(id=id, when=when, book=book, seg=seg, slides=[slide], caption=caption, tags=tags, alt=alt, theme=theme)
 
 
+def story(id, when, book, seg, slide):
+    return dict(id=id, when=when, book=book, seg=seg, slides=[slide], story=True)
+
+
 ITEMS = [
+
+ # ---------- presentazione (30 settembre) ----------
+ single("p00-presentazione", "2026-09-30T12:30", "bug", "Presentazione dell’autore + tutti",
+  dict(k="covers", text="Ciao, sono *D. Iasio*. Scrivo *romanzi*.", items=[("bug", "Il silenzio è finito. La verità è *pubblica*."), ("oblio", "Chi dimentica diventa *innocente*. Paga solo chi ricorda.")]),
+  "Ciao, sono D. Iasio. Scrivo romanzi noir e thriller.\nPer ora escono a puntate, una sera alla volta: Il Bug della Trasparenza (noir sociale, otto puntate) e L’Economia dell’Oblio (thriller psicologico, sei). Spero presto di poterli offrire interi negli store.\nQui trovi estratti, dietro le quinte e le date delle prossime puntate. La Puntata 1 di entrambi è gratis, in PDF o EPUB, senza iscrizione: link in bio.",
+  "#noir #thrillerpsicologico #narrativaitaliana #romanzi #autoreemergente",
+  "Le copertine dei due romanzi, Il Bug della Trasparenza e L’Economia dell’Oblio, con la scritta «Ciao, sono D. Iasio. Scrivo romanzi.»"),
  # ---------- caroselli (domenica 20:00, e giovedì 3 dicembre) ----------
  dict(id="c01-oblio-listino", when="2026-11-29T20:00", book="oblio", seg="Fantascienza/distopia + satira del lavoro (carosello)",
   slides=[dict(k="hook", kick=OBL, text="Quanto vale un *dolore*?", sub="Il listino di uno studio di estrazioni. Scorri."),
@@ -124,4 +135,19 @@ ITEMS = [
   "L’ultimo giorno dell’anno, un solo invito: se vuoi sapere quando esce la prossima storia, iscriviti alla newsletter. Una mail alla volta, niente rumore. E la Puntata 1 di entrambi i romanzi resta gratis.\nLink in bio.",
   "#ticino #svizzeraitaliana #narrativaitaliana #noir #thrillerpsicologico",
   "Grafica scura con la scritta «Buon 2027. Una mail quando esce la prossima storia.»"),
+
+ # ---------- Storie (lunedì 18:30, formato 1080x1920, senza didascalia) ----------
+ story("s01-bug-ascensore", "2026-10-05T18:30", "bug", "Storia · Vita di condominio", Q("Nessuno la salutava per prima nell’*ascensore*.", who="Nadia, undici giorni dopo il trasloco")),
+ story("s02-puntata1", "2026-10-12T18:30", "bug", "Storia · Invito alla Puntata 1", dict(k="cta", books=["bug", "oblio"], text="La Puntata 1 di *entrambi*.", line="Gratis · PDF ed EPUB · <b>libri.diasio.ch</b> · link in bio")),
+ story("s03-oblio-cugino", "2026-10-19T18:30", "oblio", "Storia · Satira aziendale", Q("Tutti hanno un *cugino*. Nico ne ha almeno tre e nessuno di loro è mai stato visto.", who="Dora Calvi")),
+ story("s04-bug-portiere", "2026-10-26T18:30", "bug", "Storia · Lettori noir", Q("Un uomo che apriva porte e non ne varcava mai nessuna che non gli fosse stata *indicata*.", who="Yusuf, il portiere")),
+ story("s05-due-romanzi", "2026-11-02T18:30", "bug", "Storia · Presentazione", dict(k="hook", kick="D. Iasio", text="Due romanzi. *Una sera* alla volta.", sub="La Puntata 1 è gratis. Link in bio.")),
+ story("s06-oblio-stia-fermo", "2026-11-09T18:30", "oblio", "Storia · Umorismo nero", Q("«Bella frase. Stia *fermo*, per favore.»", who="Dora Calvi, al cliente")),
+ story("s07-bug-cronista", "2026-11-16T18:30", "bug", "Storia · Giornalismo d’inchiesta", Q("Nadia li catalogò tutti, uno per uno, con la stessa *freddezza* con cui otto anni prima avrebbe catalogato le fonti di un’inchiesta.")),
+ story("s08-puntata1-bis", "2026-11-23T18:30", "oblio", "Storia · Invito alla Puntata 1", dict(k="cta", books=["bug", "oblio"], text="Senza *iscrizione*.", line="La Puntata 1 è gratis · <b>libri.diasio.ch</b> · link in bio")),
+ story("s09-oblio-mercato", "2026-11-30T18:30", "oblio", "Storia · Satira", Q("Il mercato è il *mercato*.", who="Nico")),
+ story("s10-bug-non-ancora", "2026-12-07T18:30", "bug", "Storia · Lettori noir", Q("Non lo chiese. Non *ancora*.", who="Nadia, dopo la risposta del portiere")),
+ story("s11-newsletter", "2026-12-14T18:30", "bug", "Storia · Newsletter", dict(k="hook", kick="Newsletter", text="Una mail *quando esce* la prossima storia.", sub="Iscriviti dal link in bio. Niente rumore.")),
+ story("s12-feste", "2026-12-21T18:30", "oblio", "Storia · Feste", dict(k="hook", text="Per le sere *lunghe*.", sub="La Puntata 1 di entrambi i romanzi è gratis. Link in bio.")),
+ story("s13-oblio-innocente", "2026-12-28T18:30", "oblio", "Storia · Lettori thriller", Q("Chi dimentica diventa *innocente*. Paga solo chi ricorda.", who="L’Economia dell’Oblio")),
 ]

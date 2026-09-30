@@ -62,6 +62,13 @@
       "didascalia_fb": "Nel tuo condominio c’è un’app per tutto: cancello, pacchi, assemblee. Ora immagina che una sera cominci a dire la verità.\nIl Bug della Trasparenza è un noir a puntate ambientato in un palazzo dove tutti hanno qualcosa da nascondere. Poi arriva l’aggiornamento.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#noir #thriller #narrativaitaliana"
     },
     {
+      "id": "s01-bug-ascensore",
+      "tipo": "storia",
+      "quando": "2026-10-05T18:30",
+      "segmento": "Storia · Vita di condominio",
+      "immagine": "social/img/story/s01-bug-ascensore.jpg"
+    },
+    {
       "id": "02-oblio-listino",
       "quando": "2026-10-06T19:30",
       "segmento": "Fantascienza/distopia + satira del lavoro",
@@ -90,6 +97,17 @@
       "didascalia_fb": "Trasparenza totale: bello come slogan, un incubo quando tocca a te.\nUn bug nell’app del condominio e il presidente dell’assemblea si ritrova a dichiarare, senza volerlo, quello che stava per nascondere. Tutti i telefoni della sala lo leggono nello stesso momento.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#noir #thrillersociale #privacy"
     },
     {
+      "id": "t01-bug-condominio",
+      "tipo": "testo",
+      "piattaforme": [
+        "facebook"
+      ],
+      "quando": "2026-10-09T18:00",
+      "segmento": "Testo · Vita di condominio",
+      "didascalia": "Se l’app del tuo condominio dicesse la verità, chi sarebbe il primo a finire nei guai? Nel romanzo è successo a un presidente d’assemblea.\nLa Puntata 1 de Il Bug della Trasparenza è gratis: PDF ed EPUB, senza iscrizione.",
+      "link": "https://libri.diasio.ch/bug/"
+    },
+    {
       "id": "r05-bug-rimossa",
       "tipo": "reel",
       "quando": "2026-10-10T12:30",
@@ -107,6 +125,13 @@
       "didascalia": "Domanda della domenica sera: se qualcuno ti pagasse per togliere un ricordo dalla testa, quale sceglieresti? E lo faresti davvero?\nRispondi nei commenti, leggo tutto. Nel romanzo la scelta non è mai gratuita.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\n\n#thrillerpsicologico #memoria #distopia #bookstagram #leggere",
       "alt": "Grafica scura con la domanda: Se potessi vendere un ricordo, quale sarebbe? L’Economia dell’Oblio.",
       "didascalia_fb": "Domanda della domenica sera: se qualcuno ti pagasse per togliere un ricordo dalla testa, quale sceglieresti? E lo faresti davvero?\nRispondi nei commenti, leggo tutto. Nel romanzo la scelta non è mai gratuita.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#thrillerpsicologico #memoria #distopia"
+    },
+    {
+      "id": "s02-puntata1",
+      "tipo": "storia",
+      "quando": "2026-10-12T18:30",
+      "segmento": "Storia · Invito alla Puntata 1",
+      "immagine": "social/img/story/s02-puntata1.jpg"
     },
     {
       "id": "05-oblio-costo",
@@ -146,6 +171,13 @@
       "didascalia_fb": "Come una serie tv, ma da leggere: otto puntate, una sera alla volta.\nLa Puntata 1 de Il Bug della Trasparenza è gratis, in PDF o EPUB (va bene anche su Kindle). Nessuna iscrizione richiesta.\nhttps://libri.diasio.ch/\n\n#ebook #kindle #epub"
     },
     {
+      "id": "s03-oblio-cugino",
+      "tipo": "storia",
+      "quando": "2026-10-19T18:30",
+      "segmento": "Storia · Satira aziendale",
+      "immagine": "social/img/story/s03-oblio-cugino.jpg"
+    },
+    {
       "id": "08-oblio-levia",
       "quando": "2026-10-20T19:30",
       "segmento": "Tech/IA + pubblicità e brand",
@@ -174,6 +206,17 @@
       "didascalia_fb": "Il portiere sa più di quanto dice. In fondo al garage di Residenza Meridiana c’è una porta blindata senza targhetta che nessuno può aprire, a parte l’amministrazione.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#noir #thriller #narrativaitaliana"
     },
     {
+      "id": "t02-oblio-ricordo",
+      "tipo": "testo",
+      "piattaforme": [
+        "facebook"
+      ],
+      "quando": "2026-10-23T18:00",
+      "segmento": "Testo · Community",
+      "didascalia": "Se potessi vendere un ricordo, quale sarebbe? In L’Economia dell’Oblio un lutto pulito vale quattromila euro. Dimmelo nei commenti.\nLa Puntata 1 è gratis, in PDF o EPUB.",
+      "link": "https://libri.diasio.ch/oblio/"
+    },
+    {
       "id": "r08-oblio-listino",
       "tipo": "reel",
       "quando": "2026-10-24T12:30",
@@ -191,6 +234,13 @@
       "didascalia": "Domanda della domenica sera, senza fare nomi: chi, nel tuo palazzo, avrebbe più da perdere se un’app dicesse tutto?\nSe vuoi sapere come va a finire per un presidente d’assemblea che «non ha alcun interesse personale», la Puntata 1 è gratis.\nLink in bio.\n\n#condominio #vicinidicasa #noir #thrillersociale #narrativaitaliana",
       "alt": "Grafica scura con la domanda: Se l’app del tuo condominio dicesse la verità, chi sarebbe il primo a finire nei guai? Il Bug della Trasparenza.",
       "didascalia_fb": "Domanda della domenica sera, senza fare nomi: chi, nel tuo palazzo, avrebbe più da perdere se un’app dicesse tutto?\nSe vuoi sapere come va a finire per un presidente d’assemblea che «non ha alcun interesse personale», la Puntata 1 è gratis.\nhttps://libri.diasio.ch/\n\n#condominio #vicinidicasa #noir"
+    },
+    {
+      "id": "s04-bug-portiere",
+      "tipo": "storia",
+      "quando": "2026-10-26T18:30",
+      "segmento": "Storia · Lettori noir",
+      "immagine": "social/img/story/s04-bug-portiere.jpg"
     },
     {
       "id": "11-oblio-bitcoin",
@@ -240,6 +290,13 @@
       "didascalia_fb": "Per una sera di Ognissanti da thriller: «Chi dimentica diventa innocente. Paga solo chi ricorda.»\nLa Puntata 1 de L’Economia dell’Oblio è gratis, in PDF o EPUB. Sei puntate in tutto.\nhttps://libri.diasio.ch/\n\n#thrillerpsicologico #ebook #kindle"
     },
     {
+      "id": "s05-due-romanzi",
+      "tipo": "storia",
+      "quando": "2026-11-02T18:30",
+      "segmento": "Storia · Presentazione",
+      "immagine": "social/img/story/s05-due-romanzi.jpg"
+    },
+    {
       "id": "14-bug-rimossa",
       "quando": "2026-11-03T19:30",
       "segmento": "Tech/privacy",
@@ -268,6 +325,17 @@
       "didascalia_fb": "Il Pettine: controllo semestrale obbligatorio per chi lavora con i ricordi degli altri. Se trovano tracce, ti resettano.\nPer chi ama le distopie che sembrano a un passo da noi.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#distopia #fantascienza #blackmirror"
     },
     {
+      "id": "t03-bug-regolamento",
+      "tipo": "testo",
+      "piattaforme": [
+        "facebook"
+      ],
+      "quando": "2026-11-06T18:00",
+      "segmento": "Testo · Condominio + privacy",
+      "didascalia": "«Il regolamento di condominio la definiva strumento indispensabile alla vita comunitaria. Nessuno l’aveva letto fino in fondo. Nadia nemmeno.»\nE tu, li leggi i regolamenti? La Puntata 1 è gratis.",
+      "link": "https://libri.diasio.ch/bug/"
+    },
+    {
       "id": "r12-bug-vicino",
       "tipo": "reel",
       "quando": "2026-11-07T12:30",
@@ -285,6 +353,13 @@
       "didascalia": "Il Bug della Trasparenza, di D. Iasio. Noir sociale in otto puntate: un condominio d’élite, un’app che non dovrebbe sapere quello che sa, una giornalista che ha un motivo per essere lì.\nLa Puntata 1 è gratis, in PDF o EPUB. Link in bio.\n\n#bookstagram #libriconsigliati #noir #narrativaitaliana #autoreemergente",
       "alt": "Copertina de Il Bug della Trasparenza: un palazzo notturno attraversato da frasi arancioni.",
       "didascalia_fb": "Il Bug della Trasparenza, di D. Iasio. Noir sociale in otto puntate: un condominio d’élite, un’app che non dovrebbe sapere quello che sa, una giornalista che ha un motivo per essere lì.\nLa Puntata 1 è gratis, in PDF o EPUB. https://libri.diasio.ch/\n\n#bookstagram #libriconsigliati #noir"
+    },
+    {
+      "id": "s06-oblio-stia-fermo",
+      "tipo": "storia",
+      "quando": "2026-11-09T18:30",
+      "segmento": "Storia · Umorismo nero",
+      "immagine": "social/img/story/s06-oblio-stia-fermo.jpg"
     },
     {
       "id": "17-oblio-strano",
@@ -334,6 +409,13 @@
       "didascalia_fb": "L’Economia dell’Oblio, di D. Iasio. Thriller psicologico in sei puntate: una tecnica estrattiva, un mercato che compra il dolore, un omicidio che forse ha dentro la propria testa.\nLa Puntata 1 è gratis, in PDF o EPUB. https://libri.diasio.ch/\n\n#bookstagram #libriconsigliati #thrillerpsicologico"
     },
     {
+      "id": "s07-bug-cronista",
+      "tipo": "storia",
+      "quando": "2026-11-16T18:30",
+      "segmento": "Storia · Giornalismo d’inchiesta",
+      "immagine": "social/img/story/s07-bug-cronista.jpg"
+    },
+    {
       "id": "20-bug-attivare",
       "quando": "2026-11-17T19:30",
       "segmento": "Mondo del lavoro (chi «esegue e basta»)",
@@ -362,6 +444,17 @@
       "didascalia_fb": "Il listino dello studio dove lavora Dora Calvi, tutto dal romanzo. Una cotta non ricambiata vale sessanta euro: «roba da minorenni».\nLevia e i suoi prezzi sono immaginari. La sensazione di riconoscerli un po’, molto meno.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#distopia #thrillerpsicologico #satira"
     },
     {
+      "id": "t04-oblio-listino",
+      "tipo": "testo",
+      "piattaforme": [
+        "facebook"
+      ],
+      "quando": "2026-11-20T18:00",
+      "segmento": "Testo · Satira",
+      "didascalia": "Quanto vale un dolore? Un lutto pulito quattromila euro, una vergogna novecento, una cotta non ricambiata sessanta. È il listino di uno studio di estrazioni, in L’Economia dell’Oblio.\nLa Puntata 1 è gratis.",
+      "link": "https://libri.diasio.ch/oblio/"
+    },
+    {
       "id": "r16-bug-silenzio",
       "tipo": "reel",
       "quando": "2026-11-21T12:30",
@@ -379,6 +472,13 @@
       "didascalia": "Per chi legge in italiano dal Ticino, dalla Svizzera italiana, dall’Italia e ovunque: una mail solo quando esce la prossima storia, con qualche estratto. Niente rumore.\nLa Puntata 1 di entrambi i romanzi è gratis. Iscrizione dal link in bio.\n\n#ticino #svizzeraitaliana #narrativaitaliana #noir #thrillerpsicologico",
       "alt": "Le copertine dei due romanzi, Il Bug della Trasparenza e L’Economia dell’Oblio, con la scritta Una mail quando esce la prossima storia.",
       "didascalia_fb": "Per chi legge in italiano dal Ticino, dalla Svizzera italiana, dall’Italia e ovunque: una mail solo quando esce la prossima storia, con qualche estratto. Niente rumore.\nLa Puntata 1 di entrambi i romanzi è gratis. Iscrizione dal https://libri.diasio.ch/\n\n#ticino #svizzeraitaliana #narrativaitaliana"
+    },
+    {
+      "id": "s08-puntata1-bis",
+      "tipo": "storia",
+      "quando": "2026-11-23T18:30",
+      "segmento": "Storia · Invito alla Puntata 1",
+      "immagine": "social/img/story/s08-puntata1-bis.jpg"
     },
     {
       "id": "23-oblio-igiene",
@@ -436,6 +536,13 @@
       "didascalia_fb": "Il listino dello studio dove lavora Dora Calvi. Scorri: i prezzi, il mercato e il modo in cui si taglia un ricordo. Tutto dal romanzo.\nLevia e i suoi prezzi sono immaginari. La sensazione che tutto abbia un costo, un po’ meno.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#thrillerpsicologico #distopia #satira"
     },
     {
+      "id": "s09-oblio-mercato",
+      "tipo": "storia",
+      "quando": "2026-11-30T18:30",
+      "segmento": "Storia · Satira",
+      "immagine": "social/img/story/s09-oblio-mercato.jpg"
+    },
+    {
       "id": "d01-oblio-sei-minuti",
       "quando": "2026-12-01T19:30",
       "segmento": "Psicologia/memoria (tono rispettoso) + lettori thriller",
@@ -471,6 +578,17 @@
       "didascalia_fb": "Bug o Oblio? Un noir sociale in otto puntate contro un thriller psicologico in sei. Quale cominceresti per primo? Dimmelo nei commenti: leggo tutto.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#noir #thrillerpsicologico #narrativaitaliana"
     },
     {
+      "id": "t05-newsletter",
+      "tipo": "testo",
+      "piattaforme": [
+        "facebook"
+      ],
+      "quando": "2026-12-04T18:00",
+      "segmento": "Testo · Newsletter",
+      "didascalia": "Una mail quando esce la prossima storia: solo un avviso e qualche estratto, niente rumore.\nIscriviti alla newsletter dal sito; la Puntata 1 di entrambi i romanzi è gratis.",
+      "link": "https://libri.diasio.ch/"
+    },
+    {
       "id": "r20-bug-acclamazione",
       "tipo": "reel",
       "quando": "2026-12-05T12:30",
@@ -497,6 +615,13 @@
       "alt": "Carosello di sette slide su fondo scuro con le frasi dell’assemblea di condominio de Il Bug della Trasparenza: la formalità del punto quattro, la notifica dell’aggiornamento, il preventivo B, il post che rivela il cognato, il silenzio in sala.",
       "didascalia": "Dieci minuti di assemblea di condominio e un bug che dice la verità. Le frasi della scena che apre Il Bug della Trasparenza, nell’ordine in cui succedono.\nTu quale punto all’ordine del giorno salteresti?\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\n#noir #thrillersociale #condominio #privacy #narrativaitaliana",
       "didascalia_fb": "Dieci minuti di assemblea di condominio e un bug che dice la verità. Le frasi della scena che apre Il Bug della Trasparenza, nell’ordine in cui succedono.\nTu quale punto all’ordine del giorno salteresti?\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#noir #thrillersociale #condominio"
+    },
+    {
+      "id": "s10-bug-non-ancora",
+      "tipo": "storia",
+      "quando": "2026-12-07T18:30",
+      "segmento": "Storia · Lettori noir",
+      "immagine": "social/img/story/s10-bug-non-ancora.jpg"
     },
     {
       "id": "d02-oblio-fascicolo",
@@ -555,6 +680,13 @@
       "didascalia_fb": "Il Pettine è il controllo semestrale obbligatorio per chi lavora con i ricordi degli altri. Se trovano tracce, ti resettano.\nPer chi ama le distopie che sembrano a un passo da noi. Scorri fino all’ultima frase.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#distopia #fantascienza #blackmirror"
     },
     {
+      "id": "s11-newsletter",
+      "tipo": "storia",
+      "quando": "2026-12-14T18:30",
+      "segmento": "Storia · Newsletter",
+      "immagine": "social/img/story/s11-newsletter.jpg"
+    },
+    {
       "id": "d04-oblio-pieghe",
       "quando": "2026-12-15T19:30",
       "segmento": "Psicologia/memoria + fantascienza",
@@ -583,6 +715,17 @@
       "didascalia_fb": "Il portiere e la giornalista, nell’atrio, dopo la serata in cui il condominio ha scoperto l’app. Nessuno dei due dice quello che pensa.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\n\n#noir #thriller #narrativaitaliana"
     },
     {
+      "id": "t06-feste",
+      "tipo": "testo",
+      "piattaforme": [
+        "facebook"
+      ],
+      "quando": "2026-12-18T18:00",
+      "segmento": "Testo · Feste",
+      "didascalia": "Per le sere di festa: due romanzi a puntate, e la Puntata 1 di entrambi è gratis, in PDF o EPUB (va bene anche su Kindle). Nessuna iscrizione.",
+      "link": "https://libri.diasio.ch/"
+    },
+    {
       "id": "c06-natale-albero",
       "quando": "2026-12-20T20:00",
       "segmento": "Lettori digitali + regalo di Natale + serie a puntate",
@@ -597,6 +740,13 @@
       "alt": "Carosello di cinque slide: un regalo che non costa niente, le copertine dei due romanzi, i formati PDF ed EPUB, gli auguri di buone feste e l’invito a leggere la Puntata 1 di entrambi.",
       "didascalia": "Se cerchi qualcosa da leggere nelle sere di festa: la Puntata 1 di entrambi i romanzi è gratis, in PDF o EPUB (va bene anche su Kindle). Nessuna iscrizione.\nSe conosci qualcuno che ama noir e thriller, basta girargli il link.\nLink in bio.\n#ebook #kindle #epub #leggeregratis #narrativaitaliana",
       "didascalia_fb": "Se cerchi qualcosa da leggere nelle sere di festa: la Puntata 1 di entrambi i romanzi è gratis, in PDF o EPUB (va bene anche su Kindle). Nessuna iscrizione.\nSe conosci qualcuno che ama noir e thriller, basta girargli il link.\nhttps://libri.diasio.ch/\n\n#ebook #kindle #epub"
+    },
+    {
+      "id": "s12-feste",
+      "tipo": "storia",
+      "quando": "2026-12-21T18:30",
+      "segmento": "Storia · Feste",
+      "immagine": "social/img/story/s12-feste.jpg"
     },
     {
       "id": "d06-oblio-regolatevi",
@@ -632,6 +782,13 @@
       "alt": "Carosello di sei slide: come leggere gratis la Puntata 1 in tre passi (aprire libri.diasio.ch, scegliere il romanzo, scaricare PDF o EPUB) e la newsletter facoltativa.",
       "didascalia": "Come leggere la Puntata 1 in tre passi, per chi arriva adesso: si scarica, si legge, e se piace si decide se continuare.\nÈ gratis, in PDF o EPUB, e non serve iscriversi. Link in bio.\n#ebook #kindle #epub #leggeregratis #narrativaitaliana",
       "didascalia_fb": "Come leggere la Puntata 1 in tre passi, per chi arriva adesso: si scarica, si legge, e se piace si decide se continuare.\nÈ gratis, in PDF o EPUB, e non serve iscriversi. https://libri.diasio.ch/\n\n#ebook #kindle #epub"
+    },
+    {
+      "id": "s13-oblio-innocente",
+      "tipo": "storia",
+      "quando": "2026-12-28T18:30",
+      "segmento": "Storia · Lettori thriller",
+      "immagine": "social/img/story/s13-oblio-innocente.jpg"
     },
     {
       "id": "d08-bug-nel-dubbio",

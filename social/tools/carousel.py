@@ -66,11 +66,17 @@ body{width:1080px;height:1350px;background:var(--bg);color:var(--ink);font-famil
 .foot .h{font:400 24px 'Source Serif 4';color:var(--mut);margin-top:14px}.amber .foot .u,.amber .foot .h{color:var(--dark)}
 .covers{display:flex;gap:56px;justify-content:center;margin-top:10px}.cv{width:420px;text-align:center}
 .cv img{width:420px;height:626px;object-fit:cover;box-shadow:0 30px 60px rgba(0,0,0,.55);border:2px solid var(--line)}
-.cv .t{font:700 34px 'Oswald';text-transform:uppercase;margin-top:30px}.cv .g{font:500 22px 'Oswald';letter-spacing:.18em;text-transform:uppercase;color:var(--amb);margin-top:10px}
-.cv .p{font:italic 400 34px/1.32 'Source Serif 4';color:var(--ink);margin-top:20px}
+.cv .t{font:700 34px 'Oswald';text-transform:uppercase;margin-top:30px}.cv .g{font:500 22px 'Oswald';white-space:nowrap;letter-spacing:.1em;text-transform:uppercase;color:var(--amb);margin-top:10px}
+.cv .p{font:italic 400 34px/1.32 'Source Serif 4';color:var(--ink);margin-top:20px}.cv .p b{color:var(--amb);font-weight:400}
 .one{display:flex;justify-content:center}.one img{width:460px;height:686px;object-fit:cover;box-shadow:0 30px 60px rgba(0,0,0,.55);border:2px solid var(--line)}
 .btn{position:absolute;left:70px;right:70px;bottom:160px;text-align:center;background:var(--amb);color:var(--dark);font:700 50px 'Oswald';letter-spacing:.06em;text-transform:uppercase;padding:34px 0;box-shadow:0 0 60px rgba(240,162,74,.45)}
 .btnsub{position:absolute;left:70px;right:70px;bottom:92px;text-align:center;font:400 30px 'Source Serif 4';color:var(--mut)}.btnsub b{color:var(--ink);font-weight:600}
+body.story{height:1920px}
+.story .brand{top:190px}.story .rule{top:270px}.story .pg,.story .swipe{display:none}
+.story .main{top:400px;bottom:520px}.story .q{font-size:88px}.story .q.m{font-size:76px}.story .q.s{font-size:64px}
+.story .big{font-size:132px}.story .sub{font-size:44px}.story .foot{bottom:250px}
+.story .btn{bottom:400px}.story .btnsub{bottom:320px}.story .tagline{top:290px}
+.story .cv{width:420px}.story .covers,.story .one{margin-top:0}
 .tagline{position:absolute;left:70px;right:70px;top:190px;text-align:center;font:italic 400 44px/1.3 'Source Serif 4'}.tagline b{color:var(--amb);font-weight:400}
 """
 
@@ -89,7 +95,7 @@ def foot(book):
             f'<div class="u">Puntata 1 gratis · libri.diasio.ch</div><div class="h">@d.iasio.libri</div></div></div>')
 
 
-def slide_html(s, i, n, book, theme):
+def slide_html(s, i, n, book, theme, story=False):
     k = s["k"]
     pg = f'<div class="pg">{i} / {n}</div>' if n > 1 else ""
     swipe = '<div class="swipe">SCORRI →</div>' if n > 1 and i < n else ""
@@ -129,7 +135,7 @@ def slide_html(s, i, n, book, theme):
         if len(books) == 2:
             body = body.replace('width:460px', 'width:400px')
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{fontface()}{CSS}</style></head>'
-            f'<body class="{"amber" if theme == "amber" else ""}"><div class="glow"></div>{head}{body}{foo}{swipe}</body></html>')
+            f'<body class="{"amber" if theme == "amber" else ""}{" story" if story else ""}"><div class="glow"></div>{head}{body}{foo}{swipe}</body></html>')
 
 
 def load():
@@ -142,20 +148,22 @@ def render(items, only=None):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as pw:
         br = pw.chromium.launch(executable_path=os.environ.get("CHROMIUM_PATH") or None)
-        pg = br.new_page(viewport={"width": 1080, "height": 1350})
         for it in items:
             if only and it["id"] != only:
                 continue
+            story = bool(it.get("story"))
+            pg = br.new_page(viewport={"width": 1080, "height": 1920 if story else 1350})
             slides = it["slides"]
             n = len(slides)
-            outdir = SOCIAL / "img" / "carousel" / it["id"] if n > 1 else SOCIAL / "img"
+            outdir = SOCIAL / "img" / "story" if story else SOCIAL / "img" / "carousel" / it["id"] if n > 1 else SOCIAL / "img"
             outdir.mkdir(parents=True, exist_ok=True)
             for i, s in enumerate(slides, 1):
-                pg.set_content(slide_html(s, i, n, s.get("book", it["book"]), it.get("theme")))
+                pg.set_content(slide_html(s, i, n, s.get("book", it["book"]), it.get("theme"), story))
                 pg.wait_for_timeout(150)
-                out = outdir / (f"{i:02d}.jpg" if n > 1 else f"{it['id']}.jpg")
+                out = outdir / (f"{i:02d}.jpg" if n > 1 and not story else f"{it['id']}.jpg")
                 pg.screenshot(path=str(out), type="jpeg", quality=92)
                 print("→", out.relative_to(SOCIAL))
+            pg.close()
         br.close()
 
 
@@ -172,6 +180,11 @@ def add_calendar(items):
         if it["id"] in have:
             continue
         n = len(it["slides"])
+        if it.get("story"):
+            cal["post"].append({"id": it["id"], "tipo": "storia", "quando": it["when"], "segmento": it["seg"],
+                                "immagine": f"social/img/story/{it['id']}.jpg"})
+            print("+", it["id"], it["when"])
+            continue
         e = {"id": it["id"], "quando": it["when"], "segmento": it["seg"]}
         if n > 1:
             e["tipo"] = "carosello"

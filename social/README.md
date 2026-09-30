@@ -10,6 +10,9 @@ Contenuto della cartella: `calendar.json` (calendario), `img/` (grafiche), `vide
 - `publish.py`: ogni 30 minuti (workflow `social-publish`) pubblica al massimo **un** post scaduto e non ancora pubblicato, tramite l'API Instagram con Instagram Login. L'immagine viene letta da `https://libri.diasio.ch/social/img/...`, quindi il sito deve essere già aggiornato.
 - **Reel:** voci con `"tipo": "reel"` e `"video": "social/video/....mp4"`; facoltativo `"miniatura_ms"` sceglie il fotogramma della miniatura su Instagram (senza, prende il primo: quasi nero). Su Instagram escono come Reel (anche nel feed), su Facebook come video/Reel di Pagina. Sono MP4 H.264 1080×1920, max 90 secondi.
 - **Caroselli:** voci con `"tipo": "carosello"` e `"immagini": [...]` (da 2 a 10 JPEG 1080×1350, nell'ordine di scorrimento). Su Instagram escono come carosello, su Facebook come un solo post con più foto.
+- **Storie:** voci con `"tipo": "storia"` e `"immagine"` (JPEG 1080×1920, cartella `img/story/`). Niente didascalia, sticker, sondaggi o link: l'API non li supporta (restano manuali). Escono su Instagram e sulla Pagina Facebook.
+- **Post di testo:** `"tipo": "testo"`, solo Facebook, con `"didascalia"` e `"link"` facoltativo (anteprima automatica). Instagram non ha post di solo testo.
+- `"piattaforme": ["instagram"]` (o `["facebook"]`) limita qualsiasi voce a una sola piattaforma.
 - `published.json`: stato (pubblicato, link, oppure saltato). Il workflow lo salva con un commit.
 - Un post in ritardo di oltre 12 ore viene **saltato**, non pubblicato fuori orario.
 - Il cron di GitHub può ritardare di qualche minuto: la pubblicazione avviene entro l'ora prevista + qualche minuto.
@@ -38,7 +41,7 @@ Meta for Developers → app "Libri Diasio Social" → Casi d'uso → API con Ins
 
 ## Caroselli e grafiche di novembre-dicembre
 
-`social/tools/carousels.py` contiene testi e slide (le citazioni sono testuali dalle Puntate 1). Da `social/tools`: `python carousel.py` rende le slide con Chromium (stesso stile e font dei Reel; `pip install playwright`, poi `playwright install chromium` oppure `CHROMIUM_PATH=/percorso/chrome`), `python carousel.py --calendar` aggiunge le voci a `calendar.json`. I Reel r07-r23 si aggiungono con `python reels_calendar.py` (render con `reels-src/render-all.sh`). Test con API simulate: `python3 -m unittest social/test_publish.py`.
+`social/tools/carousels.py` contiene testi e slide (le citazioni sono testuali dalle Puntate 1). Da `social/tools`: `python carousel.py` rende le slide con Chromium (stesso stile e font dei Reel; `pip install playwright`, poi `playwright install chromium` oppure `CHROMIUM_PATH=/percorso/chrome`), `python carousel.py --calendar` aggiunge le voci a `calendar.json`. Le Storie si rendono con lo stesso comando (`carousel.py`, voci con `story(...)`). I Reel r07-r23 si aggiungono con `python reels_calendar.py`, i post di testo con `python texts_calendar.py` (render con `reels-src/render-all.sh`). Test con API simulate: `python3 -m unittest social/test_publish.py`.
 
 ## Rigenerare le grafiche del 4 ottobre-26 novembre
 
@@ -46,6 +49,6 @@ Meta for Developers → app "Libri Diasio Social" → Casi d'uso → API con Ins
 
 ## Limiti
 
-- Solo immagini singole. Storie con sticker o musica non sono automatizzabili in modo affidabile.
+- Storie con sticker, sondaggi, link o musica non sono automatizzabili: solo immagine fissa.
 - Se il repo resta inattivo 60 giorni GitHub disattiva i cron: i commit di `published.json` contano come attività finché ci sono post da pubblicare.
 - Su Facebook la didascalia è `didascalia_fb` (link diretto al posto di "link in bio", 3 hashtag). Se Facebook fallisce, Instagram non viene ripubblicato: lo stato è per piattaforma.

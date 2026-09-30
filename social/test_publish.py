@@ -67,6 +67,32 @@ class PublishTests(unittest.TestCase):
         self.assertEqual(posts[4][0], "PG/photos")
         self.assertEqual(posts[5][0], "PG/videos")
 
+    def test_story_and_text(self):
+        st = {"id": "s", "tipo": "storia", "immagine": "social/img/story/s.jpg"}
+        tx = {"id": "t", "tipo": "testo", "didascalia": "ciao", "link": "https://libri.diasio.ch/"}
+        f = Fake()
+        with mock.patch.object(publish, "call", f), mock.patch.object(publish.time, "sleep"):
+            publish.publish_instagram(st, publish.media_urls(st)[0], "T")
+            publish.publish_facebook(st, publish.media_urls(st)[0], "T", "PG")
+            publish.publish_facebook(tx, None, "T", "PG")
+        posts = [(c[1], c[2]) for c in f.calls if c[0] == "POST"]
+        self.assertEqual(posts[0][1]["media_type"], "STORIES")
+        self.assertNotIn("caption", posts[0][1])
+        self.assertEqual([x[0] for x in posts[2:]], ["PG/photos", "PG/photo_stories", "PG/feed"])
+        self.assertEqual(posts[3][1]["photo_id"], "id3")
+        self.assertEqual(posts[4][1], {"message": "ciao", "link": "https://libri.diasio.ch/"})
+        self.assertEqual(publish.media_urls(tx), [])
+
+    def test_platform_restriction(self):
+        tx = {"id": "t", "tipo": "testo", "didascalia": "x"}
+        img = {"id": "i", "immagine": "a.jpg", "didascalia": "x"}
+        only_ig = {"id": "g", "immagine": "a.jpg", "didascalia": "x", "piattaforme": ["instagram"]}
+        state = {"pubblicati": {}}
+        both = ["instagram", "facebook"]
+        self.assertEqual(publish.pending(tx, state, both), ["facebook"])      # il testo va solo su Facebook
+        self.assertEqual(publish.pending(img, state, both), both)
+        self.assertEqual(publish.pending(only_ig, state, both), ["instagram"])
+
     def test_calendar_files_exist(self):
         root = Path(publish.ROOT).parent
         cal = json.loads(publish.CAL.read_text(encoding="utf-8"))
@@ -77,6 +103,8 @@ class PublishTests(unittest.TestCase):
                 self.assertTrue((root / u.replace(publish.SITE + "/", "")).is_file(), u)
             if publish.is_carousel(p):
                 self.assertTrue(2 <= len(p["immagini"]) <= 10, p["id"])
+            if p.get("tipo") == "storia":            # le Storie non hanno didascalia
+                continue
             self.assertTrue(p["didascalia"].strip())
             self.assertLessEqual(len(p["didascalia"]), 2200, p["id"])       # limite Instagram
             self.assertLessEqual(p["didascalia"].count("#"), 5, p["id"])
