@@ -152,7 +152,7 @@ ITEMS = [
  story("s13-oblio-innocente", "2026-12-28T18:30", "oblio", "Storia · Lettori thriller", Q("Chi dimentica diventa *innocente*. Paga solo chi ricorda.", who="L’Economia dell’Oblio")),
 
  # ---------- Il Bug in evidenza, ora su Amazon Kindle (1 ottobre, immagine in alto come il post del 30/9) ----------
- dict(id="b01-bug-amazon", when="2026-10-01T19:00", book="bug", seg="Il Bug in evidenza: ora su Amazon Kindle (carosello)",
+ dict(id="b01-bug-amazon", when="2026-10-01T20:30", book="bug", seg="Il Bug in evidenza: ora su Amazon Kindle (carosello)",
   slides=[dict(k="quote", hero=480, text="«Nessuno chiese di *leggere* le note di rilascio.»"),
           dict(k="hook", hero=650, kick="La premessa", text="L’app apre il cancello. Prenota la palestra. Fa *votare*.", sub="Poi arriva l’aggiornamento. Da quel momento l’app *ascolta*."),
           dict(k="quote", hero=900, text="«Un’unica scossa collettiva, come se il palazzo avesse un *battito cardiaco* e per un istante fosse saltato un colpo.»"),
