@@ -11,6 +11,7 @@ html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px)); scroll-behavi
 body{margin:0;-webkit-tap-highlight-color:color-mix(in srgb,var(--accent) 22%,transparent);background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.65;overflow-x:hidden}
 body.theme-bug{--bg:#0b1a2b;--panel:#10233a;--line:#24405f;--accent:#f0a24a;--glow:#f0a24a;--muted:#a9b9cc}
 body.theme-oblio{--bg:#111116;--panel:#1a1a21;--line:#34343f;--accent:#c23a42;--accent-text:#ea7078;--accent-ink:#fff;--glow:#e9b7a2;--muted:#a9a19b}
+body.theme-vuoto{--bg:#17171b;--panel:#202026;--line:#3a3a42;--accent:#d8a468;--accent-text:#e4b27a;--accent-ink:#1b1206;--glow:#a31621;--muted:#aca69b;--mono:"IBM Plex Mono","Courier New",Courier,monospace}
 body.theme-privacy{--bg:#0b1a2b;--panel:#10233a;--line:#24405f;--accent:#f0a24a}
 @media (prefers-color-scheme:light){
   body.theme-privacy{--bg:#f6f3ee;--panel:#fff;--ink:#15212f;--muted:#5b6673;--line:#ddd6ca;--accent:#b8611a;--accent-text:#9a4f12;--accent-ink:#fff}
@@ -72,6 +73,8 @@ section{padding:72px 0}
   @keyframes glitch{0%,92%,100%{text-shadow:2px 0 #3ff0ff,-2px 0 #ff3fd1;transform:none}93%{text-shadow:5px 0 #3ff0ff,-5px 0 #ff3fd1;transform:translateX(2px)}95%{text-shadow:-4px 0 #3ff0ff,4px 0 #ff3fd1;transform:translateX(-2px)}97%{text-shadow:2px 0 #3ff0ff,-2px 0 #ff3fd1;transform:none}}
 }
 .theme-oblio h1 em{font-style:normal;color:var(--accent-text)}
+.theme-vuoto h1{font-family:var(--mono);font-weight:700;letter-spacing:-.01em;line-height:1.02;text-transform:uppercase;font-size:clamp(2.3rem,7.4vw,4.4rem)}
+.theme-vuoto h1 em{font-style:normal;color:#e4545f}
 
 /* Fascia frasi (Il Bug) */
 .strip{border-block:1px solid var(--line);background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,0));overflow:hidden;padding:18px 0}
@@ -90,6 +93,13 @@ section{padding:72px 0}
 .module{background:#0c0c10;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:20px 24px;font-family:"Courier New",Courier,monospace;font-weight:700;font-size:.95rem;line-height:1.55;color:#e8e2dc;max-width:620px}
 .module .dim{color:#8f8983}
 .module .red{color:#e0505a}
+.module.listino{font-family:var(--mono);font-weight:400;font-size:.9rem;line-height:1.6;background:#101013}
+.module.listino .red{font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.module.listino b{font-weight:700}
+.module.listino .row{display:flex;gap:12px;align-items:baseline}
+.module.listino .row .d{flex:1 1 auto;min-width:0;border-bottom:1px dotted #6d6a66}
+.module.listino .row .p{white-space:nowrap}
+.module.listino .tot{border-top:1px solid #6d6a66;margin-top:8px;padding-top:6px;display:flex;justify-content:space-between;font-weight:700}
 .counter{font-family:var(--display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);margin-top:16px}
 blockquote.epigraph{margin:0 0 22px;padding:0;font-style:italic;font-size:1.3rem;color:var(--glow)}
 
@@ -111,6 +121,10 @@ blockquote.epigraph{margin:0 0 22px;padding:0;font-style:italic;font-size:1.3rem
 .book-card p{color:var(--muted);margin:0 0 12px;font-size:1rem}
 .book-card.bug{--accent:#f0a24a;--accent-text:#f0a24a}
 .book-card.oblio{--accent:#c23a42;--accent-text:#ea7078}
+.book-card.vuoto{--accent:#d8a468;--accent-text:#e4b27a}
+.book-card.vuoto h3{color:#f1ece0}
+.book-card.feature{grid-column:1 / -1}
+.pill.on{border-color:var(--accent);color:var(--accent-text)}
 .book-card.oblio h3{color:#e2d9d2}
 .warn{border:1px dashed var(--line);border-radius:var(--radius);padding:18px 22px;color:var(--muted);font-size:.98rem}
 .warn strong{color:var(--ink)}

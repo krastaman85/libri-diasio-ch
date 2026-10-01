@@ -1,9 +1,9 @@
 # libri.diasio.ch: memoria di progetto (leggila prima di lavorare)
 
-Ultimo aggiornamento: 30 settembre 2026, dopo le PR #1-#13. Se questo file e il repo divergono, fidati del repo e correggi il file.
+Ultimo aggiornamento: 1 ottobre 2026, dopo le PR #1-#13 (il terzo libro, Vuoto a rendere, è sul branch `claude/nifty-meitner-a45vfp`: vedi sotto). Se questo file e il repo divergono, fidati del repo e correggi il file.
 
 ## Cos'è
-Sito statico (GitHub Pages, CNAME `libri.diasio.ch`) di D. Iasio: due romanzi a puntate, «Il Bug della Trasparenza» (noir sociale, 8 puntate) e «L'Economia dell'Oblio» (thriller psicologico, 6 puntate). La Puntata 1 di entrambi è gratis in PDF/EPUB (`download/`, senza iscrizione). Newsletter MailerLite (landing `davide-fek7ym.subscribepage.io`, pagina `/grazie/`), contatore visite GoatCounter (codice `diasio`). Instagram `@d.iasio.libri` e Pagina Facebook «D. Iasio».
+Sito statico (GitHub Pages, CNAME `libri.diasio.ch`) di D. Iasio: tre romanzi, «Il Bug della Trasparenza» (noir sociale, 8 puntate), «L'Economia dell'Oblio» (thriller psicologico, 6 puntate) e «Vuoto a rendere» (romanzo satirico, 10 puntate, sottotitolo «Un romanzo in dieci voci di listino»). La Puntata 1 di ognuno è gratis in PDF/EPUB (`download/`, senza iscrizione). Newsletter MailerLite (landing `davide-fek7ym.subscribepage.io`, pagina `/grazie/`), contatore visite GoatCounter (codice `diasio`). Instagram `@d.iasio.libri` e Pagina Facebook «D. Iasio».
 Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget zero.
 
 ## Regole dell'utente (valgono sempre)
@@ -11,11 +11,12 @@ Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget
 - **Mai** seguire, scrivere, commentare o cliccare su Instagram/Facebook senza conferma esplicita. Niente follow o messaggi di massa (violano le regole di Meta).
 - Approvare = fare il merge su `main`, e il merge **pubblica**. Non unire senza via libera. Nessun token o Secret in chat, nei file o nei commit.
 - Le citazioni dei romanzi devono essere testuali dalle Puntata 1 (`download/*.epub`). Non inventare frasi né trama.
-- Non dire che i romanzi sono in vendita: l'autore scrive «spero presto interi negli store». Non scrivere «solo a puntate».
+- Stato degli store (dato dall'utente il 1/10/2026): **Il Bug** e **L'Oblio** sono disponibili su Amazon Kindle (KDP): Bug `https://www.amazon.it/dp/B0HLN2VSJP`, Oblio `https://www.amazon.it/dp/B0HLMKWJZ5` (verificati dai titoli delle schede). Su **StreetLib** (e negli store che distribuisce, **esclusa Amazon** per non avere doppioni: Kobo, Apple Books, Google Play Libri e altri) sono «prossimamente». **Vuoto a rendere** non è ancora pubblicato: sul sito è «in arrivo negli store». Non scrivere «solo a puntate».
+- Il romanzo completo di Vuoto a rendere (EPUB, PDF, copertina, quarta) **non va nel repo**, che è pubblico: nel repo c'è solo la Puntata 1 (capitolo 1). Nei file ebook per gli store non mettere link diretti ad Amazon (Apple Books e Kobo li rifiutano): solo `libri.diasio.ch` e la newsletter.
 - Una sola sessione di lavoro alla volta. Questo file è la memoria comune di tutte le sessioni (cloud e locali).
 
 ## Struttura
-- Sito: `index.html`, `bug/`, `oblio/`, `privacy/`, `grazie/`, `404.html`, `css/`, `js/config.js`, `img/`, `download/`.
+- Sito: `index.html`, `bug/`, `oblio/`, `vuoto/`, `privacy/`, `grazie/`, `404.html`, `css/`, `js/config.js` (link degli store per libro: `amazon`, `altriStore`; con `amazon` pieno e `altriStore` vuoto compare «Prossimamente su StreetLib»), `img/`, `fonts/`, `download/`.
 - Social: `social/` con `README.md` (uso), `STRATEGIA.md` (giorni, orari, segmenti), `calendar.json` (calendario), `published.json` (stato: lo scrive il bot, non a mano), `publish.py` + `test_publish.py`, `tools/` (slide con Chromium), `reels-src/` (Reel con HyperFrames), `img/`, `video/`, `kit/`.
 - Workflow: `social-publish` (ogni 30 minuti; pubblica al massimo un post scaduto, salta quelli in ritardo di oltre 12 ore) e `social-token` (rinnovo mensile del token). Secret: `IG_ACCESS_TOKEN`, `FB_PAGE_TOKEN`, `SECRETS_PAT` (facoltativo).
 
@@ -35,7 +36,7 @@ Già pubblicati: r00 (eliminato a mano dall'app), r00b (30/09, miniatura sulle c
 - I branch `main-xxxx` delle sessioni cloud sono del repo `Campanella`, non di questo.
 
 ## Da fare a mano (utente)
-Controllare dal telefono il sito; dopo le 19:45 del 1/10 controllare il Reel r01 (miniatura, didascalia, Facebook); verificare il pulsante «Iscriviti» sulla Pagina Facebook; rileggere il punto 12 della privacy; iscrizioni Goodreads e aNobii (`social/kit/`); verificare che il passaggio «Presentati» di Instagram sia chiuso; controllare profili e gruppi in `social/kit/esposizione-lista-e-testi.txt` (lista da verificare, non ancora seguito né contattato nessuno); il primo token Instagram scade dopo circa 60 giorni.
+Pubblicare «Vuoto a rendere» su KDP e StreetLib (testi di quarta, descrizione e parole chiave sono nel pacchetto consegnato in sessione); poi incollare i link in `js/config.js` (`books.vuoto.amazon`, `altriStore`) e, per Bug e Oblio, il link StreetLib in `altriStore` quando esiste; ricontrollare su Zefix e Amazon i nomi nuovi Sordina e Teleriva; dichiarare l'uso di IA su KDP e StreetLib; aggiornare Goodreads/aNobii (`social/kit/goodreads-anobii.md` dice ancora «quando è in vendita»). Controllare dal telefono il sito; dopo le 19:45 del 1/10 controllare il Reel r01 (miniatura, didascalia, Facebook); verificare il pulsante «Iscriviti» sulla Pagina Facebook; rileggere il punto 12 della privacy; iscrizioni Goodreads e aNobii (`social/kit/`); verificare che il passaggio «Presentati» di Instagram sia chiuso; controllare profili e gruppi in `social/kit/esposizione-lista-e-testi.txt` (lista da verificare, non ancora seguito né contattato nessuno); il primo token Instagram scade dopo circa 60 giorni.
 
 ## Igiene dei repository
 Dopo ogni PR unita i branch restano: cancellarli da GitHub (Branches, cestino) oppure attivare «Automatically delete head branches» in Settings > General.
