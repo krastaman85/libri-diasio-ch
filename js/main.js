@@ -131,4 +131,112 @@
     body.innerHTML = "";
     wait(500, function () { vuAdd(0); });
   }
+
+  // ---- Homepage: effetti discreti. Con "riduci movimento" o senza JS la pagina resta statica e completa.
+  if (document.body.classList.contains("theme-home")) {
+    // Header: ombra dopo il primo scorrimento; barra di avanzamento della lettura
+    (function () {
+      var hd = document.querySelector(".site-header"), bar = null, tick = false;
+      if (!reduceMotion) { bar = mk("div", "progress"); bar.setAttribute("aria-hidden", "true"); bar.appendChild(mk("i")); document.body.appendChild(bar); }
+      function upd() {
+        tick = false;
+        var y = window.scrollY || 0;
+        if (hd) hd.classList.toggle("scrolled", y > 12);
+        if (bar) { var h = document.documentElement.scrollHeight - window.innerHeight; bar.firstChild.style.transform = "scaleX(" + (h > 0 ? Math.min(1, y / h) : 0) + ")"; }
+      }
+      window.addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+      upd();
+    })();
+
+    // Ventaglio di copertine: leggero parallasse col puntatore (solo mouse)
+    (function () {
+      var hero = document.querySelector(".theme-home .hero"), fan = hero && hero.querySelector(".fan");
+      if (!fan || reduceMotion || !window.matchMedia || !window.matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+      var raf = 0;
+      hero.addEventListener("pointermove", function (e) {
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          raf = 0; var r = hero.getBoundingClientRect();
+          fan.style.setProperty("--px", (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
+          fan.style.setProperty("--py", (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3));
+        });
+      });
+      hero.addEventListener("pointerleave", function () { fan.style.setProperty("--px", 0); fan.style.setProperty("--py", 0); });
+    })();
+
+    // Frasi dalle Puntata 1 che si alternano nell'hero (tutte testuali dagli EPUB)
+    (function () {
+      var box = document.querySelector("[data-quotes]");
+      if (!box || reduceMotion) return;
+      var qs = Array.prototype.slice.call(box.querySelectorAll("blockquote"));
+      if (qs.length < 2) return;
+      var i = 0, paused = false, bar = mk("i", "bar"), D = 6500;
+      box.classList.add("js"); box.appendChild(bar);
+      function show(n) {
+        qs.forEach(function (q, k) { q.classList.toggle("on", k === n); q.setAttribute("aria-hidden", k === n ? "false" : "true"); });
+        bar.classList.remove("run"); void bar.offsetWidth;
+        bar.style.setProperty("--bc", getComputedStyle(qs[n]).getPropertyValue("--qc"));
+        bar.style.setProperty("--qd", D + "ms"); bar.classList.add("run");
+      }
+      function next() { i = (i + 1) % qs.length; show(i); }
+      var timer = null;
+      function arm() { clearTimeout(timer); timer = setTimeout(function () { if (paused || document.hidden) { arm(); } else { next(); arm(); } }, D); }
+      box.addEventListener("pointerenter", function () { paused = true; bar.style.animationPlayState = "paused"; });
+      box.addEventListener("pointerleave", function () { paused = false; bar.style.animationPlayState = "running"; arm(); });
+      box.addEventListener("focusin", function () { paused = true; });
+      box.addEventListener("focusout", function () { paused = false; });
+      show(0); arm();
+    })();
+
+    // Fascia dei titoli che scorre: duplica gli elementi finché basta per un giro continuo
+    (function () {
+      var strip = document.querySelector("[data-marquee]");
+      if (!strip || reduceMotion) return;
+      var ul = strip.querySelector("ul"), base = Array.prototype.slice.call(ul.children);
+      if (!base.length) return;
+      var guard = 0;
+      while (ul.scrollWidth < window.innerWidth * 2.2 && guard++ < 12) base.forEach(function (li) { ul.appendChild(li.cloneNode(true)); });
+      // un secondo giro identico: l'animazione trasla del 50%
+      Array.prototype.slice.call(ul.children).forEach(function (li) { ul.appendChild(li.cloneNode(true)); });
+      strip.style.setProperty("--md", Math.max(50, Math.round(ul.scrollWidth / 2 / 55)) + "s");
+      strip.classList.add("run");
+    })();
+
+    // Comparsa allo scorrimento, con piccola sequenza tra elementi fratelli
+    (function () {
+      var els = Array.prototype.slice.call(document.querySelectorAll(".rv"));
+      if (!els.length) return;
+      if (reduceMotion || !("IntersectionObserver" in window)) return;
+      document.documentElement.classList.add("js-rv");
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target, sib = Array.prototype.slice.call(el.parentNode.children).filter(function (c) { return c.classList.contains("rv"); });
+          el.style.setProperty("--d", (Math.max(0, sib.indexOf(el)) * 0.11) + "s");
+          el.classList.add("in"); io.unobserve(el);
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      els.forEach(function (el) { io.observe(el); });
+      // paracadute: gli elementi già in vista che per qualche motivo non sono stati rivelati compaiono dopo 5 s
+      setTimeout(function () { els.forEach(function (el) { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("in"); }); }, 5000);
+    })();
+
+    // Schede libro: lieve inclinazione 3D e bagliore che segue il puntatore (solo con mouse)
+    (function () {
+      if (reduceMotion || !window.matchMedia || !window.matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+      document.querySelectorAll(".book-card").forEach(function (c) {
+        var raf = 0;
+        c.addEventListener("pointermove", function (e) {
+          if (raf) return;
+          raf = requestAnimationFrame(function () {
+            raf = 0;
+            var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+            c.style.setProperty("--mx", x.toFixed(3)); c.style.setProperty("--my", y.toFixed(3));
+            c.style.setProperty("--ry", ((x - .5) * 7).toFixed(2) + "deg"); c.style.setProperty("--rx", ((.5 - y) * 5).toFixed(2) + "deg");
+          });
+        });
+        c.addEventListener("pointerleave", function () { c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg"); });
+      });
+    })();
+  }
 })();
