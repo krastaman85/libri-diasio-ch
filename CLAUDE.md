@@ -4,15 +4,15 @@ Ultimo aggiornamento: 30 settembre 2026, dopo le PR #1-#13. Se questo file e il 
 
 ## Cos'è
 Sito statico (GitHub Pages, CNAME `libri.diasio.ch`) di D. Iasio: due romanzi a puntate, «Il Bug della Trasparenza» (noir sociale, 8 puntate) e «L'Economia dell'Oblio» (thriller psicologico, 6 puntate). La Puntata 1 di entrambi è gratis in PDF/EPUB (`download/`, senza iscrizione). Newsletter MailerLite (landing `davide-fek7ym.subscribepage.io`, pagina `/grazie/`), contatore visite GoatCounter (codice `diasio`). Instagram `@d.iasio.libri` e Pagina Facebook «D. Iasio».
-Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget zero.
+Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget zero, esposizione e contenuti di qualità su social Facebook e Instagram, 
 
 ## Regole dell'utente (valgono sempre)
 - Italiano, risposte chiare e operative. Distinguere i dati presenti dalle inferenze. Dire cosa fa l'utente e cosa fa Claude. Se manca un'informazione importante, chiedere prima di produrre.
 - **Mai** seguire, scrivere, commentare o cliccare su Instagram/Facebook senza conferma esplicita. Niente follow o messaggi di massa (violano le regole di Meta).
 - Approvare = fare il merge su `main`, e il merge **pubblica**. Non unire senza via libera. Nessun token o Secret in chat, nei file o nei commit.
 - Le citazioni dei romanzi devono essere testuali dalle Puntata 1 (`download/*.epub`). Non inventare frasi né trama.
-- Non dire che i romanzi sono in vendita: l'autore scrive «spero presto interi negli store». Non scrivere «solo a puntate».
-- Una sola sessione di lavoro alla volta. Questo file è la memoria comune di tutte le sessioni (cloud e locali).
+- I romanzi sono in vendita: l'autore scrive «disponibili in formato integrale negli store». Non scrivere «solo a puntate» possono essere rilasciati a puntate a     dell'autore.
+- Una sola sessione di lavoro alla volta. Questo file è la memoria comune di tutte le sessioni (cloud e locali). Aggiorna la memoria quando si raggiungono obbiettivi importanti e cruciali, chiedendo conferma all'utente.
 
 ## Struttura
 - Sito: `index.html`, `bug/`, `oblio/`, `privacy/`, `grazie/`, `404.html`, `css/`, `js/config.js`, `img/`, `download/`.
