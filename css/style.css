@@ -5,6 +5,7 @@
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
   --display:"Oswald","Arial Narrow","Roboto Condensed",Arial,sans-serif;
   --radius:10px; --wrap:1120px;
+  --mono:"IBM Plex Mono","Courier New",Courier,monospace;
 }
 html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px)); scroll-behavior:smooth; -webkit-text-size-adjust:100%}
 *,*::before,*::after{box-sizing:border-box}
@@ -88,6 +89,56 @@ section{padding:72px 0}
 .app{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:18px 22px;max-width:560px}
 .app small{display:block;font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);font-size:.82rem;margin-bottom:6px}
 .app p{margin:0;font-style:italic;font-size:1.15rem;min-height:3.4em}
+
+/* Schede animate: L'Economia dell'Oblio (frammenti) e Vuoto a rendere (fascicolo). Come "Trasparenza attiva" nel Bug, ma con testi testuali dalla Puntata 1 */
+.feed{position:relative;max-width:620px;background:#0c0c10;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);overflow:hidden;box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.feed:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--accent) 80%,transparent),transparent)}
+.feed-head,.feed-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 20px;font:700 .72rem/1.2 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.feed-head{border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),transparent)}
+.feed-foot{border-top:1px solid var(--line);font-weight:400;letter-spacing:.1em;text-transform:none;font-size:.78rem}
+.feed-head b{color:var(--accent-text);font-weight:700}
+.feed-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:10px;box-shadow:0 0 12px var(--accent)}
+.feed-body{padding:24px 22px 22px;min-height:15.5em;display:flex;flex-direction:column;justify-content:center}
+@media (prefers-reduced-motion:no-preference){.feed-dot{animation:feedpulse 2.4s ease-in-out infinite}@keyframes feedpulse{50%{opacity:.35}}}
+
+/* Oblio: il frammento emerge da sotto una barra di oscuramento */
+.feed-oblio{--accent:#c23a42;--accent-text:#ea7078}
+.feed-oblio .feed-body{position:relative;min-height:13.5em;background:repeating-linear-gradient(180deg,rgba(255,255,255,.028) 0 1px,transparent 1px 30px)}
+@media (prefers-reduced-motion:no-preference){.feed-oblio .feed-body:before{content:"";position:absolute;left:0;right:0;top:0;height:70px;background:linear-gradient(180deg,transparent,rgba(234,112,120,.10) 70%,rgba(234,112,120,.38) 98%,transparent);pointer-events:none;animation:scan 6.5s linear infinite}@keyframes scan{from{transform:translateY(-80px)}to{transform:translateY(300px)}}}
+.frag-who{margin:0 0 14px;font:700 .74rem/1.3 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-text);transition:opacity .4s}
+.frag{position:relative;margin:0;font:italic 400 1.34rem/1.5 var(--serif);color:#f1ebe5;transition:opacity .4s}
+.frag .t{position:relative;display:inline}
+.frag .bar{position:absolute;left:-6px;right:-6px;top:-3px;bottom:-3px;background:#0c0c10;border-right:2px solid var(--accent);box-shadow:8px 0 26px -4px rgba(194,58,66,.55);transform-origin:right center;transform:scaleX(1);transition:transform 1.15s cubic-bezier(.65,0,.25,1)}
+.feed-oblio.on .bar{transform:scaleX(0)}
+.feed-oblio.off .frag-who,.feed-oblio.off .frag{opacity:0}
+.rec{margin:0;font:400 .92rem/1.55 var(--mono);color:#e8e2dc;display:grid;gap:7px}
+.rec div{display:flex;flex-wrap:wrap;gap:0 .6em;opacity:0;transform:translateY(6px);transition:opacity .45s,transform .45s}
+.rec div.in{opacity:1;transform:none}
+.rec .k{color:#8f8983}.rec .v{font-weight:700}
+.rec .x{display:inline-block;background:#e0505a;color:#e0505a;border-radius:2px;padding:0 .35em;letter-spacing:.04em}
+.rec .x.open{background:transparent;color:#ea7078;box-shadow:inset 0 0 0 1px #ea707866}
+.dots{display:flex;gap:6px}.dots i{width:22px;height:4px;border-radius:2px;background:#2a2a33;transition:background .4s,box-shadow .4s}.dots i.on{background:var(--accent);box-shadow:0 0 10px rgba(194,58,66,.7)}
+
+/* Vuoto a rendere: il fascicolo scorre come un registro; il pulsante "Chiusura pratica" non viene mai cliccato */
+.feed-vuoto{--accent:#d8a468;--accent-text:#e4b27a}
+.feed-vuoto .chip{display:inline-flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.12em;color:#c9c3b8}
+.feed-vuoto .chip svg{width:16px;height:16px;flex:none}
+.feed-vuoto .feed-body{justify-content:flex-end;gap:14px;min-height:15em;background:repeating-linear-gradient(180deg,rgba(255,255,255,.022) 0 1px,transparent 1px 30px)}
+.log{margin:0;font:400 .96rem/1.5 var(--mono);color:#ece6da;opacity:0;transition:opacity .7s}
+.log .k{display:block;margin-bottom:2px;font:700 .68rem/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent-text)}
+.log:nth-last-child(3){opacity:.3}.log:nth-last-child(2){opacity:.62}.log:nth-last-child(1){opacity:1}
+.log.rise{animation:logrise .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes logrise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.log.it .t{font-family:var(--serif);font-style:italic;font-size:1.08rem}
+.caret{display:inline-block;width:.55em;height:1.05em;margin-left:2px;vertical-align:-.15em;background:var(--accent);animation:caret 1s steps(1) infinite}
+@keyframes caret{50%{opacity:0}}
+.feed-vuoto .feed-foot{position:relative;justify-content:flex-end;padding:16px 20px}
+.chiusura{position:relative;display:inline-block;padding:11px 18px;border:2px solid var(--accent);border-radius:8px;color:var(--accent-text);font:700 .84rem/1 var(--mono);letter-spacing:.06em;background:transparent;transition:box-shadow .5s,background .5s}
+@media (prefers-reduced-motion:no-preference){.chiusura{animation:blink 2.6s ease-in-out infinite}@keyframes blink{50%{box-shadow:0 0 22px rgba(216,164,104,.4);background:rgba(216,164,104,.08)}}}
+.feed-vuoto .cursor{position:absolute;right:30px;bottom:5px;width:24px;height:24px;opacity:0;transform:translate(52px,20px);transition:transform 1.2s cubic-bezier(.3,.7,.2,1),opacity .4s;filter:drop-shadow(0 3px 6px rgba(0,0,0,.6))}
+.feed-vuoto.hover .cursor{opacity:1;transform:translate(0,-4px)}
+.feed-vuoto.hover .chiusura{box-shadow:0 0 26px rgba(216,164,104,.55);background:rgba(216,164,104,.12);animation:none}
+@media (max-width:600px){.feed-head{padding:12px 14px;letter-spacing:.1em;font-size:.66rem}.feed-body{padding:20px 16px 18px}.frag{font-size:1.18rem}.log{font-size:.88rem}.feed-vuoto .feed-foot{padding:14px 14px}.rec{font-size:.82rem}.dots i{width:16px}}
 
 /* Pannello modulo (L'Economia) */
 .module{background:#0c0c10;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:20px 24px;font-family:"Courier New",Courier,monospace;font-weight:700;font-size:.95rem;line-height:1.55;color:#e8e2dc;max-width:620px}
