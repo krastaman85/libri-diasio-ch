@@ -7,7 +7,7 @@ Contenuto della cartella: `calendar.json` (calendario), `img/` (grafiche), `vide
 ## Come funziona
 
 - `calendar.json`: data/ora (ora di Roma), immagine, didascalia e testo alternativo di ogni post.
-- `publish.py`: ogni 30 minuti (workflow `social-publish`) pubblica al massimo **un** post scaduto e non ancora pubblicato, tramite l'API Instagram con Instagram Login. L'immagine viene letta da `https://libri.diasio.ch/social/img/...`, quindi il sito deve essere già aggiornato.
+- `publish.py`: ogni 15 minuti, ai minuti 7, 22, 37 e 52 (workflow `social-publish`; GitHub può comunque ritardare le esecuzioni programmate) pubblica al massimo **un** post scaduto e non ancora pubblicato, tramite l'API Instagram con Instagram Login. L'immagine viene letta da `https://libri.diasio.ch/social/img/...`, quindi il sito deve essere già aggiornato.
 - **Reel:** voci con `"tipo": "reel"` e `"video": "social/video/....mp4"`; facoltativo `"miniatura_ms"` sceglie il fotogramma della miniatura su Instagram (senza, prende il primo: quasi nero). Su Instagram escono come Reel (anche nel feed), su Facebook come video/Reel di Pagina. Sono MP4 H.264 1080×1920, max 90 secondi.
 - **Caroselli:** voci con `"tipo": "carosello"` e `"immagini": [...]` (da 2 a 10 JPEG 1080×1350, nell'ordine di scorrimento). Su Instagram escono come carosello, su Facebook come un solo post con più foto.
 - **Storie:** voci con `"tipo": "storia"` e `"immagine"` (JPEG 1080×1920, cartella `img/story/`). Niente didascalia, sticker, sondaggi o link: l'API non li supporta (restano manuali). Escono su Instagram e sulla Pagina Facebook.

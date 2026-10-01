@@ -2,7 +2,7 @@ name: Pubblica su Instagram
 
 on:
   schedule:
-    - cron: "*/30 * * * *"      # ogni 30 minuti; GitHub può ritardare di qualche minuto
+    - cron: "7,22,37,52 * * * *"  # ogni 15 minuti, su minuti fuori dalle ore e mezze ore (più congestionate: il 1/10 le esecuzioni arrivavano ogni 4-7 ore)
   workflow_dispatch:
     inputs:
       dry_run:
