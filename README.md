@@ -1,6 +1,6 @@
 # libri.diasio.ch
 
-Sito statico di D. Iasio (Il Bug della Trasparenza, L'Economia dell'Oblio).
+Sito statico di D. Iasio (Il Bug della Trasparenza, L'Economia dell'Oblio, Vuoto a rendere).
 Pubblicato con GitHub Pages sul dominio `libri.diasio.ch` (file `CNAME`).
 
 - Link degli store e della newsletter: `js/config.js`
