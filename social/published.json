@@ -35,6 +35,18 @@
         "link": "https://www.facebook.com/1377129402146055_122096045175500199",
         "ora_utc": "2026-09-30T10:01:33+00:00"
       }
+    },
+    "r01-bug-cognato": {
+      "instagram": {
+        "media_id": "17908685172317775",
+        "link": "https://www.instagram.com/reel/Dd9ii4kj42M/",
+        "ora_utc": "2026-10-01T18:20:34+00:00"
+      },
+      "facebook": {
+        "post_id": "1794664024908828",
+        "link": "https://www.facebook.com/1794664024908828",
+        "ora_utc": "2026-10-01T18:20:34+00:00"
+      }
     }
   }
 }
