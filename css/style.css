@@ -258,3 +258,103 @@ blockquote.epigraph{margin:0 0 22px;padding:0;font-style:italic;font-size:1.3rem
   .nav a{padding:13px 6px;letter-spacing:.03em}
 }
 @media print{.site-header,.strip,.btn-row,.news{display:none}body{background:#fff;color:#000}}
+
+/* ===== Home: effetti (solo theme-home). Tutto è sotto "no-preference": con «riduci movimento» resta la pagina statica. ===== */
+.theme-home .hero{isolation:isolate;overflow:hidden}
+.theme-home .hero .wrap>.qs{display:grid}
+.theme-home .hero .wrap>.hero-cta{display:flex}
+.aurora{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.aurora i{position:absolute;border-radius:50%;filter:blur(64px);opacity:.24;will-change:transform}
+.aurora i:nth-child(1){width:min(46vw,620px);aspect-ratio:1;left:-10%;top:-34%;background:#f0a24a}
+.aurora i:nth-child(2){width:min(40vw,520px);aspect-ratio:1;right:-8%;top:-12%;background:#c23a42;opacity:.20}
+.aurora i:nth-child(3){width:min(34vw,440px);aspect-ratio:1;left:34%;bottom:-46%;background:#d8a468;opacity:.20}
+.qs{display:grid;margin:26px 0 0;max-width:660px;position:relative}
+.qs blockquote{grid-area:1/1;margin:0;padding:2px 0 14px 20px;border-left:3px solid var(--qc,var(--accent));opacity:0;transform:translateY(10px);filter:blur(6px);transition:opacity .8s,transform .8s,filter .8s;pointer-events:none}
+.qs blockquote.v{--qc:#e4b27a}.qs blockquote.b{--qc:#f0a24a}.qs blockquote.o{--qc:#ea7078}
+.qs p{margin:0 0 8px;font:italic 400 clamp(1.2rem,2.6vw,1.55rem)/1.45 var(--serif);color:#f3ede2;text-wrap:balance}
+.qs cite{display:block;font:500 .78rem/1.2 var(--display);letter-spacing:.22em;text-transform:uppercase;font-style:normal;color:var(--qc)}
+.qs:not(.js) blockquote:first-child,.qs blockquote.on{opacity:1;transform:none;filter:none;pointer-events:auto}
+.qs .bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--bc,var(--accent));transform:scaleX(0);transform-origin:left;opacity:.8}
+.hero-cta{margin-top:10px}
+.strip.titles{padding:16px 0}
+.strip.titles ul{gap:0;font-size:clamp(1.15rem,2.4vw,1.5rem);animation:none}
+.strip.titles li{display:flex;align-items:center;color:#e4b27a;padding-right:0}
+.strip.titles li::after{content:"✦";margin:0 34px;color:var(--muted);font-size:.7em;opacity:.6}
+.strip.titles li.b{color:#f0a24a}.strip.titles li.o{color:#ea7078}.strip.titles li.v{color:#e4b27a}
+.strip.titles li:nth-child(n){opacity:1}
+.site-header.scrolled{background:color-mix(in srgb,var(--bg) 94%,transparent);box-shadow:0 10px 30px -18px rgba(0,0,0,.8)}
+.progress{position:fixed;left:0;right:0;top:0;height:3px;z-index:60;pointer-events:none}
+.progress i{display:block;height:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#d8a468,#f0a24a,#c23a42)}
+@media (prefers-reduced-motion:no-preference){
+  /* Entrata dell'hero, una volta sola */
+  .theme-home .hero .kicker{animation:hup .9s .05s cubic-bezier(.2,.7,.2,1) both}
+  .theme-home .hero h1{animation:hh1 1.3s .15s cubic-bezier(.2,.7,.2,1) both}
+  .theme-home .hero .lead{animation:hup .9s .45s cubic-bezier(.2,.7,.2,1) both}
+  .theme-home .hero .qs{animation:hup .9s .7s cubic-bezier(.2,.7,.2,1) both}
+  .theme-home .hero .hero-cta{animation:hup .9s .95s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes hup{from{opacity:0;transform:translateY(18px)}}
+  @keyframes hh1{from{opacity:0;transform:translateY(16px);filter:blur(10px)}}
+  /* Luci morbide che derivano lente sullo sfondo */
+  .aurora i:nth-child(1){animation:dr1 26s ease-in-out infinite alternate}
+  .aurora i:nth-child(2){animation:dr2 31s ease-in-out infinite alternate}
+  .aurora i:nth-child(3){animation:dr3 36s ease-in-out infinite alternate}
+  @keyframes dr1{to{transform:translate(18vw,10%) scale(1.15)}}
+  @keyframes dr2{to{transform:translate(-14vw,18%) scale(.9)}}
+  @keyframes dr3{to{transform:translate(-16vw,-10%) scale(1.2)}}
+  /* Frasi che si alternano, con filo di avanzamento */
+  .qs .bar.run{animation:qbar var(--qd,6.5s) linear both}
+  @keyframes qbar{to{transform:scaleX(1)}}
+  /* Fascia dei titoli che scorre piano; si ferma al passaggio del mouse */
+  .strip.titles.run ul{animation:scroll var(--md,80s) linear infinite}
+  .strip.titles.run:hover ul{animation-play-state:paused}
+  /* Comparsa allo scorrimento (la classe js-rv la aggiunge lo script) */
+  .js-rv .rv{opacity:0;translate:0 26px;transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),translate .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .2s,border-color .2s}
+  .js-rv .rv.in{opacity:1;translate:0 0}
+  .js-rv h2.rv{translate:0 14px}
+  /* Schede libro: bagliore del colore del libro, copertina che «respira», anello di luce su Vuoto a rendere */
+  .book-card{position:relative}
+  .book-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(440px circle at calc(var(--mx,.3)*100%) calc(var(--my,.3)*100%),color-mix(in srgb,var(--accent) 17%,transparent),transparent 62%)}
+  .book-card:hover::after,.book-card:focus-visible::after{opacity:1}
+  .book-card:hover,.book-card:focus-visible{box-shadow:0 26px 70px -28px color-mix(in srgb,var(--accent) 55%,transparent)}
+  .book-card img{animation:float 7s ease-in-out infinite}
+  .book-card.bug img{animation-delay:-2.3s}.book-card.oblio img{animation-delay:-4.6s}
+  .book-card:hover img{animation-play-state:paused}
+  @keyframes float{50%{transform:translateY(-5px)}}
+  @property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+  .book-card.feature::before{content:"";position:absolute;inset:-1px;border-radius:15px;padding:1px;pointer-events:none;background:conic-gradient(from var(--ang),transparent 0 62%,#e4b27a 82%,#a31621 92%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:ring 8s linear infinite}
+  @keyframes ring{to{--ang:360deg}}
+  /* Newsletter: bagliore lento e riflesso sul pulsante */
+  .theme-home .news{position:relative;overflow:hidden}
+  .theme-home .news::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-160px;top:-260px;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 26%,transparent),transparent);pointer-events:none;animation:newsglow 14s ease-in-out infinite alternate}
+  @keyframes newsglow{to{transform:translate(-120px,120px) scale(1.2)}}
+  .theme-home .news>*{position:relative}
+  .theme-home .news .btn.primary{position:relative;overflow:hidden}
+  .theme-home .news .btn.primary::after{content:"";position:absolute;inset:0 auto 0 -60%;width:45%;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);animation:shine 6.5s 2s ease-in-out infinite}
+  @keyframes shine{0%{left:-60%}22%,100%{left:130%}}
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .book-card{transform-style:flat}
+  .book-card:hover{transform:perspective(1000px) translateY(-4px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+  .book-card{transition:transform .14s ease-out,border-color .2s,box-shadow .35s}
+}
+@media (max-width:600px){
+  .aurora i{filter:blur(46px)}
+  .qs{margin-top:20px}
+  .strip.titles li::after{margin:0 22px}
+}
+
+/* Home: ventaglio delle tre copertine (solo schermi larghi, decorativo) */
+.fan{display:none}
+@media (min-width:901px){
+  .theme-home .hero .wrap>.fan{display:block;position:absolute;right:28px;top:50%;width:360px;height:330px;margin-top:-165px;pointer-events:none;perspective:900px}
+  .fan img{position:absolute;top:10px;width:190px;height:auto;border-radius:6px;box-shadow:0 28px 60px -12px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.07)}
+  .fan .f3{left:0;transform:translate(calc(var(--px,0)*-10px),calc(var(--py,0)*-6px)) rotate(-9deg)}
+  .fan .f1{left:84px;top:34px;transform:translate(calc(var(--px,0)*4px),calc(var(--py,0)*8px)) rotate(1deg);z-index:1}
+  .fan .f2{left:166px;top:0;transform:translate(calc(var(--px,0)*14px),calc(var(--py,0)*-8px)) rotate(9deg);z-index:2}
+}
+@media (min-width:901px) and (prefers-reduced-motion:no-preference){
+  .theme-home .hero .wrap>.fan{animation:fanin 1.4s .5s cubic-bezier(.2,.7,.2,1) both,fanfloat 9s 1.9s ease-in-out infinite}
+  .fan img{transition:transform .35s ease-out}
+  @keyframes fanin{from{opacity:0;translate:60px 0}}
+  @keyframes fanfloat{50%{translate:0 -8px}}
+}
