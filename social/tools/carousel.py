@@ -22,6 +22,14 @@ def b64(p, mime):
     return f"data:{mime};base64," + base64.b64encode(Path(p).read_bytes()).decode()
 
 
+def hero_src(book):
+    """Copertina ad alta risoluzione (1200x1789) letta dall'EPUB della Puntata 1."""
+    import zipfile
+    name = {"bug": "il-bug-della-trasparenza-puntata-1.epub", "oblio": "leconomia-delloblio-puntata-1.epub"}[book]
+    z = zipfile.ZipFile(SOCIAL.parent / "download" / name)
+    return "data:image/jpeg;base64," + base64.b64encode(z.read("EPUB/images/cover.jpg")).decode()
+
+
 def fontface():
     d = {"Oswald": [(500, "Oswald-500.woff2", "normal"), (700, "Oswald-700.woff2", "normal")],
          "Source Serif 4": [(400, "SourceSerif4-400.woff2", "normal"), (400, "SourceSerif4-400i.woff2", "italic"), (600, "SourceSerif4-600.woff2", "normal")]}
@@ -71,6 +79,13 @@ body{width:1080px;height:1350px;background:var(--bg);color:var(--ink);font-famil
 .one{display:flex;justify-content:center}.one img{width:460px;height:686px;object-fit:cover;box-shadow:0 30px 60px rgba(0,0,0,.55);border:2px solid var(--line)}
 .btn{position:absolute;left:70px;right:70px;bottom:160px;text-align:center;background:var(--amb);color:var(--dark);font:700 50px 'Oswald';letter-spacing:.06em;text-transform:uppercase;padding:34px 0;box-shadow:0 0 60px rgba(240,162,74,.45)}
 .btnsub{position:absolute;left:70px;right:70px;bottom:92px;text-align:center;font:400 30px 'Source Serif 4';color:var(--mut)}.btnsub b{color:var(--ink);font-weight:600}
+.hero{position:absolute;left:0;top:0;width:1080px;height:640px;background-repeat:no-repeat;background-size:1080px auto}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,15,24,.55) 0%,rgba(10,15,24,0) 24%,rgba(10,15,24,0) 52%,rgba(10,15,24,.78) 82%,var(--bg) 100%)}
+.hq .brand,.hq .pg{z-index:3;text-shadow:0 2px 14px rgba(0,0,0,.85)}.hq .pg{background:rgba(10,15,24,.6);padding:6px 16px;border-radius:999px;top:76px;color:#d7dde6}.hq .rule{z-index:3}
+.hq .main{top:610px;bottom:300px;justify-content:flex-start}
+.hq .q{font-size:74px}.hq .q.l{font-size:96px;line-height:1.22}.hq .q.m{font-size:64px}.hq .q.s{font-size:56px}
+.hq .big{font-size:96px}.hq .kick{margin-bottom:22px}.hq .sub{margin-top:26px;font-size:38px}
+.hq .who{margin-top:30px}
 body.story{height:1920px}
 .story .brand{top:190px}.story .rule{top:270px}.story .pg,.story .swipe{display:none}
 .story .main{top:400px;bottom:520px}.story .q{font-size:88px}.story .q.m{font-size:76px}.story .q.s{font-size:64px}
@@ -101,12 +116,16 @@ def slide_html(s, i, n, book, theme, story=False):
     swipe = '<div class="swipe">SCORRI →</div>' if n > 1 and i < n else ""
     head = '<div class="brand">D<i>.</i> IASIO</div><div class="rule"></div>' + pg
     body, foo = "", foot(book)
+    if s.get("hero") is not None:
+        hy, hz, hx = (s["hero"] if isinstance(s["hero"], (tuple, list)) else (s["hero"], 1.0, 0))
+        head += (f'<div class="hero" style="background-image:url({hero_src(book)});background-size:{int(1080 * hz)}px auto;'
+                 f'background-position:-{int(hx)}px -{int(hy)}px"></div>')
     if k == "hook":
         kick = f'<div class="kick">{html.escape(s["kick"])}</div>' if s.get("kick") else ""
         sub = f'<div class="sub">{em(s["sub"])}</div>' if s.get("sub") else ""
         body = f'<div class="main">{kick}<div class="big">{em(s["text"])}</div>{sub}</div>'
     elif k == "quote":
-        size = "" if len(s["text"]) < 70 else "m" if len(s["text"]) < 120 else "s"
+        size = ("l" if s.get("hero") is not None else "") if len(s["text"]) < 60 else "" if len(s["text"]) < 70 else "m" if len(s["text"]) < 120 else "s"
         who = f'<div class="who">{html.escape(s.get("who") or TITLES[book] + " · Puntata 1")}</div>'
         txt = s["text"] if s["text"].startswith("«") else "“" + s["text"] + "”"
         body = f'<div class="main"><div class="q {size}">{em(txt)}</div>{who}</div>'
@@ -135,7 +154,7 @@ def slide_html(s, i, n, book, theme, story=False):
         if len(books) == 2:
             body = body.replace('width:460px', 'width:400px')
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{fontface()}{CSS}</style></head>'
-            f'<body class="{"amber" if theme == "amber" else ""}{" story" if story else ""}"><div class="glow"></div>{head}{body}{foo}{swipe}</body></html>')
+            f'<body class="{"amber" if theme == "amber" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}"><div class="glow"></div>{head}{body}{foo}{swipe}</body></html>')
 
 
 def load():
@@ -192,7 +211,7 @@ def add_calendar(items):
         else:
             e["immagine"] = f"social/img/{it['id']}.jpg"
         cap = it["caption"] + "\n" + it["tags"]
-        e.update({"alt": it["alt"], "didascalia": cap, "didascalia_fb": fb_caption(cap, it["tags"])})
+        e.update({"alt": it["alt"], "didascalia": cap, "didascalia_fb": it.get("caption_fb") or fb_caption(cap, it["tags"])})
         cal["post"].append(e)
         print("+", it["id"], it["when"])
     cal["post"].sort(key=lambda x: x["quando"])

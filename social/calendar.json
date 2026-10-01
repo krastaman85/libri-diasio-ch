@@ -32,6 +32,23 @@
       "alt": "Le copertine dei due romanzi, Il Bug della Trasparenza e L’Economia dell’Oblio, con la scritta «Ciao, sono D. Iasio. Scrivo romanzi.»"
     },
     {
+      "id": "b01-bug-amazon",
+      "quando": "2026-10-01T20:30",
+      "segmento": "Il Bug in evidenza: ora su Amazon Kindle (carosello)",
+      "tipo": "carosello",
+      "immagini": [
+        "social/img/carousel/b01-bug-amazon/01.jpg",
+        "social/img/carousel/b01-bug-amazon/02.jpg",
+        "social/img/carousel/b01-bug-amazon/03.jpg",
+        "social/img/carousel/b01-bug-amazon/04.jpg",
+        "social/img/carousel/b01-bug-amazon/05.jpg",
+        "social/img/carousel/b01-bug-amazon/06.jpg"
+      ],
+      "alt": "Carosello di sei slide su fondo scuro con la copertina de Il Bug della Trasparenza in alto: la frase «Nessuno chiese di leggere le note di rilascio», la premessa (l’app apre il cancello, prenota la palestra, fa votare, poi ascolta), tre citazioni dalla Puntata 1 e l’invito a leggerlo su Amazon Kindle.",
+      "didascalia": "«Nessuno chiese di leggere le note di rilascio.»\n\nIn un condominio d’élite l’app di gestione riceve un aggiornamento obbligatorio. Da quel momento ascolta: quando qualcuno mente ad alta voce, il suo pensiero non filtrato compare davanti a tutti. Questa è una frase dalla Puntata 1.\n\nIl Bug della Trasparenza è un noir sociale in otto puntate, ora disponibile su Amazon Kindle. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: link in bio.\n\nSalvalo se hai un vicino che sa troppo.\n#noir #noirsociale #narrativaitaliana #bookstagram #kindle",
+      "didascalia_fb": "«Nessuno chiese di leggere le note di rilascio.»\n\nIn un condominio d’élite l’app di gestione riceve un aggiornamento obbligatorio. Da quel momento ascolta: quando qualcuno mente ad alta voce, il suo pensiero non filtrato compare davanti a tutti. Questa è una frase dalla Puntata 1.\n\nIl Bug della Trasparenza è un noir sociale in otto puntate, ora disponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#noir #noirsociale #narrativaitaliana"
+    },
+    {
       "id": "r01-bug-cognato",
       "tipo": "reel",
       "quando": "2026-10-01T19:30",

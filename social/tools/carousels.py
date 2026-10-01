@@ -150,4 +150,17 @@ ITEMS = [
  story("s11-newsletter", "2026-12-14T18:30", "bug", "Storia · Newsletter", dict(k="hook", kick="Newsletter", text="Una mail *quando esce* la prossima storia.", sub="Iscriviti dal link in bio. Niente rumore.")),
  story("s12-feste", "2026-12-21T18:30", "oblio", "Storia · Feste", dict(k="hook", text="Per le sere *lunghe*.", sub="La Puntata 1 di entrambi i romanzi è gratis. Link in bio.")),
  story("s13-oblio-innocente", "2026-12-28T18:30", "oblio", "Storia · Lettori thriller", Q("Chi dimentica diventa *innocente*. Paga solo chi ricorda.", who="L’Economia dell’Oblio")),
+
+ # ---------- Il Bug in evidenza, ora su Amazon Kindle (1 ottobre, immagine in alto come il post del 30/9) ----------
+ dict(id="b01-bug-amazon", when="2026-10-01T20:30", book="bug", seg="Il Bug in evidenza: ora su Amazon Kindle (carosello)",
+  slides=[dict(k="quote", hero=480, text="«Nessuno chiese di *leggere* le note di rilascio.»"),
+          dict(k="hook", hero=650, kick="La premessa", text="L’app apre il cancello. Prenota la palestra. Fa *votare*.", sub="Poi arriva l’aggiornamento. Da quel momento l’app *ascolta*."),
+          dict(k="quote", hero=900, text="«Un’unica scossa collettiva, come se il palazzo avesse un *battito cardiaco* e per un istante fosse saltato un colpo.»"),
+          dict(k="quote", hero=(940, 1.45, 373), text="«Il tipo di silenzio che in una stanza con quaranta persone si sente fisicamente, come una *pressione sui timpani*.»"),
+          dict(k="quote", hero=970, text="«Signora Colombo, ogni palazzo nasconde *più cose* di quante ne mostri.»", who="Yusuf Demir · il portiere"),
+          dict(k="cta", text="Noir sociale · *otto puntate*", button="Ora su Amazon Kindle", line="Puntata 1 gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
+  caption="«Nessuno chiese di leggere le note di rilascio.»\n\nIn un condominio d’élite l’app di gestione riceve un aggiornamento obbligatorio. Da quel momento ascolta: quando qualcuno mente ad alta voce, il suo pensiero non filtrato compare davanti a tutti. Questa è una frase dalla Puntata 1.\n\nIl Bug della Trasparenza è un noir sociale in otto puntate, ora disponibile su Amazon Kindle. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: link in bio.\n\nSalvalo se hai un vicino che sa troppo.",
+  caption_fb="«Nessuno chiese di leggere le note di rilascio.»\n\nIn un condominio d’élite l’app di gestione riceve un aggiornamento obbligatorio. Da quel momento ascolta: quando qualcuno mente ad alta voce, il suo pensiero non filtrato compare davanti a tutti. Questa è una frase dalla Puntata 1.\n\nIl Bug della Trasparenza è un noir sociale in otto puntate, ora disponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#noir #noirsociale #narrativaitaliana",
+  tags="#noir #noirsociale #narrativaitaliana #bookstagram #kindle",
+  alt="Carosello di sei slide su fondo scuro con la copertina de Il Bug della Trasparenza in alto: la frase «Nessuno chiese di leggere le note di rilascio», la premessa (l’app apre il cancello, prenota la palestra, fa votare, poi ascolta), tre citazioni dalla Puntata 1 e l’invito a leggerlo su Amazon Kindle."),
 ]
