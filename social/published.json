@@ -47,6 +47,18 @@
         "link": "https://www.facebook.com/1794664024908828",
         "ora_utc": "2026-10-01T18:20:34+00:00"
       }
+    },
+    "b01-bug-amazon": {
+      "instagram": {
+        "media_id": "17932975659409928",
+        "link": "https://www.instagram.com/p/Dd9kECBm8bp/",
+        "ora_utc": "2026-10-01T18:33:11+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122096926887500199",
+        "link": "https://www.facebook.com/1377129402146055_122096926887500199",
+        "ora_utc": "2026-10-01T18:33:11+00:00"
+      }
     }
   }
 }
