@@ -137,11 +137,13 @@
     // Header: ombra dopo il primo scorrimento; barra di avanzamento della lettura
     (function () {
       var hd = document.querySelector(".site-header"), bar = null, tick = false;
+      var fanEl = document.querySelector(".theme-home .hero .fan"), small = window.matchMedia && window.matchMedia("(max-width:900px)");
       if (!reduceMotion) { bar = mk("div", "progress"); bar.setAttribute("aria-hidden", "true"); bar.appendChild(mk("i")); document.body.appendChild(bar); }
       function upd() {
         tick = false;
         var y = window.scrollY || 0;
         if (hd) hd.classList.toggle("scrolled", y > 12);
+        if (fanEl && small && small.matches && !reduceMotion) fanEl.style.setProperty("--sp", Math.min(1, y / 520).toFixed(3));
         if (bar) { var h = document.documentElement.scrollHeight - window.innerHeight; bar.firstChild.style.transform = "scaleX(" + (h > 0 ? Math.min(1, y / h) : 0) + ")"; }
       }
       window.addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
