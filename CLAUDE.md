@@ -4,16 +4,17 @@ Ultimo aggiornamento: 1 ottobre 2026, dopo le PR #1-#13 (il terzo libro, Vuoto a
 
 ## Cos'è
 Sito statico (GitHub Pages, CNAME `libri.diasio.ch`) di D. Iasio: tre romanzi, «Il Bug della Trasparenza» (noir sociale, 8 puntate), «L'Economia dell'Oblio» (thriller psicologico, 6 puntate) e «Vuoto a rendere» (romanzo satirico, 10 puntate, sottotitolo «Un romanzo in dieci voci di listino»). La Puntata 1 di ognuno è gratis in PDF/EPUB (`download/`, senza iscrizione). Newsletter MailerLite (landing `davide-fek7ym.subscribepage.io`, pagina `/grazie/`), contatore visite GoatCounter (codice `diasio`). Instagram `@d.iasio.libri` e Pagina Facebook «D. Iasio».
-Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget zero.
+Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1, a budget zero, esposizione e contenuti di qualità su social Facebook e Instagram, 
 
 ## Regole dell'utente (valgono sempre)
 - Italiano, risposte chiare e operative. Distinguere i dati presenti dalle inferenze. Dire cosa fa l'utente e cosa fa Claude. Se manca un'informazione importante, chiedere prima di produrre.
 - **Mai** seguire, scrivere, commentare o cliccare su Instagram/Facebook senza conferma esplicita. Niente follow o messaggi di massa (violano le regole di Meta).
 - Approvare = fare il merge su `main`, e il merge **pubblica**. Non unire senza via libera. Nessun token o Secret in chat, nei file o nei commit.
 - Le citazioni dei romanzi devono essere testuali dalle Puntata 1 (`download/*.epub`). Non inventare frasi né trama.
-- Stato degli store (dato dall'utente il 1/10/2026): **Il Bug** e **L'Oblio** sono disponibili su Amazon Kindle (KDP): Bug `https://www.amazon.it/dp/B0HLN2VSJP`, Oblio `https://www.amazon.it/dp/B0HLMKWJZ5` (verificati dai titoli delle schede). Su **StreetLib** (e negli store che distribuisce, **esclusa Amazon** per non avere doppioni: Kobo, Apple Books, Google Play Libri e altri) sono «prossimamente». **Vuoto a rendere** non è ancora pubblicato: sul sito è «in arrivo negli store». Non scrivere «solo a puntate».
+- I romanzi sono in vendita: l'autore scrive «disponibili in formato integrale negli store». Non scrivere «solo a puntate» possono essere rilasciati a puntate a     dell'autore.
+- Stato degli store (dato dall'utente il 1/10/2026): **Il Bug** e **L'Oblio** sono disponibili su Amazon Kindle (KDP): Bug `https://www.amazon.it/dp/B0HLN2VSJP`, Oblio `https://www.amazon.it/dp/B0HLMKWJZ5` (verificati dai titoli delle schede). Su **StreetLib** (e negli store che distribuisce, **esclusa Amazon** per non avere doppioni: Kobo, Apple Books, Google Play Libri e altri) sono «prossimamente». **Vuoto a rendere** non è ancora pubblicato: sul sito è «in arrivo negli store».
 - Il romanzo completo di Vuoto a rendere (EPUB, PDF, copertina, quarta) **non va nel repo**, che è pubblico: nel repo c'è solo la Puntata 1 (capitolo 1). Nei file ebook per gli store non mettere link diretti ad Amazon (Apple Books e Kobo li rifiutano): solo `libri.diasio.ch` e la newsletter.
-- Una sola sessione di lavoro alla volta. Questo file è la memoria comune di tutte le sessioni (cloud e locali).
+- Una sola sessione di lavoro alla volta. Questo file è la memoria comune di tutte le sessioni (cloud e locali). Aggiorna la memoria quando si raggiungono obbiettivi importanti e cruciali, chiedendo conferma all'utente.
 
 ## Struttura
 - Sito: `index.html`, `bug/`, `oblio/`, `vuoto/`, `privacy/`, `grazie/`, `404.html`, `css/`, `js/config.js` (link degli store per libro: `amazon`, `altriStore`; con `amazon` pieno e `altriStore` vuoto compare «Prossimamente su StreetLib»), `img/`, `fonts/`, `download/`.
