@@ -21,12 +21,12 @@ Pagina: https://github.com/settings/personal-access-tokens/new (menu: foto profi
 ## 2. Job su cron-job.org (10 minuti)
 Registrazione: https://console.cron-job.org/signup (conferma la mail). Console: https://console.cron-job.org/jobs. Guida: https://docs.cron-job.org/.
 Se le etichette sul sito differiscono, cerca la voce equivalente.
-1. In Settings dell'account imposta il fuso orario **Europe/Rome** (il calendario social usa Europe/Rome; così l'ora legale è gestita da sola).
+1. Imposta per il job il fuso orario **Europe/Zurich** (come nel job configurato); coincide con Europe/Rome anche nei passaggi tra ora legale e solare, usato dal calendario.
 2. «Create cronjob» → scheda **Common**:
    - Title: `Social publish libri.diasio.ch`
    - URL: `https://api.github.com/repos/krastaman85/libri-diasio-ch/actions/workflows/social-publish.yml/dispatches`
    - Execution schedule: **User-defined** → ogni giorno, ogni mese; **ore 12, 18, 19, 20; minuti 1 e 31**.
-     (I post sono alle 12:30, 18:00, 18:30, 19:30, 20:00: partire al minuto :01 o :31 evita di scattare qualche secondo prima dell'ora del post. Se nel giorno non c'è nulla da pubblicare, il workflow termina senza fare niente.)
+    (Il calendario è allineato agli stessi minuti: 12:31, 18:01, 18:31, 19:31 e 20:01. Il dispatch coincide con l'orario pianificato e non parte prima. Se nel giorno non c'è nulla da pubblicare, il workflow termina senza fare niente.)
 3. Scheda **Advanced**:
    - Request method: **POST**
    - Headers (nome → valore):
@@ -43,7 +43,8 @@ Se le etichette sul sito differiscono, cerca la voce equivalente.
 Perché `dry_run` è nel body: nel workflow vale `true` di default; senza `"dry_run":"false"` ogni avvio sarebbe solo una prova.
 
 ## Controlli dopo l'attivazione
-- Il primo giorno guarda l'esito su cron-job.org (History: 204) e su Actions all'ora del post (es. Reel r02, 2 ottobre 12:30: l'esecuzione deve partire alle 12:31).
+- Controlla l'esito su cron-job.org (History: HTTP 204) e su Actions: il run deve avere `dry_run` vuoto o `false` e deve riportare `Pubblicato su` per le piattaforme previste. HTTP 204 conferma solo l'avvio del workflow, non che abbia pubblicato.
+- Il 2 ottobre il Reel r02 era ancora pianificato alle 12:30: i dispatch delle 12:01 e 12:31 risultano con `dry_run: true`, mentre il cron interno l'ha pubblicato alle 16:57. Il calendario ora è corretto; il primo controllo con gli orari allineati è il Reel r03 del 3 ottobre alle 12:31.
 - Se un post esce due volte o troppo presto, disattiva il job su cron-job.org e scrivi a Claude.
 - Se il token GitHub scade o viene revocato, cron-job.org riceve 401: rinnova il token e aggiornalo nell'header. Nel frattempo funziona ancora il cron interno (con i suoi ritardi).
 
