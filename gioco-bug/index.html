@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101923">
+  <meta name="description" content="Entra nell’assemblea di Residenza Meridiana, raccogli gli indizi e scopri che cosa rivela il nuovo aggiornamento di Meridiana Life. Avventura gratuita ispirata a Il Bug della Trasparenza.">
+  <link rel="canonical" href="https://libri.diasio.ch/gioco-bug/">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self' https://cdn.jsdelivr.net; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_CH">
+  <meta property="og:site_name" content="D. Iasio">
+  <meta property="og:title" content="Le 7:14 · Avventura gratuita da Il Bug della Trasparenza">
+  <meta property="og:description" content="Entra nell’assemblea di Residenza Meridiana, raccogli gli indizi e scopri che cosa rivela il nuovo aggiornamento di Meridiana Life.">
+  <meta property="og:url" content="https://libri.diasio.ch/gioco-bug/">
+  <meta property="og:image" content="https://libri.diasio.ch/img/og-bug.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <title>Le 7:14 · Un'avventura da Il Bug della Trasparenza</title>
+  <link rel="stylesheet" href="/gioco-bug/game.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="/bug/" aria-label="Il Bug della Trasparenza, pagina del libro">D. IASIO<span>/</span>IL BUG</a>
+    <div class="topbar-meta"><span class="live-dot" aria-hidden="true"></span><span>PUNTATA 1 · GRATUITA</span><span class="clock" id="scene-clock">07:14</span></div>
+  </header>
+
+  <main class="layout">
+    <section class="play-column" aria-labelledby="game-title">
+      <div class="intro-row">
+        <div>
+          <p class="eyebrow">Avventura interattiva · episodio gratuito</p>
+          <h1 id="game-title">Le 7:14</h1>
+        </div>
+        <button class="reset-button" id="reset-game" type="button" title="Ricomincia l'avventura">Ricomincia</button>
+      </div>
+
+      <p class="disclaimer">Una versione giocabile della Puntata 1. Le scene e le deduzioni seguono il romanzo; le puntate successive non sono incluse. Contenuti: morte, accuse gravi, violazioni della privacy e pressione psicologica.</p>
+
+      <div class="progress-row"><span id="progress-label">GIORNO 11 · 1 / 3</span><div class="progress-track" role="progressbar" aria-label="Avanzamento della puntata" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"><span id="progress-fill"></span></div></div>
+
+      <section class="scene" aria-labelledby="scene-title">
+        <div class="scene-art" id="scene-art" data-space="garage" aria-label="Rappresentazione stilizzata del garage sotterraneo di Residenza Meridiana" role="img">
+          <div class="garage-ceiling"></div>
+          <div class="garage-pillar pillar-left"></div>
+          <div class="garage-pillar pillar-right"></div>
+          <div class="garage-light light-one"></div>
+          <div class="garage-light light-two"></div>
+          <div class="garage-floor"></div>
+          <span class="level-mark" id="scene-mark">-02</span>
+          <span class="scene-time" id="scene-time">07:14</span>
+        </div>
+        <div class="scene-heading">
+          <div>
+            <p class="eyebrow" id="scene-location">Residenza Meridiana · piano -2</p>
+            <h2 id="scene-title">Il garage</h2>
+          </div>
+          <span class="scene-status" id="scene-status">IN CORSO</span>
+        </div>
+        <div class="story-log" id="story-log" aria-live="polite" aria-label="Narrazione dell'episodio"></div>
+        <div class="story-choices" id="story-choices" role="group" aria-label="Azioni disponibili"></div>
+        <p class="engine-status" id="engine-status" role="status">Caricamento dell’episodio…</p>
+      </section>
+    </section>
+
+    <aside class="side-column" aria-label="Taccuino e inventario">
+      <section class="side-panel">
+        <div class="panel-heading"><p class="eyebrow">Taccuino di Nadia</p><span id="clue-count">0 INDIZI</span></div>
+        <ul class="clue-list" id="clue-list"><li class="empty-state">Gli indizi compariranno qui.</li></ul>
+      </section>
+
+      <section class="book-panel">
+        <img src="/img/cover-bug.jpg" width="96" height="143" alt="Copertina de Il Bug della Trasparenza" loading="lazy">
+        <div><p class="eyebrow">Dopo la partita</p><h2>Il Bug della Trasparenza</h2><a href="/download/il-bug-della-trasparenza-puntata-1.epub" download>Scarica l’EPUB gratuito</a><a class="book-link-secondary" href="/download/il-bug-della-trasparenza-puntata-1.pdf" download>Scarica il PDF</a><a class="book-link-secondary" href="/bug/">Scopri il romanzo completo</a></div>
+      </section>
+
+      <p class="save-note" id="save-note">Progressi salvati su questo dispositivo.</p>
+    </aside>
+  </main>
+
+  <footer class="page-footer"><a href="/bug/">Torna alla pagina del romanzo</a><span>Un progetto di D. Iasio</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/inkjs@2.4.0/dist/ink-full.js" integrity="sha384-psnXgYQBIOUbtPSN1bi0AUHIeqzwBIxWY13mrAEUXfKii5/aZaQL5tW70jnfrAdY" crossorigin="anonymous" defer></script>
+  <script src="/gioco-bug/ink-game.js" defer></script>
+</body>
+</html>
