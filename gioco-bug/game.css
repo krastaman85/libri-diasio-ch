@@ -126,8 +126,11 @@ h1 { margin-bottom: 0; font: 700 clamp(36px, 5vw, 56px)/1.04 Oswald, sans-serif;
 .book-panel a { font-size: 12px; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .book-panel .book-link-secondary { display: block; margin-top: 7px; color: var(--muted); }
 .save-note { margin: 0; color: #87939a; font: 11px/1.5 Oswald, sans-serif; letter-spacing: .03em; }
-.page-footer { display: flex; justify-content: space-between; gap: 14px; padding: 18px clamp(20px, 5vw, 68px); border-top: 1px solid rgb(168 177 182 / 15%); color: var(--muted); font-size: 12px; }
-.page-footer a { text-underline-offset: 3px; }
+.page-footer { display: flex; flex-direction: column; gap: 10px; padding: 18px clamp(20px, 5vw, 68px); border-top: 1px solid rgb(168 177 182 / 15%); color: var(--muted); font-size: 12px; }
+.page-footer .footer-copy { margin: 0; font: 11px/1.5 Oswald, sans-serif; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0 16px; }
+.footer-links a { min-height: 44px; padding: 10px 0; display: inline-flex; align-items: center; color: var(--muted); text-underline-offset: 3px; }
+.footer-links a:hover { color: var(--amber); }
 
 @media (max-width: 760px) {
   .layout { width: min(100% - 28px, 600px); margin: 0 auto; padding: 30px 0 42px; grid-template-columns: 1fr; gap: 24px; }
