@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /gioco-bug/
 Disallow: /privacy/
 Disallow: /grazie/
 Sitemap: https://libri.diasio.ch/sitemap.xml
