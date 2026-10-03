@@ -28,7 +28,7 @@ ffmpeg -i renders/r01-bug-cognato.mp4 -c:v libx264 -preset slow -crf 23 -pix_fmt
 
 - Font e copertine sono locali (`assets/`); GSAP è incluso (`assets/js/gsap.min.js`), nessuna dipendenza da CDN.
 - L'audio (`assets/audio/bed.mp3`) è sintetizzato con FFmpeg (drone e un colpo grave all'arrivo della copertina): originale, senza diritti di terzi.
-- Zone sicure per Instagram: il testo sta tra y=150 e y=1650; il bordo inferiore resta libero per l'interfaccia dei Reel.
+- Zone sicure per Instagram: il marchio parte da y=290 (la fascia alta, circa il 14%, è occupata da «Reels» e dal profilo) e il testo arriva fino a y=1650; il bordo inferiore resta libero per l'interfaccia dei Reel.
 
 ## Audio: come si rigenera
 
