@@ -87,10 +87,10 @@ body{width:1080px;height:1350px;background:var(--bg);color:var(--ink);font-famil
 .hq .big{font-size:96px}.hq .kick{margin-bottom:22px}.hq .sub{margin-top:26px;font-size:38px}
 .hq .who{margin-top:30px}
 body.story{height:1920px}
-.story .brand{top:190px}.story .rule{top:270px}.story .pg,.story .swipe{display:none}
-.story .main{top:400px;bottom:520px}.story .q{font-size:88px}.story .q.m{font-size:76px}.story .q.s{font-size:64px}
+.story .brand{top:290px}.story .rule{top:370px}.story .pg,.story .swipe{display:none}
+.story .main{top:470px;bottom:520px}.story .q{font-size:88px}.story .q.m{font-size:76px}.story .q.s{font-size:64px}
 .story .big{font-size:132px}.story .sub{font-size:44px}.story .foot{bottom:250px}
-.story .btn{bottom:400px}.story .btnsub{bottom:320px}.story .tagline{top:290px}
+.story .btn{bottom:400px}.story .btnsub{bottom:320px}.story .tagline{top:400px}
 .story .cv{width:420px}.story .covers,.story .one{margin-top:0}
 .tagline{position:absolute;left:70px;right:70px;top:190px;text-align:center;font:italic 400 44px/1.3 'Source Serif 4'}.tagline b{color:var(--amb);font-weight:400}
 """
