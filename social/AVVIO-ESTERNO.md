@@ -42,17 +42,21 @@ Se le etichette sul sito differiscono, cerca la voce equivalente.
 
 Perché `dry_run` è nel body: nel workflow vale `true` di default; senza `"dry_run":"false"` ogni avvio sarebbe solo una prova.
 
-## Finestre di avvio (dal 4 ottobre)
-Fuso **Europe/Zurich**, ogni mese. Dentro ogni finestra il job parte ogni 5 minuti; il post esce al primo avvio utile, con 0-5 minuti di ritardo rispetto all'orario scritto nel calendario. Gli orari nel calendario sono irregolari di proposito: stesso giorno, minuti diversi di settimana in settimana, mai due settimane di fila lo stesso minuto.
+## Finestre di avvio (dal 6 ottobre: due uscite al giorno)
+Fuso **Europe/Zurich**, ogni mese. Dentro ogni finestra il job parte ogni 5 minuti; il post esce al primo avvio utile, con 0-5 minuti di ritardo rispetto all'orario scritto nel calendario. Gli orari nel calendario sono irregolari di proposito: stessa fascia, minuti diversi di settimana in settimana, mai due settimane di fila lo stesso minuto.
+Dal 6 ottobre ogni giorno ha una fascia di pranzo e una serale (giovedì e sabato la seconda fascia è serale e pomeridiana, perché il pranzo era già occupato). Sono **nove job**: i sei originali (domenica 8560784, lunedì 8574338, martedì+mercoledì 8574346, giovedì 8574347, venerdì 8574348, sabato 8574349) più tre nuovi, che si creano con AZIONI → Clona da un job esistente (l'intestazione `Authorization` si copia senza reincollare il token).
 
 | Job | Giorni | Ora | Minuti | Cosa esce |
 |---|---|---|---|---|
-| Lun | lunedì | 18 | 7,12,17,22,27,32,37,42,47,52 | Storie, fine giornata lavorativa |
-| Mar+Mer | martedì, mercoledì | 19 | 17,22,27,32,37,42,47,52,57 | Grafiche e Reel serali |
-| Gio | giovedì | 12 | 12,17,22,27,32,37,42,47,52 | Pausa pranzo |
-| Ven | venerdì | 18 | 2,7,12,17,22,27,32,37,42 | Post di testo (solo Facebook) |
-| Sab | sabato | 12 | 2,7,12,17,22,27,32,37,42,47 | Reel di tarda mattina |
-| Dom | domenica | 20 | 2,7,12,17,22,27,32,37,42,47 | Domande e caroselli, sera di lettura |
+| Lun sera | lunedì | 18 | 7,12,17,22,27,32,37,42,47,52 | Storie, fine giornata lavorativa |
+| Mar+Mer sera | martedì, mercoledì | 19 | 17,22,27,32,37,42,47,52,57 | Grafiche e Reel serali |
+| Gio pranzo | giovedì | 12 | 12,17,22,27,32,37,42,47,52 | Pausa pranzo |
+| Ven sera | venerdì | 18 | 2,7,12,17,22,27,32,37,42 | Post di testo (solo Facebook) e nuovi post serali |
+| Sab pranzo | sabato | 12 | 2,7,12,17,22,27,32,37,42,47 | Reel di tarda mattina |
+| Dom sera | domenica | 20 | 2,7,12,17,22,27,32,37,42,47 | Domande e caroselli, sera di lettura |
+| **Pranzo (nuovo)** | domenica, lunedì, martedì, mercoledì, venerdì | 12 | 2,7,12,17,22,27,32,37,42,47,52,57 | Seconda uscita del giorno, pausa pranzo |
+| **Gio sera (nuovo)** | giovedì | 19 | 7,12,17,22,27,32,37,42,47,52 | Seconda uscita del giovedì |
+| **Sab pomeriggio (nuovo)** | sabato | 17 | 2,7,12,17,22,27,32,37,42,47 | Seconda uscita del sabato |
 
 Equivalente in formato crontab:
 ```
@@ -63,8 +67,12 @@ CRON_TZ=Europe/Zurich
 2-42/5   18 * * 5
 2-47/5   12 * * 6
 2-47/5   20 * * 0
+2-57/5   12 * * 0,1,2,3,5
+7-52/5   19 * * 4
+2-47/5   17 * * 6
 ```
-Se cambi una finestra, cambia anche `social/test_calendario.py` (stesse finestre) e gli orari in `calendar.json`: l'orario di un post deve cadere prima dell'ultimo avvio della sua finestra. Il body è sempre `{"ref":"main","inputs":{"dry_run":"false"}}`.
+I tre job nuovi vanno creati **prima del merge** (o subito dopo): senza il job del giovedì sera e quello del sabato pomeriggio i post delle 19 del giovedì e delle 17 del sabato non avrebbero un avvio nella loro fascia e, passate 12 ore, `publish.py` li salta. Se manca solo il job di pranzo, i post di pranzo escono con ritardo (al primo avvio serale del giorno, comunque entro 12 ore).
+Se cambi una finestra, cambia anche `social/test_calendario.py` (stesse finestre, ora liste per giorno) e gli orari in `calendar.json`: l'orario di un post deve cadere prima dell'ultimo avvio della sua finestra. Il body è sempre `{"ref":"main","inputs":{"dry_run":"false"}}`.
 
 ## Controlli dopo l'attivazione
 - Controlla l'esito su cron-job.org (History: HTTP 204) e su Actions: il run deve avere `dry_run` vuoto o `false` e deve riportare `Pubblicato su` per le piattaforme previste. HTTP 204 conferma solo l'avvio del workflow, non che abbia pubblicato.
