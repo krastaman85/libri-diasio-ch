@@ -25,8 +25,8 @@ Se le etichette sul sito differiscono, cerca la voce equivalente.
 2. «Create cronjob» → scheda **Common**:
    - Title: `Social publish libri.diasio.ch`
    - URL: `https://api.github.com/repos/krastaman85/libri-diasio-ch/actions/workflows/social-publish.yml/dispatches`
-   - Execution schedule: **User-defined** → ogni giorno, ogni mese; **ore 12, 18, 19, 20; minuti 1 e 31**.
-    (Il calendario è allineato agli stessi minuti: 12:31, 18:01, 18:31, 19:31 e 20:01. Il dispatch coincide con l'orario pianificato e non parte prima. Se nel giorno non c'è nulla da pubblicare, il workflow termina senza fare niente.)
+   - Execution schedule: **User-defined**, un job per finestra come nella sezione «Finestre di avvio» qui sotto (stesso URL, stesse intestazioni e stesso body in tutti; per i job successivi al primo usa «Duplicate», così l'intestazione `Authorization` si copia senza reincollare il token).
+    (Gli orari dei post nel calendario cadono dentro queste finestre. Se nel giorno non c'è nulla da pubblicare, il workflow termina senza fare niente.)
 3. Scheda **Advanced**:
    - Request method: **POST**
    - Headers (nome → valore):
@@ -41,6 +41,30 @@ Se le etichette sul sito differiscono, cerca la voce equivalente.
 7. Solo ora modifica il body in `{"ref":"main","inputs":{"dry_run":"false"}}` e salva. Da questo momento il job pubblica davvero.
 
 Perché `dry_run` è nel body: nel workflow vale `true` di default; senza `"dry_run":"false"` ogni avvio sarebbe solo una prova.
+
+## Finestre di avvio (dal 4 ottobre)
+Fuso **Europe/Zurich**, ogni mese. Dentro ogni finestra il job parte ogni 5 minuti; il post esce al primo avvio utile, con 0-5 minuti di ritardo rispetto all'orario scritto nel calendario. Gli orari nel calendario sono irregolari di proposito: stesso giorno, minuti diversi di settimana in settimana, mai due settimane di fila lo stesso minuto.
+
+| Job | Giorni | Ora | Minuti | Cosa esce |
+|---|---|---|---|---|
+| Lun | lunedì | 18 | 7,12,17,22,27,32,37,42,47,52 | Storie, fine giornata lavorativa |
+| Mar+Mer | martedì, mercoledì | 19 | 17,22,27,32,37,42,47,52,57 | Grafiche e Reel serali |
+| Gio | giovedì | 12 | 12,17,22,27,32,37,42,47,52 | Pausa pranzo |
+| Ven | venerdì | 18 | 2,7,12,17,22,27,32,37,42 | Post di testo (solo Facebook) |
+| Sab | sabato | 12 | 2,7,12,17,22,27,32,37,42,47 | Reel di tarda mattina |
+| Dom | domenica | 20 | 2,7,12,17,22,27,32,37,42,47 | Domande e caroselli, sera di lettura |
+
+Equivalente in formato crontab:
+```
+CRON_TZ=Europe/Zurich
+7-52/5   18 * * 1
+17-57/5  19 * * 2,3
+12-52/5  12 * * 4
+2-42/5   18 * * 5
+2-47/5   12 * * 6
+2-47/5   20 * * 0
+```
+Se cambi una finestra, cambia anche `social/test_calendario.py` (stesse finestre) e gli orari in `calendar.json`: l'orario di un post deve cadere prima dell'ultimo avvio della sua finestra. Il body è sempre `{"ref":"main","inputs":{"dry_run":"false"}}`.
 
 ## Controlli dopo l'attivazione
 - Controlla l'esito su cron-job.org (History: HTTP 204) e su Actions: il run deve avere `dry_run` vuoto o `false` e deve riportare `Pubblicato su` per le piattaforme previste. HTTP 204 conferma solo l'avvio del workflow, non che abbia pubblicato.

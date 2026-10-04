@@ -6,11 +6,16 @@ Account: Instagram `@d.iasio.libri` + Pagina Facebook "D. Iasio". Obiettivo unic
 
 3 post a settimana per 8 settimane (24 post), dal 4 ottobre al 26 novembre 2026.
 
-| Slot | Perché |
+| Finestra (ora di Zurigo) | Perché |
 |---|---|
-| **Domenica 20:01** | Sera di lettura e tempo libero. Qui vanno le domande da commentare e le copertine. |
-| **Martedì 19:31** | Fascia serale infrasettimanale, la più frequentata dopo cena. |
-| **Giovedì 12:31** | Pausa pranzo: pubblico che lavora (tech, aziende, giornalismo). |
+| **Domenica 20:02-20:47** | Sera di lettura e tempo libero. Qui vanno le domande da commentare e i caroselli. |
+| **Martedì e mercoledì 19:17-19:57** | Fascia serale infrasettimanale, la più frequentata dopo cena. Il mercoledì escono i Reel. |
+| **Giovedì 12:12-12:52** | Pausa pranzo: pubblico che lavora (tech, aziende, giornalismo). |
+| **Lunedì 18:07-18:52** | Storie, a fine giornata lavorativa. |
+| **Venerdì 18:02-18:42** | Post di testo (solo Facebook), inizio serata. |
+| **Sabato 12:02-12:47** | Reel, tarda mattina e pranzo. |
+
+Dal 4 ottobre gli orari non sono più fissi: ogni post esce in un minuto diverso dentro la finestra del suo giorno, e il job esterno scatta ogni 5 minuti in quelle finestre (vedi `AVVIO-ESTERNO.md`). L'orario scritto nel calendario è il primo momento utile: l'uscita avviene entro 5 minuti.
 
 Evitati: venerdì e sabato sera (pubblico fuori casa, poca lettura), mattine presto.
 Ora locale Roma/Zurigo. Il 25 ottobre torna l'ora solare: gli orari restano gli stessi.
@@ -64,9 +69,9 @@ Per popolare i profili prima della prima grafica (domenica 4 ottobre), il calend
 | r01-bug-cognato | giovedì 1 ottobre, 19:30 | Il Bug della Trasparenza |
 | r02-oblio-costo | venerdì 2 ottobre, 12:30 | L'Economia dell'Oblio |
 | r03-bug-chiavi | sabato 3 ottobre, 12:31 | Il Bug della Trasparenza |
-| r04-oblio-bitcoin | mercoledì 7 ottobre, 19:31 | L'Economia dell'Oblio |
-| r05-bug-rimossa | sabato 10 ottobre, 12:31 | Il Bug della Trasparenza |
-| r06-oblio-igiene | mercoledì 14 ottobre, 19:31 | L'Economia dell'Oblio |
+| r04-oblio-bitcoin | mercoledì 7 ottobre, 19:32 | L'Economia dell'Oblio |
+| r05-bug-rimossa | sabato 10 ottobre, 12:33 | Il Bug della Trasparenza |
+| r06-oblio-igiene | mercoledì 14 ottobre, 19:21 | L'Economia dell'Oblio |
 
 I Reel escono in giorni diversi dalle grafiche (domenica, martedì, giovedì) per non sovrapporsi. Su Instagram i Reel raggiungono anche chi non ti segue: sono il canale di scoperta, le grafiche servono ai follower.
 Da fare a mano (non automatizzabile): rispondere ai commenti, condividere ogni Reel nelle Stories, creare le Storie in evidenza ("Puntata 1", "I libri", "Newsletter").
@@ -77,9 +82,9 @@ Il calendario arriva al 31 dicembre 2026 e alterna tre formati, per non far somi
 
 | Formato | Quando | Perché |
 |---|---|---|
-| **Reel** (r07-r23, 13 s) | mercoledì 19:31 e sabato 12:31, dal 21 ottobre al 16 dicembre | Canale di scoperta: raggiungono anche chi non ti segue. Ogni citazione è testuale dalla Puntata 1. |
-| **Caroselli** (6 di 5-7 slide) | domenica 20:01 (29/11, 6/12, 13/12, 20/12, 27/12) e giovedì 3 dicembre 12:31 | Chi scorre resta di più sul post, e il salvataggio pesa nell'algoritmo. Temi: il listino di Levia, «Bug o Oblio?», l'assemblea, il Pettine, il regalo di Natale, la Puntata 1 in tre passi. |
-| **Grafiche singole** (9) | martedì 19:31 e giovedì 12:31 | Frasi nuove dalla Puntata 1, un fascicolo, un dialogo, gli auguri e il buon anno con invito alla newsletter. |
+| **Reel** (r07-r23, 13 s) | mercoledì sera e sabato a pranzo (finestre sopra), dal 21 ottobre al 16 dicembre | Canale di scoperta: raggiungono anche chi non ti segue. Ogni citazione è testuale dalla Puntata 1. |
+| **Caroselli** (6 di 5-7 slide) | domenica sera (29/11, 6/12, 13/12, 20/12, 27/12) e giovedì 3 dicembre a pranzo | Chi scorre resta di più sul post, e il salvataggio pesa nell'algoritmo. Temi: il listino di Levia, «Bug o Oblio?», l'assemblea, il Pettine, il regalo di Natale, la Puntata 1 in tre passi. |
+| **Grafiche singole** (9) | martedì sera e giovedì a pranzo | Frasi nuove dalla Puntata 1, un fascicolo, un dialogo, gli auguri e il buon anno con invito alla newsletter. |
 
 Le citazioni di novembre-dicembre non ripetono quelle di ottobre: sono ricavate dal testo delle due Puntata 1 (`download/*.epub`). Dopo il 16 dicembre non ci sono Reel: le feste hanno meno attenzione e le uscite restano sulle grafiche.
 
@@ -89,7 +94,7 @@ Da fare a mano, come sempre: rispondere ai commenti, Stories, DM di ringraziamen
 
 | Formato | Quando | Note |
 |---|---|---|
-| **Storie** (13, 1080×1920) | lunedì 18:31, dal 5 ottobre al 28 dicembre | Citazioni testuali dalla Puntata 1 e inviti a leggerla. Immagine fissa, senza sticker né link: la Storia dura 24 ore e serve a tenere vivo il profilo tra un post e l'altro. |
-| **Post di testo** (6, solo Facebook) | venerdì 18:01, ogni due settimane dal 9 ottobre al 18 dicembre | Una domanda o una frase con link a `/bug/`, `/oblio/` o alla home; Facebook mostra l'anteprima. Instagram non ha post di solo testo. |
+| **Storie** (13, 1080×1920) | lunedì dalle 18, dal 5 ottobre al 28 dicembre | Citazioni testuali dalla Puntata 1 e inviti a leggerla. Immagine fissa, senza sticker né link: la Storia dura 24 ore e serve a tenere vivo il profilo tra un post e l'altro. |
+| **Post di testo** (6, solo Facebook) | venerdì dalle 18, ogni due settimane dal 9 ottobre al 18 dicembre | Una domanda o una frase con link a `/bug/`, `/oblio/` o alla home; Facebook mostra l'anteprima. Instagram non ha post di solo testo. |
 
 Da fare a mano: rispondere ai messaggi che arrivano dalle Storie e aggiungere i sondaggi o il link (adesivo) nelle Storie che ritieni importanti.
