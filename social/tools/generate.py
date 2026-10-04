@@ -49,7 +49,7 @@ def header(d, theme):
     d.rectangle((70, 150, 150, 155), fill=acc)
 
 
-def footer(im, d, book, theme):
+def footer(im, d, book, theme, line="Puntata 1 gratis · libri.diasio.ch"):
     amber = theme == "amber"
     ink, sub, mut = (DARK, DARK, DMUT) if amber else (INK, AMBER, MUTED)
     cw, ch = 96, 143
@@ -58,7 +58,7 @@ def footer(im, d, book, theme):
     d.rectangle((68, y - 2, 70 + cw + 1, y + ch + 1), outline=DARK if amber else LINE, width=2)
     im.paste(c, (70, y))
     d.text((70 + cw + 28, y + 16), TITLES[book], font=head(30), fill=ink)
-    d.text((70 + cw + 28, y + 62), "Puntata 1 gratis · libri.diasio.ch", font=serifr(28), fill=sub)
+    d.text((70 + cw + 28, y + 62), line, font=serifr(28), fill=sub)
     d.text((70 + cw + 28, y + 104), "@d.iasio.libri", font=serifr(24), fill=mut)
 
 
@@ -189,7 +189,7 @@ def k_spot(im, d, p, theme):
     for ln in wrap(d, p["tag"], tf, W - 160):
         d.text(((W - d.textlength(ln, font=tf)) / 2, yy), ln, font=tf, fill=INK)
         yy += 54
-    cta = "Puntata 1 gratis · link in bio"
+    cta = p.get("cta", "Puntata 1 gratis · link in bio")
     d.text(((W - d.textlength(cta, font=head(34))) / 2, yy + 14), cta, font=head(34), fill=AMBER)
 
 
@@ -224,7 +224,7 @@ def card(p, out):
     header(d, theme)
     KINDS[p["kind"]](im, d, p, theme)
     if p["kind"] not in NOFOOT:
-        footer(im, d, p["book"], theme)
+        footer(im, d, p["book"], theme, p.get("foot", "Puntata 1 gratis · libri.diasio.ch"))
     im.save(out, quality=92, optimize=True)
 
 
