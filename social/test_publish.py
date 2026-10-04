@@ -107,7 +107,8 @@ class PublishTests(unittest.TestCase):
                 continue
             self.assertTrue(p["didascalia"].strip())
             self.assertLessEqual(len(p["didascalia"]), 2200, p["id"])       # limite Instagram
-            self.assertLessEqual(p["didascalia"].count("#"), 5, p["id"])
+            if p.get("piattaforme") != ["facebook"]:        # Instagram: max 5 hashtag (i post solo Facebook: test_calendario.py)
+                self.assertLessEqual(p["didascalia"].count("#"), 5, p["id"])
 
 
 if __name__ == "__main__":
