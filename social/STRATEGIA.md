@@ -23,22 +23,32 @@ Non sono dati verificati sul tuo pubblico. Sono le fasce che di solito funzionan
 
 ## Segmenti di pubblico e cosa dire a ciascuno
 
-| Segmento | Post che lo raggiungono | Hashtag chiave |
-|---|---|---|
-| Lettori noir/thriller (core) | 09, 23 | #noir #thriller #narrativaitaliana |
-| Fantascienza, distopia, fan di serie tipo Black Mirror | 02, 08, 15, 21 | #distopia #fantascienza #blackmirror |
-| Tech, privacy, app e IA | 03, 06, 08, 11, 14, 24 | #privacy #tecnologia #intelligenzaartificiale |
-| Mondo del lavoro e delle aziende | 05, 20, 21, 24 | #mondodellavoro #satira |
-| Giornalismo e inchieste | 03, 12 | #giornalismo #inchiesta |
-| Vita di condominio (relatable) | 01, 10, 18 | #condominio #vicinidicasa |
-| Psicologia, memoria, lutto (tono rispettoso) | 04, 17 | #memoria #psicologia |
-| Lettori digitali (ebook, Kindle, lettura gratuita) | 07, 13 | #ebook #kindle #epub #leggeregratis |
-| Appassionati di serie e formati a puntate | 07, 13, 16, 19 | (tag dedicati sopra) |
-| Bookstagram (copertine, community) | 04, 10, 16, 19 | #bookstagram #libriconsigliati |
-| Ticino e Svizzera italiana | 22 (+ ogni post ha il link .ch) | #ticino #svizzeraitaliana |
-| Lettori italiani ovunque | tutti | #narrativaitaliana |
+| Segmento | Post che lo raggiungono |
+|---|---|
+| Lettori noir/thriller (core) | 09, 23 |
+| Fantascienza, distopia, fan di serie tipo Black Mirror | 02, 08, 15, 21 |
+| Tech, privacy, app e IA | 03, 06, 08, 11, 14, 24 |
+| Mondo del lavoro e delle aziende | 05, 20, 21, 24 |
+| Giornalismo e inchieste | 03, 12 |
+| Vita di condominio (relatable) | 01, 10, 18 |
+| Psicologia, memoria, lutto (tono rispettoso) | 04, 17 |
+| Lettori digitali (ebook, Kindle, lettura gratuita) | 07, 13 |
+| Appassionati di serie e formati a puntate | 07, 13, 16, 19 |
+| Bookstagram (copertine, community) | 04, 10, 16, 19 |
+| Ticino e Svizzera italiana | 22 (+ ogni post ha il link .ch) |
+| Lettori italiani ovunque | tutti |
 
-Ogni post ha 5 hashtag (Instagram ne consiglia pochi e mirati) e una didascalia diversa: niente testi copiati tra post.
+## Hashtag (aggiornati il 4 ottobre 2026)
+
+Il vocabolario è quello indicato dall'utente, in quattro gruppi: genere (#ThrillerItaliano #NoirItaliano #RomanzoNoir #GialloItaliano #ThrillerPsicologico #LibriThriller #AltaTensione #LetteraturaNoir), satira e ironia (#Satira #RomanzoSatirico #UmorismoNero #Ironia #LettureDivertenti #CommediaNera), community (#BookstagramItalia #BookTokItalia #ConsigliDiLettura #LibriDaLeggere #RecensioneLibro #IoLeggo #ScrittoriEmergenti #ScrittoriItaliani) e geografia (#SvizzeraItaliana #Ticino #ScrittoriSvizzeri #EditoriaItaliana #LeggereInSvizzera #CulturaTicino #BookstagramSvizzera). I vecchi tag per argomento (#privacy, #condominio, #distopia e simili) non si usano più nei post non ancora pubblicati.
+
+- **Instagram: 5 hashtag per post e per Reel.** Dal dicembre 2025 Instagram limita i tag a 5 per post e Reel (fonte: blogdumoderateur.com, 19/12/2025). Non è chiaro se i tag in più vengano bloccati o ignorati, né se il limite valga per l'API: per non rischiare, ogni didascalia Instagram ne ha 5. Composizione: 1 tag di genere popolare, 1 di genere di nicchia (o di tono ironico se il post lo è), 1 di community popolare, 1 «speciale» (#BookTokItalia sui Reel, #ScrittoriEmergenti o #EditoriaItaliana su newsletter, CTA e post di presentazione, altrimenti #IoLeggo o #ScrittoriItaliani) e 1 geografico.
+- **Facebook: 10 hashtag** (post e post di testo). Non risulta un tetto; 10 sono nella fascia 10-15 indicata, con più genere, community e geografia.
+- **Genere per libro:** Il Bug = noir (#NoirItaliano #RomanzoNoir #LetteraturaNoir); L'Oblio = thriller psicologico (#ThrillerPsicologico #LibriThriller); post generici = misto.
+- **Tono:** i tag di satira e ironia (#Ironia #UmorismoNero #Satira #CommediaNera) vanno solo sui post con tono ironico (listino, regolamento, note di rilascio, igiene). Mai sui post di lutto, colpa e ricordo. #RomanzoSatirico e #LettureDivertenti sono riservati a «Vuoto a rendere» (nessun post nel calendario); #RecensioneLibro si usa solo quando si chiede un'opinione. Estratti e domande non vanno scambiati per recensioni.
+- Scelta dei tag casuale ma ripetibile (dipende dall'id del post), così le didascalie non sono tutte uguali. `social/test_calendario.py` controlla conteggio, vocabolario e doppioni.
+
+Ogni post ha una didascalia diversa: niente testi copiati tra post.
 
 ## Fuori da Instagram (stessi contenuti, zero costi)
 
