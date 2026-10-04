@@ -93,6 +93,24 @@ body.story{height:1920px}
 .story .btn{bottom:400px}.story .btnsub{bottom:320px}.story .tagline{top:400px}
 .story .cv{width:420px}.story .covers,.story .one{margin-top:0}
 .tagline{position:absolute;left:70px;right:70px;top:190px;text-align:center;font:italic 400 44px/1.3 'Source Serif 4'}.tagline b{color:var(--amb);font-weight:400}
+
+.photo{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,15,24,.62) 0%,rgba(10,15,24,0) 20%,rgba(10,15,24,0) 38%,rgba(10,15,24,.80) 66%,rgba(10,15,24,.97) 100%)}
+.pq{position:absolute;left:70px;right:70px;bottom:290px;text-shadow:0 2px 24px rgba(0,0,0,.7)}
+.pq .q{font-size:62px;line-height:1.26}.pq .q.s{font-size:54px}.pq .q.l{font-size:74px}
+.pq .who{margin-top:30px;color:#c9d2de}
+.pho .brand,.pho .pg,.pho .rule{z-index:3;text-shadow:0 2px 14px rgba(0,0,0,.85)}
+.kb{position:absolute;left:70px;right:70px;bottom:70px;height:118px;background:var(--amb);color:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 0 60px rgba(240,162,74,.28)}
+.kb span{font:700 46px 'Oswald';letter-spacing:.08em;text-transform:uppercase}.kb i{font:500 28px 'Oswald';font-style:normal;letter-spacing:.14em;color:#5a3a0c}
+.kd .main{bottom:250px}.kd .pq{bottom:250px}
+.notif{display:flex;gap:34px;align-items:flex-start;background:rgba(30,42,62,.97);border:2px solid var(--line);border-radius:48px;padding:48px;box-shadow:0 40px 90px rgba(0,0,0,.6);margin-top:8px}
+.ni{flex:none;width:128px;height:128px;border-radius:32px;background:#bfd8ee;display:flex;align-items:center;justify-content:center}
+.app{font:500 25px 'Oswald';letter-spacing:.2em;color:var(--mut);text-transform:uppercase}
+.nh{font:700 46px/1.15 'Oswald';margin-top:12px}.nb{font:400 46px/1.36 'Source Serif 4';margin-top:14px;color:#dbe2ec}
+.nsub{margin-top:36px;font:italic 400 38px/1.4 'Source Serif 4';color:var(--mut)}
+.tab{font:500 28px 'DejaVu Sans Mono',monospace;color:var(--amb);letter-spacing:.04em;margin-bottom:22px}
+.doc{background:#0d1522;border:2px solid var(--line);border-radius:18px;padding:44px 48px}
+.doc p{font:400 33px/1.5 'DejaVu Sans Mono',monospace;color:#d6dde8;margin-bottom:26px}.doc p:last-child{margin-bottom:0}.doc b{color:var(--amb);font-weight:400}
 """
 
 
@@ -110,12 +128,36 @@ def foot(book):
             f'<div class="u">Puntata 1 gratis · libri.diasio.ch</div><div class="h">@d.iasio.libri</div></div></div>')
 
 
+def photo_src(rel, pos=30):
+    """Foto 4:5 (1080x1350) ritagliata da una scena verticale in social/img/scene: pos = % dello scarto verticale."""
+    import io
+    from PIL import Image, ImageFilter
+    im = Image.open(SOCIAL / "img" / "scene" / rel).convert("RGB")
+    h = round(im.height * 1080 / im.width)
+    im = im.resize((1080, h), Image.LANCZOS).filter(ImageFilter.UnsharpMask(radius=1.4, percent=55, threshold=2))
+    top = round(max(0, h - 1350) * pos / 100)
+    im = im.crop((0, top, 1080, top + 1350))
+    buf = io.BytesIO()
+    im.save(buf, "JPEG", quality=90)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+def kband(text="Ora su Amazon Kindle"):
+    return f'<div class="kb"><span>{html.escape(text)}</span><i>libri.diasio.ch</i></div>'
+
+
+M_ICON = ('<svg width="84" height="84" viewBox="0 0 96 96"><polyline points="20,70 20,30 48,58 76,30 76,70" fill="none" '
+          'stroke="#f3f8fc" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+
 def slide_html(s, i, n, book, theme, story=False):
     k = s["k"]
     pg = f'<div class="pg">{i} / {n}</div>' if n > 1 else ""
     swipe = '<div class="swipe">SCORRI →</div>' if n > 1 and i < n else ""
     head = '<div class="brand">D<i>.</i> IASIO</div><div class="rule"></div>' + pg
-    body, foo = "", foot(book)
+    body, foo, pre = "", foot(book), ""
+    if s.get("kindle"):
+        foo = kband(s["kindle"] if isinstance(s["kindle"], str) else "Ora su Amazon Kindle")
     if s.get("hero") is not None:
         hy, hz, hx = (s["hero"] if isinstance(s["hero"], (tuple, list)) else (s["hero"], 1.0, 0))
         head += (f'<div class="hero" style="background-image:url({hero_src(book)});background-size:{int(1080 * hz)}px auto;'
@@ -137,6 +179,23 @@ def slide_html(s, i, n, book, theme, story=False):
     elif k == "step":
         kick = f'<div class="kick">{html.escape(s["kick"])}</div>' if s.get("kick") else ""
         body = f'<div class="main">{kick}<div class="num">{s["n"]}</div><div class="stitle">{em(s["title"])}</div><div class="stext">{em(s["text"])}</div></div>'
+    elif k == "photo":
+        pre = (f'<div class="photo" style="background-image:url({photo_src(s["photo"], s.get("pos", 30))});'
+               f'background-position:center"></div><div class="shade"></div>')
+        size = "l" if len(s["text"]) < 50 else "s" if len(s["text"]) > 150 else ""
+        who = f'<div class="who">{html.escape(s["who"])}</div>' if s.get("who") else ""
+        txt = s["text"] if s["text"].startswith("«") else "“" + s["text"] + "”"
+        body = f'<div class="pq"><div class="q {size}">{em(txt)}</div>{who}</div>'
+    elif k == "notif":
+        kick = f'<div class="kick">{html.escape(s["kick"])}</div>' if s.get("kick") else ""
+        sub = f'<div class="nsub">{em(s["sub"])}</div>' if s.get("sub") else ""
+        body = (f'<div class="main">{kick}<div class="notif"><div class="ni">{M_ICON}</div><div>'
+                f'<div class="app">{html.escape(s.get("app", "Meridiana Life"))} · {html.escape(s.get("when", "adesso"))}</div>'
+                f'<div class="nh">{html.escape(s["title"])}</div><div class="nb">{em(s["text"])}</div></div></div>{sub}</div>')
+    elif k == "doc":
+        kick = f'<div class="kick">{html.escape(s["kick"])}</div>' if s.get("kick") else ""
+        lines = "".join(f'<p>{em(x)}</p>' for x in s["lines"])
+        body = f'<div class="main">{kick}<div class="tab">{html.escape(s["name"])}</div><div class="doc">{lines}</div></div>'
     elif k == "covers":
         cs = "".join(f'<div class="cv"><img src="{cover_img(b)}"><div class="t">{TITLES[b]}</div><div class="g">{GENRES[b]}</div><div class="p">{em(p)}</div></div>'
                      for b, p in s["items"])
@@ -154,13 +213,29 @@ def slide_html(s, i, n, book, theme, story=False):
         if len(books) == 2:
             body = body.replace('width:460px', 'width:400px')
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{fontface()}{CSS}</style></head>'
-            f'<body class="{"amber" if theme == "amber" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}"><div class="glow"></div>{head}{body}{foo}{swipe}</body></html>')
+            f'<body class="{"amber" if theme == "amber" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}{" pho" if k == "photo" else ""}{" kd" if s.get("kindle") else ""}"><div class="glow"></div>{pre}{head}{body}{foo}{swipe}</body></html>')
 
 
 def load():
     ns = {}
     exec((HERE / "carousels.py").read_text(encoding="utf-8"), ns)
-    return ns["ITEMS"]
+    items = list(ns["ITEMS"])
+    extra = HERE / "nuovi_ottobre.py"          # due uscite al giorno (ottobre 2026): file in img/nuovi/
+    if extra.exists():
+        ns2 = {"__file__": str(extra)}
+        exec(extra.read_text(encoding="utf-8"), ns2)
+        items += ns2["ITEMS"]
+    return items
+
+
+def out_path(it, i, n):
+    """Cartella e nome del file di una slide. Gli item con flat=True stanno tutti in img/nuovi/."""
+    if it.get("flat"):
+        d = SOCIAL / "img" / "nuovi"
+        return d, (f"{it['id']}-{i:02d}.jpg" if n > 1 else f"{it['id']}.jpg")
+    story = bool(it.get("story"))
+    d = SOCIAL / "img" / "story" if story else SOCIAL / "img" / "carousel" / it["id"] if n > 1 else SOCIAL / "img"
+    return d, (f"{i:02d}.jpg" if n > 1 and not story else f"{it['id']}.jpg")
 
 
 def render(items, only=None):
@@ -174,12 +249,12 @@ def render(items, only=None):
             pg = br.new_page(viewport={"width": 1080, "height": 1920 if story else 1350})
             slides = it["slides"]
             n = len(slides)
-            outdir = SOCIAL / "img" / "story" if story else SOCIAL / "img" / "carousel" / it["id"] if n > 1 else SOCIAL / "img"
-            outdir.mkdir(parents=True, exist_ok=True)
             for i, s in enumerate(slides, 1):
+                outdir, fname = out_path(it, i, n)
+                outdir.mkdir(parents=True, exist_ok=True)
                 pg.set_content(slide_html(s, i, n, s.get("book", it["book"]), it.get("theme"), story))
                 pg.wait_for_timeout(150)
-                out = outdir / (f"{i:02d}.jpg" if n > 1 and not story else f"{it['id']}.jpg")
+                out = outdir / fname
                 pg.screenshot(path=str(out), type="jpeg", quality=92)
                 print("→", out.relative_to(SOCIAL))
             pg.close()
@@ -199,6 +274,17 @@ def add_calendar(items):
         if it["id"] in have:
             continue
         n = len(it["slides"])
+        if it.get("flat"):
+            e = {"id": it["id"], "quando": it["when"], "segmento": it["seg"]}
+            if n > 1:
+                e["tipo"] = "carosello"
+                e["immagini"] = [f"social/img/nuovi/{it['id']}-{i:02d}.jpg" for i in range(1, n + 1)]
+            else:
+                e["immagine"] = f"social/img/nuovi/{it['id']}.jpg"
+            e.update({"alt": it["alt"], "didascalia": it["caption"], "didascalia_fb": it["caption_fb"]})
+            cal["post"].append(e)
+            print("+", it["id"], it["when"])
+            continue
         if it.get("story"):
             cal["post"].append({"id": it["id"], "tipo": "storia", "quando": it["when"], "segmento": it["seg"],
                                 "immagine": f"social/img/story/{it['id']}.jpg"})

@@ -4,7 +4,7 @@ Account: Instagram `@d.iasio.libri` + Pagina Facebook "D. Iasio". Obiettivo unic
 
 ## Calendario: giorni e orari
 
-3 post a settimana per 8 settimane (24 post), dal 4 ottobre al 26 novembre 2026.
+3 post a settimana per 8 settimane (24 post), dal 4 ottobre al 26 novembre 2026. **Dal 6 ottobre le uscite sono due al giorno** (vedi la sezione «Due uscite al giorno» in fondo): le fasce qui sotto restano la prima uscita, la seconda va nella fascia opposta.
 
 | Finestra (ora di Zurigo) | Perché |
 |---|---|
@@ -108,3 +108,25 @@ Da fare a mano, come sempre: rispondere ai commenti, Stories, DM di ringraziamen
 | **Post di testo** (6, solo Facebook) | venerdì dalle 18, ogni due settimane dal 9 ottobre al 18 dicembre | Una domanda o una frase con link a `/bug/`, `/oblio/` o alla home; Facebook mostra l'anteprima. Instagram non ha post di solo testo. |
 
 Da fare a mano: rispondere ai messaggi che arrivano dalle Storie e aggiungere i sondaggi o il link (adesivo) nelle Storie che ritieni importanti.
+
+## Due uscite al giorno e accento su Amazon Kindle (decisione del 4 ottobre 2026)
+
+Scelte dell'utente: due pubblicazioni al giorno, orizzonte di 4 settimane (dal 6 ottobre al 2 novembre), formati grafiche con citazioni, caroselli e scene IA, riga fissa su Kindle in ogni post più post dedicati, solo disponibilità e link (niente prezzo, niente Kindle Unlimited).
+
+**Orari della seconda uscita** (ora di Zurigo): pranzo 12:00-12:55 lunedì, martedì, mercoledì, venerdì e domenica; giovedì sera 19:03-19:50 (il pranzo è già occupato); sabato pomeriggio 17:00-17:45 (idem). Il venerdì 16 e 30 ottobre, che non avevano post, escono due nuovi post (pranzo e sera); il sabato 17 ottobre pranzo e pomeriggio. Totale **31 nuovi post** (16 sul Bug, 15 sull'Oblio), alternati: dove il post già in calendario è del Bug, il nuovo è dell'Oblio e viceversa.
+
+| Formato | Quanti | Note |
+|---|---|---|
+| Grafiche con citazione (e una domanda per i lettori) | 14 | Citazioni testuali dalle Puntata 1, mai ripetute rispetto ai post già in calendario |
+| Scene IA con citazione | 4 | Le immagini approvate del set fotografico del Bug (B07, B09, B12, B17), con didascalia «Immagine creata con l'IA» |
+| Finte interfacce | 4 | Notifica di Meridiana Life (2), modulo di classificazione del lutto, estratto conto di Dora |
+| Caroselli | 6 | Merli, Elio Bassi, meridiana_note.txt, il ricordo che non è suo, tre passi verso Kindle, Oblio su Kindle |
+| Locandine Kindle | 3 | Bug, Oblio, i due romanzi insieme (pulsante «Disponibile su Amazon Kindle») |
+
+**Regola Kindle:** ogni didascalia (nuova ed esistente, dal 5 ottobre in poi) ha una riga su Amazon Kindle: su Instagram «link in bio», su Facebook il link diretto alla scheda (Bug `https://www.amazon.it/dp/B0HLN2VSJP`, Oblio `https://www.amazon.it/dp/B0HLMKWJZ5`). Circa metà dei nuovi post mostra anche una fascia ambra «Ora su Amazon Kindle» o un pulsante nell'ultima slide. Non si scrive il prezzo e non si cita Kindle Unlimited. Non si nominano StreetLib né la carta. `social/test_calendario.py` controlla la riga in ogni didascalia.
+
+**Hashtag:** stesse regole di sopra (IG 5, FB 10, solo vocabolario, ironia solo sui post ironici). Il generatore è in `social/tools/nuovi_ottobre.py` (`tag_ig`, `tag_fb`).
+
+**Come si rigenerano:** `python social/tools/carousel.py` rende le immagini in `social/img/nuovi/` (tutte nella stessa cartella: `nNN-libro-tema.jpg` per le singole, `nNN-libro-tema-0K.jpg` per i caroselli); `--calendar` aggiunge le voci a `calendar.json`. Le scene IA sorgente stanno in `social/img/scene/`.
+
+**Dopo il 2 novembre:** le uscite tornano a una al giorno finché non si decide altro (le due fasce restano nei job di cron-job.org). Per proseguire con due al giorno servono altre citazioni: le due Puntata 1 sono corte (circa 14.000 e 16.000 caratteri) e a metà novembre le frasi più forti saranno quasi tutte usate. Conviene aggiungere nuovi materiali (Reel con le scene IA dell'Oblio, estratti dalla Puntata 2 se l'autore li autorizza) prima di rinnovare l'orizzonte.

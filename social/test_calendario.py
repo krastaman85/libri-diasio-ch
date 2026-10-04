@@ -6,9 +6,11 @@ from datetime import datetime
 from pathlib import Path
 
 DIR = Path(__file__).resolve().parent
-# giorno (lunedi=0) -> (ora, primo avvio, ultimo avvio); l'orario del post va da primo-4 a ultimo-2 minuti
-FINESTRE = {0: (18, 7, 52), 1: (19, 17, 57), 2: (19, 17, 57), 3: (12, 12, 52),
-            4: (18, 2, 42), 5: (12, 2, 47), 6: (20, 2, 47)}
+# giorno (lunedi=0) -> finestre (ora, primo avvio, ultimo avvio); l'orario del post va da primo-4 a ultimo-2 minuti.
+# Due uscite al giorno dal 6/10/2026: pranzo e sera (giovedi sera e sabato pomeriggio al posto del pranzo gia occupato).
+FINESTRE = {0: [(18, 7, 52), (12, 2, 57)], 1: [(19, 17, 57), (12, 2, 57)], 2: [(19, 17, 57), (12, 2, 57)],
+            3: [(12, 12, 52), (19, 7, 52)], 4: [(18, 2, 42), (12, 2, 57)], 5: [(12, 2, 47), (17, 2, 47)],
+            6: [(20, 2, 47), (12, 2, 57)]}
 DAL = datetime(2026, 10, 5)
 
 
@@ -21,18 +23,35 @@ def da_controllare():
             yield p["id"], d
 
 
+def finestra(d):
+    """Finestra del giorno che contiene l'ora del post, oppure None."""
+    for f in FINESTRE[d.weekday()]:
+        if f[0] == d.hour:
+            return f
+    return None
+
+
 class FinestreCron(unittest.TestCase):
     def test_orari_dentro_le_finestre(self):
         for pid, d in da_controllare():
-            ora, primo, ultimo = FINESTRE[d.weekday()]
-            self.assertEqual(d.hour, ora, f"{pid} {d}: ora fuori finestra")
+            f = finestra(d)
+            self.assertIsNotNone(f, f"{pid} {d}: ora fuori finestra (ammesse {[x[0] for x in FINESTRE[d.weekday()]]})")
+            ora, primo, ultimo = f
             self.assertTrue(max(0, primo - 4) <= d.minute <= ultimo - 2, f"{pid} {d}: minuto fuori finestra")
 
-    def test_minuti_non_ripetuti_nello_stesso_giorno_della_settimana(self):
+    def test_minuti_non_ripetuti_nella_stessa_fascia_della_settimana_dopo(self):
         ultimo = {}
         for pid, d in da_controllare():
-            self.assertNotEqual(ultimo.get(d.weekday()), d.minute, f"{pid}: stesso minuto della settimana prima")
-            ultimo[d.weekday()] = d.minute
+            k = (d.weekday(), d.hour)
+            self.assertNotEqual(ultimo.get(k), d.minute, f"{pid}: stesso minuto della settimana prima")
+            ultimo[k] = d.minute
+
+    def test_una_sola_uscita_per_fascia(self):
+        visti = {}
+        for pid, d in da_controllare():
+            k = (d.date(), d.hour)
+            self.assertNotIn(k, visti, f"{pid} e {visti.get(k)}: due uscite nella stessa fascia")
+            visti[k] = pid
 
 
 # Vocabolario scelto dall'utente (4/10/2026): genere, satira, community, geolocalizzazione.
@@ -78,6 +97,22 @@ class Hashtag(unittest.TestCase):
             self.assertEqual(len(t), len(set(t)), f"{pid} {piatt}: hashtag ripetuti")
             fuori = [x for x in t if x not in VOCABOLARIO]
             self.assertFalse(fuori, f"{pid} {piatt}: fuori vocabolario {fuori}")
+
+
+class RigaKindle(unittest.TestCase):
+    def test_ogni_didascalia_nomina_amazon_kindle(self):
+        """Dal 5/10/2026 ogni didascalia non pubblicata chiude con la riga sulla disponibilita su Amazon Kindle."""
+        da_dal = {pid for pid, _ in da_controllare()}
+        for pid, piatt, testo in didascalie():
+            if pid not in da_dal:
+                continue
+            self.assertIn("Amazon Kindle", testo, f"{pid} {piatt}: manca la riga su Amazon Kindle")
+
+    def test_su_facebook_il_link_amazon_c_e(self):
+        da_dal = {pid for pid, _ in da_controllare()}
+        for pid, piatt, testo in didascalie():
+            if piatt == "facebook" and pid in da_dal:
+                self.assertIn("amazon.it/dp/", testo, f"{pid} Facebook: manca il link Amazon")
 
 
 if __name__ == "__main__":
