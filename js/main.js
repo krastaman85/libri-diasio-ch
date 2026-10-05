@@ -24,9 +24,10 @@
   document.querySelectorAll("[data-stores]").forEach(function (box) {
     var b = (S.books || {})[box.getAttribute("data-stores")] || {};
     var out = [];
-    if (b.amazon) out.push('<a class="btn primary" href="' + b.amazon + '" rel="noopener">Amazon Kindle</a>');
+    var short = box.hasAttribute("data-short"); // versione breve: solo Amazon (hero, pagina di ringraziamento)
+    if (b.amazon) out.push('<a class="btn primary" href="' + b.amazon + '" rel="noopener">Disponibile su Amazon Kindle</a>');
     if (b.altriStore) out.push('<a class="btn" href="' + b.altriStore + '" rel="noopener">Altri store</a>');
-    else if (b.amazon) out.push('<span class="pill">Prossimamente su StreetLib</span>');
+    else if (b.amazon && !short) out.push('<span class="pill">Prossimamente su StreetLib</span>');
     box.innerHTML = out.length ? out.join("") : '<span class="pill">In arrivo negli store</span>';
   });
 
