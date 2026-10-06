@@ -121,13 +121,13 @@ def lancio_aritmetica(pid):
 
 
 class LancioAritmetica(unittest.TestCase):
-    """Post di lancio de L'Aritmetica del Consenso (uscita prevista venerdi 23/10/2026)."""
+    """Post di lancio de L'Aritmetica del Consenso (uscita anticipata: online entro pochi giorni dal 6/10/2026; post «è uscito» solo con il libro online)."""
 
     def test_nominano_il_libro_e_la_data(self):
         for pid, piatt, testo in didascalie():
             if lancio_aritmetica(pid):
                 self.assertIn("Aritmetica del Consenso", testo, f"{pid} {piatt}: manca il titolo")
-                self.assertTrue(re.search(r"23 ottobre|Da oggi|è uscito|Mancano|Manca ", testo), f"{pid} {piatt}: manca la data o il conto")
+                self.assertTrue(re.search(r"Da oggi|è uscito|in arrivo|Mancano|Manca ", testo), f"{pid} {piatt}: manca la data o il conto")
 
     def test_su_facebook_il_link_al_sito(self):
         for pid, piatt, testo in didascalie():
