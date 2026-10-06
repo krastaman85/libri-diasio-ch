@@ -112,7 +112,7 @@ class RigaKindle(unittest.TestCase):
         """Su Facebook ogni post non ancora pubblicato porta il link alla scheda Amazon."""
         da_dal = {pid for pid, _ in da_controllare()}
         for pid, piatt, testo in didascalie():
-            if piatt == "facebook" and pid in da_dal:
+            if piatt == "facebook" and pid in da_dal and not re.search(r"vuoto|^v0[123]-", pid):   # i post di Vuoto hanno la regola propria in LancioVuoto
                 self.assertIn("amazon.it/dp/", testo, f"{pid} Facebook: manca il link Amazon")
 
 
@@ -141,6 +141,58 @@ class LancioAritmetica(unittest.TestCase):
         for p in cal["post"]:
             if lancio_aritmetica(p["id"]):
                 for f in ([p["immagine"]] if p.get("immagine") else p.get("immagini", [])):
+                    self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
+
+
+LANCIO_VUOTO_REEL = ("v01-listino", "v02-sedie", "v03-regia")
+ASIN_VUOTO = "B0HM4HFK34"
+
+
+def lancio_vuoto(pid):
+    return "vuoto" in pid or pid in LANCIO_VUOTO_REEL
+
+
+class LancioVuoto(unittest.TestCase):
+    """Post di lancio di «Vuoto a rendere» (su Amazon Kindle dal 23/10/2026, ASIN B0HM4HFK34)."""
+
+    def test_nominano_il_libro(self):
+        for pid, piatt, testo in didascalie():
+            if lancio_vuoto(pid):
+                self.assertIn("Vuoto a rendere", testo, f"{pid} {piatt}: manca il titolo")
+
+    def test_la_data_di_uscita_e_coerente(self):
+        """Prima del 23/10 si prenota («Esce il 23 ottobre»), dal 23/10 si dice «è su Amazon Kindle»: niente «è uscito» in anticipo."""
+        cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
+        per_id = {p["id"]: datetime.fromisoformat(p["quando"]) for p in cal["post"]}
+        for pid, piatt, testo in didascalie():
+            if not lancio_vuoto(pid):
+                continue
+            if per_id[pid] < datetime(2026, 10, 23):
+                self.assertFalse(re.search(r"è uscito|è disponibile|da oggi", testo, re.I), f"{pid} {piatt}: dice che è già uscito prima del 23/10")
+            else:
+                self.assertFalse(re.search(r"Mancano|Manca |in prenotazione|Esce il", testo, re.I), f"{pid} {piatt}: resta un conto alla rovescia dopo l'uscita")
+
+    def test_su_facebook_il_link_al_sito_e_ad_amazon(self):
+        """Il link Amazon di Vuoto compare solo se la scheda è online (js/config.js ha `vuoto.amazon`): prima del 23/10 senza link in config non c'è nemmeno nelle didascalie; dal 23/10 deve esserci sempre."""
+        cfg = (DIR.parent / "js" / "config.js").read_text(encoding="utf-8")
+        online = re.search(r'vuoto:\s*\{\s*amazon:\s*"https://', cfg) is not None
+        cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
+        per_id = {p["id"]: datetime.fromisoformat(p["quando"]) for p in cal["post"]}
+        for pid, piatt, testo in didascalie():
+            if lancio_vuoto(pid) and piatt == "facebook":
+                self.assertIn("libri.diasio.ch/vuoto/", testo, f"{pid} Facebook: manca il link alla pagina del libro")
+                self.assertNotIn("amazon.it/dp/B0HM3Y19B6", testo, f"{pid} Facebook: link Amazon dell'Aritmetica per sbaglio")
+                if online or per_id[pid] >= datetime(2026, 10, 23):
+                    self.assertIn(f"amazon.it/dp/{ASIN_VUOTO}", testo, f"{pid} Facebook: manca il link Amazon di Vuoto")
+                else:
+                    self.assertNotIn("amazon.it/dp/", testo, f"{pid} Facebook: link Amazon prima che la scheda sia online")
+
+    def test_le_immagini_e_i_video_esistono(self):
+        cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
+        for p in cal["post"]:
+            if lancio_vuoto(p["id"]):
+                files = ([p["immagine"]] if p.get("immagine") else p.get("immagini", [])) + ([p["video"]] if p.get("video") else [])
+                for f in files:
                     self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
 
 

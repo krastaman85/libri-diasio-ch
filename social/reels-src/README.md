@@ -33,3 +33,7 @@ ffmpeg -i renders/r01-bug-cognato.mp4 -c:v libx264 -preset slow -crf 23 -pix_fmt
 ## Audio: come si rigenera
 
 La traccia ssets/audio/bed.mp3 nasce da ssets/audio/bed.filter (grafo FFmpeg): pad di accordi sui medi (udibile da telefono), battito lieve che sfuma prima della rivelazione, salita di rumore rosa, un istante di vuoto e un colpo grave con attacco morbido a 7,75 s. Livello fisso (nessuna normalizzazione dinamica, che causava scatti) con compressore dolce. Obiettivo: totale ~ -15 dB, sopra 300 Hz ~ -23 dB, nessun salto di livello > 10 dB.
+
+## Reel di «Vuoto a rendere» (6/10/2026)
+
+Composizione a parte: `index-vuoto.html` (stile grafite, rosso e ambra, IBM Plex Mono + Source Serif; tre modi `listino`, `sedie`, `regia`, 15 s). Variabili in `vars/v01-listino.json`, `v02-sedie.json`, `v03-regia.json`. Per renderizzare: copiare `index-vuoto.html` come `index.html` in una cartella con `assets/`, poi `npx hyperframes render . --variables-file vars/v01-listino.json -q high` e comprimere con ffmpeg (libx264, crf 23). Uscite in `../video/v0*.mp4`.
