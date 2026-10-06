@@ -1,0 +1,233 @@
+<!doctype html>
+<html
+  lang="it"
+  data-composition-variables='[
+    {"id":"mode","type":"string","label":"Formato (listino, sedie, regia)","default":"listino"},
+    {"id":"cta","type":"string","label":"Invito (pulsante finale)","default":"Prenotalo su Kindle · 23 ottobre"},
+    {"id":"cover","type":"string","label":"Copertina","default":"assets/img/cover-vuoto.jpg"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/js/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Plex"; font-weight: 400; src: url("assets/fonts/IBMPlexMono-400.woff2") format("woff2"); }
+      @font-face { font-family: "Plex"; font-weight: 700; src: url("assets/fonts/IBMPlexMono-700.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: italic; src: url("assets/fonts/SourceSerif4-400i.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: normal; src: url("assets/fonts/SourceSerif4-400.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 600; font-style: normal; src: url("assets/fonts/SourceSerif4-600.woff2") format("woff2"); }
+
+      :root { --bg:#17171b; --panel:#202026; --line:#3a3a42; --ink:#efe9df; --muted:#aca69b; --amb:#d8a468; --red:#e4545f; --redd:#a31621; --ink-dark:#1b1206; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { width:1080px; height:1920px; overflow:hidden; background:var(--bg); }
+      #root { position:relative; width:100%; height:100%; overflow:hidden; color:var(--ink); font-family:"Plex", monospace; }
+      #scene { position:absolute; inset:0; }
+      #glow { position:absolute; left:50%; top:30%; width:1500px; height:1500px; margin-left:-750px; margin-top:-750px; border-radius:50%;
+              background:radial-gradient(circle, rgba(163,22,33,.34) 0%, rgba(90,14,22,.16) 38%, rgba(23,23,27,0) 68%); }
+      #vignette { position:absolute; inset:0; background:radial-gradient(ellipse at 50% 45%, rgba(23,23,27,0) 40%, rgba(8,8,10,.74) 100%); }
+      #brand { position:absolute; left:90px; top:290px; font-weight:700; font-size:44px; letter-spacing:.3em; text-transform:uppercase; }
+      #brand span { color:var(--red); }
+      #brand-rule { position:absolute; left:90px; top:362px; width:96px; height:6px; background:var(--red); transform-origin:left center; }
+
+      #stage { position:absolute; left:90px; right:90px; top:450px; height:1190px; }
+      .mode { position:absolute; inset:0; display:none; }
+
+      /* listino */
+      #m-listino .rcpt { position:absolute; left:0; right:0; top:40px; background:var(--panel); border:2px solid var(--line); padding:58px 54px 50px; }
+      #m-listino .rcpt:before { content:""; position:absolute; left:0; right:0; top:-14px; height:14px; background:repeating-linear-gradient(135deg, transparent 0 10px, var(--panel) 10px 20px); }
+      .rh { font-size:30px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+      .rh b { color:var(--red); font-weight:700; }
+      .rl { margin-top:40px; display:flex; align-items:baseline; font-size:38px; line-height:1.34; border-bottom:3px dashed var(--line); padding-bottom:26px; opacity:0; }
+      .rl span:first-child { flex:1; padding-right:28px; }
+      .rl span:last-child { font-weight:700; color:var(--amb); white-space:nowrap; }
+      .rn { margin-top:34px; font-size:32px; line-height:1.45; color:var(--muted); opacity:0; }
+      .rt { margin-top:40px; display:flex; font-size:42px; font-weight:700; opacity:0; }
+      .rt span:first-child { flex:1; }
+      #stamp { z-index:6; position:absolute; right:30px; top:790px; border:8px solid var(--red); color:var(--red); font-weight:700; font-size:78px; letter-spacing:.06em; padding:14px 34px; transform:rotate(-8deg); opacity:0; text-transform:uppercase; }
+      #m-listino .after { position:absolute; left:0; right:0; top:960px; font-family:"Source Serif 4", serif; font-style:italic; font-size:62px; line-height:1.25; opacity:0; }
+      #m-listino .after b { color:var(--amb); font-weight:400; }
+
+      /* sedie */
+      #grid { position:absolute; left:0; right:0; top:20px; display:grid; grid-template-columns:repeat(8, 1fr); gap:20px 12px; }
+      .ch { height:130px; display:flex; align-items:flex-end; justify-content:center; opacity:0; }
+      .ch svg { width:100%; height:100%; }
+      .ch .c { fill:#6b6258; transition:none; }
+      #cnt { position:absolute; left:0; right:0; top:760px; }
+      #cnt .big { font-weight:700; font-size:92px; line-height:1; text-transform:uppercase; letter-spacing:-.01em; opacity:0; }
+      #cnt .big b { color:var(--red); font-weight:700; }
+      #cnt .sm { margin-top:20px; font-size:38px; color:var(--muted); letter-spacing:.14em; text-transform:uppercase; opacity:0; }
+      #m-sedie .after { position:absolute; left:0; right:0; top:1000px; font-family:"Source Serif 4", serif; font-style:italic; font-size:64px; line-height:1.25; opacity:0; }
+      #m-sedie .after b { color:var(--amb); font-weight:400; }
+
+      /* regia */
+      #term { position:absolute; left:0; right:0; top:30px; background:#0e0e11; border:2px solid var(--line); padding:54px 54px; font-size:46px; line-height:1.7; }
+      #term .th { font-size:32px; letter-spacing:.2em; color:var(--muted); text-transform:uppercase; margin-bottom:26px; }
+      #term .th i { display:inline-block; width:18px; height:18px; border-radius:50%; background:#3ddc84; margin-right:16px; vertical-align:middle; box-shadow:0 0 14px #3ddc84; font-style:normal; }
+      .tl { opacity:0; white-space:nowrap; }
+      .tl b { color:var(--amb); font-weight:700; }
+      .tl.r b { color:var(--red); }
+      #chat { position:absolute; left:0; right:0; top:640px; font-family:"Source Serif 4", serif; font-size:68px; line-height:1.3; }
+      #chat div { opacity:0; margin-bottom:26px; }
+      #chat .a { color:var(--muted); font-style:italic; }
+      #chat .b { color:var(--ink); font-style:italic; padding-left:90px; }
+      #chat .e b { color:var(--amb); font-weight:400; }
+
+      /* chiusura comune */
+      #reveal { position:absolute; inset:0; }
+      #cover-wrap { position:absolute; left:50%; top:430px; width:430px; height:688px; margin-left:-215px; }
+      #cover { width:100%; height:100%; object-fit:cover; box-shadow:0 40px 120px rgba(0,0,0,.65), 0 0 0 2px var(--line), 0 0 160px rgba(163,22,33,.30); }
+      #genre { position:absolute; left:90px; right:90px; top:1150px; text-align:center; font-weight:400; font-size:28px; letter-spacing:.2em; text-transform:uppercase; color:var(--amb); }
+      #title { position:absolute; left:90px; right:90px; top:1204px; text-align:center; font-weight:700; font-size:72px; line-height:1.08; text-transform:uppercase; }
+      #title span { color:var(--red); }
+      #cta { position:absolute; left:90px; right:90px; top:1390px; display:flex; flex-direction:column; align-items:center; gap:22px; }
+      #pill { white-space:nowrap; padding:28px 40px; background:var(--amb); color:var(--ink-dark); font-weight:700; font-size:36px; letter-spacing:.04em; text-transform:uppercase; box-shadow:0 18px 60px rgba(216,164,104,.30); }
+      #url { font-size:32px; color:var(--muted); }
+      #url b { color:var(--ink); font-weight:700; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1080" data-height="1920">
+      <audio id="bed" src="assets/audio/bed.mp3" data-start="0" data-duration="13" data-track-index="10" data-volume="0.7"></audio>
+      <section id="scene">
+        <div id="glow"></div>
+        <div id="vignette"></div>
+        <div id="brand">D<span>.</span> IASIO</div>
+        <div id="brand-rule"></div>
+
+        <div id="stage">
+          <!-- LISTINO -->
+          <div class="mode" id="m-listino">
+            <div class="rcpt">
+              <div class="rh" id="rh">Sordina · Listino · <b>Voce 01</b></div>
+              <div class="rl" id="l1"><span>Sala Ulivo, allestimento e tre ore di disponibilità</span><span>CHF 1’200.00</span></div>
+              <div class="rn" id="n1">Incluso: diffusione di essenze al cedro, playlist «Commiato Pianissimo», registro delle presenze.</div>
+              <div class="rl" id="l2"><span>Comparsa, per ora</span><span>CHF 25.00</span></div>
+              <div class="rl" id="l3"><span>Tariffa lacrime</span><span>+ CHF 8.00</span></div>
+            </div>
+            <div id="stamp" data-layout-allow-overlap data-layout-allow-occlusion>Sembra pieno</div>
+            <div class="after" id="after-l">«Il cliente ha avuto esattamente quello che ha <b>pagato</b>.»</div>
+          </div>
+
+          <!-- SEDIE -->
+          <div class="mode" id="m-sedie">
+            <div id="grid"></div>
+            <div id="cnt">
+              <div class="big" id="c1">Quaranta <b>sedie</b></div>
+              <div class="big" id="c2" style="margin-top:14px">Nove presenti</div>
+              <div class="big" id="c3" style="margin-top:14px">Sei <b>pagate</b></div>
+              <div class="sm" id="c4">Sala Ulivo · tre ore</div>
+            </div>
+            <div class="after" id="after-s">Chi siederebbe in prima fila al tuo <b>funerale</b>, e da quanto non gli dai un motivo per starci?</div>
+          </div>
+
+          <!-- REGIA -->
+          <div class="mode" id="m-regia">
+            <div id="term">
+              <div class="th"><i>●</i>Regia · streaming</div>
+              <div class="tl" id="t1">Spettatori connessi: <b>1</b></div>
+              <div class="tl r" id="t2">Località: <b>Rotterdam</b></div>
+              <div class="tl" id="t3">Durata collegamento: <b>31 minuti</b></div>
+            </div>
+            <div id="chat">
+              <div class="a" id="k1">«La regia non si conta.»</div>
+              <div class="b" id="k2">«Lo so.»</div>
+              <div class="a" id="k3">«E allora perché mi guardi?»</div>
+              <div class="b e" id="k4">«Per <b>abitudine</b>.»</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="reveal">
+          <div id="cover-wrap"><img id="cover" data-var-src="cover" src="assets/img/cover-vuoto.jpg" alt="" /></div>
+          <div id="genre">Un romanzo in dieci voci di listino</div>
+          <div id="title">Vuoto a <span>rendere</span></div>
+          <div id="cta">
+            <div id="pill" data-var-text="cta">Prenotalo su Kindle · 23 ottobre</div>
+            <div id="url">Puntata 1 gratis · <b>libri.diasio.ch</b></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const V = window.__hyperframes.getVariables();
+      const mode = String(V.mode || "listino");
+      document.getElementById("m-" + mode).style.display = "block";
+      const tl = gsap.timeline({ paused: true });
+
+      // Apertura comune
+      tl.fromTo("#glow", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 2.4, ease: "power2.out" }, 0);
+      tl.to("#glow", { scale: 1.12, duration: 11, ease: "sine.inOut" }, 2.4);
+      tl.fromTo("#brand", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 0.15);
+      tl.fromTo("#brand-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 0.45);
+
+      let exitAt = 8.2;
+
+      if (mode === "listino") {
+        tl.fromTo(".rcpt", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.6);
+        tl.fromTo("#rh", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 1.0);
+        tl.fromTo("#l1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 1.6);
+        tl.fromTo("#n1", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 2.3);
+        tl.fromTo("#l2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 3.4);
+        tl.fromTo("#l3", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 4.3);
+        tl.fromTo("#stamp", { opacity: 0, scale: 2.4, rotation: -20 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.35, ease: "power4.in" }, 5.4);
+        tl.to("#stamp", { x: 8, duration: 0.05, yoyo: true, repeat: 3 }, 5.75);
+        tl.fromTo("#after-l", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 6.4);
+        exitAt = 9.2;
+      }
+
+      if (mode === "sedie") {
+        const chair = '<svg viewBox="0 0 60 100"><g class="c"><rect x="8" y="4" width="44" height="8" rx="2"/><rect x="8" y="16" width="44" height="8" rx="2"/><rect x="8" y="4" width="6" height="92"/><rect x="46" y="4" width="6" height="30"/><rect x="6" y="46" width="48" height="10" rx="2"/><rect x="8" y="56" width="6" height="40"/><rect x="46" y="56" width="6" height="40"/></g></svg>';
+        const grid = document.getElementById("grid");
+        for (let i = 0; i < 40; i++) { const d = document.createElement("div"); d.className = "ch"; d.innerHTML = chair; grid.appendChild(d); }
+        const chs = [...document.querySelectorAll(".ch")];
+        // 9 presenti: sei pagate (rosse? no: ambra) e tre non loro. La sedia rossa della copertina e la prima presenza.
+        const presenti = [3, 6, 12, 14, 18, 21, 26, 29, 35];
+        const pagate = [3, 12, 18, 21, 26, 35];
+        chs.forEach((el, i) => tl.fromTo(el, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.6 + i * 0.04));
+        tl.fromTo("#c1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 2.4);
+        presenti.forEach((n, k) => {
+          tl.to(chs[n].querySelector(".c"), { fill: "#d8a468", duration: 0.25 }, 3.4 + k * 0.1);
+        });
+        tl.fromTo("#c2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 3.5);
+        pagate.forEach((n, k) => {
+          tl.to(chs[n].querySelector(".c"), { fill: "#e4545f", duration: 0.25 }, 4.7 + k * 0.12);
+        });
+        tl.fromTo("#c3", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 4.8);
+        tl.fromTo("#c4", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 5.6);
+        tl.to("#cnt", { opacity: 0, y: -40, duration: 0.5, ease: "power2.in" }, 6.5);
+        tl.to("#grid", { opacity: 0.18, duration: 0.6 }, 6.6);
+        tl.fromTo("#after-s", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 7.0);
+        exitAt = 10.2;
+      }
+
+      if (mode === "regia") {
+        tl.fromTo("#term", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.7);
+        tl.fromTo("#t1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 1.6);
+        tl.fromTo("#t2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 2.4);
+        tl.fromTo("#t3", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.4 }, 3.2);
+        tl.fromTo("#k1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 3.9);
+        tl.fromTo("#k2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 5.0);
+        tl.fromTo("#k3", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 6.1);
+        tl.fromTo("#k4", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 7.2);
+        exitAt = 9.9;
+      }
+
+      // Uscita della scena
+      tl.to("#stage", { opacity: 0, y: -60, filter: "blur(10px)", duration: 0.6, ease: "power2.in" }, exitAt);
+
+      // Copertina, titolo, invito
+      const rv = exitAt + 0.45;
+      tl.fromTo("#cover-wrap", { opacity: 0, y: 220, rotationX: 28, scale: 0.86, transformPerspective: 1100 },
+                { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 1.0, ease: "power4.out" }, rv);
+      tl.to("#cover-wrap", { y: -14, duration: 3.2, ease: "sine.inOut" }, rv + 1.0);
+      tl.fromTo("#genre", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, rv + 0.6);
+      tl.fromTo("#title", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, rv + 0.8);
+      tl.fromTo("#cta", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, rv + 1.3);
+      tl.fromTo("#pill", { scale: 1 }, { scale: 1.04, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: 3 }, rv + 2.0);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
