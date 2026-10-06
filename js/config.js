@@ -15,7 +15,7 @@ window.SITE = {
   books: {
     bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "" },
     oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "" },
-    vuoto: { amazon: "https://www.amazon.it/dp/B0HM4HFK34", altriStore: "", uscita: "2026-10-23" },
+    vuoto: { amazon: "", altriStore: "", uscita: "2026-10-23" }, // link da mettere appena https://www.amazon.it/dp/B0HM4HFK34 è online
     aritmetica: { amazon: "https://www.amazon.it/dp/B0HM3Y19B6", altriStore: "" }
   }
 };

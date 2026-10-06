@@ -41,7 +41,10 @@
     if (b.amazon) out.push('<a class="btn primary" href="' + b.amazon + '" rel="noopener">' + (prenota ? "Prenota su Amazon Kindle" : "Disponibile su Amazon Kindle") + '</a>');
     if (b.altriStore) out.push('<a class="btn" href="' + b.altriStore + '" rel="noopener">Altri store</a>');
     else if (b.amazon && !short) out.push('<span class="pill">Prossimamente su StreetLib</span>');
-    box.innerHTML = out.length ? out.join("") : '<span class="pill">In arrivo negli store</span>';
+    var mesi = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
+    var quando = b.uscita ? new Date(b.uscita + "T12:00:00") : null;
+    var attesa = quando && prenota ? "Su Amazon Kindle dal " + quando.getDate() + " " + mesi[quando.getMonth()] : "In arrivo negli store";
+    box.innerHTML = out.length ? out.join("") : '<span class="pill">' + attesa + '</span>';
     document.querySelectorAll("[data-pre]").forEach(function (el) { el.hidden = !prenota; });
     document.querySelectorAll("[data-post]").forEach(function (el) { el.hidden = prenota; });
   });
