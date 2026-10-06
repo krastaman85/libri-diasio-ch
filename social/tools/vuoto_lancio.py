@@ -5,9 +5,14 @@
 # I Reel (v01-v03) si rigenerano con reels-src/index-vuoto.html (vedi README).
 import hashlib
 import random
+import re
+from pathlib import Path
 
 SITO_V = "https://libri.diasio.ch/vuoto/"
 AMAZON_V = "https://www.amazon.it/dp/B0HM4HFK34"      # scheda di prenotazione: va controllato che sia online prima del merge
+# Fonte unica: se js/config.js ha il link di Vuoto, la scheda Amazon è online e le didascalie prima del 23/10 parlano di prenotazione e portano il link.
+_cfg = (Path(__file__).resolve().parent.parent.parent / "js" / "config.js").read_text(encoding="utf-8")
+LIVE = re.search(r'vuoto:\s*\{\s*amazon:\s*"https://', _cfg) is not None
 
 
 def _rng(pid, kind):
@@ -38,11 +43,15 @@ def tag_fb(pid, ironico=False):
 
 
 # Righe finali. Prima del 23/10 il libro si prenota; dal 23/10 è in vendita.
-PRE_IG = "In prenotazione su Amazon Kindle: esce il 23 ottobre (link in bio). La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione."
-PRE_FB = f"In prenotazione su Amazon Kindle, esce il 23 ottobre: {AMAZON_V}\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: {SITO_V}"
+if LIVE:
+    PRE_IG = "In prenotazione su Amazon Kindle: esce il 23 ottobre (link in bio). La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione."
+    PRE_FB = f"In prenotazione su Amazon Kindle, esce il 23 ottobre: {AMAZON_V}\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: {SITO_V}"
+else:
+    PRE_IG = "Esce su Amazon Kindle il 23 ottobre. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione (link in bio)."
+    PRE_FB = f"Esce su Amazon Kindle il 23 ottobre. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: {SITO_V}"
 POST_IG = "Il romanzo completo, in dieci capitoli, è su Amazon Kindle (link in bio). La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione."
 POST_FB = f"Il romanzo completo, in dieci capitoli, è su Amazon Kindle: {AMAZON_V}\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: {SITO_V}"
-KP = "Prenotalo su Kindle"          # fascia sull'immagine prima dell'uscita
+KP = "Su Kindle dal 23 ottobre"          # fascia sull'immagine prima dell'uscita
 KD = "Su Amazon Kindle"             # fascia sull'immagine dopo l'uscita
 ES = "Esce il 23 ottobre"
 
@@ -60,9 +69,9 @@ PUNT1 = "Vuoto a rendere · Puntata 1"
 ITEMS = [
 
  V("v01-vuoto-prenotazione", "2026-10-10T17:21", "Annuncio · In prenotazione (locandina)",
-   [dict(k="cta", books=["vuoto"], text="In *prenotazione*", button="Prenotalo su Amazon Kindle", line="Esce il 23 ottobre · <b>libri.diasio.ch</b>")],
-   "Vuoto a rendere, romanzo satirico di D. Iasio, esce il 23 ottobre ed è già prenotabile.\nDario progetta funerali che sembrano pieni: sale con diffusore al cedro, comparse pagate e un indice che misura quanto un addio somigli a un addio.\nQuaranta sedie, nove presenti, sei pagate.",
-   "Locandina su fondo grafite con la copertina di Vuoto a rendere (quaranta sedie, una rossa): «In prenotazione», pulsante «Prenotalo su Amazon Kindle», esce il 23 ottobre."),
+   [dict(k="cta", books=["vuoto"], text="Esce il *23 ottobre*", button="Su Amazon Kindle dal 23 ottobre", line="Esce il 23 ottobre · <b>libri.diasio.ch</b>")],
+   "Vuoto a rendere, romanzo satirico di D. Iasio, esce il 23 ottobre su Amazon Kindle.\nDario progetta funerali che sembrano pieni: sale con diffusore al cedro, comparse pagate e un indice che misura quanto un addio somigli a un addio.\nQuaranta sedie, nove presenti, sei pagate.",
+   "Locandina su fondo grafite con la copertina di Vuoto a rendere (quaranta sedie, una rossa): «Esce il 23 ottobre», pulsante «Su Amazon Kindle dal 23 ottobre»."),
 
  V("v02-vuoto-listino", "2026-10-11T12:17", "Il listino (carosello)",
    [dict(k="hook", kick="Vuoto a rendere", text="Un funerale a *listino*", sub="Voce 01: Sala Ulivo, tre ore.", kindle=KP),
@@ -71,7 +80,7 @@ ITEMS = [
     dict(k="rows", title="Dal manuale di Dario", sub="Il lutto in aula", rows=[("In aula, per ora", "CHF 25"), ("Festivi, in più", "+ CHF 5"), ("Tariffa lacrime", "+ CHF 8")],
          note="«Espressione raccolta, mai sofferente. Il sofferente mette a disagio.»", kindle=KP),
     dict(k="quote", text="«Sembra. Il prodotto era quello. Non il funerale: il sembra.»", who=PUNT1, kindle=KP),
-    dict(k="cta", books=["vuoto"], text="Esce il *23 ottobre*", button="Prenotalo su Amazon Kindle", line="Puntata 1 gratis · <b>libri.diasio.ch</b>")],
+    dict(k="cta", books=["vuoto"], text="Esce il *23 ottobre*", button="Su Amazon Kindle dal 23 ottobre", line="Puntata 1 gratis · <b>libri.diasio.ch</b>")],
    "Voce 01 del listino: Sala Ulivo, allestimento e tre ore di disponibilità, 1’200 franchi. In aula, per imparare l’espressione giusta, 25 franchi l’ora.\n«Sembra. Il prodotto era quello. Non il funerale: il sembra.»\nVuoto a rendere, romanzo satirico di D. Iasio, esce il 23 ottobre.",
    "Carosello di cinque slide su fondo grafite: «Un funerale a listino»; la voce 01 del listino della Sala Ulivo (1’200 franchi); le tariffe del manuale (25 franchi l’ora in aula, 5 in più nei festivi, 8 per le lacrime); la frase «Sembra. Il prodotto era quello. Non il funerale: il sembra.»; invito a prenotare, esce il 23 ottobre."),
 
@@ -93,7 +102,7 @@ ITEMS = [
    [dict(k="doc", kick="Vuoto a rendere", name="SORDINA · SOLDATI ALDO, N. 1947",
          lines=["Deceduto: 31 agosto.", "Ritrovamento: 14 settembre.", "Referente: Soldati Marco (figlio), Rotterdam (NL).", "Stato: *non presente*."], kindle=KP)],
    "Deceduto: 31 agosto. Ritrovamento: 14 settembre. Referente: il figlio, a Rotterdam. Stato: non presente.\nÈ la scheda che Dario apre dopo la cerimonia. Vuoto a rendere esce il 23 ottobre.",
-   "Finta scheda su fondo grafite: «Soldati Aldo, n. 1947. Deceduto: 31 agosto. Ritrovamento: 14 settembre. Referente: Soldati Marco (figlio), Rotterdam. Stato: non presente.» Fascia: «Prenotalo su Kindle»."),
+   "Finta scheda su fondo grafite: «Soldati Aldo, n. 1947. Deceduto: 31 agosto. Ritrovamento: 14 settembre. Referente: Soldati Marco (figlio), Rotterdam. Stato: non presente.» Fascia: «Su Kindle dal 23 ottobre»."),
 
  V("v09-vuoto-domanda", "2026-10-18T12:09", "Domanda ai lettori · In prenotazione (grafica)",
    [dict(k="quote", text="«Chi siederebbe in prima fila al tuo funerale, e da quanto non gli dai un motivo per starci?»", who=PUNT1, kindle=ES)],
@@ -140,8 +149,12 @@ ITEMS = [
       slides=[dict(k="hook", kick="Vuoto a rendere", text="Domani\n*esce*", sub="Su Amazon Kindle.")]),
 ]
 
-RPRE_IG = "«Vuoto a rendere», romanzo satirico di D. Iasio, è in prenotazione su Amazon Kindle: esce il 23 ottobre (link in bio). La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione."
-RPRE_FB = f"«Vuoto a rendere», romanzo satirico di D. Iasio, è in prenotazione su Amazon Kindle, esce il 23 ottobre: {AMAZON_V}\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: {SITO_V}"
+if LIVE:
+    RPRE_IG = "«Vuoto a rendere», romanzo satirico di D. Iasio, è in prenotazione su Amazon Kindle: esce il 23 ottobre (link in bio). La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione."
+    RPRE_FB = f"«Vuoto a rendere», romanzo satirico di D. Iasio, è in prenotazione su Amazon Kindle, esce il 23 ottobre: {AMAZON_V}\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: {SITO_V}"
+else:
+    RPRE_IG = "«Vuoto a rendere», romanzo satirico di D. Iasio, esce su Amazon Kindle il 23 ottobre. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione (link in bio)."
+    RPRE_FB = f"«Vuoto a rendere», romanzo satirico di D. Iasio, esce su Amazon Kindle il 23 ottobre. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: {SITO_V}"
 REELS = [
  dict(id="v01-listino", tipo="reel", quando="2026-10-12T12:33", segmento="Reel · Satira del lavoro (il listino)", video="social/video/v01-listino.mp4",
       didascalia="Voce 01 del listino: Sala Ulivo, tre ore di disponibilità, 1’200 franchi. Incluso: essenze al cedro e un registro delle presenze.\n«Il cliente ha avuto esattamente quello che ha pagato.»\n" + RPRE_IG + "\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #IoLeggo #Ticino",
