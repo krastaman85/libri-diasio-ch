@@ -36,10 +36,14 @@
     var b = (S.books || {})[box.getAttribute("data-stores")] || {};
     var out = [];
     var short = box.hasAttribute("data-short"); // versione breve: solo Amazon (hero, pagina di ringraziamento)
-    if (b.amazon) out.push('<a class="btn primary" href="' + b.amazon + '" rel="noopener">Disponibile su Amazon Kindle</a>');
+    var oggi = new Date(), iso = oggi.getFullYear() + "-" + ("0" + (oggi.getMonth() + 1)).slice(-2) + "-" + ("0" + oggi.getDate()).slice(-2);
+    var prenota = !!(b.uscita && iso < b.uscita); // prima della data di uscita: prenotazione
+    if (b.amazon) out.push('<a class="btn primary" href="' + b.amazon + '" rel="noopener">' + (prenota ? "Prenota su Amazon Kindle" : "Disponibile su Amazon Kindle") + '</a>');
     if (b.altriStore) out.push('<a class="btn" href="' + b.altriStore + '" rel="noopener">Altri store</a>');
     else if (b.amazon && !short) out.push('<span class="pill">Prossimamente su StreetLib</span>');
     box.innerHTML = out.length ? out.join("") : '<span class="pill">In arrivo negli store</span>';
+    document.querySelectorAll("[data-pre]").forEach(function (el) { el.hidden = !prenota; });
+    document.querySelectorAll("[data-post]").forEach(function (el) { el.hidden = prenota; });
   });
 
   // Il Bug: messaggi della bacheca "Trasparenza attiva"

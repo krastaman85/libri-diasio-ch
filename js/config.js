@@ -4,6 +4,7 @@
    Lascia "" per mostrare "In arrivo negli store" (o "Prossimamente su StreetLib"
    se c'è già il link Amazon).
    amazon: pagina Kindle su Amazon.it (KDP)
+   uscita: (facoltativo) data di uscita AAAA-MM-GG: prima di quel giorno il pulsante dice «Prenota su Amazon Kindle», da quel giorno «Disponibile»
    altriStore: pagina StreetLib, o di uno degli store che distribuisce (Kobo, Apple Books, Google Play Libri)
    ============================================================ */
 window.SITE = {
@@ -14,7 +15,7 @@ window.SITE = {
   books: {
     bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "" },
     oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "" },
-    vuoto: { amazon: "", altriStore: "" },
+    vuoto: { amazon: "https://www.amazon.it/dp/B0HM4HFK34", altriStore: "", uscita: "2026-10-23" },
     aritmetica: { amazon: "https://www.amazon.it/dp/B0HM3Y19B6", altriStore: "" }
   }
 };
