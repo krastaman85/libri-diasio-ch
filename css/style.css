@@ -53,6 +53,10 @@ section{padding:72px 0}
 .btn:active{transform:scale(.98);background:var(--accent);color:var(--accent-ink)}
 @media (hover:hover){.btn:hover{transform:translateY(-2px);background:var(--accent);color:var(--accent-ink)}}
 .btn.primary{background:var(--accent);color:var(--accent-ink)}
+/* mini icona nei pulsanti degli store: fusa nel pulsante (segue il colore del testo, cambia con l'hover) */
+.btn .ico{width:28px;height:28px;flex:none;padding:5px;box-sizing:border-box;border-radius:50%;margin:-5px 0 -5px -9px;background:rgba(127,127,127,.18)}
+@supports (background:color-mix(in srgb,red 10%,transparent)){.btn .ico{background:color-mix(in srgb,currentColor 16%,transparent)}}
+.btn .ico-shop{border-radius:8px}
 .btn.primary:hover{filter:brightness(1.08)}
 .btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
 .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 0}
