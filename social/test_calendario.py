@@ -109,10 +109,37 @@ class RigaKindle(unittest.TestCase):
             self.assertIn("Amazon Kindle", testo, f"{pid} {piatt}: manca la riga su Amazon Kindle")
 
     def test_su_facebook_il_link_amazon_c_e(self):
+        """I post di lancio de L'Aritmetica del Consenso (id a01-a13) rimandano al sito: il link Amazon non esiste ancora."""
         da_dal = {pid for pid, _ in da_controllare()}
         for pid, piatt, testo in didascalie():
-            if piatt == "facebook" and pid in da_dal:
+            if piatt == "facebook" and pid in da_dal and not lancio_aritmetica(pid):
                 self.assertIn("amazon.it/dp/", testo, f"{pid} Facebook: manca il link Amazon")
+
+
+def lancio_aritmetica(pid):
+    return re.match(r"a\d\d-aritmetica", pid) is not None
+
+
+class LancioAritmetica(unittest.TestCase):
+    """Post di lancio de L'Aritmetica del Consenso (uscita prevista venerdi 23/10/2026)."""
+
+    def test_nominano_il_libro_e_la_data(self):
+        for pid, piatt, testo in didascalie():
+            if lancio_aritmetica(pid):
+                self.assertIn("Aritmetica del Consenso", testo, f"{pid} {piatt}: manca il titolo")
+                self.assertTrue(re.search(r"23 ottobre|Da oggi|è uscito|Mancano|Manca ", testo), f"{pid} {piatt}: manca la data o il conto")
+
+    def test_su_facebook_il_link_al_sito(self):
+        for pid, piatt, testo in didascalie():
+            if lancio_aritmetica(pid) and piatt == "facebook":
+                self.assertIn("libri.diasio.ch/aritmetica/", testo, f"{pid} Facebook: manca il link alla pagina del libro")
+
+    def test_le_immagini_esistono(self):
+        cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
+        for p in cal["post"]:
+            if lancio_aritmetica(p["id"]):
+                for f in ([p["immagine"]] if p.get("immagine") else p.get("immagini", [])):
+                    self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
 
 
 if __name__ == "__main__":
