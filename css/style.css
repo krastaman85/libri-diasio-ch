@@ -13,6 +13,7 @@ body{margin:0;-webkit-tap-highlight-color:color-mix(in srgb,var(--accent) 22%,tr
 body.theme-bug{--bg:#0b1a2b;--panel:#10233a;--line:#24405f;--accent:#f0a24a;--glow:#f0a24a;--muted:#a9b9cc}
 body.theme-oblio{--bg:#111116;--panel:#1a1a21;--line:#34343f;--accent:#c23a42;--accent-text:#ea7078;--accent-ink:#fff;--glow:#e9b7a2;--muted:#a9a19b}
 body.theme-vuoto{--bg:#17171b;--panel:#202026;--line:#3a3a42;--accent:#d8a468;--accent-text:#e4b27a;--accent-ink:#1b1206;--glow:#a31621;--muted:#aca69b;--mono:"IBM Plex Mono","Courier New",Courier,monospace}
+body.theme-aritmetica{--bg:#0b1a15;--panel:#12261f;--line:#2b4a3f;--accent:#c9a45c;--accent-text:#d9b872;--accent-ink:#1b1406;--glow:#6fb094;--muted:#a9b3ab}
 body.theme-privacy{--bg:#0b1a2b;--panel:#10233a;--line:#24405f;--accent:#f0a24a}
 @media (prefers-color-scheme:light){
   body.theme-privacy{--bg:#f6f3ee;--panel:#fff;--ink:#15212f;--muted:#5b6673;--line:#ddd6ca;--accent:#b8611a;--accent-text:#9a4f12;--accent-ink:#fff}
@@ -76,6 +77,12 @@ section{padding:72px 0}
 .theme-oblio h1 em{font-style:normal;color:var(--accent-text)}
 .theme-vuoto h1{font-family:var(--mono);font-weight:700;letter-spacing:-.01em;line-height:1.02;text-transform:uppercase;font-size:clamp(2.3rem,7.4vw,4.4rem)}
 .theme-vuoto h1 em{font-style:normal;color:#e4545f}
+.theme-aritmetica h1{font-family:var(--serif);font-weight:600;text-transform:uppercase;letter-spacing:.01em;line-height:1.04;font-size:clamp(2.1rem,6.6vw,4rem)}
+.theme-aritmetica h1 em{font-style:normal;color:var(--accent-text)}
+.theme-aritmetica .module .red{color:var(--accent-text)}
+.theme-aritmetica .grid.two>*{min-width:0}
+.theme-aritmetica .module.listino .row .p{white-space:normal;text-align:right;max-width:55%}
+.theme-aritmetica .module.listino .tot span:last-child{text-align:right}
 
 /* Fascia frasi (Il Bug) */
 .strip{border-block:1px solid var(--line);background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,0));overflow:hidden;padding:18px 0}
@@ -174,6 +181,8 @@ blockquote.epigraph{margin:0 0 22px;padding:0;font-style:italic;font-size:1.3rem
 .book-card.oblio{--accent:#c23a42;--accent-text:#ea7078}
 .book-card.vuoto{--accent:#d8a468;--accent-text:#e4b27a}
 .book-card.vuoto h3{color:#f1ece0}
+.book-card.aritmetica{--accent:#c9a45c;--accent-text:#d9b872}
+.book-card.aritmetica h3{color:#f3ead4}
 .book-card.feature{grid-column:1 / -1}
 .pill.on{border-color:var(--accent);color:var(--accent-text)}
 .book-card.oblio h3{color:#e2d9d2}
@@ -275,7 +284,7 @@ blockquote.epigraph{margin:0 0 22px;padding:0;font-style:italic;font-size:1.3rem
 .aurora i:nth-child(3){width:min(34vw,440px);aspect-ratio:1;left:34%;bottom:-46%;background:#d8a468;opacity:.20}
 .qs{display:grid;margin:26px 0 0;max-width:660px;position:relative}
 .qs blockquote{grid-area:1/1;margin:0;padding:2px 0 14px 20px;border-left:3px solid var(--qc,var(--accent));opacity:0;transform:translateY(10px);filter:blur(6px);transition:opacity .8s,transform .8s,filter .8s;pointer-events:none}
-.qs blockquote.v{--qc:#e4b27a}.qs blockquote.b{--qc:#f0a24a}.qs blockquote.o{--qc:#ea7078}
+.qs blockquote.a{--qc:#d9b872}.qs blockquote.v{--qc:#e4b27a}.qs blockquote.b{--qc:#f0a24a}.qs blockquote.o{--qc:#ea7078}
 .qs p{margin:0 0 8px;font:italic 400 clamp(1.2rem,2.6vw,1.55rem)/1.45 var(--serif);color:#f3ede2;text-wrap:balance}
 .qs cite{display:block;font:500 .78rem/1.2 var(--display);letter-spacing:.22em;text-transform:uppercase;font-style:normal;color:var(--qc)}
 .qs:not(.js) blockquote:first-child,.qs blockquote.on{opacity:1;transform:none;filter:none;pointer-events:auto}
@@ -285,7 +294,7 @@ blockquote.epigraph{margin:0 0 22px;padding:0;font-style:italic;font-size:1.3rem
 .strip.titles ul{gap:0;font-size:clamp(1.15rem,2.4vw,1.5rem);animation:none}
 .strip.titles li{display:flex;align-items:center;color:#e4b27a;padding-right:0}
 .strip.titles li::after{content:"✦";margin:0 34px;color:var(--muted);font-size:.7em;opacity:.6}
-.strip.titles li.b{color:#f0a24a}.strip.titles li.o{color:#ea7078}.strip.titles li.v{color:#e4b27a}
+.strip.titles li.a{color:#d9b872}.strip.titles li.b{color:#f0a24a}.strip.titles li.o{color:#ea7078}.strip.titles li.v{color:#e4b27a}
 .strip.titles li:nth-child(n){opacity:1}
 .site-header.scrolled{background:color-mix(in srgb,var(--bg) 94%,transparent);box-shadow:0 10px 30px -18px rgba(0,0,0,.8)}
 .progress{position:fixed;left:0;right:0;top:0;height:3px;z-index:60;pointer-events:none}
