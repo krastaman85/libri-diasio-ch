@@ -109,10 +109,10 @@ class RigaKindle(unittest.TestCase):
             self.assertIn("Amazon Kindle", testo, f"{pid} {piatt}: manca la riga su Amazon Kindle")
 
     def test_su_facebook_il_link_amazon_c_e(self):
-        """I post di lancio de L'Aritmetica del Consenso (id a01-a13) rimandano al sito: il link Amazon non esiste ancora."""
+        """Su Facebook ogni post non ancora pubblicato porta il link alla scheda Amazon."""
         da_dal = {pid for pid, _ in da_controllare()}
         for pid, piatt, testo in didascalie():
-            if piatt == "facebook" and pid in da_dal and not lancio_aritmetica(pid):
+            if piatt == "facebook" and pid in da_dal:
                 self.assertIn("amazon.it/dp/", testo, f"{pid} Facebook: manca il link Amazon")
 
 
@@ -121,18 +121,20 @@ def lancio_aritmetica(pid):
 
 
 class LancioAritmetica(unittest.TestCase):
-    """Post di lancio de L'Aritmetica del Consenso (uscita anticipata: online entro pochi giorni dal 6/10/2026; post «è uscito» solo con il libro online)."""
+    """Post «è uscito» de L'Aritmetica del Consenso (online su Amazon Kindle dal 6/10/2026, ASIN B0HM3Y19B6): niente conto alla rovescia."""
 
     def test_nominano_il_libro_e_la_data(self):
         for pid, piatt, testo in didascalie():
             if lancio_aritmetica(pid):
                 self.assertIn("Aritmetica del Consenso", testo, f"{pid} {piatt}: manca il titolo")
-                self.assertTrue(re.search(r"Da oggi|è uscito|in arrivo|Mancano|Manca ", testo), f"{pid} {piatt}: manca la data o il conto")
+                self.assertTrue(re.search(r"è uscito", testo, re.I), f"{pid} {piatt}: manca «è uscito»")
+                self.assertFalse(re.search(r"Mancano|Manca |in arrivo|Esce il", testo, re.I), f"{pid} {piatt}: resta un conto alla rovescia o un «in arrivo»")
 
     def test_su_facebook_il_link_al_sito(self):
         for pid, piatt, testo in didascalie():
             if lancio_aritmetica(pid) and piatt == "facebook":
                 self.assertIn("libri.diasio.ch/aritmetica/", testo, f"{pid} Facebook: manca il link alla pagina del libro")
+                self.assertIn("amazon.it/dp/B0HM3Y19B6", testo, f"{pid} Facebook: manca il link Amazon dell'Aritmetica")
 
     def test_le_immagini_esistono(self):
         cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))

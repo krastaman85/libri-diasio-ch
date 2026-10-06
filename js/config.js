@@ -15,6 +15,6 @@ window.SITE = {
     bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "" },
     oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "" },
     vuoto: { amazon: "", altriStore: "" },
-    aritmetica: { amazon: "", altriStore: "" }
+    aritmetica: { amazon: "https://www.amazon.it/dp/B0HM3Y19B6", altriStore: "" }
   }
 };
