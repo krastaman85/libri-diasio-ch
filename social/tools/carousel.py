@@ -130,7 +130,7 @@ def cover_img(book):
 
 
 def foot(book, line=None):
-    line = line or ("In uscita il 23 ottobre · libri.diasio.ch" if book == "aritmetica" else "Puntata 1 gratis · libri.diasio.ch")
+    line = line or ("In arrivo su Amazon Kindle · libri.diasio.ch" if book == "aritmetica" else "Puntata 1 gratis · libri.diasio.ch")
     return (f'<div class="foot"><img src="{cover_img(book)}"><div><div class="t">{TITLES[book]}</div>'
             f'<div class="u">{html.escape(line)}</div><div class="h">@d.iasio.libri</div></div></div>')
 
