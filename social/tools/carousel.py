@@ -14,9 +14,10 @@ HERE = Path(__file__).resolve().parent
 SOCIAL = HERE.parent
 FONTS = SOCIAL / "reels-src" / "assets" / "fonts"
 COVERS = {"bug": SOCIAL / "reels-src/assets/img/cover-bug.jpg", "oblio": SOCIAL / "reels-src/assets/img/cover-oblio.jpg",
-          "aritmetica": SOCIAL / "reels-src/assets/img/cover-aritmetica.jpg"}
-TITLES = {"bug": "Il Bug della Trasparenza", "oblio": "L’Economia dell’Oblio", "aritmetica": "L’Aritmetica del Consenso"}
-GENRES = {"bug": "Noir sociale · 8 puntate", "oblio": "Thriller psicologico · 6 puntate", "aritmetica": "Noir dinastico · 6 puntate"}
+          "aritmetica": SOCIAL / "reels-src/assets/img/cover-aritmetica.jpg",
+          "vuoto": SOCIAL / "reels-src/assets/img/cover-vuoto.jpg"}
+TITLES = {"bug": "Il Bug della Trasparenza", "oblio": "L’Economia dell’Oblio", "aritmetica": "L’Aritmetica del Consenso", "vuoto": "Vuoto a rendere"}
+GENRES = {"bug": "Noir sociale · 8 puntate", "oblio": "Thriller psicologico · 6 puntate", "aritmetica": "Noir dinastico · 6 puntate", "vuoto": "Romanzo satirico · 10 voci"}
 
 
 def b64(p, mime):
@@ -33,6 +34,7 @@ def hero_src(book):
 
 def fontface():
     d = {"Oswald": [(500, "Oswald-500.woff2", "normal"), (700, "Oswald-700.woff2", "normal")],
+         "IBM Plex Mono": [(400, "IBMPlexMono-400.woff2", "normal"), (700, "IBMPlexMono-700.woff2", "normal")],
          "Source Serif 4": [(400, "SourceSerif4-400.woff2", "normal"), (400, "SourceSerif4-400i.woff2", "italic"), (600, "SourceSerif4-600.woff2", "normal")]}
     out = []
     for fam, items in d.items():
@@ -115,6 +117,18 @@ body.green{--bg:#0b1a15;--ink:#f1ead7;--mut:#a9b3ab;--line:#2b4a3f;--amb:#c9a45c
 .green .shade{background:linear-gradient(180deg,rgba(11,26,21,.62) 0%,rgba(11,26,21,0) 20%,rgba(11,26,21,0) 38%,rgba(11,26,21,.80) 66%,rgba(11,26,21,.97) 100%)}
 .green .doc{background:#08130f}
 .green .kb{box-shadow:0 0 60px rgba(201,164,92,.25)}.green .btn{box-shadow:0 0 60px rgba(201,164,92,.35)}
+body.vuoto{--bg:#17171b;--ink:#efe9df;--mut:#aca69b;--line:#3a3a42;--amb:#d8a468;--dark:#1b1206;--red:#e4545f}
+.vuoto .glow{background:#5a0e16;filter:blur(170px)}
+.vuoto .brand,.vuoto .kick,.vuoto .big,.vuoto .who,.vuoto .swipe,.vuoto .pg,.vuoto .stitle,.vuoto .num,.vuoto .rtitle,.vuoto .rsub,.vuoto .btn,.vuoto .kb span,.vuoto .kb i,.vuoto .foot .t,.vuoto .row span:last-child,.vuoto .tab{font-family:'IBM Plex Mono',monospace}
+.vuoto .brand{font-weight:700;letter-spacing:.2em;font-size:36px}.vuoto .brand i,.vuoto .rule{color:var(--red);background:var(--red)}.vuoto .brand i{background:none}
+.vuoto .big{font-size:96px;line-height:1.08;letter-spacing:-.01em}.vuoto .big b{color:var(--red)}
+.vuoto .stitle{font-size:62px}.vuoto .num{color:var(--red);font-size:150px}.vuoto .kick{font-size:26px;letter-spacing:.18em}
+.vuoto .q b,.vuoto .sub b,.vuoto .stext b{color:var(--red);font-weight:400}.vuoto .stext b{font-weight:600}
+.vuoto .who:before{background:var(--red)}.vuoto .row{border-bottom-color:var(--line)}
+.vuoto .btn{font-size:40px;letter-spacing:.02em;box-shadow:0 0 60px rgba(228,84,95,.30)}.vuoto .kb{box-shadow:0 0 60px rgba(228,84,95,.22)}
+.vuoto .doc{background:#202026;border-radius:0}.vuoto .doc b{color:var(--red);font-weight:700}
+.vuoto .foot img{border-color:var(--line)}
+.vuoto .shade{background:linear-gradient(180deg,rgba(23,23,27,.62) 0%,rgba(23,23,27,0) 20%,rgba(23,23,27,0) 38%,rgba(23,23,27,.80) 66%,rgba(23,23,27,.97) 100%)}
 .doc{background:#0d1522;border:2px solid var(--line);border-radius:18px;padding:44px 48px}
 .doc p{font:400 33px/1.5 'DejaVu Sans Mono',monospace;color:#d6dde8;margin-bottom:26px}.doc p:last-child{margin-bottom:0}.doc b{color:var(--amb);font-weight:400}
 """
@@ -130,7 +144,7 @@ def cover_img(book):
 
 
 def foot(book, line=None):
-    line = line or ("In arrivo su Amazon Kindle · libri.diasio.ch" if book == "aritmetica" else "Puntata 1 gratis · libri.diasio.ch")
+    line = line or "Puntata 1 gratis · libri.diasio.ch"
     return (f'<div class="foot"><img src="{cover_img(book)}"><div><div class="t">{TITLES[book]}</div>'
             f'<div class="u">{html.escape(line)}</div><div class="h">@d.iasio.libri</div></div></div>')
 
@@ -221,7 +235,7 @@ def slide_html(s, i, n, book, theme, story=False):
         if len(books) == 2:
             body = body.replace('width:460px', 'width:400px')
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{fontface()}{CSS}</style></head>'
-            f'<body class="{"amber" if theme == "amber" else "green" if theme == "green" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}{" pho" if k == "photo" else ""}{" kd" if s.get("kindle") else ""}"><div class="glow"></div>{pre}{head}{body}{foo}{swipe}</body></html>')
+            f'<body class="{"amber" if theme == "amber" else "green" if theme == "green" else "vuoto" if theme == "vuoto" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}{" pho" if k == "photo" else ""}{" kd" if s.get("kindle") else ""}"><div class="glow"></div>{pre}{head}{body}{foo}{swipe}</body></html>')
 
 
 def load():
@@ -238,6 +252,11 @@ def load():
         ns3 = {"__file__": str(extra2)}
         exec(extra2.read_text(encoding="utf-8"), ns3)
         items += ns3["ITEMS"]
+    extra3 = HERE / "vuoto_lancio.py"           # post di lancio di Vuoto a rendere (prenotazione, uscita 23/10/2026)
+    if extra3.exists():
+        ns4 = {"__file__": str(extra3)}
+        exec(extra3.read_text(encoding="utf-8"), ns4)
+        items += ns4["ITEMS"]
     return items
 
 
@@ -286,7 +305,13 @@ def load_testi():
         return []
     ns3 = {"__file__": str(extra2)}
     exec(extra2.read_text(encoding="utf-8"), ns3)
-    return ns3.get("TESTI", [])
+    testi = list(ns3.get("TESTI", []))
+    extra3 = HERE / "vuoto_lancio.py"
+    if extra3.exists():
+        ns4 = {"__file__": str(extra3)}
+        exec(extra3.read_text(encoding="utf-8"), ns4)
+        testi += ns4.get("TESTI", [])
+    return testi
 
 
 def add_calendar(items):
@@ -298,6 +323,14 @@ def add_calendar(items):
             cal["post"].append({"id": pid, "tipo": "testo", "piattaforme": ["facebook"], "quando": when, "segmento": seg,
                                 "didascalia": text, "link": link})
             print("+", pid, when)
+    extra3 = HERE / "vuoto_lancio.py"
+    if extra3.exists():
+        ns4 = {"__file__": str(extra3)}
+        exec(extra3.read_text(encoding="utf-8"), ns4)
+        for e in ns4.get("REELS", []):
+            if e["id"] not in have:
+                cal["post"].append(e)
+                print("+", e["id"], e["quando"])
     for it in items:
         if it["id"] in have:
             continue
