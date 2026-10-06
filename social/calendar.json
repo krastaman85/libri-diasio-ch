@@ -132,13 +132,13 @@
       "miniatura_ms": 5500
     },
     {
-      "id": "03-bug-cognato",
-      "quando": "2026-10-08T12:33",
-      "segmento": "Tech/privacy + giornalismo d’inchiesta",
-      "immagine": "social/img/03-bug-cognato.jpg",
-      "didascalia": "Trasparenza totale: bello come slogan, un incubo quando tocca a te.\nUn bug nell’app del condominio e il presidente dell’assemblea si ritrova a dichiarare, senza volerlo, quello che stava per nascondere. Tutti i telefoni della sala lo leggono nello stesso momento.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nOra su Amazon Kindle. Link in bio.\n\n#RomanzoNoir #Ironia #LibriDaLeggere #ScrittoriItaliani #LeggereInSvizzera",
-      "alt": "Citazione su fondo scuro: «Il preventivo B è di mio cognato. Se lo dico gli altri capiscono e mi tolgono la presidenza.» Il Bug della Trasparenza.",
-      "didascalia_fb": "Trasparenza totale: bello come slogan, un incubo quando tocca a te.\nUn bug nell’app del condominio e il presidente dell’assemblea si ritrova a dichiarare, senza volerlo, quello che stava per nascondere. Tutti i telefoni della sala lo leggono nello stesso momento.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#RomanzoNoir #ThrillerItaliano #LetteraturaNoir #Satira #Ironia #BookstagramItalia #ConsigliDiLettura #IoLeggo #LeggereInSvizzera #SvizzeraItaliana"
+      "id": "a01-aritmetica-annuncio",
+      "quando": "2026-10-08T12:24",
+      "segmento": "Annuncio · Work in progress (grafica)",
+      "immagine": "social/img/nuovi/a01-aritmetica-annuncio.jpg",
+      "alt": "Copertina de L’Aritmetica del Consenso (le mani di una vecchia sbucciano un mandarino su un piatto d’argento), con la frase «Somiglia a qualcuno che ho pagato.» e il pulsante «In uscita il 23 ottobre». Work in progress.",
+      "didascalia": "Work in progress. Il prossimo romanzo esce il 23 ottobre.\nUn ghostwriter, una famiglia che sta per diventare legalmente eterna e una vecchia che ha cominciato a ricordare tutto.\n«Somiglia a qualcuno che ho pagato.»\nL’Aritmetica del Consenso, noir dinastico di D. Iasio. Segui il conto alla rovescia.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#RomanzoNoir #GialloItaliano #BookstagramItalia #ScrittoriEmergenti #CulturaTicino",
+      "didascalia_fb": "Work in progress. Il prossimo romanzo esce il 23 ottobre.\nUn ghostwriter, una famiglia che sta per diventare legalmente eterna e una vecchia che ha cominciato a ricordare tutto.\n«Somiglia a qualcuno che ho pagato.»\nL’Aritmetica del Consenso, noir dinastico di D. Iasio. Segui il conto alla rovescia.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#AltaTensione #LetteraturaNoir #GialloItaliano #RomanzoNoir #BookstagramItalia #LibriDaLeggere #IoLeggo #CulturaTicino #ScrittoriSvizzeri #BookstagramSvizzera"
     },
     {
       "id": "n03-oblio-kindle",
@@ -219,13 +219,19 @@
       "didascalia_fb": "Alle undici di sera, dopo la prima assemblea, Nadia apre un file e scrive quello che ha visto. Lo chiama meridiana_note.txt «per pura mancanza di fantasia».\nQueste sono le sue note, parola per parola. Scorri.\nSalvalo, se anche tu tieni un file così.\n\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nPuntata 1 gratis, PDF o EPUB: https://libri.diasio.ch/bug/\n\n#ThrillerItaliano #RomanzoNoir #AltaTensione #LetteraturaNoir #BookstagramItalia #LibriDaLeggere #IoLeggo #LeggereInSvizzera #ScrittoriSvizzeri #SvizzeraItaliana"
     },
     {
-      "id": "04-oblio-domanda",
-      "quando": "2026-10-11T20:12",
-      "segmento": "Community di lettori (commenti) + psicologia/memoria",
-      "immagine": "social/img/04-oblio-domanda.jpg",
-      "didascalia": "Domanda della domenica sera: se qualcuno ti pagasse per togliere un ricordo dalla testa, quale sceglieresti? E lo faresti davvero?\nRispondi nei commenti, leggo tutto. Nel romanzo la scelta non è mai gratuita.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\n\n#LibriThriller #ThrillerItaliano #ConsigliDiLettura #ScrittoriItaliani #CulturaTicino",
-      "alt": "Grafica scura con la domanda: Se potessi vendere un ricordo, quale sarebbe? L’Economia dell’Oblio.",
-      "didascalia_fb": "Domanda della domenica sera: se qualcuno ti pagasse per togliere un ricordo dalla testa, quale sceglieresti? E lo faresti davvero?\nRispondi nei commenti, leggo tutto. Nel romanzo la scelta non è mai gratuita.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#LibriThriller #ThrillerPsicologico #LetteraturaNoir #ThrillerItaliano #LibriDaLeggere #BookstagramItalia #ScrittoriItaliani #BookstagramSvizzera #SvizzeraItaliana #Ticino"
+      "id": "a02-aritmetica-quaderno",
+      "quando": "2026-10-11T20:23",
+      "segmento": "Accenni · Il quaderno e il registratore (carosello)",
+      "tipo": "carosello",
+      "immagini": [
+        "social/img/nuovi/a02-aritmetica-quaderno-01.jpg",
+        "social/img/nuovi/a02-aritmetica-quaderno-02.jpg",
+        "social/img/nuovi/a02-aritmetica-quaderno-03.jpg",
+        "social/img/nuovi/a02-aritmetica-quaderno-04.jpg"
+      ],
+      "alt": "Carosello di quattro slide su fondo verde bottiglia: «Una penna. Un registratore.»; la frase «La penna scrive «tempo: sereno». Il registratore scrive tutto il resto.»; la frase sulla vita come partita doppia; «23 ottobre, mancano 12 giorni». L’Aritmetica del Consenso.",
+      "didascalia": "La penna scrive «tempo: sereno». Il registratore scrive tutto il resto.\nPer la signora la vita è una partita doppia: quello che entra e quello che si è dovuto dare perché entrasse.\nL’Aritmetica del Consenso, noir dinastico in uscita il 23 ottobre.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#RomanzoNoir #GialloItaliano #BookstagramItalia #ScrittoriItaliani #SvizzeraItaliana",
+      "didascalia_fb": "La penna scrive «tempo: sereno». Il registratore scrive tutto il resto.\nPer la signora la vita è una partita doppia: quello che entra e quello che si è dovuto dare perché entrasse.\nL’Aritmetica del Consenso, noir dinastico in uscita il 23 ottobre.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#ThrillerItaliano #LetteraturaNoir #GialloItaliano #NoirItaliano #LibriDaLeggere #ConsigliDiLettura #EditoriaItaliana #ScrittoriSvizzeri #LeggereInSvizzera #Ticino"
     },
     {
       "id": "n07-bug-fa-parte-del-lavoro",
@@ -260,22 +266,22 @@
       "didascalia_fb": "Come si passa dalla Puntata 1 gratis al romanzo intero, in tre passi. Scorri.\n\nIl Bug della Trasparenza è un noir sociale in otto puntate. Il romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#RomanzoNoir #AltaTensione #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #BookstagramSvizzera #ScrittoriSvizzeri #Ticino"
     },
     {
-      "id": "05-oblio-costo",
-      "quando": "2026-10-13T19:55",
-      "segmento": "Mondo del lavoro e delle aziende",
-      "immagine": "social/img/05-oblio-costo.jpg",
-      "didascalia": "La frase preferita di un cliente che vuole «tagliare» il lutto del padre prima dell’assemblea dei soci.\nUna satira nera sul mondo in cui tutto ha un prezzo, anche quello che non dovrebbe averlo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nOra su Amazon Kindle. Link in bio.\n\n#ThrillerItaliano #Satira #IoLeggo #ScrittoriItaliani #Ticino",
-      "alt": "Citazione su fondo scuro: «Il dolore è un costo. E i costi si tagliano.» L’Economia dell’Oblio.",
-      "didascalia_fb": "La frase preferita di un cliente che vuole «tagliare» il lutto del padre prima dell’assemblea dei soci.\nUna satira nera sul mondo in cui tutto ha un prezzo, anche quello che non dovrebbe averlo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerItaliano #NoirItaliano #ThrillerPsicologico #Satira #CommediaNera #BookstagramItalia #LibriDaLeggere #ScrittoriItaliani #CulturaTicino #SvizzeraItaliana"
+      "id": "a03-aritmetica-direttori",
+      "quando": "2026-10-13T19:38",
+      "segmento": "Citazione ironica · Conto alla rovescia (grafica)",
+      "immagine": "social/img/nuovi/a03-aritmetica-direttori.jpg",
+      "alt": "Frase su fondo verde bottiglia: «I direttori capiscono sempre, ragioniere, è per questo che li scelgono.» L’Aritmetica del Consenso, Puntata 1. Fascia: «Mancano 10 giorni».",
+      "didascalia": "«I direttori capiscono sempre, ragioniere, è per questo che li scelgono.»\nMancano 10 giorni a L’Aritmetica del Consenso, noir dinastico di D. Iasio.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#RomanzoNoir #Ironia #BookstagramItalia #IoLeggo #CulturaTicino",
+      "didascalia_fb": "«I direttori capiscono sempre, ragioniere, è per questo che li scelgono.»\nMancano 10 giorni a L’Aritmetica del Consenso, noir dinastico di D. Iasio.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#NoirItaliano #LetteraturaNoir #ThrillerItaliano #CommediaNera #UmorismoNero #LibriDaLeggere #ConsigliDiLettura #EditoriaItaliana #ScrittoriSvizzeri #BookstagramSvizzera"
     },
     {
-      "id": "n09-bug-alma",
-      "quando": "2026-10-14T12:12",
-      "segmento": "Vita di condominio + lettori noir",
-      "immagine": "social/img/nuovi/n09-bug-alma.jpg",
-      "alt": "Citazione su fondo scuro: «Scusate, ma è successo anche a me ieri sera. Il telefono che si accende da solo, tipo in ascolto. Pensavo fosse un virus.» Alma Ferretti, all’assemblea. Il Bug della Trasparenza.",
-      "didascalia": "Il punto sei dell’ordine del giorno non arriva mai: una vicina alza la mano e dice una cosa che cambia l’assemblea.\nÈ la scena in cui il bug smette di essere un problema di Cesare e diventa di tutto il palazzo. Dal Bug della Trasparenza, Puntata 1.\nDisponibile su Amazon Kindle: link in bio, dove c’è anche la Puntata 1 gratis.\n\n#RomanzoNoir #AltaTensione #ConsigliDiLettura #EditoriaItaliana #Ticino",
-      "didascalia_fb": "Il punto sei dell’ordine del giorno non arriva mai: una vicina alza la mano e dice una cosa che cambia l’assemblea.\nÈ la scena in cui il bug smette di essere un problema di Cesare e diventa di tutto il palazzo. Dal Bug della Trasparenza, Puntata 1.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#GialloItaliano #RomanzoNoir #NoirItaliano #ThrillerItaliano #BookstagramItalia #ConsigliDiLettura #IoLeggo #SvizzeraItaliana #LeggereInSvizzera #Ticino"
+      "id": "a04-aritmetica-silenzio",
+      "quando": "2026-10-14T12:31",
+      "segmento": "Domanda ai lettori · Conto alla rovescia (grafica)",
+      "immagine": "social/img/nuovi/a04-aritmetica-silenzio.jpg",
+      "alt": "Frase su fondo verde bottiglia: «Il compenso era indecente. Lo capisci da come nessuno lo nomina.» Sotto, la domanda «E tu: quanto costa il tuo silenzio?». Fascia: «Mancano 9 giorni».",
+      "didascalia": "«Il compenso era indecente. Lo capisci da come nessuno lo nomina.»\nE tu: quanto costa il tuo silenzio? Rispondi nei commenti.\nL’Aritmetica del Consenso esce il 23 ottobre.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#RomanzoNoir #AltaTensione #LibriDaLeggere #IoLeggo #SvizzeraItaliana",
+      "didascalia_fb": "«Il compenso era indecente. Lo capisci da come nessuno lo nomina.»\nE tu: quanto costa il tuo silenzio? Rispondi nei commenti.\nL’Aritmetica del Consenso esce il 23 ottobre.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#ThrillerItaliano #NoirItaliano #LetteraturaNoir #GialloItaliano #LibriDaLeggere #BookstagramItalia #IoLeggo #ScrittoriSvizzeri #BookstagramSvizzera #CulturaTicino"
     },
     {
       "id": "r06-oblio-igiene",
@@ -297,13 +303,13 @@
       "didascalia_fb": "Nessuno legge le note di rilascio. Nessuno legge il regolamento. Ma tutti approvano per acclamazione.\nÈ così che comincia Il Bug della Trasparenza: con una notifica che non doveva essere un problema.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#ThrillerItaliano #LetteraturaNoir #NoirItaliano #Ironia #Satira #ConsigliDiLettura #BookstagramItalia #IoLeggo #Ticino #ScrittoriSvizzeri"
     },
     {
-      "id": "n10-oblio-dora",
-      "quando": "2026-10-15T19:41",
-      "segmento": "Lettori thriller + voce narrante",
-      "immagine": "social/img/nuovi/n10-oblio-dora.jpg",
-      "alt": "Citazione su fondo scuro con fascia ambra «Ora su Amazon Kindle»: «Trent’anni fa, se stavi male, andavi da uno psicologo che ti faceva parlare per cinquanta minuti e ti mandava via sul più bello, e ci tornavi per anni, e alla fine forse stavi meglio, forse avevi solo imparato a raccontartela.» Dora Calvi. L’Economia dell’Oblio.",
-      "didascalia": "Com’era curarsi, prima. Poi qualcuno ha fatto due conti: perché curare un dolore quando si può estrarre?\nDora Calvi, tecnica estrattiva, racconta il mondo de L’Economia dell’Oblio, thriller psicologico in sei puntate.\nSu Amazon Kindle trovi L’Economia dell’Oblio completo (link in bio). La Puntata 1 resta gratis, in PDF o EPUB.\n\n#LibriThriller #LetteraturaNoir #BookstagramItalia #EditoriaItaliana #SvizzeraItaliana",
-      "didascalia_fb": "Com’era curarsi, prima. Poi qualcuno ha fatto due conti: perché curare un dolore quando si può estrarre?\nDora Calvi, tecnica estrattiva, racconta il mondo de L’Economia dell’Oblio, thriller psicologico in sei puntate.\n\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPer cominciare dalla Puntata 1 gratis (PDF o EPUB): https://libri.diasio.ch/oblio/\n\n#LetteraturaNoir #ThrillerPsicologico #AltaTensione #ThrillerItaliano #LibriDaLeggere #ConsigliDiLettura #ScrittoriEmergenti #LeggereInSvizzera #ScrittoriSvizzeri #SvizzeraItaliana"
+      "id": "a05-aritmetica-dopo",
+      "quando": "2026-10-15T19:26",
+      "segmento": "Citazione · Conto alla rovescia (grafica)",
+      "immagine": "social/img/nuovi/a05-aritmetica-dopo.jpg",
+      "alt": "Frase su fondo verde bottiglia: «Ma noi lavoriamo sempre dopo.» L’Aritmetica del Consenso, Puntata 1. Fascia: «Mancano 8 giorni».",
+      "didascalia": "«Ma noi lavoriamo sempre dopo.»\nMancano 8 giorni: L’Aritmetica del Consenso, di D. Iasio, esce il 23 ottobre.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#NoirItaliano #GialloItaliano #LibriDaLeggere #ScrittoriEmergenti #LeggereInSvizzera",
+      "didascalia_fb": "«Ma noi lavoriamo sempre dopo.»\nMancano 8 giorni: L’Aritmetica del Consenso, di D. Iasio, esce il 23 ottobre.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#GialloItaliano #AltaTensione #ThrillerItaliano #RomanzoNoir #BookstagramItalia #LibriDaLeggere #EditoriaItaliana #CulturaTicino #ScrittoriSvizzeri #LeggereInSvizzera"
     },
     {
       "id": "n11-bug-presidente",
@@ -324,21 +330,13 @@
       "didascalia_fb": "Dopo ogni estrazione, undici minuti nella Sala Prato: un prato su uno schermo e, ogni tanto, un cane che lo attraversa. Il cane l’ha scelto un comitato.\nL’Economia dell’Oblio ha un’idea molto precisa di cosa sia il benessere.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/oblio/\n\n#LetteraturaNoir #AltaTensione #ThrillerPsicologico #CommediaNera #Satira #LibriDaLeggere #BookstagramItalia #ScrittoriEmergenti #CulturaTicino #SvizzeraItaliana"
     },
     {
-      "id": "n13-oblio-ricordo-non-suo",
-      "quando": "2026-10-17T12:21",
-      "segmento": "Fantascienza/distopia + lettori thriller (carosello)",
-      "tipo": "carosello",
-      "immagini": [
-        "social/img/nuovi/n13-oblio-ricordo-non-suo-01.jpg",
-        "social/img/nuovi/n13-oblio-ricordo-non-suo-02.jpg",
-        "social/img/nuovi/n13-oblio-ricordo-non-suo-03.jpg",
-        "social/img/nuovi/n13-oblio-ricordo-non-suo-04.jpg",
-        "social/img/nuovi/n13-oblio-ricordo-non-suo-05.jpg",
-        "social/img/nuovi/n13-oblio-ricordo-non-suo-06.jpg"
-      ],
-      "alt": "Carosello di sei slide su fondo scuro: un ricordo che Dora Calvi non riconosce come suo (shampoo alla pesca, capelli bagnati, una persona sotto di lei, una suoneria da bambini, una risata) e l’invito a leggere il romanzo su Amazon Kindle. L’Economia dell’Oblio.",
-      "didascalia": "Dopo un’estrazione, a Dora Calvi di solito resta addosso una briciola: un sapore, un jingle. Stavolta restano uno shampoo alla pesca, due mani sui polsi e una risata che è la sua.\nScorri: una scena della Puntata 1, senza spiegazioni.\nSu Amazon Kindle trovi L’Economia dell’Oblio completo (link in bio). La Puntata 1 resta gratis, in PDF o EPUB.\n\n#ThrillerPsicologico #AltaTensione #ConsigliDiLettura #EditoriaItaliana #CulturaTicino",
-      "didascalia_fb": "Dopo un’estrazione, a Dora Calvi di solito resta addosso una briciola: un sapore, un jingle. Stavolta restano uno shampoo alla pesca, due mani sui polsi e una risata che è la sua.\nScorri: una scena della Puntata 1, senza spiegazioni.\n\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPuntata 1 gratis, PDF o EPUB: https://libri.diasio.ch/oblio/\n\n#ThrillerItaliano #LibriThriller #AltaTensione #ThrillerPsicologico #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #CulturaTicino #LeggereInSvizzera #Ticino"
+      "id": "a06-aritmetica-posta",
+      "quando": "2026-10-17T12:38",
+      "segmento": "La «posta» · Conto alla rovescia (grafica in stile registro)",
+      "immagine": "social/img/nuovi/a06-aritmetica-posta.jpg",
+      "alt": "Finto registro su fondo verde bottiglia, «Registratore · acceso»: «Dodici milioni di lire, in contanti, nel settantaquattro. Per il sottosegretario. Non per lui: per la sua segretaria, che era quella che decideva.» Fascia: «Mancano 6 giorni».",
+      "didascalia": "Dodici milioni di lire, in contanti, nel settantaquattro. Per il sottosegretario. Non per lui: per la sua segretaria, che era quella che decideva.\nÈ la «posta» che la signora detta e il registratore conserva. Mancano 6 giorni a L’Aritmetica del Consenso.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#NoirItaliano #AltaTensione #LibriDaLeggere #ScrittoriEmergenti #SvizzeraItaliana",
+      "didascalia_fb": "Dodici milioni di lire, in contanti, nel settantaquattro. Per il sottosegretario. Non per lui: per la sua segretaria, che era quella che decideva.\nÈ la «posta» che la signora detta e il registratore conserva. Mancano 6 giorni a L’Aritmetica del Consenso.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#AltaTensione #GialloItaliano #LetteraturaNoir #ThrillerItaliano #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #CulturaTicino #LeggereInSvizzera #ScrittoriSvizzeri"
     },
     {
       "id": "n14-bug-kindle",
@@ -359,13 +357,13 @@
       "didascalia_fb": "Otto milioni per lo spot di un’azienda che toglie il dolore. E una comparsa scartata perché troppo poco sollevata.\nCosì Dora Calvi, tecnica estrattiva, ci presenta il mondo de L’Economia dell’Oblio. Puntata 1.\n\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPuntata 1 gratis, PDF o EPUB: https://libri.diasio.ch/oblio/\n\n#AltaTensione #LetteraturaNoir #ThrillerPsicologico #Satira #Ironia #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #SvizzeraItaliana #Ticino"
     },
     {
-      "id": "07-bug-cta",
-      "quando": "2026-10-18T20:09",
-      "segmento": "Lettori digitali (ebook)",
-      "immagine": "social/img/07-bug-cta.jpg",
-      "didascalia": "Il Bug della Trasparenza, noir sociale di D. Iasio, è ora su Amazon Kindle.\nUn condominio d’élite, un’app che non dovrebbe sapere quello che sa, una giornalista che ha un motivo per essere lì.\nIl link è in bio.\n\n#RomanzoNoir #LetteraturaNoir #IoLeggo #EditoriaItaliana #Ticino",
-      "alt": "Grafica scura con la scritta: Ora su Amazon Kindle. Il Bug della Trasparenza, il noir sociale di D. Iasio. Link in bio.",
-      "didascalia_fb": "Il Bug della Trasparenza, noir sociale di D. Iasio, è ora su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nUn condominio d’élite, un’app che non dovrebbe sapere quello che sa, una giornalista che ha un motivo per essere lì.\nIl sito: https://libri.diasio.ch/\n\n#RomanzoNoir #GialloItaliano #LetteraturaNoir #ThrillerItaliano #IoLeggo #ConsigliDiLettura #ScrittoriEmergenti #LeggereInSvizzera #CulturaTicino #BookstagramSvizzera"
+      "id": "a07-aritmetica-ci-penso",
+      "quando": "2026-10-18T20:36",
+      "segmento": "Domanda ai lettori (tono ironico) · Conto alla rovescia (grafica)",
+      "immagine": "social/img/nuovi/a07-aritmetica-ci-penso.jpg",
+      "alt": "Frase su fondo verde bottiglia: «Brindare a un «ci penso» non è una cosa che si faccia, nelle famiglie normali.» Sotto, la domanda «E tu, quando hai detto «ci penso» per non dire no?». Fascia: «Mancano 5 giorni».",
+      "didascalia": "«Brindare a un «ci penso» non è una cosa che si faccia, nelle famiglie normali.»\nE tu, quando hai detto «ci penso» per non dire no? Rispondi nei commenti.\nMancano 5 giorni a L’Aritmetica del Consenso.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#RomanzoNoir #Ironia #BookstagramItalia #IoLeggo #SvizzeraItaliana",
+      "didascalia_fb": "«Brindare a un «ci penso» non è una cosa che si faccia, nelle famiglie normali.»\nE tu, quando hai detto «ci penso» per non dire no? Rispondi nei commenti.\nMancano 5 giorni a L’Aritmetica del Consenso.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#GialloItaliano #NoirItaliano #RomanzoNoir #Satira #UmorismoNero #BookstagramItalia #LibriDaLeggere #ScrittoriItaliani #LeggereInSvizzera #Ticino"
     },
     {
       "id": "n16-bug-bettarini",
@@ -377,11 +375,11 @@
       "didascalia_fb": "Ogni assemblea ha la sua prima fila. Nel Bug della Trasparenza è questa: annuisce insieme, senza aver letto niente.\nSe riconosci i tuoi vicini, scrivilo nei commenti.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#AltaTensione #LetteraturaNoir #RomanzoNoir #UmorismoNero #CommediaNera #ConsigliDiLettura #BookstagramItalia #ScrittoriEmergenti #LeggereInSvizzera #BookstagramSvizzera"
     },
     {
-      "id": "s03-oblio-cugino",
+      "id": "a08-aritmetica-storia",
       "tipo": "storia",
-      "quando": "2026-10-19T18:28",
-      "segmento": "Storia · Satira aziendale",
-      "immagine": "social/img/story/s03-oblio-cugino.jpg"
+      "quando": "2026-10-19T18:44",
+      "segmento": "Storia · Conto alla rovescia",
+      "immagine": "social/img/story/a08-aritmetica-storia.jpg"
     },
     {
       "id": "n17-bug-chiavi",
@@ -393,13 +391,19 @@
       "didascalia_fb": "Il portiere di Residenza Meridiana non dice mai tutto. Questa è la sua risposta alla domanda sulle chiavi giuste, nell’atrio, dopo l’assemblea.\nDal Bug della Trasparenza, Puntata 1.\nImmagine creata con l’IA, la frase è dal romanzo.\n\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nPuntata 1 gratis, PDF o EPUB: https://libri.diasio.ch/bug/\n\n#NoirItaliano #AltaTensione #ThrillerItaliano #GialloItaliano #ConsigliDiLettura #BookstagramItalia #ScrittoriItaliani #ScrittoriSvizzeri #BookstagramSvizzera #SvizzeraItaliana"
     },
     {
-      "id": "08-oblio-levia",
-      "quando": "2026-10-20T19:51",
-      "segmento": "Tech/IA + pubblicità e brand",
-      "immagine": "social/img/08-oblio-levia.jpg",
-      "didascalia": "Levia è il nome dell’azienda che, nel romanzo, ti toglie il dolore dalla testa. Lo slogan è tutto: «Il peso non è tuo».\nMa il peso non sparisce mai davvero. Qualcuno lo porta. Qualcuno lo compra.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\n\n#LibriThriller #Satira #ConsigliDiLettura #ScrittoriItaliani #ScrittoriSvizzeri",
-      "alt": "Grafica ambra con la scritta Levia. Il peso non è tuo. Slogan dell’azienda immaginaria de L’Economia dell’Oblio.",
-      "didascalia_fb": "Levia è il nome dell’azienda che, nel romanzo, ti toglie il dolore dalla testa. Lo slogan è tutto: «Il peso non è tuo».\nMa il peso non sparisce mai davvero. Qualcuno lo porta. Qualcuno lo compra.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerItaliano #NoirItaliano #LetteraturaNoir #Ironia #CommediaNera #LibriDaLeggere #ConsigliDiLettura #IoLeggo #LeggereInSvizzera #ScrittoriSvizzeri"
+      "id": "a09-aritmetica-troverai",
+      "quando": "2026-10-20T19:29",
+      "segmento": "Cosa troverai · Conto alla rovescia (carosello)",
+      "tipo": "carosello",
+      "immagini": [
+        "social/img/nuovi/a09-aritmetica-troverai-01.jpg",
+        "social/img/nuovi/a09-aritmetica-troverai-02.jpg",
+        "social/img/nuovi/a09-aritmetica-troverai-03.jpg",
+        "social/img/nuovi/a09-aritmetica-troverai-04.jpg"
+      ],
+      "alt": "Carosello di quattro slide su fondo verde bottiglia: 1 «Una vecchia che ricorda tutto»; 2 «Un mestiere da invisibile»; 3 «Una famiglia gentile»; 4 «Mancano 3 giorni, 23 ottobre». L’Aritmetica del Consenso.",
+      "didascalia": "Una vecchia che ricorda tutto, un mestiere da invisibile, una famiglia gentile.\nMancano 3 giorni a L’Aritmetica del Consenso, noir dinastico di D. Iasio. Iscriviti alla newsletter per sapere quando esce e scaricare la Puntata 1.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#NoirItaliano #AltaTensione #LibriDaLeggere #ScrittoriEmergenti #ScrittoriSvizzeri",
+      "didascalia_fb": "Una vecchia che ricorda tutto, un mestiere da invisibile, una famiglia gentile.\nMancano 3 giorni a L’Aritmetica del Consenso, noir dinastico di D. Iasio. Iscriviti alla newsletter per sapere quando esce e scaricare la Puntata 1.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#LetteraturaNoir #ThrillerItaliano #AltaTensione #GialloItaliano #LibriDaLeggere #ConsigliDiLettura #ScrittoriItaliani #Ticino #ScrittoriSvizzeri #CulturaTicino"
     },
     {
       "id": "n18-oblio-dove-leggi",
@@ -430,41 +434,33 @@
       "didascalia_fb": "Il portiere sa più di quanto dice. In fondo al garage di Residenza Meridiana c’è una porta blindata senza targhetta che nessuno può aprire, a parte l’amministrazione.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#ThrillerItaliano #LetteraturaNoir #GialloItaliano #RomanzoNoir #BookstagramItalia #LibriDaLeggere #IoLeggo #BookstagramSvizzera #SvizzeraItaliana #Ticino"
     },
     {
-      "id": "n19-oblio-modulo",
-      "quando": "2026-10-22T19:09",
-      "segmento": "Fantascienza/distopia + mondo del lavoro",
-      "immagine": "social/img/nuovi/n19-oblio-modulo.jpg",
-      "alt": "Finto modulo di classificazione di uno studio Levia: lutto naturale, decorso ospedaliero, nessun elemento controverso, presenza di colpa assente. In fondo: «Nessuno» dico, e spunto assente. A me arriva il quattro per cento sul venduto. L’Economia dell’Oblio.",
-      "didascalia": "Il modulo di classificazione di un lutto ha una casella: presenza di colpa. Se la spunti, il lotto vale meno. Dora Calvi ci pensa un secondo, poi spunta «assente».\nUna scena della Puntata 1 de L’Economia dell’Oblio.\nSu Amazon Kindle trovi L’Economia dell’Oblio completo (link in bio). La Puntata 1 resta gratis, in PDF o EPUB.\n\n#LibriThriller #LetteraturaNoir #BookstagramItalia #EditoriaItaliana #BookstagramSvizzera",
-      "didascalia_fb": "Il modulo di classificazione di un lutto ha una casella: presenza di colpa. Se la spunti, il lotto vale meno. Dora Calvi ci pensa un secondo, poi spunta «assente».\nUna scena della Puntata 1 de L’Economia dell’Oblio.\n\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPer cominciare dalla Puntata 1 gratis (PDF o EPUB): https://libri.diasio.ch/oblio/\n\n#AltaTensione #LibriThriller #ThrillerItaliano #ThrillerPsicologico #ConsigliDiLettura #BookstagramItalia #EditoriaItaliana #LeggereInSvizzera #BookstagramSvizzera #ScrittoriSvizzeri"
+      "id": "a10-aritmetica-listino",
+      "quando": "2026-10-22T19:44",
+      "segmento": "Citazione · Ultimo giorno (grafica)",
+      "immagine": "social/img/nuovi/a10-aritmetica-listino.jpg",
+      "alt": "Frase su fondo verde bottiglia: «Era il suo listino.» L’Aritmetica del Consenso, Puntata 1. Fascia: «Manca 1 giorno».",
+      "didascalia": "«Era il suo listino.»\nManca 1 giorno a L’Aritmetica del Consenso.\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali. Link in bio.\n\n#RomanzoNoir #AltaTensione #BookstagramItalia #ScrittoriEmergenti #BookstagramSvizzera",
+      "didascalia_fb": "«Era il suo listino.»\nManca 1 giorno a L’Aritmetica del Consenso.\n\nEsce il 23 ottobre su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\nLa Puntata 1 sarà gratuita dal giorno dell’uscita: https://libri.diasio.ch/aritmetica/\n\n#RomanzoNoir #NoirItaliano #GialloItaliano #ThrillerItaliano #ConsigliDiLettura #BookstagramItalia #ScrittoriEmergenti #SvizzeraItaliana #Ticino #BookstagramSvizzera"
     },
     {
-      "id": "n20-bug-elio-bassi",
-      "quando": "2026-10-23T12:47",
-      "segmento": "Giornalismo d’inchiesta + lettori noir (carosello)",
-      "tipo": "carosello",
-      "immagini": [
-        "social/img/nuovi/n20-bug-elio-bassi-01.jpg",
-        "social/img/nuovi/n20-bug-elio-bassi-02.jpg",
-        "social/img/nuovi/n20-bug-elio-bassi-03.jpg",
-        "social/img/nuovi/n20-bug-elio-bassi-04.jpg",
-        "social/img/nuovi/n20-bug-elio-bassi-05.jpg",
-        "social/img/nuovi/n20-bug-elio-bassi-06.jpg"
-      ],
-      "alt": "Carosello di sei slide su fondo scuro: perché Nadia Colombo vive nel palazzo (Elio Bassi, programmatore, morto 27 anni prima; l’articolo di otto anni prima che le è costato la carriera) e l’invito a leggere Il Bug della Trasparenza su Amazon Kindle.",
-      "didascalia": "Ventisette anni prima, in quel palazzo, era morto un programmatore. Otto anni prima, Nadia aveva scritto l’articolo che le è costato la carriera. Per questo ha comprato un appartamento nel seminterrato.\nScorri: le frasi della Puntata 1 che mettono insieme i pezzi.\nIl romanzo completo è su Amazon Kindle: link in bio.\n\n#RomanzoNoir #GialloItaliano #ConsigliDiLettura #ScrittoriEmergenti #ScrittoriSvizzeri",
-      "didascalia_fb": "Ventisette anni prima, in quel palazzo, era morto un programmatore. Otto anni prima, Nadia aveva scritto l’articolo che le è costato la carriera. Per questo ha comprato un appartamento nel seminterrato.\nScorri: le frasi della Puntata 1 che mettono insieme i pezzi.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#RomanzoNoir #LetteraturaNoir #GialloItaliano #NoirItaliano #LibriDaLeggere #ConsigliDiLettura #ScrittoriItaliani #ScrittoriSvizzeri #Ticino #BookstagramSvizzera"
+      "id": "a11-aritmetica-da-oggi",
+      "quando": "2026-10-23T12:29",
+      "segmento": "Lancio · Da oggi (locandina)",
+      "immagine": "social/img/nuovi/a11-aritmetica-da-oggi.jpg",
+      "alt": "Locandina su fondo verde bottiglia con la copertina de L’Aritmetica del Consenso (mani di una vecchia che sbucciano un mandarino): «Da oggi», pulsante «Leggi la Puntata 1 gratis», PDF ed EPUB su libri.diasio.ch.",
+      "didascalia": "Da oggi. L’Aritmetica del Consenso, noir dinastico di D. Iasio in sei puntate, tutte in un unico ebook.\nIl romanzo è su Amazon Kindle e, tramite StreetLib, negli altri store digitali. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: link in bio.\n\n#NoirItaliano #GialloItaliano #ConsigliDiLettura #EditoriaItaliana #Ticino",
+      "didascalia_fb": "Da oggi. L’Aritmetica del Consenso, noir dinastico di D. Iasio in sei puntate, tutte in un unico ebook.\n\nIl romanzo è su Amazon Kindle e, tramite StreetLib, negli altri store digitali: i link sono sul sito.\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\n\n#ThrillerItaliano #LetteraturaNoir #AltaTensione #RomanzoNoir #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #CulturaTicino #BookstagramSvizzera #LeggereInSvizzera"
     },
     {
-      "id": "t02-oblio-ricordo",
+      "id": "a12-aritmetica-lettera",
       "tipo": "testo",
       "piattaforme": [
         "facebook"
       ],
-      "quando": "2026-10-23T18:13",
-      "segmento": "Testo · Community",
-      "didascalia": "Se potessi vendere un ricordo, quale sarebbe? In L’Economia dell’Oblio un lutto pulito vale quattromila euro. Dimmelo nei commenti.\nLa Puntata 1 è gratis, in PDF o EPUB.\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerPsicologico #AltaTensione #ThrillerItaliano #NoirItaliano #IoLeggo #ConsigliDiLettura #ScrittoriItaliani #CulturaTicino #SvizzeraItaliana #BookstagramSvizzera",
-      "link": "https://libri.diasio.ch/oblio/"
+      "quando": "2026-10-23T18:26",
+      "segmento": "Testo · Lancio",
+      "didascalia": "L’Aritmetica del Consenso è uscito.\nÈ un noir dinastico in sei puntate, per adulti, riunite in un unico ebook. Un ghostwriter scrive la biografia di una matriarca di novantun anni che ha cominciato a ricordare tutto; intanto la sua famiglia si prepara a votare la propria eternità.\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nIl romanzo completo è su Amazon Kindle e, tramite StreetLib, negli altri store digitali.\n\n#LetteraturaNoir #ThrillerItaliano #GialloItaliano #NoirItaliano #LibriDaLeggere #BookstagramItalia #EditoriaItaliana #SvizzeraItaliana #Ticino #LeggereInSvizzera",
+      "link": "https://libri.diasio.ch/aritmetica/"
     },
     {
       "id": "r08-oblio-listino",
@@ -495,13 +491,20 @@
       "didascalia_fb": "Sul monitor la linea si spegne in un punto e riparte poco più giù, con un piccolo salto. Il cliente non se ne accorge: sente solo che è più leggero.\nIl lavoro di Dora Calvi, in tre frasi. L’Economia dell’Oblio, Puntata 1.\n\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPer cominciare dalla Puntata 1 gratis (PDF o EPUB): https://libri.diasio.ch/oblio/\n\n#AltaTensione #LibriThriller #LetteraturaNoir #ThrillerItaliano #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #LeggereInSvizzera #CulturaTicino #ScrittoriSvizzeri"
     },
     {
-      "id": "10-bug-domanda",
-      "quando": "2026-10-25T20:11",
-      "segmento": "Community (commenti) + vita di condominio",
-      "immagine": "social/img/10-bug-domanda.jpg",
-      "didascalia": "Domanda della domenica sera, senza fare nomi: chi, nel tuo palazzo, avrebbe più da perdere se un’app dicesse tutto?\nSe vuoi sapere come va a finire per un presidente d’assemblea che «non ha alcun interesse personale», la Puntata 1 è gratis.\nLink in bio.\nDisponibile su Amazon Kindle (link in bio).\n\n#ThrillerItaliano #RomanzoNoir #BookstagramItalia #ScrittoriItaliani #LeggereInSvizzera",
-      "alt": "Grafica scura con la domanda: Se l’app del tuo condominio dicesse la verità, chi sarebbe il primo a finire nei guai? Il Bug della Trasparenza.",
-      "didascalia_fb": "Domanda della domenica sera, senza fare nomi: chi, nel tuo palazzo, avrebbe più da perdere se un’app dicesse tutto?\nSe vuoi sapere come va a finire per un presidente d’assemblea che «non ha alcun interesse personale», la Puntata 1 è gratis.\nhttps://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#NoirItaliano #GialloItaliano #AltaTensione #ThrillerItaliano #ConsigliDiLettura #LibriDaLeggere #IoLeggo #BookstagramSvizzera #SvizzeraItaliana #LeggereInSvizzera"
+      "id": "a13-aritmetica-incipit",
+      "quando": "2026-10-25T20:19",
+      "segmento": "Prime righe (carosello)",
+      "tipo": "carosello",
+      "immagini": [
+        "social/img/nuovi/a13-aritmetica-incipit-01.jpg",
+        "social/img/nuovi/a13-aritmetica-incipit-02.jpg",
+        "social/img/nuovi/a13-aritmetica-incipit-03.jpg",
+        "social/img/nuovi/a13-aritmetica-incipit-04.jpg",
+        "social/img/nuovi/a13-aritmetica-incipit-05.jpg"
+      ],
+      "alt": "Carosello di cinque slide su fondo verde bottiglia con le prime righe de L’Aritmetica del Consenso: la domanda sul costo di un ministro; la sala da pranzo; il ghostwriter e l’idraulico; il registratore acceso in tasca; invito a leggere la Puntata 1 gratis.",
+      "didascalia": "L’Aritmetica del Consenso è uscito: ecco le prime righe, una alla volta.\nUn ghostwriter, una vecchia che ricorda tutto e un registratore in tasca.\nIl romanzo è su Amazon Kindle e, tramite StreetLib, negli altri store digitali. La Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: link in bio.\n\n#NoirItaliano #GialloItaliano #BookstagramItalia #IoLeggo #LeggereInSvizzera",
+      "didascalia_fb": "L’Aritmetica del Consenso è uscito: ecco le prime righe, una alla volta.\nUn ghostwriter, una vecchia che ricorda tutto e un registratore in tasca.\n\nIl romanzo è su Amazon Kindle e, tramite StreetLib, negli altri store digitali: i link sono sul sito.\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\n\n#GialloItaliano #RomanzoNoir #AltaTensione #NoirItaliano #BookstagramItalia #LibriDaLeggere #IoLeggo #SvizzeraItaliana #BookstagramSvizzera #ScrittoriSvizzeri"
     },
     {
       "id": "n23-oblio-kindle",
@@ -646,6 +649,15 @@
       "immagine": "social/img/story/s05-due-romanzi.jpg"
     },
     {
+      "id": "05-oblio-costo",
+      "quando": "2026-11-03T12:49",
+      "segmento": "Mondo del lavoro e delle aziende",
+      "immagine": "social/img/05-oblio-costo.jpg",
+      "didascalia": "La frase preferita di un cliente che vuole «tagliare» il lutto del padre prima dell’assemblea dei soci.\nUna satira nera sul mondo in cui tutto ha un prezzo, anche quello che non dovrebbe averlo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nOra su Amazon Kindle. Link in bio.\n\n#ThrillerItaliano #Satira #IoLeggo #ScrittoriItaliani #Ticino",
+      "alt": "Citazione su fondo scuro: «Il dolore è un costo. E i costi si tagliano.» L’Economia dell’Oblio.",
+      "didascalia_fb": "La frase preferita di un cliente che vuole «tagliare» il lutto del padre prima dell’assemblea dei soci.\nUna satira nera sul mondo in cui tutto ha un prezzo, anche quello che non dovrebbe averlo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerItaliano #NoirItaliano #ThrillerPsicologico #Satira #CommediaNera #BookstagramItalia #LibriDaLeggere #ScrittoriItaliani #CulturaTicino #SvizzeraItaliana"
+    },
+    {
       "id": "14-bug-rimossa",
       "quando": "2026-11-03T19:17",
       "segmento": "Tech/privacy",
@@ -653,6 +665,15 @@
       "didascalia": "C’è un’impostazione che non puoi disattivare da solo. E chi può disattivarla è proprio l’uomo che l’app ha appena smascherato.\nOgni tanto una funzione «per il tuo bene» ha un problema di controllo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nDisponibile su Amazon Kindle (link in bio).\n\n#RomanzoNoir #NoirItaliano #ConsigliDiLettura #ScrittoriItaliani #SvizzeraItaliana",
       "alt": "Citazione su fondo scuro: «Trasparenza Meridiana non può essere rimossa da un singolo utente.» Il Bug della Trasparenza.",
       "didascalia_fb": "C’è un’impostazione che non puoi disattivare da solo. E chi può disattivarla è proprio l’uomo che l’app ha appena smascherato.\nOgni tanto una funzione «per il tuo bene» ha un problema di controllo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#RomanzoNoir #GialloItaliano #NoirItaliano #ThrillerItaliano #BookstagramItalia #IoLeggo #ScrittoriItaliani #ScrittoriSvizzeri #Ticino #BookstagramSvizzera"
+    },
+    {
+      "id": "n09-bug-alma",
+      "quando": "2026-11-04T12:12",
+      "segmento": "Vita di condominio + lettori noir",
+      "immagine": "social/img/nuovi/n09-bug-alma.jpg",
+      "alt": "Citazione su fondo scuro: «Scusate, ma è successo anche a me ieri sera. Il telefono che si accende da solo, tipo in ascolto. Pensavo fosse un virus.» Alma Ferretti, all’assemblea. Il Bug della Trasparenza.",
+      "didascalia": "Il punto sei dell’ordine del giorno non arriva mai: una vicina alza la mano e dice una cosa che cambia l’assemblea.\nÈ la scena in cui il bug smette di essere un problema di Cesare e diventa di tutto il palazzo. Dal Bug della Trasparenza, Puntata 1.\nDisponibile su Amazon Kindle: link in bio, dove c’è anche la Puntata 1 gratis.\n\n#RomanzoNoir #AltaTensione #ConsigliDiLettura #EditoriaItaliana #Ticino",
+      "didascalia_fb": "Il punto sei dell’ordine del giorno non arriva mai: una vicina alza la mano e dice una cosa che cambia l’assemblea.\nÈ la scena in cui il bug smette di essere un problema di Cesare e diventa di tutto il palazzo. Dal Bug della Trasparenza, Puntata 1.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#GialloItaliano #RomanzoNoir #NoirItaliano #ThrillerItaliano #BookstagramItalia #ConsigliDiLettura #IoLeggo #SvizzeraItaliana #LeggereInSvizzera #Ticino"
     },
     {
       "id": "r11-oblio-benissimo",
@@ -672,6 +693,32 @@
       "didascalia": "Il Pettine: controllo semestrale obbligatorio per chi lavora con i ricordi degli altri. Se trovano tracce, ti resettano.\nPer chi ama le distopie che sembrano a un passo da noi.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nDisponibile su Amazon Kindle (link in bio).\n\n#ThrillerItaliano #AltaTensione #LibriDaLeggere #IoLeggo #Ticino",
       "alt": "Grafica scura con il titolo Certificazione di Vuoto e quattro righe sulla scansione semestrale del cervello. L’Economia dell’Oblio.",
       "didascalia_fb": "Il Pettine: controllo semestrale obbligatorio per chi lavora con i ricordi degli altri. Se trovano tracce, ti resettano.\nPer chi ama le distopie che sembrano a un passo da noi.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerItaliano #AltaTensione #ThrillerPsicologico #LibriThriller #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #SvizzeraItaliana #LeggereInSvizzera #ScrittoriSvizzeri"
+    },
+    {
+      "id": "03-bug-cognato",
+      "quando": "2026-11-05T19:19",
+      "segmento": "Tech/privacy + giornalismo d’inchiesta",
+      "immagine": "social/img/03-bug-cognato.jpg",
+      "didascalia": "Trasparenza totale: bello come slogan, un incubo quando tocca a te.\nUn bug nell’app del condominio e il presidente dell’assemblea si ritrova a dichiarare, senza volerlo, quello che stava per nascondere. Tutti i telefoni della sala lo leggono nello stesso momento.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nOra su Amazon Kindle. Link in bio.\n\n#RomanzoNoir #Ironia #LibriDaLeggere #ScrittoriItaliani #LeggereInSvizzera",
+      "alt": "Citazione su fondo scuro: «Il preventivo B è di mio cognato. Se lo dico gli altri capiscono e mi tolgono la presidenza.» Il Bug della Trasparenza.",
+      "didascalia_fb": "Trasparenza totale: bello come slogan, un incubo quando tocca a te.\nUn bug nell’app del condominio e il presidente dell’assemblea si ritrova a dichiarare, senza volerlo, quello che stava per nascondere. Tutti i telefoni della sala lo leggono nello stesso momento.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#RomanzoNoir #ThrillerItaliano #LetteraturaNoir #Satira #Ironia #BookstagramItalia #ConsigliDiLettura #IoLeggo #LeggereInSvizzera #SvizzeraItaliana"
+    },
+    {
+      "id": "n20-bug-elio-bassi",
+      "quando": "2026-11-06T12:26",
+      "segmento": "Giornalismo d’inchiesta + lettori noir (carosello)",
+      "tipo": "carosello",
+      "immagini": [
+        "social/img/nuovi/n20-bug-elio-bassi-01.jpg",
+        "social/img/nuovi/n20-bug-elio-bassi-02.jpg",
+        "social/img/nuovi/n20-bug-elio-bassi-03.jpg",
+        "social/img/nuovi/n20-bug-elio-bassi-04.jpg",
+        "social/img/nuovi/n20-bug-elio-bassi-05.jpg",
+        "social/img/nuovi/n20-bug-elio-bassi-06.jpg"
+      ],
+      "alt": "Carosello di sei slide su fondo scuro: perché Nadia Colombo vive nel palazzo (Elio Bassi, programmatore, morto 27 anni prima; l’articolo di otto anni prima che le è costato la carriera) e l’invito a leggere Il Bug della Trasparenza su Amazon Kindle.",
+      "didascalia": "Ventisette anni prima, in quel palazzo, era morto un programmatore. Otto anni prima, Nadia aveva scritto l’articolo che le è costato la carriera. Per questo ha comprato un appartamento nel seminterrato.\nScorri: le frasi della Puntata 1 che mettono insieme i pezzi.\nIl romanzo completo è su Amazon Kindle: link in bio.\n\n#RomanzoNoir #GialloItaliano #ConsigliDiLettura #ScrittoriEmergenti #ScrittoriSvizzeri",
+      "didascalia_fb": "Ventisette anni prima, in quel palazzo, era morto un programmatore. Otto anni prima, Nadia aveva scritto l’articolo che le è costato la carriera. Per questo ha comprato un appartamento nel seminterrato.\nScorri: le frasi della Puntata 1 che mettono insieme i pezzi.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#RomanzoNoir #LetteraturaNoir #GialloItaliano #NoirItaliano #LibriDaLeggere #ConsigliDiLettura #ScrittoriItaliani #ScrittoriSvizzeri #Ticino #BookstagramSvizzera"
     },
     {
       "id": "t03-bug-regolamento",
@@ -695,6 +742,32 @@
       "didascalia_fb": "Nel tuo condominio c’è un’app per tutto: cancello, pacchi, assemblee. Ora immagina che una sera cominci a dire la verità.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#NoirItaliano #AltaTensione #LetteraturaNoir #Ironia #CommediaNera #LibriDaLeggere #IoLeggo #BookTokItalia #BookstagramSvizzera #ScrittoriSvizzeri"
     },
     {
+      "id": "n13-oblio-ricordo-non-suo",
+      "quando": "2026-11-07T17:22",
+      "segmento": "Fantascienza/distopia + lettori thriller (carosello)",
+      "tipo": "carosello",
+      "immagini": [
+        "social/img/nuovi/n13-oblio-ricordo-non-suo-01.jpg",
+        "social/img/nuovi/n13-oblio-ricordo-non-suo-02.jpg",
+        "social/img/nuovi/n13-oblio-ricordo-non-suo-03.jpg",
+        "social/img/nuovi/n13-oblio-ricordo-non-suo-04.jpg",
+        "social/img/nuovi/n13-oblio-ricordo-non-suo-05.jpg",
+        "social/img/nuovi/n13-oblio-ricordo-non-suo-06.jpg"
+      ],
+      "alt": "Carosello di sei slide su fondo scuro: un ricordo che Dora Calvi non riconosce come suo (shampoo alla pesca, capelli bagnati, una persona sotto di lei, una suoneria da bambini, una risata) e l’invito a leggere il romanzo su Amazon Kindle. L’Economia dell’Oblio.",
+      "didascalia": "Dopo un’estrazione, a Dora Calvi di solito resta addosso una briciola: un sapore, un jingle. Stavolta restano uno shampoo alla pesca, due mani sui polsi e una risata che è la sua.\nScorri: una scena della Puntata 1, senza spiegazioni.\nSu Amazon Kindle trovi L’Economia dell’Oblio completo (link in bio). La Puntata 1 resta gratis, in PDF o EPUB.\n\n#ThrillerPsicologico #AltaTensione #ConsigliDiLettura #EditoriaItaliana #CulturaTicino",
+      "didascalia_fb": "Dopo un’estrazione, a Dora Calvi di solito resta addosso una briciola: un sapore, un jingle. Stavolta restano uno shampoo alla pesca, due mani sui polsi e una risata che è la sua.\nScorri: una scena della Puntata 1, senza spiegazioni.\n\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPuntata 1 gratis, PDF o EPUB: https://libri.diasio.ch/oblio/\n\n#ThrillerItaliano #LibriThriller #AltaTensione #ThrillerPsicologico #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #CulturaTicino #LeggereInSvizzera #Ticino"
+    },
+    {
+      "id": "04-oblio-domanda",
+      "quando": "2026-11-08T12:16",
+      "segmento": "Community di lettori (commenti) + psicologia/memoria",
+      "immagine": "social/img/04-oblio-domanda.jpg",
+      "didascalia": "Domanda della domenica sera: se qualcuno ti pagasse per togliere un ricordo dalla testa, quale sceglieresti? E lo faresti davvero?\nRispondi nei commenti, leggo tutto. Nel romanzo la scelta non è mai gratuita.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\n\n#LibriThriller #ThrillerItaliano #ConsigliDiLettura #ScrittoriItaliani #CulturaTicino",
+      "alt": "Grafica scura con la domanda: Se potessi vendere un ricordo, quale sarebbe? L’Economia dell’Oblio.",
+      "didascalia_fb": "Domanda della domenica sera: se qualcuno ti pagasse per togliere un ricordo dalla testa, quale sceglieresti? E lo faresti davvero?\nRispondi nei commenti, leggo tutto. Nel romanzo la scelta non è mai gratuita.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#LibriThriller #ThrillerPsicologico #LetteraturaNoir #ThrillerItaliano #LibriDaLeggere #BookstagramItalia #ScrittoriItaliani #BookstagramSvizzera #SvizzeraItaliana #Ticino"
+    },
+    {
       "id": "16-bug-spot",
       "quando": "2026-11-08T20:23",
       "segmento": "Bookstagram (copertina e presentazione)",
@@ -704,11 +777,27 @@
       "didascalia_fb": "Il Bug della Trasparenza, di D. Iasio. Noir sociale: un condominio d’élite, un’app che non dovrebbe sapere quello che sa, una giornalista che ha un motivo per essere lì.\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nIl sito: https://libri.diasio.ch/\n\n#NoirItaliano #AltaTensione #LetteraturaNoir #ThrillerItaliano #ConsigliDiLettura #IoLeggo #ScrittoriEmergenti #ScrittoriSvizzeri #CulturaTicino #Ticino"
     },
     {
+      "id": "s03-oblio-cugino",
+      "tipo": "storia",
+      "quando": "2026-11-09T12:36",
+      "segmento": "Storia · Satira aziendale",
+      "immagine": "social/img/story/s03-oblio-cugino.jpg"
+    },
+    {
       "id": "s06-oblio-stia-fermo",
       "tipo": "storia",
       "quando": "2026-11-09T18:06",
       "segmento": "Storia · Umorismo nero",
       "immagine": "social/img/story/s06-oblio-stia-fermo.jpg"
+    },
+    {
+      "id": "08-oblio-levia",
+      "quando": "2026-11-10T12:23",
+      "segmento": "Tech/IA + pubblicità e brand",
+      "immagine": "social/img/08-oblio-levia.jpg",
+      "didascalia": "Levia è il nome dell’azienda che, nel romanzo, ti toglie il dolore dalla testa. Lo slogan è tutto: «Il peso non è tuo».\nMa il peso non sparisce mai davvero. Qualcuno lo porta. Qualcuno lo compra.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\n\n#LibriThriller #Satira #ConsigliDiLettura #ScrittoriItaliani #ScrittoriSvizzeri",
+      "alt": "Grafica ambra con la scritta Levia. Il peso non è tuo. Slogan dell’azienda immaginaria de L’Economia dell’Oblio.",
+      "didascalia_fb": "Levia è il nome dell’azienda che, nel romanzo, ti toglie il dolore dalla testa. Lo slogan è tutto: «Il peso non è tuo».\nMa il peso non sparisce mai davvero. Qualcuno lo porta. Qualcuno lo compra.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerItaliano #NoirItaliano #LetteraturaNoir #Ironia #CommediaNera #LibriDaLeggere #ConsigliDiLettura #IoLeggo #LeggereInSvizzera #ScrittoriSvizzeri"
     },
     {
       "id": "17-oblio-strano",
@@ -739,6 +828,26 @@
       "didascalia_fb": "Lo strumento indispensabile, di cui nessuno ha letto i termini. Dai condomini alle app, cambia poco.\nTu li leggi, i regolamenti? Dimmelo nei commenti.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#ThrillerItaliano #NoirItaliano #RomanzoNoir #Satira #Ironia #IoLeggo #BookstagramItalia #ScrittoriItaliani #Ticino #SvizzeraItaliana"
     },
     {
+      "id": "n10-oblio-dora",
+      "quando": "2026-11-12T19:37",
+      "segmento": "Lettori thriller + voce narrante",
+      "immagine": "social/img/nuovi/n10-oblio-dora.jpg",
+      "alt": "Citazione su fondo scuro con fascia ambra «Ora su Amazon Kindle»: «Trent’anni fa, se stavi male, andavi da uno psicologo che ti faceva parlare per cinquanta minuti e ti mandava via sul più bello, e ci tornavi per anni, e alla fine forse stavi meglio, forse avevi solo imparato a raccontartela.» Dora Calvi. L’Economia dell’Oblio.",
+      "didascalia": "Com’era curarsi, prima. Poi qualcuno ha fatto due conti: perché curare un dolore quando si può estrarre?\nDora Calvi, tecnica estrattiva, racconta il mondo de L’Economia dell’Oblio, thriller psicologico in sei puntate.\nSu Amazon Kindle trovi L’Economia dell’Oblio completo (link in bio). La Puntata 1 resta gratis, in PDF o EPUB.\n\n#LibriThriller #LetteraturaNoir #BookstagramItalia #EditoriaItaliana #SvizzeraItaliana",
+      "didascalia_fb": "Com’era curarsi, prima. Poi qualcuno ha fatto due conti: perché curare un dolore quando si può estrarre?\nDora Calvi, tecnica estrattiva, racconta il mondo de L’Economia dell’Oblio, thriller psicologico in sei puntate.\n\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPer cominciare dalla Puntata 1 gratis (PDF o EPUB): https://libri.diasio.ch/oblio/\n\n#LetteraturaNoir #ThrillerPsicologico #AltaTensione #ThrillerItaliano #LibriDaLeggere #ConsigliDiLettura #ScrittoriEmergenti #LeggereInSvizzera #ScrittoriSvizzeri #SvizzeraItaliana"
+    },
+    {
+      "id": "t02-oblio-ricordo",
+      "tipo": "testo",
+      "piattaforme": [
+        "facebook"
+      ],
+      "quando": "2026-11-13T18:04",
+      "segmento": "Testo · Community",
+      "didascalia": "Se potessi vendere un ricordo, quale sarebbe? In L’Economia dell’Oblio un lutto pulito vale quattromila euro. Dimmelo nei commenti.\nLa Puntata 1 è gratis, in PDF o EPUB.\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerPsicologico #AltaTensione #ThrillerItaliano #NoirItaliano #IoLeggo #ConsigliDiLettura #ScrittoriItaliani #CulturaTicino #SvizzeraItaliana #BookstagramSvizzera",
+      "link": "https://libri.diasio.ch/oblio/"
+    },
+    {
       "id": "r14-bug-amministrazione",
       "tipo": "reel",
       "quando": "2026-11-14T12:16",
@@ -747,6 +856,15 @@
       "miniatura_ms": 5500,
       "didascalia": "L’app non si spegne da sola: per disattivarla serve l’amministrazione. Cioè proprio l’uomo che l’app ha appena smascherato.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nDisponibile su Amazon Kindle (link in bio).\n\n#NoirItaliano #RomanzoNoir #BookstagramItalia #BookTokItalia #LeggereInSvizzera",
       "didascalia_fb": "L’app non si spegne da sola: per disattivarla serve l’amministrazione. Cioè proprio l’uomo che l’app ha appena smascherato.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#NoirItaliano #ThrillerItaliano #RomanzoNoir #AltaTensione #BookstagramItalia #IoLeggo #BookTokItalia #SvizzeraItaliana #LeggereInSvizzera #Ticino"
+    },
+    {
+      "id": "07-bug-cta",
+      "quando": "2026-11-15T12:15",
+      "segmento": "Lettori digitali (ebook)",
+      "immagine": "social/img/07-bug-cta.jpg",
+      "didascalia": "Il Bug della Trasparenza, noir sociale di D. Iasio, è ora su Amazon Kindle.\nUn condominio d’élite, un’app che non dovrebbe sapere quello che sa, una giornalista che ha un motivo per essere lì.\nIl link è in bio.\n\n#RomanzoNoir #LetteraturaNoir #IoLeggo #EditoriaItaliana #Ticino",
+      "alt": "Grafica scura con la scritta: Ora su Amazon Kindle. Il Bug della Trasparenza, il noir sociale di D. Iasio. Link in bio.",
+      "didascalia_fb": "Il Bug della Trasparenza, noir sociale di D. Iasio, è ora su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nUn condominio d’élite, un’app che non dovrebbe sapere quello che sa, una giornalista che ha un motivo per essere lì.\nIl sito: https://libri.diasio.ch/\n\n#RomanzoNoir #GialloItaliano #LetteraturaNoir #ThrillerItaliano #IoLeggo #ConsigliDiLettura #ScrittoriEmergenti #LeggereInSvizzera #CulturaTicino #BookstagramSvizzera"
     },
     {
       "id": "19-oblio-spot",
@@ -793,6 +911,15 @@
       "didascalia_fb": "Il listino dello studio dove lavora Dora Calvi, tutto dal romanzo. Una cotta non ricambiata vale sessanta euro: «roba da minorenni».\nLevia e i suoi prezzi sono immaginari. La sensazione di riconoscerli un po’, molto meno.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerPsicologico #AltaTensione #NoirItaliano #Ironia #Satira #BookstagramItalia #LibriDaLeggere #IoLeggo #BookstagramSvizzera #CulturaTicino"
     },
     {
+      "id": "n19-oblio-modulo",
+      "quando": "2026-11-19T19:04",
+      "segmento": "Fantascienza/distopia + mondo del lavoro",
+      "immagine": "social/img/nuovi/n19-oblio-modulo.jpg",
+      "alt": "Finto modulo di classificazione di uno studio Levia: lutto naturale, decorso ospedaliero, nessun elemento controverso, presenza di colpa assente. In fondo: «Nessuno» dico, e spunto assente. A me arriva il quattro per cento sul venduto. L’Economia dell’Oblio.",
+      "didascalia": "Il modulo di classificazione di un lutto ha una casella: presenza di colpa. Se la spunti, il lotto vale meno. Dora Calvi ci pensa un secondo, poi spunta «assente».\nUna scena della Puntata 1 de L’Economia dell’Oblio.\nSu Amazon Kindle trovi L’Economia dell’Oblio completo (link in bio). La Puntata 1 resta gratis, in PDF o EPUB.\n\n#LibriThriller #LetteraturaNoir #BookstagramItalia #EditoriaItaliana #BookstagramSvizzera",
+      "didascalia_fb": "Il modulo di classificazione di un lutto ha una casella: presenza di colpa. Se la spunti, il lotto vale meno. Dora Calvi ci pensa un secondo, poi spunta «assente».\nUna scena della Puntata 1 de L’Economia dell’Oblio.\n\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nPer cominciare dalla Puntata 1 gratis (PDF o EPUB): https://libri.diasio.ch/oblio/\n\n#AltaTensione #LibriThriller #ThrillerItaliano #ThrillerPsicologico #ConsigliDiLettura #BookstagramItalia #EditoriaItaliana #LeggereInSvizzera #BookstagramSvizzera #ScrittoriSvizzeri"
+    },
+    {
       "id": "t04-oblio-listino",
       "tipo": "testo",
       "piattaforme": [
@@ -812,6 +939,15 @@
       "miniatura_ms": 5500,
       "didascalia": "Quaranta persone in una sala, un telefono che dice la verità, e nessuno che respira. La scena che apre il romanzo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\n\n#NoirItaliano #GialloItaliano #LibriDaLeggere #BookTokItalia #LeggereInSvizzera",
       "didascalia_fb": "Quaranta persone in una sala, un telefono che dice la verità, e nessuno che respira. La scena che apre il romanzo.\nPuntata 1 gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#NoirItaliano #GialloItaliano #ThrillerItaliano #RomanzoNoir #IoLeggo #LibriDaLeggere #BookTokItalia #BookstagramSvizzera #SvizzeraItaliana #Ticino"
+    },
+    {
+      "id": "10-bug-domanda",
+      "quando": "2026-11-22T12:55",
+      "segmento": "Community (commenti) + vita di condominio",
+      "immagine": "social/img/10-bug-domanda.jpg",
+      "didascalia": "Domanda della domenica sera, senza fare nomi: chi, nel tuo palazzo, avrebbe più da perdere se un’app dicesse tutto?\nSe vuoi sapere come va a finire per un presidente d’assemblea che «non ha alcun interesse personale», la Puntata 1 è gratis.\nLink in bio.\nDisponibile su Amazon Kindle (link in bio).\n\n#ThrillerItaliano #RomanzoNoir #BookstagramItalia #ScrittoriItaliani #LeggereInSvizzera",
+      "alt": "Grafica scura con la domanda: Se l’app del tuo condominio dicesse la verità, chi sarebbe il primo a finire nei guai? Il Bug della Trasparenza.",
+      "didascalia_fb": "Domanda della domenica sera, senza fare nomi: chi, nel tuo palazzo, avrebbe più da perdere se un’app dicesse tutto?\nSe vuoi sapere come va a finire per un presidente d’assemblea che «non ha alcun interesse personale», la Puntata 1 è gratis.\nhttps://libri.diasio.ch/\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\n\n#NoirItaliano #GialloItaliano #AltaTensione #ThrillerItaliano #ConsigliDiLettura #LibriDaLeggere #IoLeggo #BookstagramSvizzera #SvizzeraItaliana #LeggereInSvizzera"
     },
     {
       "id": "22-newsletter",

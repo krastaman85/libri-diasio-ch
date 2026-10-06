@@ -13,9 +13,10 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SOCIAL = HERE.parent
 FONTS = SOCIAL / "reels-src" / "assets" / "fonts"
-COVERS = {"bug": SOCIAL / "reels-src/assets/img/cover-bug.jpg", "oblio": SOCIAL / "reels-src/assets/img/cover-oblio.jpg"}
-TITLES = {"bug": "Il Bug della Trasparenza", "oblio": "L’Economia dell’Oblio"}
-GENRES = {"bug": "Noir sociale · 8 puntate", "oblio": "Thriller psicologico · 6 puntate"}
+COVERS = {"bug": SOCIAL / "reels-src/assets/img/cover-bug.jpg", "oblio": SOCIAL / "reels-src/assets/img/cover-oblio.jpg",
+          "aritmetica": SOCIAL / "reels-src/assets/img/cover-aritmetica.jpg"}
+TITLES = {"bug": "Il Bug della Trasparenza", "oblio": "L’Economia dell’Oblio", "aritmetica": "L’Aritmetica del Consenso"}
+GENRES = {"bug": "Noir sociale · 8 puntate", "oblio": "Thriller psicologico · 6 puntate", "aritmetica": "Noir dinastico · 6 puntate"}
 
 
 def b64(p, mime):
@@ -109,6 +110,11 @@ body.story{height:1920px}
 .nh{font:700 46px/1.15 'Oswald';margin-top:12px}.nb{font:400 46px/1.36 'Source Serif 4';margin-top:14px;color:#dbe2ec}
 .nsub{margin-top:36px;font:italic 400 38px/1.4 'Source Serif 4';color:var(--mut)}
 .tab{font:500 28px 'DejaVu Sans Mono',monospace;color:var(--amb);letter-spacing:.04em;margin-bottom:22px}
+body.green{--bg:#0b1a15;--ink:#f1ead7;--mut:#a9b3ab;--line:#2b4a3f;--amb:#c9a45c;--dark:#1b1406}
+.green .glow{background:#16382d;filter:blur(160px)}
+.green .shade{background:linear-gradient(180deg,rgba(11,26,21,.62) 0%,rgba(11,26,21,0) 20%,rgba(11,26,21,0) 38%,rgba(11,26,21,.80) 66%,rgba(11,26,21,.97) 100%)}
+.green .doc{background:#08130f}
+.green .kb{box-shadow:0 0 60px rgba(201,164,92,.25)}.green .btn{box-shadow:0 0 60px rgba(201,164,92,.35)}
 .doc{background:#0d1522;border:2px solid var(--line);border-radius:18px;padding:44px 48px}
 .doc p{font:400 33px/1.5 'DejaVu Sans Mono',monospace;color:#d6dde8;margin-bottom:26px}.doc p:last-child{margin-bottom:0}.doc b{color:var(--amb);font-weight:400}
 """
@@ -123,9 +129,10 @@ def cover_img(book):
     return b64(COVERS[book], "image/jpeg")
 
 
-def foot(book):
+def foot(book, line=None):
+    line = line or ("In uscita il 23 ottobre · libri.diasio.ch" if book == "aritmetica" else "Puntata 1 gratis · libri.diasio.ch")
     return (f'<div class="foot"><img src="{cover_img(book)}"><div><div class="t">{TITLES[book]}</div>'
-            f'<div class="u">Puntata 1 gratis · libri.diasio.ch</div><div class="h">@d.iasio.libri</div></div></div>')
+            f'<div class="u">{html.escape(line)}</div><div class="h">@d.iasio.libri</div></div></div>')
 
 
 def photo_src(rel, pos=30):
@@ -155,7 +162,7 @@ def slide_html(s, i, n, book, theme, story=False):
     pg = f'<div class="pg">{i} / {n}</div>' if n > 1 else ""
     swipe = '<div class="swipe">SCORRI →</div>' if n > 1 and i < n else ""
     head = '<div class="brand">D<i>.</i> IASIO</div><div class="rule"></div>' + pg
-    body, foo, pre = "", foot(book), ""
+    body, foo, pre = "", foot(book, s.get("foot")), ""
     if s.get("kindle"):
         foo = kband(s["kindle"] if isinstance(s["kindle"], str) else "Ora su Amazon Kindle")
     if s.get("hero") is not None:
@@ -170,7 +177,8 @@ def slide_html(s, i, n, book, theme, story=False):
         size = ("l" if s.get("hero") is not None else "") if len(s["text"]) < 60 else "" if len(s["text"]) < 70 else "m" if len(s["text"]) < 120 else "s"
         who = f'<div class="who">{html.escape(s.get("who") or TITLES[book] + " · Puntata 1")}</div>'
         txt = s["text"] if s["text"].startswith("«") else "“" + s["text"] + "”"
-        body = f'<div class="main"><div class="q {size}">{em(txt)}</div>{who}</div>'
+        sub = f'<div class="sub">{em(s["sub"])}</div>' if s.get("sub") else ""
+        body = f'<div class="main"><div class="q {size}">{em(txt)}</div>{who}{sub}</div>'
     elif k == "rows":
         rows = "".join(f'<div class="row"><span>{html.escape(a)}</span><span>{html.escape(b)}</span></div>' for a, b in s["rows"])
         note = f'<div class="note">{html.escape(s["note"])}</div>' if s.get("note") else ""
@@ -213,7 +221,7 @@ def slide_html(s, i, n, book, theme, story=False):
         if len(books) == 2:
             body = body.replace('width:460px', 'width:400px')
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{fontface()}{CSS}</style></head>'
-            f'<body class="{"amber" if theme == "amber" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}{" pho" if k == "photo" else ""}{" kd" if s.get("kindle") else ""}"><div class="glow"></div>{pre}{head}{body}{foo}{swipe}</body></html>')
+            f'<body class="{"amber" if theme == "amber" else "green" if theme == "green" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}{" pho" if k == "photo" else ""}{" kd" if s.get("kindle") else ""}"><div class="glow"></div>{pre}{head}{body}{foo}{swipe}</body></html>')
 
 
 def load():
@@ -225,6 +233,11 @@ def load():
         ns2 = {"__file__": str(extra)}
         exec(extra.read_text(encoding="utf-8"), ns2)
         items += ns2["ITEMS"]
+    extra2 = HERE / "aritmetica_lancio.py"      # post di lancio de L'Aritmetica del Consenso (uscita 23/10/2026)
+    if extra2.exists():
+        ns3 = {"__file__": str(extra2)}
+        exec(extra2.read_text(encoding="utf-8"), ns3)
+        items += ns3["ITEMS"]
     return items
 
 
@@ -243,7 +256,7 @@ def render(items, only=None):
     with sync_playwright() as pw:
         br = pw.chromium.launch(executable_path=os.environ.get("CHROMIUM_PATH") or None)
         for it in items:
-            if only and it["id"] != only:
+            if only and not it["id"].startswith(only):
                 continue
             story = bool(it.get("story"))
             pg = br.new_page(viewport={"width": 1080, "height": 1920 if story else 1350})
@@ -266,10 +279,25 @@ def fb_caption(cap, tags):
     return cap.replace("\n" + tags, "") + "\n\n" + " ".join(tags.split()[:3])
 
 
+def load_testi():
+    """Post di solo testo (Facebook) definiti in aritmetica_lancio.py: (id, quando, segmento, testo con hashtag, link)."""
+    extra2 = HERE / "aritmetica_lancio.py"
+    if not extra2.exists():
+        return []
+    ns3 = {"__file__": str(extra2)}
+    exec(extra2.read_text(encoding="utf-8"), ns3)
+    return ns3.get("TESTI", [])
+
+
 def add_calendar(items):
     p = SOCIAL / "calendar.json"
     cal = json.loads(p.read_text(encoding="utf-8"))
     have = {x["id"] for x in cal["post"]}
+    for pid, when, seg, text, link in load_testi():
+        if pid not in have:
+            cal["post"].append({"id": pid, "tipo": "testo", "piattaforme": ["facebook"], "quando": when, "segmento": seg,
+                                "didascalia": text, "link": link})
+            print("+", pid, when)
     for it in items:
         if it["id"] in have:
             continue

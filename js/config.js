@@ -14,6 +14,7 @@ window.SITE = {
   books: {
     bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "" },
     oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "" },
-    vuoto: { amazon: "", altriStore: "" }
+    vuoto: { amazon: "", altriStore: "" },
+    aritmetica: { amazon: "", altriStore: "" }
   }
 };

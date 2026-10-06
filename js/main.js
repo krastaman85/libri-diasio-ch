@@ -14,6 +14,17 @@
     document.head.appendChild(gc);
   }
 
+  // Conto alla rovescia verso un'uscita: data-countdown="AAAA-MM-GG". Prima della data scrive «Mancano N giorni»; senza JS o dopo la data resta il testo statico.
+  document.querySelectorAll("[data-countdown]").forEach(function (e) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(e.getAttribute("data-countdown") || "");
+    if (!m) return;
+    var now = new Date(), t = new Date(+m[1], +m[2] - 1, +m[3]);
+    var d = Math.round((t - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
+    if (d > 1) e.textContent = "Mancano " + d + " giorni";
+    else if (d === 1) e.textContent = "Manca 1 giorno";
+    else if (d === 0) e.textContent = "In uscita oggi";
+  });
+
   // Pulsante newsletter
   document.querySelectorAll("[data-news]").forEach(function (a) {
     if (S.newsletterUrl) { a.href = S.newsletterUrl; a.rel = "noopener"; a.removeAttribute("aria-disabled"); }
