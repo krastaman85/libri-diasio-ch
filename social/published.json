@@ -119,6 +119,18 @@
         "link": "https://www.facebook.com/1377129402146055_122100673977500199",
         "ora_utc": "2026-10-06T10:22:40+00:00"
       }
+    },
+    "02-oblio-listino": {
+      "instagram": {
+        "media_id": "18195358870381386",
+        "link": "https://www.instagram.com/p/DeKTT8umz47/",
+        "ora_utc": "2026-10-06T17:17:39+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122100940371500199",
+        "link": "https://www.facebook.com/1377129402146055_122100940371500199",
+        "ora_utc": "2026-10-06T17:17:39+00:00"
+      }
     }
   }
 }
