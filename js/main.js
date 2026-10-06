@@ -31,9 +31,9 @@
     else { a.setAttribute("aria-disabled", "true"); a.setAttribute("tabindex", "-1"); a.textContent = "Iscrizioni in apertura"; }
   });
 
-  // Icone dei pulsanti negli store (glifi generici: lettore e-book e vetrina, non i marchi dei negozi)
-  var IC_KINDLE = '<svg class="ico ico-kindle" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="2.5" width="12" height="19" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 7.5h6M9 10.5h6M9 13.5h3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="18.6" r=".95" fill="currentColor"/></svg>';
-  var IC_SHOP = '<svg class="ico ico-shop" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.8 4h14.4L21 9.5c0 1.5-1.3 2.6-3 2.6s-3-1.1-3-2.6c0 1.5-1.3 2.6-3 2.6s-3-1.1-3-2.6c0 1.5-1.3 2.6-3 2.6S3 11 3 9.5L4.8 4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5.2 13v7.5h13.6V13M9.5 20.5v-4.3h5v4.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>';
+  // Marchi dei negozi nei pulsanti (file forniti dall'autore in img/stores/): stessa altezza, in un riquadro bianco di misura fissa
+  var LOGO_AMAZON = '<span class="logo"><img src="/img/stores/amazon-kindle.png" alt="Amazon Kindle" width="105" height="22"></span>';
+  var LOGO_STREETLIB = '<span class="logo"><img src="/img/stores/streetlib.png" alt="StreetLib" width="74" height="22"></span>';
 
   // Link negli store
   document.querySelectorAll("[data-stores]").forEach(function (box) {
@@ -42,8 +42,8 @@
     var short = box.hasAttribute("data-short"); // versione breve: solo Amazon (hero, pagina di ringraziamento)
     var oggi = new Date(), iso = oggi.getFullYear() + "-" + ("0" + (oggi.getMonth() + 1)).slice(-2) + "-" + ("0" + oggi.getDate()).slice(-2);
     var prenota = !!(b.uscita && iso < b.uscita); // prima della data di uscita: prenotazione
-    if (b.amazon) out.push('<a class="btn primary" href="' + b.amazon + '" rel="noopener">' + IC_KINDLE + (prenota ? "Prenota su Amazon Kindle" : "Disponibile su Amazon Kindle") + '</a>');
-    if (b.altriStore) out.push('<a class="btn" href="' + b.altriStore + '" rel="noopener">' + IC_SHOP + 'StreetLib</a>');
+    if (b.amazon) out.push('<a class="btn primary store" href="' + b.amazon + '" rel="noopener"><span class="lbl">' + (prenota ? "Prenota su" : "Disponibile su") + '</span>' + LOGO_AMAZON + '</a>');
+    if (b.altriStore) out.push('<a class="btn store" href="' + b.altriStore + '" rel="noopener"><span class="lbl">Disponibile su</span>' + LOGO_STREETLIB + '</a>');
     else if (b.amazon && !short) out.push('<span class="pill">Prossimamente su StreetLib</span>');
     var mesi = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
     var quando = b.uscita ? new Date(b.uscita + "T12:00:00") : null;

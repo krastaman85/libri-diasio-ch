@@ -53,12 +53,11 @@ section{padding:72px 0}
 .btn:active{transform:scale(.98);background:var(--accent);color:var(--accent-ink)}
 @media (hover:hover){.btn:hover{transform:translateY(-2px);background:var(--accent);color:var(--accent-ink)}}
 .btn.primary{background:var(--accent);color:var(--accent-ink)}
-/* mini icona nei pulsanti degli store: fusa nel pulsante (segue il colore del testo, cambia con l'hover) */
-.btn .ico{width:28px;height:28px;flex:none;padding:5px;box-sizing:border-box;border-radius:50%;margin:-5px 0 -5px -9px;background:rgba(127,127,127,.18)}
-@supports (background:color-mix(in srgb,red 10%,transparent)){.btn .ico{background:color-mix(in srgb,currentColor 16%,transparent)}}
-.btn .ico-shop{border-radius:8px}
-.btn.primary:hover{filter:brightness(1.08)}
-.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
+/* pulsanti degli store: testo + marchio in un riquadro bianco di misura fissa, stessa altezza per tutti */
+.btn.store{padding:6px 6px 6px 20px;gap:14px;min-height:50px}
+.btn.store .lbl{white-space:nowrap}
+.btn.store .logo{display:inline-flex;align-items:center;justify-content:center;flex:none;width:128px;height:36px;background:#fff;border-radius:5px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.btn.store .logo img{display:block;height:22px;width:auto;max-width:108px}
 .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 0}
 .pill{display:inline-block;font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:.82rem;border:1px solid var(--line);color:var(--muted);padding:6px 12px;border-radius:999px}
 
@@ -252,6 +251,7 @@ blockquote.epigraph{margin:0 0 22px;padding:0;font-style:italic;font-size:1.3rem
   /* Pulsanti a tutta larghezza */
   .btn-row,.dl{flex-direction:column;align-items:stretch}
   .btn{justify-content:center;text-align:center;padding:14px 18px;line-height:1.3}
+  .btn.store{justify-content:space-between;text-align:left;padding:6px 6px 6px 18px}
   /* Schede libro: copertina piccola accanto al titolo, testo a tutta larghezza sotto */
   .book-card{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 16px;padding:18px;align-items:start}
   .book-card>div{display:contents}
