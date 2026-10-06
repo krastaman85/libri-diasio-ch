@@ -62,7 +62,7 @@ ITEMS = [
    [dict(k="cta", books=["aritmetica"], text="«Somiglia a qualcuno che ho *pagato*.»", button="In uscita il 23 ottobre",
          line="Work in progress · <b>libri.diasio.ch</b>")],
    "Work in progress. Il prossimo romanzo esce il 23 ottobre.\nUn ghostwriter, una famiglia che sta per diventare legalmente eterna e una vecchia che ha cominciato a ricordare tutto.\n«Somiglia a qualcuno che ho pagato.»\nL’Aritmetica del Consenso, noir dinastico di D. Iasio. Segui il conto alla rovescia.",
-   "Copertina de L’Aritmetica del Consenso su fondo verde bottiglia, con la frase «Somiglia a qualcuno che ho pagato.» e il pulsante «In uscita il 23 ottobre». Work in progress."),
+   "Copertina de L’Aritmetica del Consenso (le mani di una vecchia sbucciano un mandarino su un piatto d’argento), con la frase «Somiglia a qualcuno che ho pagato.» e il pulsante «In uscita il 23 ottobre». Work in progress."),
 
  A("a02-aritmetica-quaderno", "2026-10-11T20:23", "Accenni · Il quaderno e il registratore (carosello)",
    [dict(k="hook", kick="L’Aritmetica del Consenso", text="Una *penna*.\nUn *registratore*.", sub="Due versioni dello stesso pomeriggio."),
@@ -118,7 +118,7 @@ ITEMS = [
  A("a11-aritmetica-da-oggi", "2026-10-23T12:29", "Lancio · Da oggi (locandina)",
    [dict(k="cta", books=["aritmetica"], text="Da *oggi*", button="Leggi la Puntata 1 gratis", line="PDF ed EPUB · <b>libri.diasio.ch</b>")],
    "Da oggi. L’Aritmetica del Consenso, noir dinastico di D. Iasio in sei puntate, tutte in un unico ebook.",
-   "Locandina su fondo verde bottiglia con la copertina de L’Aritmetica del Consenso: «Da oggi», pulsante «Leggi la Puntata 1 gratis», PDF ed EPUB su libri.diasio.ch.", post=True),
+   "Locandina su fondo verde bottiglia con la copertina de L’Aritmetica del Consenso (mani di una vecchia che sbucciano un mandarino): «Da oggi», pulsante «Leggi la Puntata 1 gratis», PDF ed EPUB su libri.diasio.ch.", post=True),
 
  A("a13-aritmetica-incipit", "2026-10-25T20:19", "Prime righe (carosello)",
    [dict(k="quote", text="«La vecchia mi ha appena chiesto quanto costava un ministro, ai suoi tempi, e io le ho risposto la verità: meno di quanto costa oggi un buon avvocato.»", who="L’Aritmetica del Consenso · Puntata 1", foot="Puntata 1 gratis · libri.diasio.ch"),
