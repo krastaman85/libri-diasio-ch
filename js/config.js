@@ -13,8 +13,8 @@ window.SITE = {
   // GoatCounter (statistiche senza cookie), attivo. "" = spente. Se cambi il codice aggiorna anche la CSP delle pagine (vedi social/kit/analytics.md).
   analytics: { goatcounter: "diasio" },
   books: {
-    bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "" },
-    oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "" },
+    bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "https://store.streetlib.com/fiction/il-bug-della-trasparenza-il-silenzio-e-finito-la-verita-e-pubblica-1008988/" },
+    oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "https://store.streetlib.com/fiction/l-economia-dell-oblio-chi-dimentica-diventa-innocente-paga-solo-chi-ricorda-1008980/" },
     vuoto: { amazon: "", altriStore: "", uscita: "2026-10-23" }, // link da mettere appena https://www.amazon.it/dp/B0HM4HFK34 è online
     aritmetica: { amazon: "https://www.amazon.it/dp/B0HM3Y19B6", altriStore: "" }
   }
