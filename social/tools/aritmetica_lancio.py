@@ -1,3 +1,4 @@
+# ARCHIVIO (6/10/2026, sera): questi post con data 23 ottobre sono stati tolti dal calendario perché l'eBook esce prima; riscrivere date e conto alla rovescia prima di riusarli.
 # 13 post di lancio de «L'Aritmetica del Consenso» (uscita prevista venerdì 23 ottobre 2026), approvati dall'utente il 6/10/2026.
 # Le citazioni sono testuali dalla Puntata 1 (testo approvato, in Drive). *parola* = parola in ottone.
 # Letto da carousel.py (load) con exec: niente import relativi. `python carousel.py` rende le immagini in social/img/nuovi/
