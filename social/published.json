@@ -143,6 +143,18 @@
         "link": "https://www.facebook.com/1377129402146055_122101481757500199",
         "ora_utc": "2026-10-07T10:37:29+00:00"
       }
+    },
+    "r04-oblio-bitcoin": {
+      "instagram": {
+        "media_id": "18071506001589866",
+        "link": "https://www.instagram.com/reel/DeM50xFE-Ja/",
+        "ora_utc": "2026-10-07T17:32:37+00:00"
+      },
+      "facebook": {
+        "post_id": "970620679427355",
+        "link": "https://www.facebook.com/970620679427355",
+        "ora_utc": "2026-10-07T17:32:37+00:00"
+      }
     }
   }
 }
