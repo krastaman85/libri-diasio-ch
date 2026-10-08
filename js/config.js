@@ -16,6 +16,6 @@ window.SITE = {
     bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "https://store.streetlib.com/fiction/il-bug-della-trasparenza-il-silenzio-e-finito-la-verita-e-pubblica-1008988/" },
     oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "https://store.streetlib.com/fiction/l-economia-dell-oblio-chi-dimentica-diventa-innocente-paga-solo-chi-ricorda-1008980/" },
     vuoto: { amazon: "https://www.amazon.it/dp/B0HM4HFK34", altriStore: "", uscita: "2026-10-23" }, // prenotazione online dal 6/10/2026
-    aritmetica: { amazon: "https://www.amazon.it/dp/B0HM3Y19B6", altriStore: "" }
+    aritmetica: { amazon: "https://www.amazon.it/dp/B0HM3Y19B6", altriStore: "https://store.streetlib.com/noir/l-aritmetica-del-consenso-romanzo-in-sei-puntate-1012194/" }
   }
 };
