@@ -44,7 +44,7 @@
     var prenota = !!(b.uscita && iso < b.uscita); // prima della data di uscita: prenotazione
     if (b.amazon) out.push('<a class="btn primary store" href="' + b.amazon + '" rel="noopener"><span class="lbl">' + (prenota ? "Prenota su" : "Disponibile su") + '</span>' + LOGO_AMAZON + '</a>');
     if (b.altriStore) out.push('<a class="btn store" href="' + b.altriStore + '" rel="noopener"><span class="lbl">Disponibile su</span>' + LOGO_STREETLIB + '</a>');
-    else if (b.amazon && !short) out.push('<span class="pill">Prossimamente su StreetLib</span>');
+    if (b.amazon && S.kindleUnlimited && !short && !prenota) out.push('<span class="pill">Incluso in Kindle Unlimited</span>');
     var mesi = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
     var quando = b.uscita ? new Date(b.uscita + "T12:00:00") : null;
     var attesa = quando && prenota ? "Su Amazon Kindle dal " + quando.getDate() + " " + mesi[quando.getMonth()] : "In arrivo negli store";
@@ -52,6 +52,8 @@
     document.querySelectorAll("[data-pre]").forEach(function (el) { el.hidden = !prenota; });
     document.querySelectorAll("[data-post]").forEach(function (el) { el.hidden = prenota; });
   });
+  // Kindle Unlimited: le frasi [data-ku] compaiono solo con l'iscrizione a KDP Select attiva (config.js)
+  document.querySelectorAll("[data-ku]").forEach(function (el) { el.hidden = !S.kindleUnlimited; });
 
   // Il Bug: messaggi della bacheca "Trasparenza attiva"
   var app = document.querySelector("[data-app]");
