@@ -12,8 +12,8 @@ window.SITE = {
   newsletterUrl: "https://davide-fek7ym.subscribepage.io",
   // GoatCounter (statistiche senza cookie), attivo. "" = spente. Se cambi il codice aggiorna anche la CSP delle pagine (vedi social/kit/analytics.md).
   analytics: { goatcounter: "diasio" },
-  // KDP Select / Kindle Unlimited: false finché l'iscrizione non è attiva su KDP (poi true)
-  kindleUnlimited: false,
+  // KDP Select / Kindle Unlimited: iscrizione attiva per i 4 ebook dall’11/10/2026
+  kindleUnlimited: true,
   books: {
     bug:   { amazon: "https://www.amazon.it/dp/B0HLN2VSJP", altriStore: "" },
     oblio: { amazon: "https://www.amazon.it/dp/B0HLMKWJZ5", altriStore: "" },
