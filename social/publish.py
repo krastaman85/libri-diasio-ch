@@ -16,6 +16,9 @@ Tipi di post in calendar.json: immagine (campo "immagine"), "tipo": "reel" (camp
 "tipo": "carosello" (campo "immagini": da 2 a 10 file JPEG), "tipo": "storia" (campo "immagine": JPEG 1080x1920,
 senza didascalia), "tipo": "testo" (solo Facebook: "didascalia" + "link" facoltativo, anteprima automatica).
 Il campo facoltativo "piattaforme": ["instagram"] o ["facebook"] limita un post a una sola piattaforma.
+Il campo facoltativo "poi": "<id>" abbina un secondo post (di solito la Storia della stessa frase): esce nella
+stessa esecuzione, subito dopo il primo, senza aspettare il suo orario. Solo se il primo è uscito senza errori;
+altrimenti resta in calendario con il suo orario, come ripiego.
 """
 import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
@@ -137,6 +140,52 @@ def media_urls(p):
     if is_carousel(p):
         return [f"{SITE}/{x}" for x in p["immagini"]]
     return [f"{SITE}/{p['immagine']}"]
+
+
+def kind_of(p):
+    return "reel" if is_reel(p) else "carosello" if is_carousel(p) else "storia" if is_story(p) else "testo" if is_text(p) else "immagine"
+
+
+def companion(cal, state, plats, p):
+    """Post abbinato a `p` con il campo "poi", e le sue piattaforme ancora da fare (vuote se già uscito)."""
+    cid = p.get("poi")
+    if not cid:
+        return None, []
+    c = next((x for x in cal["post"] if x["id"] == cid), None)
+    if c is None:
+        print(f"::warning::{p['id']}: il post abbinato {cid} non è in calendario.")
+        return None, []
+    return c, pending(c, state, plats)
+
+
+def check_media(p):
+    """URL del post, dopo aver controllato numero di slide e raggiungibilità. Esce con errore se qualcosa non va."""
+    urls = media_urls(p)
+    if is_carousel(p) and not 2 <= len(urls) <= 10:
+        sys.exit(f"Un carosello ha da 2 a 10 slide: {p['id']} ne ha {len(urls)}.")
+    for u in urls:
+        if not media_ok(u, "video/" if is_reel(p) else "image/jpeg"):
+            sys.exit(f"File non raggiungibile o di tipo sbagliato: {u} (il sito è aggiornato?)")
+    return urls
+
+
+def publish_post(p, todo, urls, state):
+    """Pubblica `p` sulle piattaforme `todo`, salva lo stato dopo ognuna. Restituisce l'elenco degli errori."""
+    errors = []
+    for plat in todo:
+        try:
+            if plat == "instagram":
+                res = publish_instagram(p, urls if is_carousel(p) else urls[0], os.environ["IG_ACCESS_TOKEN"])
+            else:
+                res = publish_facebook(p, urls if is_carousel(p) else (urls[0] if urls else None), fb_token(), os.environ["FB_PAGE_ID"])
+            res["ora_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+            entry(state, p["id"])[plat] = res
+            print(f"Pubblicato su {plat}: {res['link']}")
+        except ApiError as e:
+            errors.append(f"{plat}: {e}")
+            print(f"::error::Errore su {plat} ({p['id']}): {e}")
+        STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+    return errors
 
 
 def wait_container(cid, token, tries, wait):
@@ -262,7 +311,6 @@ def main():
         return
 
     print("Piattaforme attive:", ", ".join(plats))
-    errors = []
     try:
         check_tokens(plats)
     except ApiError as e:
@@ -274,33 +322,25 @@ def main():
     if not p:
         print("Nessun post da pubblicare adesso.")
         return
-    kind = "reel" if is_reel(p) else "carosello" if is_carousel(p) else "storia" if is_story(p) else "testo" if is_text(p) else "immagine"
-    urls = media_urls(p)
-    print(f"Post: {p['id']} ({kind}, {p['segmento']}) su {', '.join(todo)} → {', '.join(urls)}")
-    if is_carousel(p) and not 2 <= len(urls) <= 10:
-        sys.exit(f"Un carosello ha da 2 a 10 slide: {p['id']} ne ha {len(urls)}.")
-    for u in urls:
-        if not media_ok(u, "video/" if is_reel(p) else "image/jpeg"):
-            sys.exit(f"File non raggiungibile o di tipo sbagliato: {u} (il sito è aggiornato?)")
+    urls = check_media(p)
+    print(f"Post: {p['id']} ({kind_of(p)}, {p['segmento']}) su {', '.join(todo)} → {', '.join(urls)}")
+    c, ctodo = companion(cal, state, plats, p)
+    curls = []
+    if c and ctodo:
+        curls = check_media(c)
+        print(f"Abbinato: {c['id']} ({kind_of(c)}) su {', '.join(ctodo)}, subito dopo → {', '.join(curls)}")
     if a.dry_run:
-        print("Dry run riuscito: token validi, file raggiungibile. Non pubblico.")
+        print("Dry run riuscito: token validi, file raggiungibili. Non pubblico.")
         return
 
-    for plat in todo:
-        try:
-            if plat == "instagram":
-                res = publish_instagram(p, urls if is_carousel(p) else urls[0], os.environ["IG_ACCESS_TOKEN"])
-            else:
-                res = publish_facebook(p, urls if is_carousel(p) else (urls[0] if urls else None), fb_token(), os.environ["FB_PAGE_ID"])
-            res["ora_utc"] = now.isoformat(timespec="seconds")
-            entry(state, p["id"])[plat] = res
-            print(f"Pubblicato su {plat}: {res['link']}")
-        except ApiError as e:
-            errors.append(f"{plat}: {e}")
-            print(f"::error::Errore su {plat}: {e}")
-        STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+    errors = publish_post(p, todo, urls, state)
     if errors:
+        if c and ctodo:
+            print(f"{c['id']} non esce adesso: resta in calendario per le {c['quando'][11:]} (ripiego).")
         sys.exit(1)
+    if c and ctodo:
+        if publish_post(c, ctodo, curls, state):
+            sys.exit(1)
 
 
 if __name__ == "__main__":

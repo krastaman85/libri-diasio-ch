@@ -75,7 +75,7 @@ I tre job nuovi vanno creati **prima del merge** (o subito dopo): senza il job d
 Se cambi una finestra, cambia anche `social/test_calendario.py` (stesse finestre, ora liste per giorno) e gli orari in `calendar.json`: l'orario di un post deve cadere prima dell'ultimo avvio della sua finestra. Il body è sempre `{"ref":"main","inputs":{"dry_run":"false"}}`.
 
 ## Rubrica «Citazioni D. Iasio» (dal 23 ottobre 2026): decimo job
-Decisione dell'utente (12/10/2026): ogni sera alle **23:10 esatte** esce un Reel con una frase dell'autore (Instagram e Facebook), alle 23:13 la stessa frase come Storia (solo Instagram). Orario fisso, uguale ogni giorno: niente minuti variabili per questa rubrica.
+Decisione dell'utente (12/10/2026): ogni sera alle **23:10 esatte** esce un Reel con una frase dell'autore (Instagram e Facebook) e, subito dopo, la stessa frase come Storia (Instagram e Facebook, come le altre Storie). Orario fisso, uguale ogni giorno: niente minuti variabili per questa rubrica.
 Serve un **decimo job**, creato con AZIONI → Clona da un job esistente (l'intestazione `Authorization` resta):
 
 | Job | Giorni | Ora | Minuti | Cosa esce |
@@ -83,7 +83,7 @@ Serve un **decimo job**, creato con AZIONI → Clona da un job esistente (l'inte
 | **Citazioni 23:10 (nuovo)** | tutti | 23 | 10 | Reel della frase (scelta dell'utente del 12/10: un solo avvio, minuto 10) |
 
 Crontab: `10 23 * * *` con `CRON_TZ=Europe/Zurich`. Body `{"ref":"main","inputs":{"dry_run":"false"}}`.
-Puntualità reale: il workflow parte entro pochi secondi dalla chiamata, il Reel richiede l'elaborazione del video da parte di Instagram (di solito 1-2 minuti), quindi il post compare tra le 23:10 e le 23:13 circa. Con un solo avvio: `publish.py` pubblica un post per esecuzione, quindi la Storia delle 23:13 non ha un avvio esterno e resta al cron interno di GitHub (in ritardo, oppure saltata dopo 12 ore); se l'avvio delle 23:10 fallisce, anche il Reel aspetta il cron interno. Il job va creato **prima del 23/10 alle 23:10**: senza, i post della rubrica escono solo con il cron interno di GitHub (in ritardo, a volte di ore) o vengono saltati dopo 12 ore.
+Un solo avvio basta (modifica del 12/10): il Reel ha il campo `"poi"` con l'id della sua Storia, e `publish.py` pubblica la Storia nella stessa esecuzione, subito dopo il Reel, senza aspettare il suo orario. Puntualità reale: il workflow parte entro pochi secondi dalla chiamata, il Reel richiede l'elaborazione del video da parte di Instagram (di solito 1-2 minuti), quindi il Reel compare tra le 23:10 e le 23:13 circa e la Storia uno o due minuti dopo. Se il Reel va in errore su una piattaforma, la Storia non esce in quella esecuzione: resta in calendario alle 23:13 e la pubblica il cron interno di GitHub (in ritardo). Se l'avvio delle 23:10 non parte, Reel e Storia aspettano entrambi il cron interno. Un post rimasto indietro dalla sera (per esempio delle 20) passerebbe davanti al Reel: il workflow pubblica sempre il post scaduto più vecchio. Il job va creato **prima del 23/10 alle 23:10**: senza, i post della rubrica escono solo con il cron interno di GitHub (in ritardo, a volte di ore) o vengono saltati dopo 12 ore.
 
 ## Controlli dopo l'attivazione
 - Controlla l'esito su cron-job.org (History: HTTP 204) e su Actions: il run deve avere `dry_run` vuoto o `false` e deve riportare `Pubblicato su` per le piattaforme previste. HTTP 204 conferma solo l'avvio del workflow, non che abbia pubblicato.

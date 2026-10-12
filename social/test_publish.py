@@ -111,5 +111,79 @@ class PublishTests(unittest.TestCase):
                 self.assertLessEqual(p["didascalia"].count("#"), 5, p["id"])
 
 
+class Abbinati(unittest.TestCase):
+    """Campo "poi": il Reel delle 23:10 porta con sé la sua Storia nella stessa esecuzione."""
+
+    CAL = {"fuso": "Europe/Rome", "max_ritardo_ore": 12, "post": [
+        {"id": "q01-x", "tipo": "reel", "quando": "2026-10-23T23:10", "segmento": "s",
+         "video": "social/video/q01-x.mp4", "didascalia": "d", "didascalia_fb": "d", "poi": "q01s-x"},
+        {"id": "q01s-x", "tipo": "storia", "quando": "2026-10-23T23:13", "segmento": "s",
+         "immagine": "social/img/story/q01-x.jpg"}]}
+
+    def run_main(self, state, fail_on=None, dry=False, ora="2026-10-23T21:10:30+00:00"):
+        """Esegue main() con API, file e orologio simulati; restituisce lo stato salvato e i POST fatti."""
+        import tempfile
+        from datetime import datetime as real_dt
+        f = Fake()
+
+        def call(base, method, path, token, params=None):
+            if fail_on and method == "POST" and path.endswith(fail_on):
+                raise publish.ApiError("simulato")
+            return f(base, method, path, token, params)
+
+        class Clock(real_dt):
+            @classmethod
+            def now(cls, tz=None):
+                return real_dt.fromisoformat(ora)
+
+        tmp = Path(tempfile.mkdtemp())
+        (tmp / "calendar.json").write_text(json.dumps(self.CAL), encoding="utf-8")
+        (tmp / "published.json").write_text(json.dumps(state), encoding="utf-8")
+        env = {"IG_ACCESS_TOKEN": "T", "FB_PAGE_TOKEN": "F", "FB_PAGE_ID": "PG"}
+        argv = ["publish.py"] + (["--dry-run"] if dry else [])
+        with mock.patch.object(publish, "call", call), mock.patch.object(publish.time, "sleep"), \
+                mock.patch.object(publish, "media_ok", lambda u, t: True), mock.patch.object(publish, "datetime", Clock), \
+                mock.patch.object(publish, "CAL", tmp / "calendar.json"), mock.patch.object(publish, "STATE", tmp / "published.json"), \
+                mock.patch.dict(publish.os.environ, env), mock.patch.object(sys, "argv", argv):
+            code = None
+            try:
+                publish.main()
+            except SystemExit as e:
+                code = e.code
+        out = json.loads((tmp / "published.json").read_text(encoding="utf-8"))
+        return out, [c for c in f.calls if c[0] == "POST"], code
+
+    def test_reel_e_poi_la_storia_nella_stessa_esecuzione(self):
+        st, posts, code = self.run_main({"pubblicati": {}})
+        self.assertIsNone(code)
+        self.assertEqual(set(st["pubblicati"]["q01-x"]), {"instagram", "facebook"})
+        self.assertEqual(set(st["pubblicati"]["q01s-x"]), {"instagram", "facebook"})
+        tipi = [c[2].get("media_type") for c in posts if c[1] == "U1/media"]
+        self.assertEqual(tipi, ["REELS", "STORIES"])        # prima il Reel, poi la Storia
+
+    def test_se_il_reel_fallisce_la_storia_aspetta(self):
+        st, posts, code = self.run_main({"pubblicati": {}}, fail_on="/videos")      # Reel su Facebook in errore
+        self.assertEqual(code, 1)
+        self.assertNotIn("q01s-x", st["pubblicati"])
+        self.assertFalse(any(c[2].get("media_type") == "STORIES" for c in posts))
+
+    def test_storia_gia_uscita_non_si_ripete(self):
+        st0 = {"pubblicati": {"q01s-x": {"instagram": {"link": "x"}, "facebook": {"link": "y"}}}}
+        st, posts, code = self.run_main(st0)
+        self.assertIsNone(code)
+        self.assertFalse(any(c[2].get("media_type") == "STORIES" for c in posts))
+
+    def test_dry_run_non_pubblica_nessuno_dei_due(self):
+        st, posts, code = self.run_main({"pubblicati": {}}, dry=True)
+        self.assertEqual(posts, [])
+        self.assertEqual(st["pubblicati"], {})
+
+    def test_ripiego_la_storia_esce_da_sola_dopo_le_23_13(self):
+        st0 = {"pubblicati": {"q01-x": {"instagram": {"link": "x"}, "facebook": {"link": "y"}}}}
+        st, posts, code = self.run_main(st0, ora="2026-10-23T21:20:00+00:00")
+        self.assertIsNone(code)
+        self.assertIn("instagram", st["pubblicati"]["q01s-x"])
+
+
 if __name__ == "__main__":
     unittest.main()

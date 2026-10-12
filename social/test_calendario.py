@@ -13,7 +13,7 @@ FINESTRE = {0: [(18, 7, 52), (12, 2, 57)], 1: [(19, 17, 57), (12, 2, 57)], 2: [(
             6: [(20, 2, 47), (12, 2, 57)]}
 DAL = datetime(2026, 10, 5)
 # Rubrica «Citazioni D. Iasio» (decisione dell'utente del 12/10/2026): ogni sera alle 23:10 esatte il Reel,
-# alle 23:13 la Storia, con un job dedicato su cron-job.org (ogni giorno alle 23:10). Orario fisso: niente minuti variabili.
+# subito dopo la Storia (campo "poi" del Reel; 23:13 è l'orario di ripiego), con un job dedicato su cron-job.org (ogni giorno alle 23:10). Orario fisso: niente minuti variabili.
 RUBRICA = re.compile(r"^q\d\d(s)?-")
 
 
@@ -85,6 +85,15 @@ class RubricaCitazioni(unittest.TestCase):
         for p in self.q:
             f = p.get("video") or p.get("immagine")
             self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
+
+    def test_ogni_reel_porta_la_sua_storia(self):
+        ids = {p["id"]: p for p in self.q}
+        for p in self.q:
+            if p["tipo"] == "reel":
+                s = ids.get(p.get("poi", ""))
+                self.assertIsNotNone(s, f"{p['id']}: manca il campo poi con la Storia")
+                self.assertEqual(s["tipo"], "storia", p["id"])
+                self.assertEqual(s["quando"][:10], p["quando"][:10], f"{p['id']}: Storia di un'altra sera")
 
     def test_firma_nelle_didascalie(self):
         for p in self.q:

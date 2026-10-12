@@ -1,7 +1,8 @@
 """Rubrica «Citazioni D. Iasio»: variabili dei Reel e voci del calendario.
 
 Legge social/citazioni/citazioni.json e, nell'ordine del file, assegna una sera a ogni frase dal giorno «inizio»:
-Reel alle 23:10 (Instagram e Facebook), la stessa frase come Storia alle 23:13 (solo Instagram, immagine).
+Reel alle 23:10 (Instagram e Facebook) e, nella stessa esecuzione, la Storia della stessa frase (campo "poi"
+del Reel); l'orario 23:13 della Storia serve solo da ripiego se il Reel non esce.
 
 Uso (dalla radice del repo):
   python3 social/tools/citazioni.py --vars        # scrive social/reels-src/vars/qNN-*.json
@@ -86,10 +87,11 @@ def calendario(d):
     pub = json.loads(PUB.read_text(encoding="utf-8"))["pubblicati"]
     nuove = []
     for n, pid, g, c in voci(d):
+        sid = pid.replace("-", "s-", 1)
         reel = {"id": pid, "tipo": "reel", "quando": f"{g.isoformat()}T{d['ora_reel']}",
                 "segmento": "Reel · Citazioni D. Iasio", "video": f"social/video/{pid}.mp4", "miniatura_ms": 12500,
-                "didascalia": didascalia(n, c, False), "didascalia_fb": didascalia(n, c, True)}
-        storia = {"id": pid.replace("-", "s-", 1), "tipo": "storia", "quando": f"{g.isoformat()}T{d['ora_storia']}",
+                "didascalia": didascalia(n, c, False), "didascalia_fb": didascalia(n, c, True), "poi": sid}
+        storia = {"id": sid, "tipo": "storia", "quando": f"{g.isoformat()}T{d['ora_storia']}",
                   "segmento": "Storia · Citazioni D. Iasio", "immagine": f"social/img/story/{pid}.jpg"}
         nuove += [reel, storia]
     ids = {p["id"] for p in nuove}
