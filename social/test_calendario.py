@@ -13,7 +13,7 @@ FINESTRE = {0: [(18, 7, 52), (12, 2, 57)], 1: [(19, 17, 57), (12, 2, 57)], 2: [(
             6: [(20, 2, 47), (12, 2, 57)]}
 DAL = datetime(2026, 10, 5)
 # Rubrica «Citazioni D. Iasio» (decisione dell'utente del 12/10/2026): ogni sera alle 23:10 esatte il Reel,
-# alle 23:13 la Storia, con un job dedicato su cron-job.org (23:10, 23:13, 23:16). Orario fisso: niente minuti variabili.
+# alle 23:13 la Storia, con un job dedicato su cron-job.org (ogni giorno alle 23:10). Orario fisso: niente minuti variabili.
 RUBRICA = re.compile(r"^q\d\d(s)?-")
 
 

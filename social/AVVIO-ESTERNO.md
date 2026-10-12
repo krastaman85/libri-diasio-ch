@@ -80,10 +80,10 @@ Serve un **decimo job**, creato con AZIONI → Clona da un job esistente (l'inte
 
 | Job | Giorni | Ora | Minuti | Cosa esce |
 |---|---|---|---|---|
-| **Citazioni 23:10 (nuovo)** | tutti | 23 | 10, 13, 16 | 23:10 Reel della frase, 23:13 Storia, 23:16 ripiego se un avvio è andato a vuoto |
+| **Citazioni 23:10 (nuovo)** | tutti | 23 | 10 | Reel della frase (scelta dell'utente del 12/10: un solo avvio, minuto 10) |
 
-Crontab: `10,13,16 23 * * *` con `CRON_TZ=Europe/Zurich`. Body `{"ref":"main","inputs":{"dry_run":"false"}}`.
-Puntualità reale: il workflow parte entro pochi secondi dalla chiamata, il Reel richiede l'elaborazione del video da parte di Instagram (di solito 1-2 minuti), quindi il post compare tra le 23:10 e le 23:13 circa. Il job va creato **prima del 23/10 alle 23:10**: senza, i post della rubrica escono solo con il cron interno di GitHub (in ritardo, a volte di ore) o vengono saltati dopo 12 ore.
+Crontab: `10 23 * * *` con `CRON_TZ=Europe/Zurich`. Body `{"ref":"main","inputs":{"dry_run":"false"}}`.
+Puntualità reale: il workflow parte entro pochi secondi dalla chiamata, il Reel richiede l'elaborazione del video da parte di Instagram (di solito 1-2 minuti), quindi il post compare tra le 23:10 e le 23:13 circa. Con un solo avvio: `publish.py` pubblica un post per esecuzione, quindi la Storia delle 23:13 non ha un avvio esterno e resta al cron interno di GitHub (in ritardo, oppure saltata dopo 12 ore); se l'avvio delle 23:10 fallisce, anche il Reel aspetta il cron interno. Il job va creato **prima del 23/10 alle 23:10**: senza, i post della rubrica escono solo con il cron interno di GitHub (in ritardo, a volte di ore) o vengono saltati dopo 12 ore.
 
 ## Controlli dopo l'attivazione
 - Controlla l'esito su cron-job.org (History: HTTP 204) e su Actions: il run deve avere `dry_run` vuoto o `false` e deve riportare `Pubblicato su` per le piattaforme previste. HTTP 204 conferma solo l'avvio del workflow, non che abbia pubblicato.

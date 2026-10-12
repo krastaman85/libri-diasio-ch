@@ -50,7 +50,7 @@ Già pubblicati: r00 (eliminato a mano dall'app), r00b (30/09, miniatura sulle c
 Frasi originali dell'autore (aforismi noir-satirici), firmate D. Iasio. Decisioni dell'utente: **ogni sera alle 23:10 esatte** dal 23/10/2026 (fascia serale tarda, prima scoperta), Reel come formato principale e la stessa frase come Storia; tono forte ma nel rispetto della legge; stile dei Reel D. Iasio.
 - Testi: `social/citazioni/citazioni.json` (47 frasi, ordine = calendario, campi `libro` e `ironica`); revisione, scarti motivati, verifica web di originalità e bozza originale **solo in Drive**, cartella «Citazioni D. Iasio» (`1 Testi e revisione`, `2 Reel (23:10)`, `3 Storie (23:13)`, `4 Scarti e versioni superate`), con il foglio «Citazioni D. Iasio - calendario e stato».
 - Calendario: voci `qNN-slug` (Reel 23:10, IG+FB) e `qNNs-slug` (Storia 23:13, IG), 23/10-8/12/2026, generate da `social/tools/citazioni.py --vars --calendar`; Reel da `social/reels-src/render-citazioni.sh` (composizione `index-citazione.html`). `test_calendario.py` le esclude dalle finestre a minuti variabili e le controlla con la classe `RubricaCitazioni`.
-- Serve un **decimo job** cron-job.org: tutti i giorni alle 23 ai minuti 10, 13, 16 (Europe/Zurich), clonato da un job esistente, body `dry_run` false. Vedi `social/AVVIO-ESTERNO.md`.
+- Serve un **decimo job** cron-job.org: tutti i giorni alle 23:10, solo minuto 10 (Europe/Zurich, scelta dell'utente del 12/10), clonato da un job esistente, body `dry_run` false. Vedi `social/AVVIO-ESTERNO.md`.
 - Nuove frasi: aggiungerle in coda a `citazioni.json` (non riordinare quelle già pubblicate), rilanciare lo script e il render dei soli id nuovi, fare verifica web e revisione prima.
 
 ## Revisione editoriale (1/10/2026, fuori dal repo)
