@@ -246,6 +246,18 @@
         "link": "https://www.facebook.com/1377129402146055_122105370021500199",
         "ora_utc": "2026-10-11T18:27:24+00:00"
       }
+    },
+    "v01-listino": {
+      "instagram": {
+        "media_id": "18217469200353505",
+        "link": "https://www.instagram.com/reel/DeZCSCEElZI/",
+        "ora_utc": "2026-10-12T10:37:58+00:00"
+      },
+      "facebook": {
+        "post_id": "28806830195652718",
+        "link": "https://www.facebook.com/28806830195652718",
+        "ora_utc": "2026-10-12T10:38:03+00:00"
+      }
     }
   }
 }
