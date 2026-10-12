@@ -37,3 +37,8 @@ La traccia ssets/audio/bed.mp3 nasce da ssets/audio/bed.filter (grafo FFmpeg):
 ## Reel di «Vuoto a rendere» (6/10/2026)
 
 Composizione a parte: `index-vuoto.html` (stile grafite, rosso e ambra, IBM Plex Mono + Source Serif; tre modi `listino`, `sedie`, `regia`, 15 s). Variabili in `vars/v01-listino.json`, `v02-sedie.json`, `v03-regia.json`. Per renderizzare: copiare `index-vuoto.html` come `index.html` in una cartella con `assets/`, poi `npx hyperframes render . --variables-file vars/v01-listino.json -q high` e comprimere con ffmpeg (libx264, crf 23). Uscite in `../video/v0*.mp4`.
+
+## Rubrica «Citazioni D. Iasio» (12/10/2026)
+
+Composizione `index-citazione.html` (13 s, stessa palette e stessi caratteri dei Reel, fondo più scuro): numero della frase in alto a destra, citazione parola per parola, firma «D. Iasio» sul colpo grave della traccia (7,75 s), riga «Una frase ogni sera alle 23:10 · @d.iasio.libri». Variabili `quote`, `emphasis`, `num` in `vars/qNN-*.json` (scritte da `social/tools/citazioni.py --vars`).
+`./render-citazioni.sh` (senza argomenti fa tutte le `vars/q*.json`) produce `../video/qNN-*.mp4` (crf 25) e la Storia `../img/story/qNN-*.jpg` (fotogramma a 12,5 s). Circa un minuto per Reel in cloud.

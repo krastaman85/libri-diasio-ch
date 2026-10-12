@@ -1,0 +1,111 @@
+<!doctype html>
+<html
+  lang="it"
+  data-composition-variables='[
+    {"id":"quote","type":"string","label":"Citazione","default":"La paranoia è un sesto senso con un pessimo ufficio stampa."},
+    {"id":"emphasis","type":"string","label":"Parole in evidenza (separate da virgola)","default":"stampa"},
+    {"id":"num","type":"string","label":"Numero della citazione","default":"N. 06"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/js/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Oswald"; font-weight: 700; src: url("assets/fonts/Oswald-700.woff2") format("woff2"); }
+      @font-face { font-family: "Oswald"; font-weight: 500; src: url("assets/fonts/Oswald-500.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: normal; src: url("assets/fonts/SourceSerif4-400.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 400; font-style: italic; src: url("assets/fonts/SourceSerif4-400i.woff2") format("woff2"); }
+      @font-face { font-family: "Source Serif 4"; font-weight: 600; font-style: normal; src: url("assets/fonts/SourceSerif4-600.woff2") format("woff2"); }
+
+      /* Stessa palette dei Reel D. Iasio (index.html), più scura: è la rubrica di mezzanotte. */
+      :root { --bg: #070b12; --ink: #eef1f5; --muted: #a7b2c2; --line: #22324a; --accent: #f0a24a; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; color: var(--ink); font-family: "Source Serif 4", Georgia, serif; }
+
+      #glow { position: absolute; left: 50%; top: 46%; width: 1600px; height: 1600px; margin-left: -800px; margin-top: -800px; border-radius: 50%;
+              background: radial-gradient(circle, rgba(240,162,74,.20) 0%, rgba(120,72,24,.10) 36%, rgba(7,11,18,0) 66%); }
+      #vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 48%, rgba(7,11,18,0) 38%, rgba(3,5,9,.82) 100%); }
+
+      #brand { position: absolute; left: 90px; top: 290px; font-family: "Oswald", sans-serif; font-weight: 700; font-size: 46px; letter-spacing: .28em; text-transform: uppercase; }
+      #brand span { color: var(--accent); }
+      #brand-rule { position: absolute; left: 90px; top: 366px; width: 96px; height: 6px; background: var(--accent); transform-origin: left center; }
+      #kicker { position: absolute; right: 90px; top: 300px; font-family: "Oswald", sans-serif; font-weight: 500; font-size: 30px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+
+      #qmark { position: absolute; left: 82px; top: 470px; font-family: "Source Serif 4", serif; font-style: italic; font-size: 240px; line-height: 1; color: var(--accent); opacity: .9; }
+      #quote-wrap { position: absolute; left: 90px; right: 90px; top: 700px; height: 720px; display: flex; flex-direction: column; justify-content: center; }
+      #quote { display: flex; flex-wrap: wrap; column-gap: .27em; row-gap: .1em; font-style: italic; font-weight: 400; line-height: 1.2; color: var(--ink); }
+      #quote .w { display: inline-block; will-change: transform, opacity, filter; }
+      #quote .w.em { color: var(--accent); }
+
+      #sign { position: absolute; left: 90px; right: 90px; top: 1470px; display: flex; align-items: center; gap: 26px; }
+      #sign-rule { width: 84px; height: 4px; background: var(--accent); transform-origin: left center; }
+      #sign-name { font-family: "Oswald", sans-serif; font-weight: 700; font-size: 58px; letter-spacing: .16em; text-transform: uppercase; }
+      #sign-name span { color: var(--accent); }
+      #footer { position: absolute; left: 90px; right: 90px; top: 1570px; font-family: "Source Serif 4", serif; font-size: 34px; color: var(--muted); }
+      #footer b { color: var(--ink); font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="13" data-width="1080" data-height="1920">
+      <audio id="bed" src="assets/audio/bed.mp3" data-start="0" data-duration="13" data-track-index="10" data-volume="0.7"></audio>
+      <div id="glow"></div>
+      <div id="vignette"></div>
+      <div id="brand">D<span>.</span> IASIO</div>
+      <div id="brand-rule"></div>
+      <div id="kicker" data-var-text="num">N. 06</div>
+
+      <div id="qmark">“</div>
+      <div id="quote-wrap"><div id="quote"></div></div>
+
+      <div id="sign"><div id="sign-rule"></div><div id="sign-name">D<span>.</span> Iasio</div></div>
+      <div id="footer">Una frase ogni sera alle 23:10 · <b>@d.iasio.libri</b></div>
+    </div>
+    <script>
+      const V = window.__hyperframes.getVariables();
+      const quote = String(V.quote || "");
+      const emph = String(V.emphasis || "").toLowerCase().split(",").map((s) => s.trim()).filter(Boolean);
+      const norm = (s) => s.toLowerCase().replace(/[^a-zàèéìòù’']/gi, "");
+      const n = quote.length;
+      const size = n > 160 ? 62 : n > 120 ? 70 : n > 85 ? 80 : n > 55 ? 92 : 108;
+      const qEl = document.getElementById("quote");
+      qEl.style.fontSize = size + "px";
+      const words = quote.split(/\s+/).filter(Boolean);
+      words.forEach((w) => {
+        const s = document.createElement("span");
+        s.className = "w" + (emph.some((e) => e === norm(w)) ? " em" : "");
+        s.textContent = w;
+        qEl.appendChild(s);
+      });
+
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#glow", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 2.4, ease: "power2.out" }, 0);
+      tl.to("#glow", { scale: 1.12, duration: 10.6, ease: "sine.inOut" }, 2.4);
+      tl.fromTo("#brand", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 0.15);
+      tl.fromTo("#brand-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.out" }, 0.45);
+      tl.fromTo("#kicker", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 0.6);
+      tl.fromTo("#qmark", { opacity: 0, y: 30, scale: 0.85 }, { opacity: 0.9, y: 0, scale: 1, duration: 0.8, ease: "power3.out" }, 0.55);
+
+      // Citazione parola per parola: tutta visibile entro circa 5,5 s, poi resta ferma da leggere.
+      const start = 0.9;
+      const step = Math.min(0.2, 4.4 / Math.max(words.length, 1));
+      const ws = document.querySelectorAll("#quote .w");
+      ws.forEach((el, i) => {
+        const t = start + i * step;
+        tl.fromTo(el, { opacity: 0, y: 40, filter: "blur(12px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power3.out" }, t);
+        if (el.classList.contains("em")) {
+          tl.fromTo(el, { textShadow: "0 0 0px rgba(240,162,74,0)" }, { textShadow: "0 0 30px rgba(240,162,74,.7)", duration: 0.5, ease: "power2.out", yoyo: true, repeat: 1 }, t + 0.35);
+        }
+      });
+
+      // Firma sul colpo grave della traccia (7,75 s), poi la riga della rubrica.
+      tl.fromTo("#sign-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 7.55);
+      tl.fromTo("#sign-name", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, 7.7);
+      tl.fromTo("#footer", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 8.6);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

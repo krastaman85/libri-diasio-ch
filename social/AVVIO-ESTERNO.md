@@ -74,6 +74,17 @@ CRON_TZ=Europe/Zurich
 I tre job nuovi vanno creati **prima del merge** (o subito dopo): senza il job del giovedì sera e quello del sabato pomeriggio i post delle 19 del giovedì e delle 17 del sabato non avrebbero un avvio nella loro fascia e, passate 12 ore, `publish.py` li salta. Se manca solo il job di pranzo, i post di pranzo escono con ritardo (al primo avvio serale del giorno, comunque entro 12 ore).
 Se cambi una finestra, cambia anche `social/test_calendario.py` (stesse finestre, ora liste per giorno) e gli orari in `calendar.json`: l'orario di un post deve cadere prima dell'ultimo avvio della sua finestra. Il body è sempre `{"ref":"main","inputs":{"dry_run":"false"}}`.
 
+## Rubrica «Citazioni D. Iasio» (dal 23 ottobre 2026): decimo job
+Decisione dell'utente (12/10/2026): ogni sera alle **23:10 esatte** esce un Reel con una frase dell'autore (Instagram e Facebook), alle 23:13 la stessa frase come Storia (solo Instagram). Orario fisso, uguale ogni giorno: niente minuti variabili per questa rubrica.
+Serve un **decimo job**, creato con AZIONI → Clona da un job esistente (l'intestazione `Authorization` resta):
+
+| Job | Giorni | Ora | Minuti | Cosa esce |
+|---|---|---|---|---|
+| **Citazioni 23:10 (nuovo)** | tutti | 23 | 10, 13, 16 | 23:10 Reel della frase, 23:13 Storia, 23:16 ripiego se un avvio è andato a vuoto |
+
+Crontab: `10,13,16 23 * * *` con `CRON_TZ=Europe/Zurich`. Body `{"ref":"main","inputs":{"dry_run":"false"}}`.
+Puntualità reale: il workflow parte entro pochi secondi dalla chiamata, il Reel richiede l'elaborazione del video da parte di Instagram (di solito 1-2 minuti), quindi il post compare tra le 23:10 e le 23:13 circa. Il job va creato **prima del 23/10 alle 23:10**: senza, i post della rubrica escono solo con il cron interno di GitHub (in ritardo, a volte di ore) o vengono saltati dopo 12 ore.
+
 ## Controlli dopo l'attivazione
 - Controlla l'esito su cron-job.org (History: HTTP 204) e su Actions: il run deve avere `dry_run` vuoto o `false` e deve riportare `Pubblicato su` per le piattaforme previste. HTTP 204 conferma solo l'avvio del workflow, non che abbia pubblicato.
 - Il 2 ottobre il Reel r02 era ancora pianificato alle 12:30: i dispatch delle 12:01 e 12:31 risultano con `dry_run: true`, mentre il cron interno l'ha pubblicato alle 16:57. Il calendario ora è corretto; il primo controllo con gli orari allineati è il Reel r03 del 3 ottobre alle 12:31.

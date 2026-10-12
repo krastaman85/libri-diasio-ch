@@ -12,6 +12,13 @@ FINESTRE = {0: [(18, 7, 52), (12, 2, 57)], 1: [(19, 17, 57), (12, 2, 57)], 2: [(
             3: [(12, 12, 52), (19, 7, 52)], 4: [(18, 2, 42), (12, 2, 57)], 5: [(12, 2, 47), (17, 2, 47)],
             6: [(20, 2, 47), (12, 2, 57)]}
 DAL = datetime(2026, 10, 5)
+# Rubrica «Citazioni D. Iasio» (decisione dell'utente del 12/10/2026): ogni sera alle 23:10 esatte il Reel,
+# alle 23:13 la Storia, con un job dedicato su cron-job.org (23:10, 23:13, 23:16). Orario fisso: niente minuti variabili.
+RUBRICA = re.compile(r"^q\d\d(s)?-")
+
+
+def rubrica(pid):
+    return RUBRICA.match(pid) is not None
 
 
 def da_controllare():
@@ -19,7 +26,7 @@ def da_controllare():
     pub = json.loads((DIR / "published.json").read_text(encoding="utf-8"))["pubblicati"]
     for p in sorted(cal["post"], key=lambda x: x["quando"]):
         d = datetime.fromisoformat(p["quando"])
-        if p["id"] not in pub and d >= DAL:
+        if p["id"] not in pub and d >= DAL and not rubrica(p["id"]):
             yield p["id"], d
 
 
@@ -52,6 +59,39 @@ class FinestreCron(unittest.TestCase):
             k = (d.date(), d.hour)
             self.assertNotIn(k, visti, f"{pid} e {visti.get(k)}: due uscite nella stessa fascia")
             visti[k] = pid
+
+
+class RubricaCitazioni(unittest.TestCase):
+    """Reel alle 23:10 e Storia alle 23:13, una coppia per sera, file presenti, firma e riga Kindle nelle didascalie."""
+
+    def setUp(self):
+        cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
+        self.q = [p for p in cal["post"] if rubrica(p["id"])]
+
+    def test_orari_fissi(self):
+        for p in self.q:
+            d = datetime.fromisoformat(p["quando"])
+            atteso = (23, 13) if p["tipo"] == "storia" else (23, 10)
+            self.assertEqual((d.hour, d.minute), atteso, f"{p['id']}: {p['quando']}")
+
+    def test_una_coppia_per_sera(self):
+        per_giorno = {}
+        for p in self.q:
+            per_giorno.setdefault(p["quando"][:10], []).append(p["tipo"])
+        for g, tipi in per_giorno.items():
+            self.assertEqual(sorted(tipi), ["reel", "storia"], f"{g}: {tipi}")
+
+    def test_i_file_esistono(self):
+        for p in self.q:
+            f = p.get("video") or p.get("immagine")
+            self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
+
+    def test_firma_nelle_didascalie(self):
+        for p in self.q:
+            if p["tipo"] == "reel":
+                for k in ("didascalia", "didascalia_fb"):
+                    self.assertIn("— D. Iasio", p[k], f"{p['id']} {k}: manca la firma")
+                    self.assertIn("Amazon Kindle", p[k], f"{p['id']} {k}: manca la riga Kindle")
 
 
 # Vocabolario scelto dall'utente (4/10/2026): genere, satira, community, geolocalizzazione.
