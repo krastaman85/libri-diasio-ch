@@ -21,12 +21,17 @@ def rubrica(pid):
     return RUBRICA.match(pid) is not None
 
 
+def tiktok(p):
+    """Post solo TikTok (dal 12/10/2026): li pubblica Buffer all'orario esatto, fuori dalle finestre di cron-job.org."""
+    return p.get("piattaforme") == ["tiktok"]
+
+
 def da_controllare():
     cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
     pub = json.loads((DIR / "published.json").read_text(encoding="utf-8"))["pubblicati"]
     for p in sorted(cal["post"], key=lambda x: x["quando"]):
         d = datetime.fromisoformat(p["quando"])
-        if p["id"] not in pub and d >= DAL and not rubrica(p["id"]):
+        if p["id"] not in pub and d >= DAL and not rubrica(p["id"]) and not tiktok(p):
             yield p["id"], d
 
 
@@ -101,6 +106,39 @@ class RubricaCitazioni(unittest.TestCase):
                 for k in ("didascalia", "didascalia_fb"):
                     self.assertIn("— D. Iasio", p[k], f"{p['id']} {k}: manca la firma")
                     self.assertIn("Amazon Kindle", p[k], f"{p['id']} {k}: manca la riga Kindle")
+
+
+class TikTok(unittest.TestCase):
+    """Reel solo TikTok inviati a Buffer: file nel repo, un post al giorno in fascia serale, IA dichiarata, riga Kindle."""
+
+    def setUp(self):
+        cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
+        self.t = [p for p in cal["post"] if tiktok(p)]
+
+    def test_solo_reel_con_video_presente(self):
+        for p in self.t:
+            self.assertEqual(p.get("tipo"), "reel", p["id"])
+            self.assertTrue((DIR.parent / p["video"]).exists(), f"{p['id']}: manca {p['video']}")
+
+    def test_un_post_al_giorno_tra_le_7_e_le_23(self):
+        giorni = {}
+        for p in self.t:
+            d = datetime.fromisoformat(p["quando"])
+            self.assertTrue(7 <= d.hour <= 22, f"{p['id']}: {p['quando']}")
+            self.assertNotIn(d.date(), giorni, f"{p['id']} e {giorni.get(d.date())}: due TikTok lo stesso giorno")
+            giorni[d.date()] = p["id"]
+
+    def test_ia_dichiarata_e_riga_kindle(self):
+        for p in self.t:
+            self.assertTrue(p.get("ia", True), f"{p['id']}: contenuto IA non dichiarato")
+            self.assertIn("Amazon Kindle", p["didascalia"], f"{p['id']}: manca la riga Kindle")
+            self.assertNotIn("link in bio", p["didascalia"], f"{p['id']}: su TikTok il link in bio non c'è")
+
+    def test_vuoto_prima_dell_uscita(self):
+        """I Reel di Vuoto dicono «Prenota su Kindle · 23 ottobre»: su TikTok devono uscire entro il 22/10."""
+        for p in self.t:
+            if "/v-" in p["video"]:
+                self.assertLess(p["quando"][:10], "2026-10-23", f"{p['id']}: Reel di prenotazione dopo l'uscita")
 
 
 # Vocabolario scelto dall'utente (4/10/2026): genere, satira, community, geolocalizzazione.

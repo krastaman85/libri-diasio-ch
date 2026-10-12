@@ -185,5 +185,89 @@ class Abbinati(unittest.TestCase):
         self.assertIn("instagram", st["pubblicati"]["q01s-x"])
 
 
+class TikTokBuffer(unittest.TestCase):
+    """Invio a Buffer dei Reel solo TikTok (nessuna chiamata di rete)."""
+    from datetime import datetime as _dt, timezone as _tz
+
+    def setUp(self):
+        self.cal = {"fuso": "Europe/Rome", "max_ritardo_ore": 12, "post": [
+            {"id": "t1", "tipo": "reel", "quando": "2026-10-13T20:17", "video": "social/video/tiktok/a.mp4",
+             "piattaforme": ["tiktok"], "didascalia": "d #BookTokItalia", "miniatura_ms": 1500},
+            {"id": "t2", "tipo": "reel", "quando": "2026-10-20T21:14", "video": "social/video/tiktok/b.mp4",
+             "piattaforme": ["tiktok"], "didascalia": "d2"},
+            {"id": "ig", "tipo": "reel", "quando": "2026-10-13T12:30", "video": "social/video/r.mp4", "didascalia": "x"}]}
+        self.env = mock.patch.dict(publish.os.environ, {"BUFFER_API_KEY": "K", "BUFFER_TIKTOK_CHANNEL": "CH"})
+        self.env.start()
+        self.state_file = mock.patch.object(publish, "STATE", mock.MagicMock())
+        self.state_file.start()
+
+    def tearDown(self):
+        self.env.stop()
+        self.state_file.stop()
+
+    def run_pass(self, now, state, risposta=None):
+        calls = []
+
+        def fake(query, variables=None):
+            calls.append(variables)
+            return risposta or {"createPost": {"post": {"id": "B1", "dueAt": "2026-10-13T18:17:00.000Z"}}}
+        with mock.patch.object(publish, "buffer_call", fake), mock.patch.object(publish, "media_ok", return_value=True):
+            err = publish.tiktok_pass(self.cal, state, now)
+        return calls, err
+
+    def test_invio_con_orario_esatto_in_utc(self):
+        state = {"pubblicati": {}}
+        now = self._dt(2026, 10, 13, 10, 0, tzinfo=self._tz.utc)          # 12:00 a Zurigo, il post è alle 20:17
+        calls, err = self.run_pass(now, state)
+        self.assertEqual(err, [])
+        self.assertEqual(len(calls), 1)                                   # t2 è oltre le 36 ore
+        inp = calls[0]["input"]
+        self.assertEqual(inp["mode"], "customScheduled")
+        self.assertEqual(inp["dueAt"], "2026-10-13T18:17:00.000Z")
+        self.assertEqual(inp["channelId"], "CH")
+        self.assertTrue(inp["metadata"]["tiktok"]["isAiGenerated"])
+        self.assertEqual(inp["assets"][0]["video"]["url"], "https://libri.diasio.ch/social/video/tiktok/a.mp4")
+        self.assertEqual(state["pubblicati"]["t1"]["tiktok"]["buffer_post_id"], "B1")
+
+    def test_non_reinvia_mai(self):
+        state = {"pubblicati": {"t1": {"tiktok": {"buffer_post_id": "B1"}}}}
+        calls, _ = self.run_pass(self._dt(2026, 10, 13, 17, 0, tzinfo=self._tz.utc), state)
+        self.assertEqual(calls, [])
+
+    def test_in_scadenza_esce_subito(self):
+        state = {"pubblicati": {}}
+        calls, _ = self.run_pass(self._dt(2026, 10, 13, 18, 30, tzinfo=self._tz.utc), state)
+        self.assertEqual(calls[0]["input"]["mode"], "shareNow")
+        self.assertNotIn("dueAt", calls[0]["input"])
+
+    def test_troppo_in_ritardo_viene_saltato(self):
+        state = {"pubblicati": {}}
+        calls, _ = self.run_pass(self._dt(2026, 10, 14, 12, 0, tzinfo=self._tz.utc), state)
+        self.assertEqual(calls, [])
+        self.assertIn("saltato", state["pubblicati"]["t1"]["tiktok"])
+
+    def test_errore_buffer_non_segna_il_post(self):
+        state = {"pubblicati": {}}
+        _, err = self.run_pass(self._dt(2026, 10, 13, 10, 0, tzinfo=self._tz.utc), state,
+                               {"createPost": {"message": "video non valido"}})
+        self.assertTrue(err)
+        self.assertNotIn("t1", state["pubblicati"])
+
+    def test_risposta_incerta_blocca_i_doppioni(self):
+        state = {"pubblicati": {}}
+
+        def boom(query, variables=None):
+            raise publish.Incerto("timeout")
+        with mock.patch.object(publish, "buffer_call", boom), mock.patch.object(publish, "media_ok", return_value=True):
+            err = publish.tiktok_pass(self.cal, state, self._dt(2026, 10, 13, 10, 0, tzinfo=self._tz.utc))
+        self.assertTrue(err)
+        self.assertIn("incerto", state["pubblicati"]["t1"]["tiktok"])
+
+    def test_instagram_e_facebook_ignorano_i_post_tiktok(self):
+        state = {"pubblicati": {}}
+        self.assertEqual(publish.pending(self.cal["post"][0], state, ["instagram", "facebook"]), [])
+        self.assertEqual(publish.pending(self.cal["post"][2], state, ["instagram", "facebook"]), ["instagram", "facebook"])
+
+
 if __name__ == "__main__":
     unittest.main()

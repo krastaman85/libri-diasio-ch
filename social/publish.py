@@ -19,6 +19,14 @@ Il campo facoltativo "piattaforme": ["instagram"] o ["facebook"] limita un post 
 Il campo facoltativo "poi": "<id>" abbina un secondo post (di solito la Storia della stessa frase): esce nella
 stessa esecuzione, subito dopo il primo, senza aspettare il suo orario. Solo se il primo è uscito senza errori;
 altrimenti resta in calendario con il suo orario, come ripiego.
+
+TikTok (dal 12/10/2026, tramite Buffer): i post con "piattaforme": ["tiktok"] (Reel, campo "video") non passano dal
+flusso Instagram/Facebook. Ogni esecuzione invia a Buffer quelli che scadono entro TIKTOK_ANTICIPO_ORE ore, con l'orario
+esatto ("customScheduled"): è Buffer a pubblicarli all'ora giusta, anche fuori dalle finestre di cron-job.org. Un post
+già inviato ha la voce "tiktok" in published.json e non viene mai reinviato. Servono le variabili d'ambiente
+  BUFFER_API_KEY         chiave API di Buffer (Secret di GitHub)
+  BUFFER_TIKTOK_CHANNEL  ID del canale TikTok in Buffer (non segreto)
+Senza, TikTok è semplicemente disattivato. Campo facoltativo "ia" (default vero): dichiara a TikTok il contenuto generato con IA.
 """
 import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
@@ -29,6 +37,9 @@ ROOT = Path(__file__).resolve().parent
 IG_API = "https://graph.instagram.com/v23.0"
 FB_API = "https://graph.facebook.com/v23.0"
 SITE = "https://libri.diasio.ch"
+BUFFER_API = "https://api.buffer.com"
+TIKTOK_ANTICIPO_ORE = 36   # un post TikTok si invia a Buffer quando mancano al massimo 36 ore
+TIKTOK_PER_ESECUZIONE = 2
 CAL, STATE = ROOT / "calendar.json", ROOT / "published.json"
 
 
@@ -140,6 +151,10 @@ def media_urls(p):
     if is_carousel(p):
         return [f"{SITE}/{x}" for x in p["immagini"]]
     return [f"{SITE}/{p['immagine']}"]
+
+
+def is_tiktok(p):
+    return "tiktok" in (p.get("piattaforme") or [])
 
 
 def kind_of(p):
@@ -295,6 +310,123 @@ def check_tokens(plats):
             print(f"Facebook: scadenza non verificabile ({str(e)[:120]})")
 
 
+# --- TikTok tramite Buffer ---------------------------------------------------------------------------
+
+BUFFER_CREATE = """mutation CreatePost($input: CreatePostInput!) {
+  createPost(input: $input) {
+    ... on PostActionSuccess { post { id dueAt } }
+    ... on MutationError { message }
+  }
+}"""
+
+
+def tiktok_attivo():
+    return bool(os.environ.get("BUFFER_API_KEY", "").strip() and os.environ.get("BUFFER_TIKTOK_CHANNEL", "").strip())
+
+
+class Incerto(Exception):
+    """La richiesta a Buffer è partita ma la risposta non è arrivata: il post potrebbe esistere."""
+
+
+def buffer_call(query, variables=None):
+    body = json.dumps({"query": query, "variables": variables or {}}).encode()
+    req = urllib.request.Request(BUFFER_API, data=body, method="POST", headers={
+        "Authorization": "Bearer " + os.environ["BUFFER_API_KEY"].strip(), "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            res = json.load(r)
+    except urllib.error.HTTPError as e:
+        raise ApiError(f"Buffer: HTTP {e.code} {e.read().decode('utf-8', 'replace')[:300]}")
+    except (urllib.error.URLError, TimeoutError, OSError) as e:
+        raise Incerto(f"Buffer: nessuna risposta ({e})")
+    if res.get("errors"):
+        raise ApiError("Buffer: " + "; ".join(x.get("message", "?") for x in res["errors"]))
+    return res.get("data") or {}
+
+
+def check_buffer():
+    """Chiave valida e canale TikTok presente nell'account Buffer."""
+    canale = os.environ["BUFFER_TIKTOK_CHANNEL"].strip()
+    orgs = buffer_call("query { account { organizations { id name } } }")["account"]["organizations"]
+    for o in orgs:
+        q = 'query { channels(input: {organizationId: "%s"}) { id name service } }' % o["id"]
+        for c in buffer_call(q).get("channels", []):
+            if c.get("id") == canale:
+                print(f"Buffer: canale {c.get('service')} «{c.get('name')}»")
+                return
+    raise ApiError(f"Buffer: il canale {canale} non è nell'account")
+
+
+def tiktok_input(p, when, now):
+    inp = {"text": p["didascalia"], "channelId": os.environ["BUFFER_TIKTOK_CHANNEL"].strip(),
+           "schedulingType": "automatic", "needsApproval": False,
+           "assets": [{"video": {"url": f"{SITE}/{p['video']}",
+                                 "metadata": {"thumbnailOffset": int(p.get("miniatura_ms", 1000))}}}],
+           "metadata": {"tiktok": {"isAiGenerated": bool(p.get("ia", True))}}}
+    if when - now <= timedelta(minutes=5):
+        inp["mode"] = "shareNow"
+    else:
+        inp["mode"] = "customScheduled"
+        inp["dueAt"] = when.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    return inp
+
+
+def tiktok_da_inviare(cal, state, now, forced=None):
+    """Post TikTok da inviare adesso a Buffer (al massimo TIKTOK_PER_ESECUZIONE). Segna quelli troppo in ritardo."""
+    tz = ZoneInfo(cal.get("fuso", "Europe/Rome"))
+    late = timedelta(hours=cal.get("max_ritardo_ore", 12))
+    ahead = timedelta(hours=TIKTOK_ANTICIPO_ORE)
+    out = []
+    for p in sorted(cal["post"], key=lambda x: x["quando"]):
+        if not is_tiktok(p) or (forced and p["id"] != forced):
+            continue
+        done = state["pubblicati"].get(p["id"], {})
+        if "tiktok" in done or done.get("saltato"):
+            continue
+        when = datetime.fromisoformat(p["quando"]).replace(tzinfo=tz)
+        if not forced:
+            if when - now > ahead:
+                continue
+            if now - when > late:
+                entry(state, p["id"])["tiktok"] = {"saltato": "oltre la finestra di ritardo"}
+                print(f"TikTok: saltato {p['id']}, programmato {p['quando']}, troppo in ritardo.")
+                continue
+        out.append((p, max(when, now)))
+    return out[:TIKTOK_PER_ESECUZIONE]
+
+
+def tiktok_pass(cal, state, now, forced=None, dry=False):
+    """Invia a Buffer i post TikTok in scadenza. Restituisce l'elenco degli errori."""
+    errors = []
+    for p, when in tiktok_da_inviare(cal, state, now, forced):
+        url = f"{SITE}/{p['video']}"
+        if not media_ok(url, "video/"):
+            errors.append(f"tiktok: file non raggiungibile {url}")
+            print(f"::error::TikTok {p['id']}: file non raggiungibile o di tipo sbagliato: {url}")
+            continue
+        inp = tiktok_input(p, when, now)
+        if dry:
+            print(f"TikTok (dry run): {p['id']} andrebbe a Buffer, modo {inp['mode']}, orario {p['quando']} → {url}")
+            continue
+        try:
+            r = buffer_call(BUFFER_CREATE, {"input": inp}).get("createPost") or {}
+            if not r.get("post"):
+                raise ApiError("Buffer: " + (r.get("message") or "risposta senza post"))
+            entry(state, p["id"])["tiktok"] = {"buffer_post_id": r["post"].get("id"), "dueAt": r["post"].get("dueAt"),
+                                               "modo": inp["mode"], "ora_utc": now.isoformat(timespec="seconds")}
+            print(f"TikTok: {p['id']} inviato a Buffer ({inp['mode']}, uscita {r['post'].get('dueAt')})")
+        except Incerto as e:
+            # meglio un post mancante che un doppione: si segna e si controlla a mano in Buffer
+            entry(state, p["id"])["tiktok"] = {"incerto": str(e)[:200], "ora_utc": now.isoformat(timespec="seconds")}
+            errors.append(f"tiktok: {e}")
+            print(f"::error::TikTok {p['id']}: esito incerto, controllare la coda di Buffer ({e})")
+        except ApiError as e:
+            errors.append(f"tiktok: {e}")
+            print(f"::error::TikTok {p['id']}: {e}")
+        STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+    return errors
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -310,17 +442,32 @@ def main():
         print("Calendario in pausa (pausa: true). Nessuna pubblicazione.")
         return
 
-    print("Piattaforme attive:", ", ".join(plats))
+    print("Piattaforme attive:", ", ".join(plats + (["tiktok (Buffer)"] if tiktok_attivo() else [])))
     try:
         check_tokens(plats)
     except ApiError as e:
         sys.exit(f"Errore token: {e}")
+    tk = tiktok_attivo()
+    if tk:
+        try:
+            check_buffer()
+        except (ApiError, Incerto) as e:
+            print(f"::error::TikTok disattivato in questa esecuzione: {e}")
+            if a.dry_run:
+                sys.exit(f"Errore Buffer: {e}")
+            tk = False
 
     now = datetime.now(timezone.utc)
+    forced_tk = bool(a.id) and any(x["id"] == a.id and is_tiktok(x) for x in cal["post"])
+    tk_errors = tiktok_pass(cal, state, now, a.id if forced_tk else None, a.dry_run) if tk and (forced_tk or not a.id) else []
+    if forced_tk:
+        sys.exit(1 if tk_errors else 0)
     p, todo = pick(cal, state, plats, now, a.id)
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
     if not p:
         print("Nessun post da pubblicare adesso.")
+        if tk_errors:
+            sys.exit(1)
         return
     urls = check_media(p)
     print(f"Post: {p['id']} ({kind_of(p)}, {p['segmento']}) su {', '.join(todo)} → {', '.join(urls)}")
@@ -341,6 +488,8 @@ def main():
     if c and ctodo:
         if publish_post(c, ctodo, curls, state):
             sys.exit(1)
+    if tk_errors:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
