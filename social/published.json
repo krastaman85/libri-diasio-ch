@@ -278,6 +278,14 @@
         "modo": "customScheduled",
         "ora_utc": "2026-10-12T21:10:48+00:00"
       }
+    },
+    "t02-a-sereno": {
+      "tiktok": {
+        "buffer_post_id": "6ace01b9e79eea2efe564107",
+        "dueAt": "2026-10-14T17:43:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-13T10:02:32+00:00"
+      }
     }
   }
 }
