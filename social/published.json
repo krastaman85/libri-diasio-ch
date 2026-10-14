@@ -310,6 +310,14 @@
         "link": "https://www.facebook.com/1377129402146055_122107546935500199",
         "ora_utc": "2026-10-13T17:42:50+00:00"
       }
+    },
+    "t03-v-clic": {
+      "tiktok": {
+        "buffer_post_id": "6acf533a033d64cf5cee2d1c",
+        "dueAt": "2026-10-15T19:08:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-14T10:02:33+00:00"
+      }
     }
   }
 }
