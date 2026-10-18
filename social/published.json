@@ -422,6 +422,14 @@
         "link": "https://www.facebook.com/1377129402146055_122110407159500199",
         "ora_utc": "2026-10-17T15:47:39+00:00"
       }
+    },
+    "t05-v-anticipo": {
+      "tiktok": {
+        "buffer_post_id": "6ad494150a208cb3235b7f5a",
+        "dueAt": "2026-10-19T17:52:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-18T09:40:36+00:00"
+      }
     }
   }
 }
