@@ -454,6 +454,14 @@
         "link": "https://www.facebook.com/1377129402146055_122110920015500199",
         "ora_utc": "2026-10-18T18:37:36+00:00"
       }
+    },
+    "t06-a-cipenso": {
+      "tiktok": {
+        "buffer_post_id": "6ad5eabe0a846dac96d3c6ac",
+        "dueAt": "2026-10-20T19:14:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-19T10:02:37+00:00"
+      }
     }
   }
 }
