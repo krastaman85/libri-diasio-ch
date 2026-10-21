@@ -525,6 +525,18 @@
         "link": "https://www.facebook.com/1377129402146055_122112166131500199",
         "ora_utc": "2026-10-21T10:52:48+00:00"
       }
+    },
+    "v03-regia": {
+      "instagram": {
+        "media_id": "17998811841001312",
+        "link": "https://www.instagram.com/reel/Dew-H0YEzIG/",
+        "ora_utc": "2026-10-21T17:43:23+00:00"
+      },
+      "facebook": {
+        "post_id": "2246289405915456",
+        "link": "https://www.facebook.com/2246289405915456",
+        "ora_utc": "2026-10-21T17:43:28+00:00"
+      }
     }
   }
 }
