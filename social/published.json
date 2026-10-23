@@ -588,6 +588,30 @@
         "link": "https://www.facebook.com/1377129402146055_122113042761500199",
         "ora_utc": "2026-10-23T16:27:40+00:00"
       }
+    },
+    "q01-mutuo": {
+      "instagram": {
+        "media_id": "17953778202324045",
+        "link": "https://www.instagram.com/reel/De2flGboG1c/",
+        "ora_utc": "2026-10-23T21:12:02+00:00"
+      },
+      "facebook": {
+        "post_id": "2368891223648259",
+        "link": "https://www.facebook.com/2368891223648259",
+        "ora_utc": "2026-10-23T21:12:07+00:00"
+      }
+    },
+    "q01s-mutuo": {
+      "instagram": {
+        "media_id": "18002970860808576",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4014535352459070690",
+        "ora_utc": "2026-10-23T21:12:18+00:00"
+      },
+      "facebook": {
+        "post_id": "2349077355924684",
+        "link": "https://www.facebook.com/2349077355924684",
+        "ora_utc": "2026-10-23T21:12:24+00:00"
+      }
     }
   }
 }
