@@ -573,6 +573,14 @@
         "link": "https://www.facebook.com/1377129402146055_122112922527500199",
         "ora_utc": "2026-10-23T10:17:47+00:00"
       }
+    },
+    "tvl1-vuoto-sedie": {
+      "tiktok": {
+        "buffer_post_id": "6adb7c2f10223fea566eeebc",
+        "dueAt": "2026-10-24T18:16:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-23T15:24:30+00:00"
+      }
     }
   }
 }
