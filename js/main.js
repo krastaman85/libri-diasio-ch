@@ -43,6 +43,7 @@
     var oggi = new Date(), iso = oggi.getFullYear() + "-" + ("0" + (oggi.getMonth() + 1)).slice(-2) + "-" + ("0" + oggi.getDate()).slice(-2);
     var prenota = !!(b.uscita && iso < b.uscita); // prima della data di uscita: prenotazione
     if (b.amazon) out.push('<a class="btn primary store" href="' + b.amazon + '" rel="noopener"><span class="lbl">' + (prenota ? "Prenota su" : "Disponibile su") + '</span>' + LOGO_AMAZON + '</a>');
+    if (b.cartaceo && !prenota) out.push('<a class="btn store paper" href="' + b.cartaceo + '" rel="noopener"><span class="lbl">Cartaceo su Amazon</span></a>');
     if (b.altriStore) out.push('<a class="btn store" href="' + b.altriStore + '" rel="noopener"><span class="lbl">Disponibile su</span>' + LOGO_STREETLIB + '</a>');
     if (b.amazon && S.kindleUnlimited && !short && !prenota) out.push('<span class="pill">Incluso in Kindle Unlimited</span>');
     var mesi = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
