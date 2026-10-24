@@ -612,6 +612,14 @@
         "link": "https://www.facebook.com/2349077355924684",
         "ora_utc": "2026-10-23T21:12:24+00:00"
       }
+    },
+    "tl0-vuoto-trailer": {
+      "tiktok": {
+        "buffer_post_id": "6adc7f186887a2efc1ac5a3b",
+        "dueAt": "2026-10-25T18:41:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-24T09:49:11+00:00"
+      }
     }
   }
 }
