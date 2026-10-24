@@ -644,6 +644,30 @@
         "link": "https://www.facebook.com/2594194294341014",
         "ora_utc": "2026-10-24T15:08:00+00:00"
       }
+    },
+    "q02-cena": {
+      "instagram": {
+        "media_id": "18037308197845270",
+        "link": "https://www.instagram.com/reel/De5EU0MDjcr/",
+        "ora_utc": "2026-10-24T21:11:24+00:00"
+      },
+      "facebook": {
+        "post_id": "1637304701077266",
+        "link": "https://www.facebook.com/1637304701077266",
+        "ora_utc": "2026-10-24T21:11:29+00:00"
+      }
+    },
+    "q02s-cena": {
+      "instagram": {
+        "media_id": "17988221463119935",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4015259813022520779",
+        "ora_utc": "2026-10-24T21:11:40+00:00"
+      },
+      "facebook": {
+        "post_id": "1630561465224715",
+        "link": "https://www.facebook.com/1630561465224715",
+        "ora_utc": "2026-10-24T21:11:45+00:00"
+      }
     }
   }
 }
