@@ -668,6 +668,14 @@
         "link": "https://www.facebook.com/1630561465224715",
         "ora_utc": "2026-10-24T21:11:45+00:00"
       }
+    },
+    "tvl2-vuoto-lacrime": {
+      "tiktok": {
+        "buffer_post_id": "6adde1c66887a2efc1ff7db3",
+        "dueAt": "2026-10-26T19:52:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-25T11:02:29+00:00"
+      }
     }
   }
 }
