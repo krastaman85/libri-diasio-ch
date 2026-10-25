@@ -676,6 +676,18 @@
         "modo": "customScheduled",
         "ora_utc": "2026-10-25T11:02:29+00:00"
       }
+    },
+    "st-vuoto-cartaceo": {
+      "instagram": {
+        "media_id": "18115384424032473",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4015703210094628216",
+        "ora_utc": "2026-10-25T11:52:37+00:00"
+      },
+      "facebook": {
+        "post_id": "2381816255925585",
+        "link": "https://www.facebook.com/2381816255925585",
+        "ora_utc": "2026-10-25T11:52:41+00:00"
+      }
     }
   }
 }
