@@ -748,6 +748,30 @@
         "link": "https://www.facebook.com/1459499789605915",
         "ora_utc": "2026-10-26T17:22:42+00:00"
       }
+    },
+    "q04-analista": {
+      "instagram": {
+        "media_id": "17965816266238248",
+        "link": "https://www.instagram.com/reel/De-UxK-jTfj/",
+        "ora_utc": "2026-10-26T22:11:25+00:00"
+      },
+      "facebook": {
+        "post_id": "1107218472186944",
+        "link": "https://www.facebook.com/1107218472186944",
+        "ora_utc": "2026-10-26T22:11:29+00:00"
+      }
+    },
+    "q04s-analista": {
+      "instagram": {
+        "media_id": "18022533299944370",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4016739554849754692",
+        "ora_utc": "2026-10-26T22:11:37+00:00"
+      },
+      "facebook": {
+        "post_id": "1819666509060957",
+        "link": "https://www.facebook.com/1819666509060957",
+        "ora_utc": "2026-10-26T22:11:43+00:00"
+      }
     }
   }
 }
