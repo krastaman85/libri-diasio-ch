@@ -804,6 +804,30 @@
         "link": "https://www.facebook.com/2152689075325018",
         "ora_utc": "2026-10-27T18:38:49+00:00"
       }
+    },
+    "q05-filantropo": {
+      "instagram": {
+        "media_id": "18374830762240145",
+        "link": "https://www.instagram.com/reel/DfA5k8XFdFk/",
+        "ora_utc": "2026-10-27T22:11:36+00:00"
+      },
+      "facebook": {
+        "post_id": "1796961118237122",
+        "link": "https://www.facebook.com/1796961118237122",
+        "ora_utc": "2026-10-27T22:11:41+00:00"
+      }
+    },
+    "q05s-filantropo": {
+      "instagram": {
+        "media_id": "18118899941079735",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4017464439557663483",
+        "ora_utc": "2026-10-27T22:11:53+00:00"
+      },
+      "facebook": {
+        "post_id": "1580022460471275",
+        "link": "https://www.facebook.com/1580022460471275",
+        "ora_utc": "2026-10-27T22:11:58+00:00"
+      }
     }
   }
 }
