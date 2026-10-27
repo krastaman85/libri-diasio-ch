@@ -772,6 +772,14 @@
         "link": "https://www.facebook.com/1819666509060957",
         "ora_utc": "2026-10-26T22:11:43+00:00"
       }
+    },
+    "tvl3-vuoto-regia": {
+      "tiktok": {
+        "buffer_post_id": "6ae05e5c124181c6d9a97b50",
+        "dueAt": "2026-10-28T18:58:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-27T08:18:35+00:00"
+      }
     }
   }
 }
