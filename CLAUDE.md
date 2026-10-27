@@ -150,6 +150,13 @@ Caricare la copertina Facebook della Pagina «D. Iasio» (1640×624, scena IA co
 ## Igiene dei repository
 Dopo ogni PR unita i branch restano: cancellarli da GitHub (Branches, cestino) oppure attivare «Automatically delete head branches» in Settings > General.
 
+## Spazio su GitHub: pulizia dei media dopo ogni serie (regola dell'utente del 27/10/2026)
+- Limiti GitHub Pages: repo consigliato sotto 1 GB, sito pubblicato massimo 1 GB. Il 27/10: repo circa 493 MB con la storia, sito 361 MB prima della pulizia e circa 312 MB dopo.
+- **Dopo ogni serie di post** (o quando il sito supera circa 400 MB): `python3 social/tools/pulisci_media.py` elenca i media dei post già usciti su tutte le loro piattaforme (stessa regola di `pending()` in `publish.py`) e quelli mai usati da nessun file. Copiare prima i file elencati in Drive, `Audio e Video D. Iasio/6 Archivio media social pubblicati/tolti dal repo il <data>` (stessa struttura di `social/`), poi `--rimuovi`, test, commit e PR. Il merge resta all'utente.
+- I test controllano l'esistenza dei file solo per i post ancora da pubblicare (`file_serve()` in `test_calendario.py`, `pending()` in `test_publish.py`).
+- Togliere i file riduce il sito, non il repo: restano nella storia di git. Riscrivere la storia (filter-repo e push forzato su `main`) solo vicino a 1 GB e solo con il via libera esplicito dell'utente.
+- Prima pulizia (27/10): 99 file, 49,4 MB (90 media di post usciti, 9 file mai usati), copia in Drive in `6 Archivio media social pubblicati/tolti dal repo il 27 ottobre 2026`.
+
 ## Mappa dei progetti dell'account (un progetto = un repository = una sessione)
 Non mescolare i progetti: apri la sessione con **solo** il repository che serve e dai un titolo «Progetto – argomento». Ogni repository ha il suo `CLAUDE.md`.
 

@@ -98,9 +98,13 @@ class PublishTests(unittest.TestCase):
         cal = json.loads(publish.CAL.read_text(encoding="utf-8"))
         ids = [p["id"] for p in cal["post"]]
         self.assertEqual(len(ids), len(set(ids)))
+        state = json.loads(publish.STATE.read_text(encoding="utf-8"))
         for p in cal["post"]:
-            for u in publish.media_urls(p):
-                self.assertTrue((root / u.replace(publish.SITE + "/", "")).is_file(), u)
+            # i media dei post già usciti si tolgono dal repo dopo ogni serie (social/tools/pulisci_media.py)
+            piatt = ["tiktok"] if publish.is_tiktok(p) else ["instagram", "facebook"]
+            if publish.pending(p, state, piatt):
+                for u in publish.media_urls(p):
+                    self.assertTrue((root / u.replace(publish.SITE + "/", "")).is_file(), u)
             if publish.is_carousel(p):
                 self.assertTrue(2 <= len(p["immagini"]) <= 10, p["id"])
             if p.get("tipo") == "storia":            # le Storie non hanno didascalia
