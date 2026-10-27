@@ -26,6 +26,16 @@ def tiktok(p):
     return p.get("piattaforme") == ["tiktok"]
 
 
+def file_serve(p):
+    """Vero se i file del post servono ancora: post non ancora uscito su tutte le sue piattaforme.
+    I media dei post già usciti si tolgono dal repo dopo ogni serie (social/tools/pulisci_media.py, 27/10/2026)."""
+    pub = json.loads((DIR / "published.json").read_text(encoding="utf-8"))["pubblicati"].get(p["id"], {})
+    if pub.get("saltato"):
+        return False
+    piatt = p.get("piattaforme") or (["facebook"] if p.get("tipo") == "testo" else ["instagram", "facebook"])
+    return any(x not in pub for x in piatt)
+
+
 def da_controllare():
     cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
     pub = json.loads((DIR / "published.json").read_text(encoding="utf-8"))["pubblicati"]
@@ -88,6 +98,8 @@ class RubricaCitazioni(unittest.TestCase):
 
     def test_i_file_esistono(self):
         for p in self.q:
+            if not file_serve(p):
+                continue
             f = p.get("video") or p.get("immagine")
             self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
 
@@ -118,7 +130,8 @@ class TikTok(unittest.TestCase):
     def test_solo_reel_con_video_presente(self):
         for p in self.t:
             self.assertEqual(p.get("tipo"), "reel", p["id"])
-            self.assertTrue((DIR.parent / p["video"]).exists(), f"{p['id']}: manca {p['video']}")
+            if file_serve(p):
+                self.assertTrue((DIR.parent / p["video"]).exists(), f"{p['id']}: manca {p['video']}")
 
     def test_un_post_al_giorno_tra_le_7_e_le_23(self):
         giorni = {}
@@ -226,7 +239,7 @@ class LancioAritmetica(unittest.TestCase):
     def test_le_immagini_esistono(self):
         cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
         for p in cal["post"]:
-            if lancio_aritmetica(p["id"]):
+            if lancio_aritmetica(p["id"]) and file_serve(p):
                 for f in ([p["immagine"]] if p.get("immagine") else p.get("immagini", [])):
                     self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
 
@@ -277,7 +290,7 @@ class LancioVuoto(unittest.TestCase):
     def test_le_immagini_e_i_video_esistono(self):
         cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
         for p in cal["post"]:
-            if lancio_vuoto(p["id"]):
+            if lancio_vuoto(p["id"]) and file_serve(p):
                 files = ([p["immagine"]] if p.get("immagine") else p.get("immagini", [])) + ([p["video"]] if p.get("video") else [])
                 for f in files:
                     self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
