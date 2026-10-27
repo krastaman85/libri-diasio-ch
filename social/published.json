@@ -780,6 +780,18 @@
         "modo": "customScheduled",
         "ora_utc": "2026-10-27T08:18:35+00:00"
       }
+    },
+    "v17-vuoto-regia": {
+      "instagram": {
+        "media_id": "17896286706427095",
+        "link": "https://www.instagram.com/p/De_yPScG_hQ/",
+        "ora_utc": "2026-10-27T11:47:50+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122114501013500199",
+        "link": "https://www.facebook.com/1377129402146055_122114501013500199",
+        "ora_utc": "2026-10-27T11:47:53+00:00"
+      }
     }
   }
 }
