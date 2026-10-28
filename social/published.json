@@ -840,6 +840,18 @@
         "link": "https://www.facebook.com/1377129402146055_122114894829500199",
         "ora_utc": "2026-10-28T11:27:49+00:00"
       }
+    },
+    "r09-bug-notifica": {
+      "instagram": {
+        "media_id": "17909629404597439",
+        "link": "https://www.instagram.com/reel/DfDFZ6dj7By/",
+        "ora_utc": "2026-10-28T18:33:22+00:00"
+      },
+      "facebook": {
+        "post_id": "1044224621971985",
+        "link": "https://www.facebook.com/1044224621971985",
+        "ora_utc": "2026-10-28T18:33:27+00:00"
+      }
     }
   }
 }
