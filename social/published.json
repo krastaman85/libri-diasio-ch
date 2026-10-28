@@ -852,6 +852,30 @@
         "link": "https://www.facebook.com/1044224621971985",
         "ora_utc": "2026-10-28T18:33:27+00:00"
       }
+    },
+    "q06-paranoia": {
+      "instagram": {
+        "media_id": "18131178022870198",
+        "link": "https://www.instagram.com/reel/DfDeaMGD322/",
+        "ora_utc": "2026-10-28T22:11:55+00:00"
+      },
+      "facebook": {
+        "post_id": "4034230770045885",
+        "link": "https://www.facebook.com/4034230770045885",
+        "ora_utc": "2026-10-28T22:12:01+00:00"
+      }
+    },
+    "q06s-paranoia": {
+      "instagram": {
+        "media_id": "18172450093419440",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4018189378129007409",
+        "ora_utc": "2026-10-28T22:12:12+00:00"
+      },
+      "facebook": {
+        "post_id": "4509671105957534",
+        "link": "https://www.facebook.com/4509671105957534",
+        "ora_utc": "2026-10-28T22:12:18+00:00"
+      }
     }
   }
 }
