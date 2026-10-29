@@ -908,6 +908,30 @@
         "link": "https://www.facebook.com/4493209367674346",
         "ora_utc": "2026-10-29T18:38:34+00:00"
       }
+    },
+    "q07-attico": {
+      "instagram": {
+        "media_id": "17914651035284382",
+        "link": "https://www.instagram.com/reel/DfGDK6PnW-G/",
+        "ora_utc": "2026-10-29T22:11:37+00:00"
+      },
+      "facebook": {
+        "post_id": "4423094678000758",
+        "link": "https://www.facebook.com/4423094678000758",
+        "ora_utc": "2026-10-29T22:11:42+00:00"
+      }
+    },
+    "q07s-attico": {
+      "instagram": {
+        "media_id": "18092136914298463",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4018913998149348844",
+        "ora_utc": "2026-10-29T22:11:53+00:00"
+      },
+      "facebook": {
+        "post_id": "29250218131275352",
+        "link": "https://www.facebook.com/29250218131275352",
+        "ora_utc": "2026-10-29T22:11:59+00:00"
+      }
     }
   }
 }
