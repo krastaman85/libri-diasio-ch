@@ -876,6 +876,14 @@
         "link": "https://www.facebook.com/4509671105957534",
         "ora_utc": "2026-10-28T22:12:18+00:00"
       }
+    },
+    "tvl4-vuoto-algoritmo": {
+      "tiktok": {
+        "buffer_post_id": "6ae32a2b0c2cf6705774b3c1",
+        "dueAt": "2026-10-30T19:37:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-29T11:12:42+00:00"
+      }
     }
   }
 }
