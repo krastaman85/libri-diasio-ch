@@ -884,6 +884,18 @@
         "modo": "customScheduled",
         "ora_utc": "2026-10-29T11:12:42+00:00"
       }
+    },
+    "12-bug-note": {
+      "instagram": {
+        "media_id": "18435197524150058",
+        "link": "https://www.instagram.com/p/DfE4-cOGy9p/",
+        "ora_utc": "2026-10-29T11:22:54+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122115232449500199",
+        "link": "https://www.facebook.com/1377129402146055_122115232449500199",
+        "ora_utc": "2026-10-29T11:22:59+00:00"
+      }
     }
   }
 }
