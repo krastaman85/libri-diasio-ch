@@ -988,6 +988,18 @@
         "modo": "customScheduled",
         "ora_utc": "2026-10-31T08:56:33+00:00"
       }
+    },
+    "r10-oblio-innocente": {
+      "instagram": {
+        "media_id": "17895014421436474",
+        "link": "https://www.instagram.com/reel/DfKBjSlDXPD/",
+        "ora_utc": "2026-10-31T11:14:20+00:00"
+      },
+      "facebook": {
+        "post_id": "4409270715885666",
+        "link": "https://www.facebook.com/4409270715885666",
+        "ora_utc": "2026-10-31T11:14:24+00:00"
+      }
     }
   }
 }
