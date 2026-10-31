@@ -93,6 +93,18 @@ class PublishTests(unittest.TestCase):
         self.assertEqual(publish.pending(img, state, both), both)
         self.assertEqual(publish.pending(only_ig, state, both), ["instagram"])
 
+    def test_post_sospeso_non_esce(self):
+        # «sospeso»: post in revisione, fermo finché il campo non viene tolto (31/10/2026)
+        both = ["instagram", "facebook"]
+        sosp = {"id": "s", "immagine": "a.jpg", "didascalia": "x", "sospeso": True}
+        self.assertEqual(publish.pending(sosp, {"pubblicati": {}}, both), [])
+        cal = {"fuso": "Europe/Rome", "post": [
+            {"id": "s", "quando": "2026-11-01T12:00", "immagine": "a.jpg", "sospeso": True},
+            {"id": "b", "quando": "2026-11-01T12:05", "immagine": "b.jpg"}]}
+        now = publish.datetime(2026, 11, 1, 12, 10, tzinfo=publish.timezone.utc)
+        p, _ = publish.pick(cal, {"pubblicati": {}}, both, now, None)
+        self.assertEqual(p["id"], "b")
+
     def test_calendar_files_exist(self):
         root = Path(publish.ROOT).parent
         cal = json.loads(publish.CAL.read_text(encoding="utf-8"))
