@@ -98,7 +98,7 @@ def entry(state, pid):
 
 def pending(post, state, plats):
     done = state["pubblicati"].get(post["id"], {})
-    if done.get("saltato"):
+    if done.get("saltato") or post.get("sospeso"):
         return []
     allowed = post.get("piattaforme") or (["facebook"] if is_text(post) else plats)
     return [p for p in plats if p in allowed and p not in done]
@@ -381,7 +381,7 @@ def tiktok_da_inviare(cal, state, now, forced=None):
         if not is_tiktok(p) or (forced and p["id"] != forced):
             continue
         done = state["pubblicati"].get(p["id"], {})
-        if "tiktok" in done or done.get("saltato"):
+        if "tiktok" in done or done.get("saltato") or p.get("sospeso"):
             continue
         when = datetime.fromisoformat(p["quando"]).replace(tzinfo=tz)
         if not forced:
