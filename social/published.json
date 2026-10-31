@@ -1012,6 +1012,30 @@
         "link": "https://www.facebook.com/1377129402146055_122115980391500199",
         "ora_utc": "2026-10-31T16:33:47+00:00"
       }
+    },
+    "q09-legge": {
+      "instagram": {
+        "media_id": "17963263719267315",
+        "link": "https://www.instagram.com/reel/DfLMz3RkRIq/",
+        "ora_utc": "2026-10-31T22:12:03+00:00"
+      },
+      "facebook": {
+        "post_id": "2248427039073583",
+        "link": "https://www.facebook.com/2248427039073583",
+        "ora_utc": "2026-10-31T22:12:08+00:00"
+      }
+    },
+    "q09s-legge": {
+      "instagram": {
+        "media_id": "18110264855223267",
+        "link": "https://www.instagram.com/stories/d.iasio.libri/4020363764470155138",
+        "ora_utc": "2026-10-31T22:12:19+00:00"
+      },
+      "facebook": {
+        "post_id": "1420497373538327",
+        "link": "https://www.facebook.com/1420497373538327",
+        "ora_utc": "2026-10-31T22:12:24+00:00"
+      }
     }
   }
 }
