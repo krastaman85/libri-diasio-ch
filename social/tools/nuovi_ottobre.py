@@ -122,7 +122,7 @@ ITEMS = [
    [dict(k="hook", kick=OBL, text="Chi dimentica diventa *innocente*. Paga solo chi *ricorda*.", sub="Thriller psicologico in sei puntate. Scorri."),
     Q("«Perché curare un dolore quando puoi estrarlo, metterlo in una scatola e rivenderlo?»", book="oblio", who="Dora Calvi · L’Economia dell’Oblio"),
     Q("«Fuori, sul marciapiede, c’è il solito presidio del Comitato Anestesia: sei persone con i cartelli «Il dolore è tuo» e un megafono che non funziona mai.»", book="oblio", who="Dora Calvi · L’Economia dell’Oblio"),
-    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="Puntata 1 gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
+    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="L’inizio è gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
    "", "Carosello di quattro slide su fondo scuro: il motto de L’Economia dell’Oblio («Chi dimentica diventa innocente. Paga solo chi ricorda.»), due frasi dalla Puntata 1 sul dolore da estrarre e sul presidio del Comitato Anestesia, e l’invito a leggere il romanzo completo su Amazon Kindle.",
    ig="L’Economia dell’Oblio, thriller psicologico: Dora Calvi estrae i ricordi dei clienti e li mette in una scatola, finché trova nella propria testa i frammenti di un omicidio.\nScorri: due frasi dalla Puntata 1. Il romanzo completo, in sei puntate, è su Amazon Kindle (link in bio). La Puntata 1 resta gratis, in PDF o EPUB.",
    fb="L’Economia dell’Oblio, thriller psicologico: Dora Calvi estrae i ricordi dei clienti e li mette in una scatola, finché trova nella propria testa i frammenti di un omicidio.\nScorri: due frasi dalla Puntata 1.\n\nIl romanzo completo, in sei puntate, è su Amazon Kindle: " + URL["oblio"] + "\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: " + SITO["oblio"]),
@@ -142,7 +142,7 @@ ITEMS = [
     Q("«Scusa» dice Gianfranco al morto. «Era Brescia.»", book="oblio", who="Gianfranco Merli"),
     Q("«Il ventilatore col calzino si è fermato.»", book="oblio", who="Dora Calvi · la stanza 314"),
     Q("«Ha la mano calda e asciutta di chi non ha più niente da nascondere, e per un istante lo invidio da morire.»", book="oblio", who="Dora Calvi"),
-    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="Puntata 1 gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
+    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="L’inizio è gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
    "Gianfranco Merli ha cinquantadue anni e vuole togliersi dalla testa la morte di suo padre prima dell’assemblea dei soci. Dora Calvi vede che cosa c’è davvero dentro quel ricordo.\nUna scena della Puntata 1 de L’Economia dell’Oblio, in cinque frasi. Scorri.",
    "Carosello di sei slide su fondo scuro: Gianfranco Merli vuole dimenticare suo padre; il dialogo «Fa male?» «Dipende da cosa intende per male.»; «Scusa, era Brescia»; «Il ventilatore col calzino si è fermato»; la mano calda di chi non ha più niente da nascondere; invito a leggere il romanzo su Amazon Kindle. L’Economia dell’Oblio."),
 
@@ -155,7 +155,7 @@ ITEMS = [
          lines=["Reazione: minimizzare, promettere disattivazione, andarsene in fretta.", "Nessuno ha creduto davvero alla storia del bug — troppo specifico, troppo vero."]),
     dict(k="doc", kick="L’ultima riga", name="meridiana_note.txt",
          lines=["Domanda aperta: chi altro, nel palazzo, sa già cosa succederà quando toccherà a loro?"]),
-    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="Puntata 1 gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
+    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="L’inizio è gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
    "Alle undici di sera, dopo la prima assemblea, Nadia apre un file e scrive quello che ha visto. Lo chiama meridiana_note.txt «per pura mancanza di fantasia».\nQueste sono le sue note, parola per parola. Scorri.\nSalvalo, se anche tu tieni un file così.",
    "Carosello di cinque slide: il file meridiana_note.txt di Nadia Colombo, mostrato come nota di testo in tre schermate (l’aggiornamento attivato dal portiere, la prima vittima, la domanda aperta), e l’invito a leggere Il Bug della Trasparenza su Amazon Kindle."),
 
@@ -167,11 +167,11 @@ ITEMS = [
 
  # ================= martedì 13 ottobre =================
  P("n08-bug-tre-passi-kindle", "2026-10-13T12:44", "bug", "Lettori digitali (ebook, Kindle) + nuovi arrivati (carosello)",
-   [dict(k="hook", kick=BUG, text="Dalla Puntata 1 al *romanzo intero*.", sub="Tre passi. Scorri."),
-    dict(k="step", n="1", title="Leggi la *Puntata 1*", text="Gratis, in PDF o EPUB, senza iscrizione. Dal link in bio, su libri.diasio.ch."),
+   [dict(k="hook", kick=BUG, text="Dall’inizio gratis al *romanzo intero*.", sub="Tre passi. Scorri."),
+    dict(k="step", n="1", title="Leggi l’*inizio*", text="Gratis, in PDF o EPUB, senza iscrizione. Dal link in bio, su libri.diasio.ch."),
     dict(k="step", n="2", title="Se ti prende, apri *Amazon Kindle*", text="Il romanzo completo, in otto puntate, è disponibile in formato integrale su Amazon Kindle."),
     dict(k="step", n="3", title="Leggi dove *vuoi*", text="Su un Kindle, oppure con l’app gratuita Kindle su telefono e tablet."),
-    dict(k="cta", text="Noir sociale · *otto puntate*", **KB, line="Puntata 1 gratis · <b>libri.diasio.ch</b>")],
+    dict(k="cta", text="Noir sociale · *otto puntate*", **KB, line="L’inizio è gratis · <b>libri.diasio.ch</b>")],
    "", "Carosello di cinque slide: dalla Puntata 1 gratuita al romanzo intero de Il Bug della Trasparenza in tre passi (leggere la Puntata 1, aprire Amazon Kindle, leggere su Kindle o con l’app).",
    ig="Come si passa dalla Puntata 1 gratis al romanzo intero, in tre passi. Scorri.\nIl Bug della Trasparenza è un noir sociale in otto puntate: il romanzo completo è su Amazon Kindle (link in bio), la Puntata 1 resta gratis in PDF o EPUB.",
    fb="Come si passa dalla Puntata 1 gratis al romanzo intero, in tre passi. Scorri.\n\nIl Bug della Trasparenza è un noir sociale in otto puntate. Il romanzo completo è su Amazon Kindle: " + URL["bug"] + "\nLa Puntata 1 è gratis, in PDF o EPUB, senza iscrizione: " + SITO["bug"]),
@@ -207,7 +207,7 @@ ITEMS = [
     Q("«Ho in mano i capelli di qualcuno, bagnati, pesanti come una corda. Sotto di me c’è una persona.»", book="oblio", who="Dora Calvi"),
     Q("«Nell’altra stanza un telefono suona una suoneria da bambini, la stessa cantilena, ancora, ancora.»", book="oblio", who="Dora Calvi"),
     Q("«Mi sento come dopo il primo bagno dell’estate, quando ti asciughi al sole e non devi niente a nessuno. E rido. Sono io che rido.»", book="oblio", who="Dora Calvi"),
-    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="Puntata 1 gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
+    dict(k="cta", text="Il romanzo *completo*. Ora su *Kindle*.", **KB, line="L’inizio è gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
    "Dopo un’estrazione, a Dora Calvi di solito resta addosso una briciola: un sapore, un jingle. Stavolta restano uno shampoo alla pesca, due mani sui polsi e una risata che è la sua.\nScorri: una scena della Puntata 1, senza spiegazioni.",
    "Carosello di sei slide su fondo scuro: un ricordo che Dora Calvi non riconosce come suo (shampoo alla pesca, capelli bagnati, una persona sotto di lei, una suoneria da bambini, una risata) e l’invito a leggere il romanzo su Amazon Kindle. L’Economia dell’Oblio."),
  P("n14-bug-kindle", "2026-10-17T17:36", "bug", "Lettori digitali + lettori noir (Kindle)",
@@ -256,7 +256,7 @@ ITEMS = [
     Q("«Programmatore, trentaquattro anni, morto in circostanze che il fascicolo della polizia chiamava “caduta accidentale dal tetto”.»"),
     Q("«Otto anni prima, Nadia aveva scritto l’unico articolo che qualcuno si fosse mai preso la briga di dedicare al caso, e le circostanze le aveva definite con più cautela.»"),
     Q("«L’articolo le era costato la carriera in redazione.»"),
-    dict(k="cta", text="Noir sociale · *otto puntate*", **KB, line="Puntata 1 gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
+    dict(k="cta", text="Noir sociale · *otto puntate*", **KB, line="L’inizio è gratis, PDF ed EPUB · <b>libri.diasio.ch</b>")],
    "Ventisette anni prima, in quel palazzo, era morto un programmatore. Otto anni prima, Nadia aveva scritto l’articolo che le è costato la carriera. Per questo ha comprato un appartamento nel seminterrato.\nScorri: le frasi della Puntata 1 che mettono insieme i pezzi.",
    "Carosello di sei slide su fondo scuro: perché Nadia Colombo vive nel palazzo (Elio Bassi, programmatore, morto 27 anni prima; l’articolo di otto anni prima che le è costato la carriera) e l’invito a leggere Il Bug della Trasparenza su Amazon Kindle."),
 
@@ -318,7 +318,7 @@ ITEMS = [
 
  # ================= domenica 1 novembre =================
  P("n30-kindle-due-romanzi", "2026-11-01T12:26", "both", "Lettori digitali + tutti (Kindle)",
-   [dict(k="cta", books=["bug", "oblio"], text="Due romanzi. *Amazon Kindle*.", button="Disponibili su Amazon Kindle", line="Puntata 1 di entrambi gratis · <b>libri.diasio.ch</b>")],
+   [dict(k="cta", books=["vuoto", "aritmetica", "bug", "oblio"], text="Quattro romanzi. *Amazon Kindle*.", button="Disponibili su Amazon Kindle", line="L’inizio di ognuno è gratis · <b>libri.diasio.ch</b>")],
    "", "Locandina con le copertine dei due romanzi, Il Bug della Trasparenza e L’Economia dell’Oblio: «Due romanzi. Amazon Kindle.» Pulsante «Disponibili su Amazon Kindle», Puntata 1 di entrambi gratis su libri.diasio.ch.",
    ig="Due romanzi, un posto dove trovarli interi: Amazon Kindle.\nIl Bug della Trasparenza, noir sociale in otto puntate. L’Economia dell’Oblio, thriller psicologico in sei.\nLink in bio. La Puntata 1 di entrambi è gratis, in PDF o EPUB, senza iscrizione.",
    fb="Due romanzi, un posto dove trovarli interi: Amazon Kindle.\n\nIl Bug della Trasparenza, noir sociale in otto puntate: " + URL["bug"] + "\nL’Economia dell’Oblio, thriller psicologico in sei: " + URL["oblio"] + "\n\nLa Puntata 1 di entrambi è gratis, in PDF o EPUB, senza iscrizione: " + SITO["both"],
