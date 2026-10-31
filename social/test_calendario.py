@@ -118,7 +118,7 @@ class RubricaCitazioni(unittest.TestCase):
                 for k in ("didascalia", "didascalia_fb"):
                     self.assertIn("— D. Iasio", p[k], f"{p['id']} {k}: manca la firma")
                     if file_serve(p):   # le frasi già uscite restano come sono
-                        self.assertNotIn("Amazon", p[k], f"{p['id']} {k}: la rubrica non fa pubblicità ai libri (31/10/2026)")
+                        self.assertNotRegex(p[k], r"amazon\.it|Kindle|link in bio", f"{p['id']} {k}: la rubrica non fa pubblicità ai libri (31/10/2026)")
 
 
 class TikTok(unittest.TestCase):
