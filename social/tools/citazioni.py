@@ -60,16 +60,9 @@ def tag(n, c, fb):
 
 
 def didascalia(n, c, fb):
-    titolo, slug, asin, _ = LIBRI[c["libro"]]
+    # Dal 31/10/2026 (scelta dell'autore) le frasi delle 23:10 sono pensieri a sé, non pubblicità ai libri:
+    # niente titolo, link o riga Kindle; solo la frase, la firma e l'appuntamento.
     righe = [f"«{c['testo']}»", "— D. Iasio", "", "Una frase ogni sera alle 23:10."]
-    if fb:
-        righe += [f"Se questa ti ha punto, leggi «{titolo}»: https://libri.diasio.ch/{slug}/",
-                  f"Il romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/{asin}",
-                  "Incluso in Kindle Unlimited."]
-    else:
-        righe += [f"Se questa ti ha punto, leggi «{titolo}».",
-                  "Il romanzo completo è su Amazon Kindle: link in bio.",
-                  "Incluso in Kindle Unlimited."]
     return "\n".join(righe) + "\n\n" + " ".join(tag(n, c, fb))
 
 
