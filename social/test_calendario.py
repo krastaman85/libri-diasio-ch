@@ -77,7 +77,7 @@ class FinestreCron(unittest.TestCase):
 
 
 class RubricaCitazioni(unittest.TestCase):
-    """Reel alle 23:10 e Storia alle 23:13, una coppia per sera, file presenti, firma e riga Kindle nelle didascalie."""
+    """Reel alle 23:10 e Storia alle 23:13, una coppia per sera, file presenti, firma nelle didascalie, nessuna pubblicità ai libri (dal 31/10/2026)."""
 
     def setUp(self):
         cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
@@ -117,7 +117,8 @@ class RubricaCitazioni(unittest.TestCase):
             if p["tipo"] == "reel":
                 for k in ("didascalia", "didascalia_fb"):
                     self.assertIn("— D. Iasio", p[k], f"{p['id']} {k}: manca la firma")
-                    self.assertIn("Amazon Kindle", p[k], f"{p['id']} {k}: manca la riga Kindle")
+                    if file_serve(p):   # le frasi già uscite restano come sono
+                        self.assertNotIn("Amazon", p[k], f"{p['id']} {k}: la rubrica non fa pubblicità ai libri (31/10/2026)")
 
 
 class TikTok(unittest.TestCase):
