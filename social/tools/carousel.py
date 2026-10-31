@@ -49,7 +49,7 @@ CSS = """
 body{width:1080px;height:1350px;background:var(--bg);color:var(--ink);font-family:'Source Serif 4',serif;position:relative;overflow:hidden}
 .glow{position:absolute;left:380px;top:-260px;width:920px;height:880px;border-radius:50%;background:#2e2010;filter:blur(160px)}
 .amber{background:var(--amb);color:var(--dark)}.amber .glow{left:-300px;top:700px;width:1000px;height:1000px;background:#e2923a;filter:blur(140px)}
-.brand{position:absolute;left:70px;top:70px;font:700 40px 'Oswald';letter-spacing:.16em}
+.brand{position:absolute;left:70px;top:70px;font:700 40px 'Oswald';letter-spacing:.16em}.brand.bt{font:500 26px 'Oswald';letter-spacing:.3em;top:78px}
 .brand i{font-style:normal;color:var(--amb)}.amber .brand i{color:var(--dark)}
 .rule{position:absolute;left:70px;top:150px;width:80px;height:5px;background:var(--amb)}.amber .rule{background:var(--dark)}
 .pg{position:absolute;right:70px;top:82px;font:500 26px 'Oswald';letter-spacing:.14em;color:var(--mut)}.amber .pg{color:#5a3a0c}
@@ -102,6 +102,10 @@ body.story{height:1920px}
 .pq{position:absolute;left:70px;right:70px;bottom:290px;text-shadow:0 2px 24px rgba(0,0,0,.7)}
 .pq .q{font-size:62px;line-height:1.26}.pq .q.s{font-size:54px}.pq .q.l{font-size:74px}
 .pq .who{margin-top:30px;color:#c9d2de}
+.pa .pq{top:190px;bottom:auto}
+.pa .shade{background:linear-gradient(180deg,rgba(10,15,24,.97) 0%,rgba(10,15,24,.86) 30%,rgba(10,15,24,0) 52%,rgba(10,15,24,0) 76%,rgba(10,15,24,.92) 100%)!important}
+.green.pa .shade{background:linear-gradient(180deg,rgba(11,26,21,.97) 0%,rgba(11,26,21,.86) 30%,rgba(11,26,21,0) 52%,rgba(11,26,21,0) 76%,rgba(11,26,21,.92) 100%)!important}
+.vuoto.pa .shade{background:linear-gradient(180deg,rgba(23,23,27,.97) 0%,rgba(23,23,27,.86) 30%,rgba(23,23,27,0) 52%,rgba(23,23,27,0) 76%,rgba(23,23,27,.92) 100%)!important}
 .pho .brand,.pho .pg,.pho .rule{z-index:3;text-shadow:0 2px 14px rgba(0,0,0,.85)}
 .kb{position:absolute;left:70px;right:70px;bottom:70px;height:118px;background:var(--amb);color:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 0 60px rgba(240,162,74,.28)}
 .kb span{font:700 46px 'Oswald';letter-spacing:.08em;text-transform:uppercase}.kb i{font:500 28px 'Oswald';font-style:normal;letter-spacing:.14em;color:#5a3a0c}
@@ -144,9 +148,9 @@ def cover_img(book):
 
 
 def foot(book, line=None):
-    line = line or "Puntata 1 gratis · libri.diasio.ch"
+    line = line or "L’inizio è gratis · libri.diasio.ch"
     return (f'<div class="foot"><img src="{cover_img(book)}"><div><div class="t">{TITLES[book]}</div>'
-            f'<div class="u">{html.escape(line)}</div><div class="h">@d.iasio.libri</div></div></div>')
+            f'<div class="u">{html.escape(line)}</div></div></div>')   # 31/10/2026: niente @handle, il nome resta solo sulla copertina
 
 
 def photo_src(rel, pos=30):
@@ -175,8 +179,13 @@ def slide_html(s, i, n, book, theme, story=False):
     k = s["k"]
     pg = f'<div class="pg">{i} / {n}</div>' if n > 1 else ""
     swipe = '<div class="swipe">SCORRI →</div>' if n > 1 and i < n else ""
-    head = '<div class="brand">D<i>.</i> IASIO</div><div class="rule"></div>' + pg
+    # 31/10/2026 (scelta dell'autore): firma una sola volta, sulla copertina; in alto solo il titolo del libro, se c'è
+    genere = GENRES[book].split(" · ")[0].upper()
+    multi = len(s.get("books") or s.get("items") or []) > 2   # slide con i quattro romanzi: il genere di uno solo sarebbe sbagliato
+    head = (f'<div class="brand bt">{html.escape(genere)}</div><div class="rule"></div>' if s.get("testata", not multi) else '') + pg
     body, foo, pre = "", foot(book, s.get("foot")), ""
+    if multi or s.get("testata") is False and s["k"] == "hook":   # slide per tutti i romanzi: piede senza la copertina di uno solo
+        foo = f'<div class="foot"><div><div class="t">libri.diasio.ch</div><div class="u">{html.escape(s.get("foot") or "Su Amazon Kindle · inclusi in Kindle Unlimited")}</div></div></div>'
     if s.get("kindle"):
         foo = kband(s["kindle"] if isinstance(s["kindle"], str) else "Ora su Amazon Kindle")
     if s.get("hero") is not None:
@@ -219,23 +228,34 @@ def slide_html(s, i, n, book, theme, story=False):
         lines = "".join(f'<p>{em(x)}</p>' for x in s["lines"])
         body = f'<div class="main">{kick}<div class="tab">{html.escape(s["name"])}</div><div class="doc">{lines}</div></div>'
     elif k == "covers":
-        cs = "".join(f'<div class="cv"><img src="{cover_img(b)}"><div class="t">{TITLES[b]}</div><div class="g">{GENRES[b]}</div><div class="p">{em(p)}</div></div>'
-                     for b, p in s["items"])
+        if len(s["items"]) > 2:   # quattro romanzi in fila (31/10/2026)
+            cs = "".join(f'<div class="cv" style="width:224px"><img src="{cover_img(b)}" style="width:224px;height:334px"><div class="t" style="font-size:22px;margin-top:18px">{TITLES[b]}</div>'
+                         f'<div class="g" style="font-size:15px;white-space:normal">{GENRES[b].split(" · ")[0]}</div>{f"<div class=p style=font-size:24px>{em(p)}</div>" if p else ""}</div>'
+                         for b, p in s["items"])
+            cs = cs.replace('class="cv"', 'class="cv"', 1)
+        else:
+            cs = "".join(f'<div class="cv"><img src="{cover_img(b)}"><div class="t">{TITLES[b]}</div><div class="g">{GENRES[b]}</div><div class="p">{em(p)}</div></div>'
+                         for b, p in s["items"])
         tag = f'<div class="tagline">{em(s["text"])}</div>' if s.get("text") else ""
-        body = f'{tag}<div class="main" style="top:300px;bottom:150px;justify-content:flex-start"><div class="covers">{cs}</div></div>'
+        if story and len(s["items"]) > 2:   # Storia con i quattro romanzi: griglia 2x2 sotto la frase
+            cs = cs.replace("width:224px;height:334px", "width:300px;height:448px").replace('style="width:224px"', 'style="width:300px"')
+            body = f'{tag}<div class="main" style="top:560px;bottom:240px;justify-content:flex-start"><div class="covers" style="display:grid;grid-template-columns:1fr 1fr;gap:56px 70px;justify-items:center">{cs}</div></div>'
+        else:
+            body = f'{tag}<div class="main" style="top:300px;bottom:150px;justify-content:flex-start"><div class="covers">{cs}</div></div>'
         foo = ""
     elif k == "cta":
         books = s.get("books") or [book]
-        imgs = "".join(f'<img src="{cover_img(b)}">' for b in books)
+        st4 = ' style="width:224px;height:334px"' if len(books) > 2 else ""
+        imgs = "".join(f'<img src="{cover_img(b)}"{st4}>' for b in books)
         tag = f'<div class="tagline">{em(s["text"])}</div>' if s.get("text") else ""
-        body = (f'{tag}<div class="main" style="top:280px;bottom:330px;justify-content:center"><div class="one" style="gap:40px">{imgs}</div></div>'
-                f'<div class="btn">{html.escape(s.get("button", "Leggi la Puntata 1 gratis"))}</div>'
+        body = (f'{tag}<div class="main" style="top:280px;bottom:330px;justify-content:center"><div class="one" style="gap:{24 if len(books) > 2 else 40}px">{imgs}</div></div>'
+                f'<div class="btn">{html.escape(s.get("button", "Leggi l’inizio gratis"))}</div>'
                 f'<div class="btnsub">{s.get("line", "PDF ed EPUB · <b>libri.diasio.ch</b>")}</div>')
         foo = ""
         if len(books) == 2:
             body = body.replace('width:460px', 'width:400px')
     return (f'<!doctype html><html><head><meta charset="utf-8"><style>{fontface()}{CSS}</style></head>'
-            f'<body class="{"amber" if theme == "amber" else "green" if theme == "green" else "vuoto" if theme == "vuoto" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}{" pho" if k == "photo" else ""}{" kd" if s.get("kindle") else ""}"><div class="glow"></div>{pre}{head}{body}{foo}{swipe}</body></html>')
+            f'<body class="{"amber" if theme == "amber" else "green" if theme == "green" else "vuoto" if theme == "vuoto" else ""}{" story" if story else ""}{" hq" if s.get("hero") is not None else ""}{" pho" if k == "photo" else ""}{" pa" if k == "photo" and s.get("alto") else ""}{" kd" if s.get("kindle") else ""}"><div class="glow"></div>{pre}{head}{body}{foo}{swipe}</body></html>')
 
 
 def load():
@@ -257,7 +277,16 @@ def load():
         ns4 = {"__file__": str(extra3)}
         exec(extra3.read_text(encoding="utf-8"), ns4)
         items += ns4["ITEMS"]
-    return items
+    extra4 = HERE / "dicembre_4libri.py"        # Aritmetica e Vuoto a dicembre (riequilibrio sui quattro libri, 31/10/2026)
+    if extra4.exists():
+        ns5 = {"__file__": str(extra4)}
+        exec(extra4.read_text(encoding="utf-8"), ns5)
+        items += ns5["ITEMS"]
+    # Tolti dal calendario il 31/10/2026: n12 (il cane del comitato è già nel Reel r17)
+    return [it for it in items if it["id"] not in TOLTI]
+
+
+TOLTI = {"n12-oblio-cane"}
 
 
 def out_path(it, i, n):
