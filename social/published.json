@@ -980,6 +980,14 @@
         "link": "https://www.facebook.com/2206766819904404",
         "ora_utc": "2026-10-30T22:11:58+00:00"
       }
+    },
+    "tvl5-vuoto-modulo": {
+      "tiktok": {
+        "buffer_post_id": "6ae5ad431891472093c1e9c2",
+        "dueAt": "2026-11-01T18:23:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-10-31T08:56:33+00:00"
+      }
     }
   }
 }
