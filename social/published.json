@@ -1048,6 +1048,30 @@
         "link": "https://www.facebook.com/1661262795619737",
         "ora_utc": "2026-11-01T19:43:40+00:00"
       }
+    },
+    "q10-cesoie": {
+      "instagram": {
+        "media_id": "18159131569501724",
+        "link": "https://www.instagram.com/reel/DfNxlIvjL4W/",
+        "ora_utc": "2026-11-01T22:11:49+00:00"
+      },
+      "facebook": {
+        "post_id": "2901339940242992",
+        "link": "https://www.facebook.com/2901339940242992",
+        "ora_utc": "2026-11-01T22:11:55+00:00"
+      }
+    },
+    "q10s-cesoie": {
+      "instagram": {
+        "media_id": "18503484973099341",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4021088433120156083",
+        "ora_utc": "2026-11-01T22:12:05+00:00"
+      },
+      "facebook": {
+        "post_id": "3081057638910201",
+        "link": "https://www.facebook.com/3081057638910201",
+        "ora_utc": "2026-11-01T22:12:13+00:00"
+      }
     }
   }
 }
