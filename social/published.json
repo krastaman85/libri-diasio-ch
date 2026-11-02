@@ -1080,6 +1080,18 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-02T09:37:40+00:00"
       }
+    },
+    "g-vuoto-pov": {
+      "instagram": {
+        "media_id": "17927467506430456",
+        "link": "https://www.instagram.com/p/DfPN9i7nA05/",
+        "ora_utc": "2026-11-02T11:38:38+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122116546857500199",
+        "link": "https://www.facebook.com/1377129402146055_122116546857500199",
+        "ora_utc": "2026-11-02T11:38:42+00:00"
+      }
     }
   }
 }
