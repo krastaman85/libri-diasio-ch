@@ -1092,6 +1092,30 @@
         "link": "https://www.facebook.com/1377129402146055_122116546857500199",
         "ora_utc": "2026-11-02T11:38:42+00:00"
       }
+    },
+    "q11-amazzonia": {
+      "instagram": {
+        "media_id": "17900105358676654",
+        "link": "https://www.instagram.com/reel/DfQWcFtCa6_/",
+        "ora_utc": "2026-11-02T22:12:23+00:00"
+      },
+      "facebook": {
+        "post_id": "1140423561871173",
+        "link": "https://www.facebook.com/1140423561871173",
+        "ora_utc": "2026-11-02T22:12:28+00:00"
+      }
+    },
+    "q11s-amazzonia": {
+      "instagram": {
+        "media_id": "18120288697956963",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4021813483409608653",
+        "ora_utc": "2026-11-02T22:12:40+00:00"
+      },
+      "facebook": {
+        "post_id": "1132963739721491",
+        "link": "https://www.facebook.com/1132963739721491",
+        "ora_utc": "2026-11-02T22:12:46+00:00"
+      }
     }
   }
 }
