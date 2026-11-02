@@ -1072,6 +1072,14 @@
         "link": "https://www.facebook.com/3081057638910201",
         "ora_utc": "2026-11-01T22:12:13+00:00"
       }
+    },
+    "tvl6-vuoto-fazzoletto": {
+      "tiktok": {
+        "buffer_post_id": "6ae859e5ca68b566b62ef048",
+        "dueAt": "2026-11-03T20:04:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-02T09:37:40+00:00"
+      }
     }
   }
 }
