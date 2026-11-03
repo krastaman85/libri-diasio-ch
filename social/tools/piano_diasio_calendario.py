@@ -48,9 +48,10 @@ TAG_MU = ("#Ticino #SvizzeraItaliana #CulturaTicino #ScrittoriEmergenti #Scritto
 
 
 def musica(id, titolo, apertura, su_youtube=True):
+    canale = "Il brano intero è" if su_youtube else "Gli altri brani sono"
     testo = (f"D.IAsio music · {titolo}.\n{apertura}\n\n"
-             ("Il brano intero è" if su_youtube else "Gli altri brani sono") + " sul canale YouTube @D.IAsio_music: link in bio.\n"
-             "Musica creata con MusicAI su testi di D.IAsio, video con immagini create con l’IA.")
+             f"{canale} sul canale YouTube @D.IAsio_music: link in bio.\n"
+             "Testi di D.IAsio. Musica e immagini create con l’IA.")
     ig = f"{testo}\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n{TAG_MU[0]}"
     fb = (f"{testo.replace('link in bio', 'https://www.youtube.com/@D.IAsio_music')}\n\n"
           f"E se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: {AMZ_VUOTO}\n\n{TAG_MU[1]}")
@@ -64,6 +65,28 @@ MUSICA = [
     musica("mu3-spirale-di-vetro-2", "Spirale di vetro", "Un altro passaggio dello stesso brano. Quale parte preferisci?"),
     musica("mu4-archivio-della-sete-2", "L’Archivio della Sete", "Seconda parte del brano, meglio in cuffia."),
 ]
+
+
+# Storie musicali (3/11/2026): escono subito dopo il Reel del sabato (campo "poi"), da mettere a mano nell'highlight «Musica».
+# Immagini da social/tools/storie_musica.py. L'orario della Storia (Reel + 3 minuti) vale solo come ripiego.
+STORIE_MUSICA = {"mu1-spirale-di-vetro": "mus1-spirale-di-vetro", "mu2-archivio-della-sete": "mus2-archivio-della-sete",
+                 "mu3-spirale-di-vetro-2": "mus3-spirale-di-vetro-2", "mu4-archivio-della-sete-2": "mus4-archivio-della-sete-2"}
+
+
+def storie_musica(cal):
+    from datetime import datetime, timedelta
+    have = {x["id"] for x in cal["post"]}
+    for x in list(cal["post"]):
+        sid = STORIE_MUSICA.get(x["id"])
+        if not sid:
+            continue
+        x["poi"] = sid
+        quando = (datetime.fromisoformat(x["quando"]) + timedelta(minutes=3)).strftime("%Y-%m-%dT%H:%M")
+        if sid not in have:
+            cal["post"].append({"id": sid, "tipo": "storia", "quando": quando, "segmento": "Storia · D.IAsio music (highlight Musica)",
+                                "immagine": f"social/img/story/{sid}.jpg"})
+        else:
+            next(y for y in cal["post"] if y["id"] == sid)["quando"] = quando
 
 
 def main():
@@ -84,7 +107,10 @@ def main():
     for x in cal["post"]:
         if x["id"] in pub or x.get("piattaforme") == ["tiktok"] or (x["id"][0] == "q" and x["id"][1].isdigit()):
             continue
-        if x["id"] in SCHEMA:
+        if x["id"] in STORIE_MUSICA.values():   # Storie abbinate ai Reel musicali: le gestisce storie_musica()
+            x.pop("sospeso", None)
+            x.pop("nota", None)
+        elif x["id"] in SCHEMA:
             x["quando"] = SCHEMA[x["id"]]
             x.pop("sospeso", None)
             x.pop("nota", None)
@@ -94,6 +120,7 @@ def main():
             x["sospeso"], x["nota"] = True, NOTA
         elif "2026-12-14" <= x["quando"][:10] <= "2026-12-31" and x["id"] not in TIENI_DICEMBRE:
             x["sospeso"], x["nota"] = True, NOTA
+    storie_musica(cal)
     cal["post"].sort(key=lambda x: x["quando"])
     eol = "\r\n" if "\r\n" in testo else "\n"
     p.write_text((json.dumps(cal, indent=2, ensure_ascii=False) + "\n").replace("\n", eol), encoding="utf-8", newline="")
