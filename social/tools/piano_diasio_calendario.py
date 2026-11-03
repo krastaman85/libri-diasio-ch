@@ -51,7 +51,7 @@ def musica(id, titolo, apertura, su_youtube=True):
     canale = "Il brano intero è" if su_youtube else "Gli altri brani sono"
     testo = (f"D.IAsio music · {titolo}.\n{apertura}\n\n"
              f"{canale} sul canale YouTube @D.IAsio_music: link in bio.\n"
-             "Musica creata con MusicAI su testi di D.IAsio, video con immagini create con l’IA.")
+             "Testi di D.IAsio. Musica e immagini create con l’IA.")
     ig = f"{testo}\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n{TAG_MU[0]}"
     fb = (f"{testo.replace('link in bio', 'https://www.youtube.com/@D.IAsio_music')}\n\n"
           f"E se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: {AMZ_VUOTO}\n\n{TAG_MU[1]}")
@@ -107,7 +107,10 @@ def main():
     for x in cal["post"]:
         if x["id"] in pub or x.get("piattaforme") == ["tiktok"] or (x["id"][0] == "q" and x["id"][1].isdigit()):
             continue
-        if x["id"] in SCHEMA:
+        if x["id"] in STORIE_MUSICA.values():   # Storie abbinate ai Reel musicali: le gestisce storie_musica()
+            x.pop("sospeso", None)
+            x.pop("nota", None)
+        elif x["id"] in SCHEMA:
             x["quando"] = SCHEMA[x["id"]]
             x.pop("sospeso", None)
             x.pop("nota", None)

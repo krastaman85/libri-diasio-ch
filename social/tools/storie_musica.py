@@ -72,7 +72,7 @@ def main():
                            f"<div class=bg style=\"background-image:url({fon})\"></div><div class=vg></div>"
                            f"<div class=kick>D.IAsio music</div><div class=disc style=\"background-image:url({cer})\"></div>{svg}"
                            f"<div class=tit>{titolo}</div><div class=sub>{riga} · il brano intero su YouTube</div>"
-                           f"<div class=cta>Link in bio</div><div class=sig>Musica MusicAI · immagini IA</div></body></html>")
+                           f"<div class=cta>Link in bio</div><div class=sig>Musica e immagini create con l’IA</div></body></html>")
             pg.wait_for_timeout(250)
             pg.screenshot(path=str(out / f"{sid}.jpg"), type="jpeg", quality=90)
             print("→", f"img/story/{sid}.jpg")
