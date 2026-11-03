@@ -1128,6 +1128,30 @@
         "link": "https://www.facebook.com/4513829222202090",
         "ora_utc": "2026-11-03T18:21:17+00:00"
       }
+    },
+    "q12-ansia": {
+      "instagram": {
+        "media_id": "18103453007530481",
+        "link": "https://www.instagram.com/reel/DfS7dCjgttR/",
+        "ora_utc": "2026-11-03T22:14:21+00:00"
+      },
+      "facebook": {
+        "post_id": "1007686842379174",
+        "link": "https://www.facebook.com/1007686842379174",
+        "ora_utc": "2026-11-03T22:14:26+00:00"
+      }
+    },
+    "q12s-ansia": {
+      "instagram": {
+        "media_id": "18035303156674143",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4022539249610501996",
+        "ora_utc": "2026-11-03T22:14:34+00:00"
+      },
+      "facebook": {
+        "post_id": "1130112656282020",
+        "link": "https://www.facebook.com/1130112656282020",
+        "ora_utc": "2026-11-03T22:14:38+00:00"
+      }
     }
   }
 }
