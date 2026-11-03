@@ -3,7 +3,7 @@
 nelle finestre di cron-job.org); i post spostati vanno, nell'ordine, nelle prime fasce libere dopo il 13/11.
 Uso (dalla radice del repo): python social/tools/vuoto_uscita.py   (idempotente: se i post nuovi ci sono gia non fa nulla)
 Decisioni dell'autore (23/10/2026): massimo 2 post al giorno su IG/FB (la rubrica delle 23:10 resta a parte),
-musica = strumentali MusicAI licenziati il 13/10, campagna di 3 settimane, immagini esistenti + 15 nuove (Firefly)."""
+musica = strumentali con licenza il 13/10, campagna di 3 settimane, immagini esistenti + 15 nuove (Firefly)."""
 import json, random
 from datetime import datetime, date, timedelta
 from pathlib import Path
