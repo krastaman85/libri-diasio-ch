@@ -41,7 +41,7 @@ def da_controllare():
     pub = json.loads((DIR / "published.json").read_text(encoding="utf-8"))["pubblicati"]
     for p in sorted(cal["post"], key=lambda x: x["quando"]):
         d = datetime.fromisoformat(p["quando"])
-        if p["id"] not in pub and d >= DAL and not rubrica(p["id"]) and not tiktok(p):
+        if p["id"] not in pub and d >= DAL and not rubrica(p["id"]) and not tiktok(p) and not p.get("sospeso"):   # i sospesi non escono (31/10/2026)
             yield p["id"], d
 
 

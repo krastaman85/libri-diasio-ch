@@ -1,6 +1,6 @@
 # Pubblicazione automatica su Instagram e Facebook
 
-Account Instagram `@d.iasio.libri` e Pagina Facebook "D. Iasio". Calendario dal 30 settembre al 31 dicembre 2026: Reel, grafiche singole e caroselli (vedi `STRATEGIA.md`).
+Account Instagram `@_d.iasio_` (prima `@d.iasio.libri`) e Pagina Facebook "D. Iasio". Calendario dal 30 settembre al 31 dicembre 2026: Reel, grafiche singole e caroselli (vedi `STRATEGIA.md`).
 
 Contenuto della cartella: `calendar.json` (calendario), `img/` (grafiche), `video/` (Reel), `publish.py` (pubblicazione), `tools/` (generatori delle grafiche), `kit/` (Goodreads, aNobii, contatore visite), `reels-src/` (progetto HyperFrames dei Reel: una composizione con variabili, un file `vars/*.json` per Reel).
 

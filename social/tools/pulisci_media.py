@@ -44,8 +44,8 @@ def main():
         usato.update(fs)
         # come in produzione: IG e FB per i post normali (testo solo FB), TikTok per quelli marcati tiktok
         plats = ["tiktok"] if publish.is_tiktok(p) else ["instagram", "facebook"]
-        if publish.pending(p, state, plats):
-            serve.update(fs)
+        if publish.pending(p, state, plats) or (p.get("sospeso") and p["id"] not in state["pubblicati"]):
+            serve.update(fs)   # i sospesi non sono usciti: si tengono per riusarli (3/11/2026)
     tracciati = subprocess.run(["git", "ls-files", "-z"], capture_output=True, text=True, check=True).stdout.split("\0")
     media = [f for f in tracciati if f.startswith(CARTELLE)]
     # dove cercare i nomi: il sito (che li servirebbe davvero) e tutto il testo del repo

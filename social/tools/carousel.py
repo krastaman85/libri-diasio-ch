@@ -133,6 +133,15 @@ body.vuoto{--bg:#17171b;--ink:#efe9df;--mut:#aca69b;--line:#3a3a42;--amb:#d8a468
 .vuoto .doc{background:#202026;border-radius:0}.vuoto .doc b{color:var(--red);font-weight:700}
 .vuoto .foot img{border-color:var(--line)}
 .vuoto .shade{background:linear-gradient(180deg,rgba(23,23,27,.62) 0%,rgba(23,23,27,0) 20%,rgba(23,23,27,0) 38%,rgba(23,23,27,.80) 66%,rgba(23,23,27,.97) 100%)}
+.main.mod{top:140px;bottom:220px;justify-content:center}
+.mod .kick{font-size:32px;margin-bottom:30px}
+.mshade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,23,27,.80) 0%,rgba(23,23,27,.30) 30%,rgba(23,23,27,.40) 70%,rgba(23,23,27,.92) 100%)}
+.mdoc{background:rgba(242,236,224,.96);color:#1d1b18;border-radius:6px;padding:46px 50px 40px;box-shadow:0 40px 90px rgba(0,0,0,.65);transform:rotate(-1deg)}
+.mdoc .mtit{font:700 44px/1.15 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.02em;border-bottom:3px solid #1d1b18;padding-bottom:16px}
+.mdoc .msub{font:400 26px 'IBM Plex Mono',monospace;color:#5b554b;margin:12px 0 26px}
+.mdoc p{font:400 34px/1.45 'IBM Plex Mono',monospace;margin:0 0 14px}.mdoc p b{color:#b3232f;font-weight:700}
+.mnota{margin-top:22px;padding-top:16px;border-top:2px dashed #8a8273;font:italic 400 33px/1.35 'Source Serif 4';color:#3b362e}.mnota b{color:#b3232f;font-weight:600}
+.mod .kick{color:var(--amb);text-shadow:0 2px 14px rgba(0,0,0,.8)}
 .doc{background:#0d1522;border:2px solid var(--line);border-radius:18px;padding:44px 48px}
 .doc p{font:400 33px/1.5 'DejaVu Sans Mono',monospace;color:#d6dde8;margin-bottom:26px}.doc p:last-child{margin-bottom:0}.doc b{color:var(--amb);font-weight:400}
 """
@@ -227,6 +236,18 @@ def slide_html(s, i, n, book, theme, story=False):
         kick = f'<div class="kick">{html.escape(s["kick"])}</div>' if s.get("kick") else ""
         lines = "".join(f'<p>{em(x)}</p>' for x in s["lines"])
         body = f'<div class="main">{kick}<div class="tab">{html.escape(s["name"])}</div><div class="doc">{lines}</div></div>'
+    elif k == "modulo":   # piano D.IAsio (3/11/2026): finto documento ticinese su foto scura, firma solo nel piede
+        if s.get("photo"):
+            pre = (f'<div class="photo" style="background-image:url({photo_src(s["photo"], s.get("pos", 30))});'
+                   f'background-position:center;filter:brightness(.75) saturate(.8) blur(1.5px)"></div><div class="mshade"></div>')
+        kick = f'<div class="kick">{html.escape(s["kick"])}</div>' if s.get("kick") else ""
+        rows = "".join(f'<p>{em(x)}</p>' for x in s["lines"])
+        nota = f'<div class="mnota">{em(s["nota"])}</div>' if s.get("nota") else ""
+        body = (f'<div class="main mod">{kick}<div class="mdoc"><div class="mtit">{html.escape(s["title"])}</div>'
+                f'<div class="msub">{html.escape(s.get("ente", ""))}</div>{rows}{nota}</div></div>')
+        foo = (f'<div class="foot"><div><div class="t">D.IAsio · noir e satira dal Ticino</div>'
+               f'<div class="u">{html.escape(s.get("foot") or "Mandalo a chi lo compilerebbe così")}</div></div></div>')
+        head = pg
     elif k == "covers":
         if len(s["items"]) > 2:   # quattro romanzi in fila (31/10/2026)
             cs = "".join(f'<div class="cv" style="width:224px"><img src="{cover_img(b)}" style="width:224px;height:334px"><div class="t" style="font-size:22px;margin-top:18px">{TITLES[b]}</div>'
@@ -282,6 +303,11 @@ def load():
         ns5 = {"__file__": str(extra4)}
         exec(extra4.read_text(encoding="utf-8"), ns5)
         items += ns5["ITEMS"]
+    extra5 = HERE / "piano_diasio.py"           # piano D.IAsio dal 16/11/2026: moduli ticinesi e puntate del Bug
+    if extra5.exists():
+        ns6 = {"__file__": str(extra5)}
+        exec(extra5.read_text(encoding="utf-8"), ns6)
+        items += ns6["ITEMS"]
     # Tolti dal calendario il 31/10/2026: n12 (il cane del comitato è già nel Reel r17)
     return [it for it in items if it["id"] not in TOLTI]
 

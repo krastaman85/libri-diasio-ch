@@ -1,6 +1,6 @@
 # Strategia social D. Iasio, budget 0
 
-Account: Instagram `@d.iasio.libri` + Pagina Facebook "D. Iasio". Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1 (link in bio → `libri.diasio.ch`).
+Account: Instagram `@_d.iasio_` (prima `@d.iasio.libri`, rinominato; profilo unico D.IAsio dal 3/11/2026) + Pagina Facebook "D. Iasio". Obiettivo unico: iscrizioni alla newsletter e download della Puntata 1 (link in bio → `libri.diasio.ch`).
 
 ## Calendario: giorni e orari
 

@@ -59,7 +59,7 @@ def footer(im, d, book, theme, line="Puntata 1 gratis · libri.diasio.ch"):
     im.paste(c, (70, y))
     d.text((70 + cw + 28, y + 16), TITLES[book], font=head(30), fill=ink)
     d.text((70 + cw + 28, y + 62), line, font=serifr(28), fill=sub)
-    d.text((70 + cw + 28, y + 104), "@d.iasio.libri", font=serifr(24), fill=mut)
+    d.text((70 + cw + 28, y + 104), "@_d.iasio_", font=serifr(24), fill=mut)
 
 
 def text_block(d, lines, font, x, y, lh, fill):
@@ -209,7 +209,7 @@ def k_both(im, d, p, theme):
     for ln in wrap(d, p["sub"], sf, W - 140):
         d.text((70, yy + 8), ln, font=sf, fill=MUTED)
         yy += 50
-    d.text((70, H - 90), "@d.iasio.libri · libri.diasio.ch", font=serifr(28), fill=AMBER)
+    d.text((70, H - 90), "@_d.iasio_ · libri.diasio.ch", font=serifr(28), fill=AMBER)
 
 
 KINDS = dict(quote=k_quote, hook=k_hook, brand=k_brand, notif=k_notif, terminal=k_terminal,

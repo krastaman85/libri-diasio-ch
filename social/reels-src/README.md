@@ -40,5 +40,5 @@ Composizione a parte: `index-vuoto.html` (stile grafite, rosso e ambra, IBM Plex
 
 ## Rubrica «Citazioni D. Iasio» (12/10/2026)
 
-Composizione `index-citazione.html` (13 s, stessa palette e stessi caratteri dei Reel, fondo più scuro): numero della frase in alto a destra, citazione parola per parola, firma «D. Iasio» sul colpo grave della traccia (7,75 s), riga «Una frase ogni sera alle 23:10 · @d.iasio.libri». Variabili `quote`, `emphasis`, `num` in `vars/qNN-*.json` (scritte da `social/tools/citazioni.py --vars`).
+Composizione `index-citazione.html` (13 s, stessa palette e stessi caratteri dei Reel, fondo più scuro): numero della frase in alto a destra, citazione parola per parola, firma «D. Iasio» sul colpo grave della traccia (7,75 s), riga «Una frase ogni sera alle 23:10 · @_d.iasio_». Variabili `quote`, `emphasis`, `num` in `vars/qNN-*.json` (scritte da `social/tools/citazioni.py --vars`).
 `./render-citazioni.sh` (senza argomenti fa tutte le `vars/q*.json`) produce `../video/qNN-*.mp4` (crf 25) e la Storia `../img/story/qNN-*.jpg` (fotogramma a 12,5 s). Circa un minuto per Reel in cloud.
