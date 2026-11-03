@@ -24,7 +24,7 @@ Le iscrizioni ai due servizi le fai tu (account, email, password): qui trovi cos
 **Nome:** D. Iasio
 **Sito:** https://libri.diasio.ch/
 **Newsletter:** https://davide-fek7ym.subscribepage.io/
-**Instagram:** https://www.instagram.com/d.iasio.libri/
+**Instagram:** https://www.instagram.com/_d.iasio_/
 **Lingue:** italiano
 **Generi:** noir, thriller psicologico, fiction distopica
 
