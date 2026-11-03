@@ -39,9 +39,10 @@ def file_serve(p):
 def da_controllare():
     cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
     pub = json.loads((DIR / "published.json").read_text(encoding="utf-8"))["pubblicati"]
+    abbinati = {p["poi"] for p in cal["post"] if p.get("poi")}   # escono nella stessa esecuzione del post che li richiama (campo "poi")
     for p in sorted(cal["post"], key=lambda x: x["quando"]):
         d = datetime.fromisoformat(p["quando"])
-        if p["id"] not in pub and d >= DAL and not rubrica(p["id"]) and not tiktok(p) and not p.get("sospeso"):   # i sospesi non escono (31/10/2026)
+        if p["id"] not in pub and d >= DAL and not rubrica(p["id"]) and not tiktok(p) and p["id"] not in abbinati and not p.get("sospeso"):   # i sospesi non escono (31/10/2026)
             yield p["id"], d
 
 
