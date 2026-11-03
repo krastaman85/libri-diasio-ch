@@ -47,9 +47,9 @@ TAG_MU = ("#Ticino #SvizzeraItaliana #CulturaTicino #ScrittoriEmergenti #Scritto
           "#Ticino #SvizzeraItaliana #CulturaTicino #ScrittoriEmergenti #ScrittoriSvizzeri #LeggereInSvizzera #BookstagramSvizzera #ScrittoriItaliani #EditoriaItaliana #Ironia")
 
 
-def musica(id, titolo, apertura):
+def musica(id, titolo, apertura, su_youtube=True):
     testo = (f"D.IAsio music · {titolo}.\n{apertura}\n\n"
-             "Il brano intero è sul canale YouTube @D.IAsio_music: link in bio.\n"
+             ("Il brano intero è" if su_youtube else "Gli altri brani sono") + " sul canale YouTube @D.IAsio_music: link in bio.\n"
              "Musica creata con MusicAI su testi di D.IAsio, video con immagini create con l’IA.")
     ig = f"{testo}\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n{TAG_MU[0]}"
     fb = (f"{testo.replace('link in bio', 'https://www.youtube.com/@D.IAsio_music')}\n\n"
@@ -60,9 +60,9 @@ def musica(id, titolo, apertura):
 
 MUSICA = [
     musica("mu1-spirale-di-vetro", "Spirale di vetro", "Rap conscious dal Ticino: lavoro, merito e quello che resta quando la corsa si ferma."),
-    musica("mu2-archivio-della-sete", "L’Archivio della Sete", "Un nuovo brano: ascoltalo fino in fondo, poi dimmi quale verso ti resta in testa."),
+    musica("mu2-archivio-della-sete", "L’Archivio della Sete", "Un estratto del brano nuovo: dimmi quale verso ti resta in testa.", su_youtube=False),
     musica("mu3-spirale-di-vetro-2", "Spirale di vetro", "Un altro passaggio dello stesso brano. Quale parte preferisci?"),
-    musica("mu4-archivio-della-sete-2", "L’Archivio della Sete", "Seconda parte. Il brano intero dura quattro minuti: vale l’ascolto in cuffia."),
+    musica("mu4-archivio-della-sete-2", "L’Archivio della Sete", "Seconda parte del brano, meglio in cuffia.", su_youtube=False),
 ]
 
 
