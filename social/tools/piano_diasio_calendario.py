@@ -60,9 +60,9 @@ def musica(id, titolo, apertura, su_youtube=True):
 
 MUSICA = [
     musica("mu1-spirale-di-vetro", "Spirale di vetro", "Rap conscious dal Ticino: lavoro, merito e quello che resta quando la corsa si ferma."),
-    musica("mu2-archivio-della-sete", "L’Archivio della Sete", "Un estratto del brano nuovo: dimmi quale verso ti resta in testa.", su_youtube=False),
+    musica("mu2-archivio-della-sete", "L’Archivio della Sete", "Un estratto del brano nuovo: dimmi quale verso ti resta in testa."),
     musica("mu3-spirale-di-vetro-2", "Spirale di vetro", "Un altro passaggio dello stesso brano. Quale parte preferisci?"),
-    musica("mu4-archivio-della-sete-2", "L’Archivio della Sete", "Seconda parte del brano, meglio in cuffia.", su_youtube=False),
+    musica("mu4-archivio-della-sete-2", "L’Archivio della Sete", "Seconda parte del brano, meglio in cuffia."),
 ]
 
 
