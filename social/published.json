@@ -1160,6 +1160,13 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-04T09:23:24+00:00"
       }
+    },
+    "st-vuoto-fuori-sala": {
+      "facebook": {
+        "post_id": "1652795929873000",
+        "link": "https://www.facebook.com/1652795929873000",
+        "ora_utc": "2026-11-04T11:22:42+00:00"
+      }
     }
   }
 }
