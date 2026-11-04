@@ -73,17 +73,27 @@ STORIE_MUSICA = {"mu1-spirale-di-vetro": "mus1-spirale-di-vetro", "mu2-archivio-
                  "mu3-spirale-di-vetro-2": "mus3-spirale-di-vetro-2", "mu4-archivio-della-sete-2": "mus4-archivio-della-sete-2"}
 
 
+# Storie delle serie (4/11/2026): dopo «Inizia qui», ogni Modulo e ogni Puntata esce una Storia (social/tools/storie_serie.py),
+# da mettere a mano negli highlight «Inizia qui», «Moduli» e «La puntata».
+from storie_serie import SERIE  # noqa: E402
+STORIE_SERIE = {pid: v[0] for pid, v in SERIE.items()}
+HIGHLIGHT = {"iq": "Inizia qui", "mt": "Moduli", "pb": "La puntata"}
+STORIE_ABBINATE = {**STORIE_MUSICA, **STORIE_SERIE}
+
+
 def storie_musica(cal):
     from datetime import datetime, timedelta
     have = {x["id"] for x in cal["post"]}
     for x in list(cal["post"]):
-        sid = STORIE_MUSICA.get(x["id"])
+        sid = STORIE_ABBINATE.get(x["id"])
         if not sid:
             continue
         x["poi"] = sid
         quando = (datetime.fromisoformat(x["quando"]) + timedelta(minutes=3)).strftime("%Y-%m-%dT%H:%M")
+        seg = ("Storia · D.IAsio music (highlight Musica)" if x["id"] in STORIE_MUSICA
+               else f"Storia · {HIGHLIGHT[x['id'][:2]]} (highlight {HIGHLIGHT[x['id'][:2]]})")
         if sid not in have:
-            cal["post"].append({"id": sid, "tipo": "storia", "quando": quando, "segmento": "Storia · D.IAsio music (highlight Musica)",
+            cal["post"].append({"id": sid, "tipo": "storia", "quando": quando, "segmento": seg,
                                 "immagine": f"social/img/story/{sid}.jpg"})
         else:
             next(y for y in cal["post"] if y["id"] == sid)["quando"] = quando
@@ -107,7 +117,7 @@ def main():
     for x in cal["post"]:
         if x["id"] in pub or x.get("piattaforme") == ["tiktok"] or (x["id"][0] == "q" and x["id"][1].isdigit()):
             continue
-        if x["id"] in STORIE_MUSICA.values():   # Storie abbinate ai Reel musicali: le gestisce storie_musica()
+        if x["id"] in STORIE_ABBINATE.values():   # Storie abbinate (musica e serie): le gestisce storie_musica()
             x.pop("sospeso", None)
             x.pop("nota", None)
         elif x["id"] in SCHEMA:
