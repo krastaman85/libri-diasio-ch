@@ -1208,6 +1208,18 @@
         "link": "https://www.facebook.com/2154940935130283",
         "ora_utc": "2026-11-04T22:11:53+00:00"
       }
+    },
+    "r12-bug-vicino": {
+      "instagram": {
+        "media_id": "18630929314044205",
+        "link": "https://www.instagram.com/reel/DfW9YTHCuW3/",
+        "ora_utc": "2026-11-05T11:47:57+00:00"
+      },
+      "facebook": {
+        "post_id": "2203343826882584",
+        "link": "https://www.facebook.com/2203343826882584",
+        "ora_utc": "2026-11-05T11:48:03+00:00"
+      }
     }
   }
 }
