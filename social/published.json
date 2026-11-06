@@ -1264,6 +1264,18 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-06T11:02:39+00:00"
       }
+    },
+    "g-vuoto-per-chi": {
+      "instagram": {
+        "media_id": "17956840518295245",
+        "link": "https://www.instagram.com/p/DfZf4nSm_nY/",
+        "ora_utc": "2026-11-06T11:27:42+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122117820543500199",
+        "link": "https://www.facebook.com/1377129402146055_122117820543500199",
+        "ora_utc": "2026-11-06T11:27:46+00:00"
+      }
     }
   }
 }
