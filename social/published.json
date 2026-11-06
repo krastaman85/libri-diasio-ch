@@ -1256,6 +1256,14 @@
         "link": "https://www.facebook.com/1478967117481322",
         "ora_utc": "2026-11-05T22:11:51+00:00"
       }
+    },
+    "tvl8-vuoto-clic": {
+      "tiktok": {
+        "buffer_post_id": "6aedb3d00011231a4521023c",
+        "dueAt": "2026-11-07T18:47:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-06T11:02:39+00:00"
+      }
     }
   }
 }
