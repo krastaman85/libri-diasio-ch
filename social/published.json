@@ -1415,6 +1415,30 @@
         "link": "https://www.facebook.com/1183143367402543",
         "ora_utc": "2026-11-09T17:18:05+00:00"
       }
+    },
+    "q18-social": {
+      "instagram": {
+        "media_id": "17876636046650205",
+        "link": "https://www.instagram.com/reel/DfiX_C8DO1G/",
+        "ora_utc": "2026-11-09T22:12:09+00:00"
+      },
+      "facebook": {
+        "post_id": "1142366871776710",
+        "link": "https://www.facebook.com/1142366871776710",
+        "ora_utc": "2026-11-09T22:12:14+00:00"
+      }
+    },
+    "q18s-social": {
+      "instagram": {
+        "media_id": "17940055647126424",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4026886796995153254",
+        "ora_utc": "2026-11-09T22:12:24+00:00"
+      },
+      "facebook": {
+        "post_id": "1146890791362921",
+        "link": "https://www.facebook.com/1146890791362921",
+        "ora_utc": "2026-11-09T22:12:29+00:00"
+      }
     }
   }
 }
