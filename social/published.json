@@ -1451,6 +1451,18 @@
         "link": "https://www.instagram.com/stories/_d.iasio_/4027289639090654261",
         "ora_utc": "2026-11-10T11:32:48+00:00"
       }
+    },
+    "r14-bug-amministrazione": {
+      "instagram": {
+        "media_id": "17971902363190531",
+        "link": "https://www.instagram.com/reel/Dfkk9AGFTMm/",
+        "ora_utc": "2026-11-10T18:44:01+00:00"
+      },
+      "facebook": {
+        "post_id": "1505019001492995",
+        "link": "https://www.facebook.com/1505019001492995",
+        "ora_utc": "2026-11-10T18:44:06+00:00"
+      }
     }
   }
 }
