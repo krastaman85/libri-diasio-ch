@@ -1499,6 +1499,30 @@
         "link": "https://www.facebook.com/2295283291315488",
         "ora_utc": "2026-11-11T18:42:48+00:00"
       }
+    },
+    "q20-capello": {
+      "instagram": {
+        "media_id": "18342615877275215",
+        "link": "https://www.instagram.com/reel/DfnhfiNgsVc/",
+        "ora_utc": "2026-11-11T22:11:29+00:00"
+      },
+      "facebook": {
+        "post_id": "1126180303453738",
+        "link": "https://www.facebook.com/1126180303453738",
+        "ora_utc": "2026-11-11T22:11:34+00:00"
+      }
+    },
+    "q20s-capello": {
+      "instagram": {
+        "media_id": "18140584348633467",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4028336014289500267",
+        "ora_utc": "2026-11-11T22:11:46+00:00"
+      },
+      "facebook": {
+        "post_id": "1157914643460685",
+        "link": "https://www.facebook.com/1157914643460685",
+        "ora_utc": "2026-11-11T22:11:50+00:00"
+      }
     }
   }
 }
