@@ -1,6 +1,8 @@
 # Piano D.IAsio (approvato il 3/11/2026): dal 16/11 un post al giorno + la frase delle 23:10, in giorni fissi.
 #   Lun e Gio: Moduli ticinesi (mt*) · Mar e Ven: La puntata del Bug (pb*) · Mer e Dom: Il libro (post già pronti, uno per libro a settimana)
 #   Sab: D.IAsio music (mu*, Reel dai videoclip del canale YouTube @D.IAsio_music)
+# Dal 12/11/2026 il mercoledì de «Il libro» è l'ASMR del libro quando esiste (asmr*: oggetti dei romanzi, Blender/Firefly + Seedance, suono generato);
+# i post che sostituisce (x05, x01) restano in calendario come sospesi.
 # I post già in calendario che non rientrano nello schema restano, con "sospeso": true (riutilizzabili). Dal 14/12 al 31/12 resta un solo post al giorno.
 # Idempotente: si può rilanciare. Uso: python social/tools/piano_diasio_calendario.py
 import json
@@ -19,7 +21,7 @@ NOTA = "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
 SCHEMA = {
     # settimana 1 (Vuoto a rendere)
     "iq0-inizia-qui": "2026-11-15T12:21",
-    "mt1-modulo-commemorazione": "2026-11-16T18:14", "pb1-bug-puntata-1": "2026-11-17T19:22", "x05-vuoto-cane": "2026-11-18T19:31",
+    "mt1-modulo-commemorazione": "2026-11-16T18:14", "pb1-bug-puntata-1": "2026-11-17T19:22", "asmr1-vuoto-fazzoletto": "2026-11-18T19:31",
     "mt2-listino-sordina": "2026-11-19T12:17", "pb2-bug-puntata-2": "2026-11-20T18:09", "mu1-spirale-di-vetro": "2026-11-21T12:16",
     "x06-vuoto-wifi": "2026-11-22T20:13",
     # settimana 2 (Il Bug della Trasparenza)
@@ -31,7 +33,7 @@ SCHEMA = {
     "mt6-accettazione-nebbia": "2026-12-03T12:41", "pb6-bug-puntata-6": "2026-12-04T18:33", "mu3-spirale-di-vetro-2": "2026-12-05T12:38",
     "n05-oblio-merli": "2026-12-06T20:36",
     # settimana 4 (L'Aritmetica del Consenso)
-    "mt7-listino-scuse": "2026-12-07T18:19", "pb7-bug-puntata-7": "2026-12-08T19:27", "x01-aritmetica-signora": "2026-12-09T19:36",
+    "mt7-listino-scuse": "2026-12-07T18:19", "pb7-bug-puntata-7": "2026-12-08T19:27", "asmr2-aritmetica-mandarino": "2026-12-09T19:36",
     "mt8-ricevuta-ascensore": "2026-12-10T12:22", "pb8-bug-puntata-8": "2026-12-11T18:14", "mu4-archivio-della-sete-2": "2026-12-12T12:09",
     "x04-aritmetica-due-mani": "2026-12-13T20:18",
 }
@@ -64,6 +66,34 @@ MUSICA = [
     musica("mu2-archivio-della-sete", "L’Archivio della Sete", "Un estratto del brano nuovo: dimmi quale verso ti resta in testa."),
     musica("mu3-spirale-di-vetro-2", "Spirale di vetro", "Un altro passaggio dello stesso brano. Quale parte preferisci?"),
     musica("mu4-archivio-della-sete-2", "L’Archivio della Sete", "Seconda parte del brano, meglio in cuffia."),
+]
+
+
+# ASMR dei libri (12/11/2026): un oggetto del romanzo da vicinissimo, frasi testuali della Puntata 1, cartello finale con la copertina.
+# Prima riga della didascalia con le parole che un lettore cercherebbe (Instagram usa la didascalia per capire l'argomento).
+def asmr(id, apertura, riga_kindle_ig, righe_fb, tag_ig, tag_fb, miniatura_ms):
+    ia = "Video e suono creati con l’IA."
+    return {"id": id, "tipo": "reel", "segmento": "ASMR dei libri · Reel", "video": f"social/video/{id}.mp4", "miniatura_ms": miniatura_ms,
+            "didascalia": f"{apertura}\n\n{riga_kindle_ig}\n{ia}\n\n{tag_ig}", "didascalia_fb": f"{apertura}\n\n{righe_fb}\n{ia}\n\n{tag_fb}"}
+
+
+ASMR = [
+    asmr("asmr1-vuoto-fazzoletto",
+         "ASMR da un romanzo satirico: una sala del commiato vuota, una porta che si chiude piano, un fazzoletto rimasto sulla sedia.\n"
+         "«Sulla sedia restò un fazzoletto.» È una riga di Vuoto a rendere. Meglio in cuffia.",
+         "Vuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.",
+         "Vuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\n"
+         "L’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/",
+         "#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
+         "#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera", 2600),
+    asmr("asmr2-aritmetica-mandarino",
+         "ASMR da un romanzo noir: un mandarino solo su un piattino d’argento, la buccia che si apre, uno spicchio che si stacca.\n"
+         "«Somiglia a qualcuno che ho pagato.» È una battuta de L’Aritmetica del Consenso. Meglio in cuffia.",
+         "L’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.",
+         "L’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\n"
+         "L’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/",
+         "#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
+         "#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino", 2600),
 ]
 
 
@@ -111,9 +141,9 @@ def main():
     carousel.add_calendar(nuovi)   # scrive il file: lo rileggiamo
     cal = json.loads(p.read_text(encoding="utf-8"))
     have = {x["id"] for x in cal["post"]}
-    for m in MUSICA:
+    for m in MUSICA + ASMR:
         if m["id"] not in have:
-            cal["post"].append(m)
+            cal["post"].append(dict(m, quando=SCHEMA[m["id"]]))
     for x in cal["post"]:
         if x["id"] in pub or x.get("piattaforme") == ["tiktok"] or (x["id"][0] == "q" and x["id"][1].isdigit()):
             continue

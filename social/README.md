@@ -52,3 +52,12 @@ Meta for Developers → app "Libri Diasio Social" → Casi d'uso → API con Ins
 - Storie con sticker, sondaggi, link o musica non sono automatizzabili: solo immagine fissa.
 - Se il repo resta inattivo 60 giorni GitHub disattiva i cron: i commit di `published.json` contano come attività finché ci sono post da pubblicare.
 - Su Facebook la didascalia è `didascalia_fb` (link diretto al posto di "link in bio", 3 hashtag). Se Facebook fallisce, Instagram non viene ripubblicato: lo stato è per piattaforma.
+
+## Misure (dal 12/11/2026)
+
+`social/misure.py` legge da Instagram gli Insights di ogni post uscito (copertura, like, invii, salvataggi, visualizzazioni e, per i Reel, tempo medio di visione) e scrive `social/misure.json` e `social/MISURE.md`. Il workflow `social-misure` lo lancia ogni lunedì mattina; si può avviare a mano da Actions («Run workflow», con «tutti» per rileggere anche i post vecchi).
+
+- Non pubblica e non modifica nulla su Instagram.
+- Le Storie non si misurano (scadono dopo 24 ore), i post solo Facebook nemmeno.
+- Serve il permesso `instagram_business_manage_insights` sul token `IG_ACCESS_TOKEN`. Se manca, il job si ferma con un errore chiaro e non scrive file: va rigenerato il token dall'app Meta con quel permesso e salvato di nuovo nel Secret.
+- `MISURE.md` raggruppa per serie (frase delle 23:10, ASMR, Moduli ticinesi, La puntata, Musica, Reel dei libri…) e per libro: è la base per decidere cosa tenere nel calendario.
