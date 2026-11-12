@@ -61,8 +61,11 @@ def leggi(media_id, tipo, token, call=None):
         r = call(publish.IG_API, "GET", f"{media_id}/insights", token, {"metric": ",".join(metriche)})
     except publish.ApiError as e:
         t = str(e)
-        if "permission" in t.lower() or '"code":10' in t.replace(" ", "") or '"code":200' in t.replace(" ", ""):
+        c = t.replace(" ", "")
+        if "(#10)" in t or '"code":10,' in c or '"code":10}' in c or '"code":200,' in c or '"code":200}' in c:
             raise SenzaPermesso(t)
+        if '"code":100' in c:         # contenuto eliminato dall'app o non leggibile: si salta, non è un problema del token
+            raise
         if tipo == "reel":            # alcune metriche non esistono per tutti i Reel: riprova con quelle comuni
             r = call(publish.IG_API, "GET", f"{media_id}/insights", token, {"metric": ",".join(COMUNI)})
         else:
@@ -167,6 +170,11 @@ def main():
         print("::error::Il token Instagram non può leggere gli Insights: serve il permesso instagram_business_manage_insights "
               "(vedi social/README.md, sezione Misure). Nessun file modificato.")
         print(str(e)[:300])
+        sys.exit(1)
+    if errori and not post:      # nemmeno un post letto: non è un contenuto eliminato, è il token
+        print("::error::Nessun post letto: probabilmente al token manca il permesso instagram_business_manage_insights "
+              "(vedi social/README.md, sezione Misure). Nessun file modificato.")
+        print(errori[0])
         sys.exit(1)
     profilo = list(vecchie.get("profilo", []))
     try:

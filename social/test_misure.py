@@ -52,6 +52,12 @@ class Misure(unittest.TestCase):
         post, err = misure.aggiorna(CAL, STATO, {}, "tok", ADESSO, call=finta({"1": {"reach": 9}, "2": e}, []))
         self.assertEqual(list(post), ["r06-oblio-igiene"]); self.assertEqual(len(err), 1)
 
+    def test_post_eliminato_non_e_un_problema_di_permesso(self):
+        e = publish.ApiError('GET 2/insights: HTTP 400 {"error":{"message":"Unsupported get request. Object with ID \'2\' does not exist, cannot be loaded '
+                             'due to missing permissions, or does not support this operation","type":"IGApiException","code":100,"error_subcode":33}}')
+        post, err = misure.aggiorna(CAL, STATO, {}, "tok", ADESSO, call=finta({"1": {"reach": 9}, "2": e}, []))
+        self.assertEqual(list(post), ["r06-oblio-igiene"]); self.assertEqual(len(err), 1)
+
     def test_rapporto(self):
         post, _ = misure.aggiorna(CAL, STATO, {}, "tok", ADESSO, call=finta({"1": {"reach": 100, "shares": 4, "ig_reels_avg_watch_time": 5200}, "2": {"reach": 40}}, []))
         t = misure.rapporto({"aggiornato": ADESSO.isoformat(), "post": post, "profilo": [{"giorno": "2026-11-12", "follower": 120, "contenuti": 90}], "errori": []})
