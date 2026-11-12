@@ -1547,6 +1547,30 @@
         "link": "https://www.facebook.com/1377129402146055_122119726437500199",
         "ora_utc": "2026-11-12T18:17:55+00:00"
       }
+    },
+    "q21-menta": {
+      "instagram": {
+        "media_id": "18140522074628840",
+        "link": "https://www.instagram.com/reel/DfqGSxYnMgb/",
+        "ora_utc": "2026-11-12T22:11:30+00:00"
+      },
+      "facebook": {
+        "post_id": "1174022215575389",
+        "link": "https://www.facebook.com/1174022215575389",
+        "ora_utc": "2026-11-12T22:11:34+00:00"
+      }
+    },
+    "q21s-menta": {
+      "instagram": {
+        "media_id": "18108183494127086",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4029060786832021627",
+        "ora_utc": "2026-11-12T22:11:41+00:00"
+      },
+      "facebook": {
+        "post_id": "1480274497324267",
+        "link": "https://www.facebook.com/1480274497324267",
+        "ora_utc": "2026-11-12T22:11:46+00:00"
+      }
     }
   }
 }
