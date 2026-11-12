@@ -1,0 +1,49 @@
+name: Misure dei post Instagram
+
+# Ogni lunedì legge gli Insights dei post usciti (copertura, tempo di visione, invii, salvataggi)
+# e aggiorna social/misure.json e social/MISURE.md. Non pubblica nulla.
+# Serve che il token IG_ACCESS_TOKEN abbia il permesso instagram_business_manage_insights.
+
+on:
+  schedule:
+    - cron: "41 4 * * 1"
+  workflow_dispatch:
+    inputs:
+      tutti:
+        description: "Rileggi anche i post più vecchi di 35 giorni"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: social-publish   # stessa coda della pubblicazione: mai due scritture insieme su main
+  cancel-in-progress: false
+
+jobs:
+  misure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Leggi gli Insights
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          TUTTI: ${{ github.event.inputs.tutti }}
+        run: |
+          args=""
+          [ "$TUTTI" = "true" ] && args="--tutti"
+          python3 social/misure.py $args
+      - name: Salva le misure
+        run: |
+          if [ -n "$(git status --porcelain social/misure.json social/MISURE.md)" ]; then
+            git config user.name "social-bot"
+            git config user.email "social-bot@users.noreply.github.com"
+            git add social/misure.json social/MISURE.md
+            git commit -m "social: aggiorna le misure dei post"
+            git pull --rebase -q
+            git push
+          fi
