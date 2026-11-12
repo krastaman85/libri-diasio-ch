@@ -1616,12 +1616,25 @@
     {
       "id": "asmr1-vuoto-fazzoletto",
       "tipo": "reel",
-      "segmento": "ASMR dei libri · Reel",
+      "segmento": "ASMR dei libri · Reel con voce narrante",
       "video": "social/video/asmr1-vuoto-fazzoletto.mp4",
-      "miniatura_ms": 2600,
-      "didascalia": "ASMR da un romanzo satirico: una sala del commiato vuota, una porta che si chiude piano, un fazzoletto rimasto sulla sedia.\n«Sulla sedia restò un fazzoletto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo e suono creati con l’IA.\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
-      "didascalia_fb": "ASMR da un romanzo satirico: una sala del commiato vuota, una porta che si chiude piano, un fazzoletto rimasto sulla sedia.\n«Sulla sedia restò un fazzoletto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\nVideo e suono creati con l’IA.\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera",
+      "miniatura_ms": 18000,
+      "didascalia": "ASMR da un romanzo satirico, letto ad alta voce: una sala del commiato vuota, una porta che si chiude piano, un fazzoletto rimasto sulla sedia.\n«Sulla sedia restò un fazzoletto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
+      "didascalia_fb": "ASMR da un romanzo satirico, letto ad alta voce: una sala del commiato vuota, una porta che si chiude piano, un fazzoletto rimasto sulla sedia.\n«Sulla sedia restò un fazzoletto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera",
       "quando": "2026-11-18T19:31"
+    },
+    {
+      "id": "tasmr1-vuoto-fazzoletto",
+      "tipo": "reel",
+      "quando": "2026-11-18T21:05",
+      "segmento": "TikTok · ASMR dei libri con voce narrante",
+      "video": "social/video/asmr1-vuoto-fazzoletto.mp4",
+      "miniatura_ms": 18000,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "ASMR da un romanzo satirico, letto ad alta voce: una sala del commiato vuota, una porta che si chiude piano, un fazzoletto rimasto sulla sedia.\n«Sulla sedia restò un fazzoletto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\n«Vuoto a rendere» di D. Iasio: ebook su Amazon Kindle (anche in Kindle Unlimited) e copertina flessibile. Cercalo su Amazon.\n\n#RomanzoSatirico #UmorismoNero #BookTokItalia #LibriDaLeggere #Ticino"
     },
     {
       "id": "q27-asfalto",
@@ -1796,7 +1809,19 @@
       "immagine": "social/img/nuovi/x06-vuoto-wifi.jpg",
       "alt": "Immagine creata con l’IA: un router con le luci accese su un leggio di una sala del commiato, accanto ai fiori bianchi. Sopra, la frase del romanzo sul commiato laico «senza ostie e con il wifi». Vuoto a rendere.",
       "didascalia": "Il commiato laico, versione Sordina: niente ostie, connessione garantita.\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\n\n#Satira #CommediaNera #ConsigliDiLettura #IoLeggo #SvizzeraItaliana",
-      "didascalia_fb": "Il commiato laico, versione Sordina: niente ostie, connessione garantita.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\n\n#RomanzoSatirico #LettureDivertenti #Ironia #Satira #IoLeggo #EditoriaItaliana #ScrittoriEmergenti #SvizzeraItaliana #CulturaTicino #BookstagramSvizzera"
+      "didascalia_fb": "Il commiato laico, versione Sordina: niente ostie, connessione garantita.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\n\n#RomanzoSatirico #LettureDivertenti #Ironia #Satira #IoLeggo #EditoriaItaliana #ScrittoriEmergenti #SvizzeraItaliana #CulturaTicino #BookstagramSvizzera",
+      "sospeso": true,
+      "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
+    },
+    {
+      "id": "vn1-vuoto-wifi",
+      "tipo": "reel",
+      "segmento": "Voce narrante · Reel",
+      "video": "social/video/vn1-vuoto-wifi.mp4",
+      "miniatura_ms": 13500,
+      "didascalia": "Il commiato laico, versione Sordina: niente ostie, connessione garantita.\nUna voce legge Vuoto a rendere, il romanzo satirico sulle pompe funebri che vendono il «sembra».\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
+      "didascalia_fb": "Il commiato laico, versione Sordina: niente ostie, connessione garantita.\nUna voce legge Vuoto a rendere, il romanzo satirico sulle pompe funebri che vendono il «sembra».\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera",
+      "quando": "2026-11-22T20:13"
     },
     {
       "id": "q31-citta",
@@ -1946,7 +1971,32 @@
       "video": "social/video/r07-bug-attivare.mp4",
       "miniatura_ms": 9600,
       "didascalia": "Il classico «io eseguo». Un portiere, un’email con le istruzioni e un aggiornamento da attivare entro le diciannove del quindici.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited.\n\n#RomanzoNoir #Ironia #LibriDaLeggere #BookTokItalia #CulturaTicino",
-      "didascalia_fb": "Il classico «io eseguo». Un portiere, un’email con le istruzioni e un aggiornamento da attivare entro le diciannove del quindici.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nIncluso in Kindle Unlimited.\n\n#ThrillerItaliano #GialloItaliano #AltaTensione #CommediaNera #Ironia #LibriDaLeggere #ConsigliDiLettura #BookTokItalia #SvizzeraItaliana #ScrittoriSvizzeri"
+      "didascalia_fb": "Il classico «io eseguo». Un portiere, un’email con le istruzioni e un aggiornamento da attivare entro le diciannove del quindici.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nIncluso in Kindle Unlimited.\n\n#ThrillerItaliano #GialloItaliano #AltaTensione #CommediaNera #Ironia #LibriDaLeggere #ConsigliDiLettura #BookTokItalia #SvizzeraItaliana #ScrittoriSvizzeri",
+      "sospeso": true,
+      "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
+    },
+    {
+      "id": "asmr3-aritmetica-lago",
+      "tipo": "reel",
+      "segmento": "ASMR dei libri · Reel con voce narrante",
+      "video": "social/video/asmr3-aritmetica-lago.mp4",
+      "miniatura_ms": 16000,
+      "didascalia": "ASMR da un romanzo noir, letto ad alta voce: una sala riunioni sopra il lago di Lugano, quattro tazzine ancora calde, le sedie vuote.\n«…che è la vista di tutti i soldi ticinesi, solo guardata da più in alto.» È L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
+      "didascalia_fb": "ASMR da un romanzo noir, letto ad alta voce: una sala riunioni sopra il lago di Lugano, quattro tazzine ancora calde, le sedie vuote.\n«…che è la vista di tutti i soldi ticinesi, solo guardata da più in alto.» È L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino",
+      "quando": "2026-11-25T19:43"
+    },
+    {
+      "id": "tasmr3-aritmetica-lago",
+      "tipo": "reel",
+      "quando": "2026-11-25T21:05",
+      "segmento": "TikTok · ASMR dei libri con voce narrante",
+      "video": "social/video/asmr3-aritmetica-lago.mp4",
+      "miniatura_ms": 16000,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "ASMR da un romanzo noir, letto ad alta voce: una sala riunioni sopra il lago di Lugano, quattro tazzine ancora calde, le sedie vuote.\n«…che è la vista di tutti i soldi ticinesi, solo guardata da più in alto.» È L’Aritmetica del Consenso. Meglio in cuffia.\n\n«L’Aritmetica del Consenso» di D. Iasio: ebook su Amazon Kindle, anche in Kindle Unlimited. Cercalo su Amazon.\n\n#NoirItaliano #LetteraturaNoir #BookTokItalia #LibriDaLeggere #Ticino"
     },
     {
       "id": "q34-wifi",
@@ -2164,7 +2214,19 @@
       "immagine": "social/img/nuovi/n21-bug-non-rimovibile.jpg",
       "alt": "Finto avviso dell’app Meridiana Life: «Trasparenza Meridiana non può essere rimossa da un singolo utente. Contattare l’amministrazione per la disattivazione collettiva.» Sotto: «Amministrazione collettiva. Cioè Cesare.» Il Bug della Trasparenza.",
       "didascalia": "Un messaggio che nessuno può cancellare: niente tasto elimina, solo l’avviso che serve una disattivazione collettiva, da chiedere all’amministrazione. Cioè a Cesare.\nL’app che ha appena smascherato il presidente adesso risponde al presidente. Dal Bug della Trasparenza, Puntata 1.\nIl romanzo completo è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited.\n\n#RomanzoNoir #Satira #ConsigliDiLettura #EditoriaItaliana #SvizzeraItaliana",
-      "didascalia_fb": "Un messaggio che nessuno può cancellare: niente tasto elimina, solo l’avviso che serve una disattivazione collettiva, da chiedere all’amministrazione. Cioè a Cesare.\nL’app che ha appena smascherato il presidente adesso risponde al presidente. Dal Bug della Trasparenza, Puntata 1.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#NoirItaliano #ThrillerItaliano #AltaTensione #Satira #UmorismoNero #ConsigliDiLettura #BookstagramItalia #ScrittoriEmergenti #Ticino #LeggereInSvizzera"
+      "didascalia_fb": "Un messaggio che nessuno può cancellare: niente tasto elimina, solo l’avviso che serve una disattivazione collettiva, da chiedere all’amministrazione. Cioè a Cesare.\nL’app che ha appena smascherato il presidente adesso risponde al presidente. Dal Bug della Trasparenza, Puntata 1.\n\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/bug/\n\n#NoirItaliano #ThrillerItaliano #AltaTensione #Satira #UmorismoNero #ConsigliDiLettura #BookstagramItalia #ScrittoriEmergenti #Ticino #LeggereInSvizzera",
+      "sospeso": true,
+      "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
+    },
+    {
+      "id": "vn2-aritmetica-ghostwriter",
+      "tipo": "reel",
+      "segmento": "Voce narrante · Reel",
+      "video": "social/video/vn2-aritmetica-ghostwriter.mp4",
+      "miniatura_ms": 8000,
+      "didascalia": "Il narratore de L’Aritmetica del Consenso fa un mestiere invisibile per definizione.\n«…nessuno ringrazia l’idraulico, si ringrazia il rubinetto.» Una voce legge l’inizio del romanzo.\n\nL’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
+      "didascalia_fb": "Il narratore de L’Aritmetica del Consenso fa un mestiere invisibile per definizione.\n«…nessuno ringrazia l’idraulico, si ringrazia il rubinetto.» Una voce legge l’inizio del romanzo.\n\nL’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino",
+      "quando": "2026-11-29T20:24"
     },
     {
       "id": "q38-antifurto",
@@ -2294,7 +2356,19 @@
       "video": "social/video/r15-oblio-firma.mp4",
       "miniatura_ms": 9100,
       "didascalia": "Nel suo fascicolo Dora Calvi trova una firma che riconosce e un ricordo che non ha. Una delle due cose mente.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited.\n\n#ThrillerPsicologico #LetteraturaNoir #BookstagramItalia #BookTokItalia #CulturaTicino",
-      "didascalia_fb": "Nel suo fascicolo Dora Calvi trova una firma che riconosce e un ricordo che non ha. Una delle due cose mente.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nIncluso in Kindle Unlimited.\n\n#ThrillerItaliano #LetteraturaNoir #NoirItaliano #LibriThriller #IoLeggo #ConsigliDiLettura #BookTokItalia #LeggereInSvizzera #CulturaTicino #SvizzeraItaliana"
+      "didascalia_fb": "Nel suo fascicolo Dora Calvi trova una firma che riconosce e un ricordo che non ha. Una delle due cose mente.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nIncluso in Kindle Unlimited.\n\n#ThrillerItaliano #LetteraturaNoir #NoirItaliano #LibriThriller #IoLeggo #ConsigliDiLettura #BookTokItalia #LeggereInSvizzera #CulturaTicino #SvizzeraItaliana",
+      "sospeso": true,
+      "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
+    },
+    {
+      "id": "asmr4-vuoto-diffusore",
+      "tipo": "reel",
+      "segmento": "ASMR dei libri · Reel con voce narrante",
+      "video": "social/video/asmr4-vuoto-diffusore.mp4",
+      "miniatura_ms": 7000,
+      "didascalia": "ASMR da un romanzo satirico, letto ad alta voce: legno chiaro, luce calda, un diffusore al cedro in una sala del commiato.\n«…un diffusore al cedro che spargeva odore di spa svizzera.» È Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
+      "didascalia_fb": "ASMR da un romanzo satirico, letto ad alta voce: legno chiaro, luce calda, un diffusore al cedro in una sala del commiato.\n«…un diffusore al cedro che spargeva odore di spa svizzera.» È Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera",
+      "quando": "2026-12-02T19:24"
     },
     {
       "id": "r20-bug-acclamazione",
@@ -2307,6 +2381,19 @@
       "didascalia_fb": "«Il punto quattro è una formalità.» Le ultime parole famose di un presidente d’assemblea.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nOra su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nIncluso in Kindle Unlimited.\n\n#ThrillerItaliano #NoirItaliano #AltaTensione #Satira #Ironia #IoLeggo #BookstagramItalia #BookTokItalia #LeggereInSvizzera #ScrittoriSvizzeri",
       "sospeso": true,
       "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
+    },
+    {
+      "id": "tasmr4-vuoto-diffusore",
+      "tipo": "reel",
+      "quando": "2026-12-02T21:05",
+      "segmento": "TikTok · ASMR dei libri con voce narrante",
+      "video": "social/video/asmr4-vuoto-diffusore.mp4",
+      "miniatura_ms": 7000,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "ASMR da un romanzo satirico, letto ad alta voce: legno chiaro, luce calda, un diffusore al cedro in una sala del commiato.\n«…un diffusore al cedro che spargeva odore di spa svizzera.» È Vuoto a rendere. Meglio in cuffia.\n\n«Vuoto a rendere» di D. Iasio: ebook su Amazon Kindle (anche in Kindle Unlimited) e copertina flessibile. Cercalo su Amazon.\n\n#RomanzoSatirico #UmorismoNero #BookTokItalia #LibriDaLeggere #Ticino"
     },
     {
       "id": "q41-candeggina",
@@ -2525,7 +2612,19 @@
       ],
       "alt": "Carosello di sei slide su fondo scuro: Gianfranco Merli vuole dimenticare suo padre; il dialogo «Fa male?» «Dipende da cosa intende per male.»; «Scusa, era Brescia»; «Il ventilatore col calzino si è fermato»; la mano calda di chi non ha più niente da nascondere; invito a leggere il romanzo su Amazon Kindle. L’Economia dell’Oblio.",
       "didascalia": "Gianfranco Merli ha cinquantadue anni e vuole togliersi dalla testa la morte di suo padre prima dell’assemblea dei soci. Dora Calvi vede che cosa c’è davvero dentro quel ricordo.\nUna scena della Puntata 1 de L’Economia dell’Oblio, in cinque frasi. Scorri.\nIl romanzo completo è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited.\n\n#LibriThriller #LetteraturaNoir #ConsigliDiLettura #IoLeggo #SvizzeraItaliana",
-      "didascalia_fb": "Gianfranco Merli ha cinquantadue anni e vuole togliersi dalla testa la morte di suo padre prima dell’assemblea dei soci. Dora Calvi vede che cosa c’è davvero dentro quel ricordo.\nUna scena della Puntata 1 de L’Economia dell’Oblio, in cinque frasi. Scorri.\n\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nIncluso in Kindle Unlimited.\nL’inizio gratis, PDF o EPUB: https://libri.diasio.ch/oblio/\n\n#LetteraturaNoir #LibriThriller #ThrillerPsicologico #AltaTensione #LibriDaLeggere #BookstagramItalia #ScrittoriEmergenti #BookstagramSvizzera #ScrittoriSvizzeri #LeggereInSvizzera"
+      "didascalia_fb": "Gianfranco Merli ha cinquantadue anni e vuole togliersi dalla testa la morte di suo padre prima dell’assemblea dei soci. Dora Calvi vede che cosa c’è davvero dentro quel ricordo.\nUna scena della Puntata 1 de L’Economia dell’Oblio, in cinque frasi. Scorri.\n\nDisponibile su Amazon Kindle: https://www.amazon.it/dp/B0HLMKWJZ5\nIncluso in Kindle Unlimited.\nL’inizio gratis, PDF o EPUB: https://libri.diasio.ch/oblio/\n\n#LetteraturaNoir #LibriThriller #ThrillerPsicologico #AltaTensione #LibriDaLeggere #BookstagramItalia #ScrittoriEmergenti #BookstagramSvizzera #ScrittoriSvizzeri #LeggereInSvizzera",
+      "sospeso": true,
+      "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
+    },
+    {
+      "id": "vn3-vuoto-puntualita",
+      "tipo": "reel",
+      "segmento": "Voce narrante · Reel",
+      "video": "social/video/vn3-vuoto-puntualita.mp4",
+      "miniatura_ms": 3500,
+      "didascalia": "La prima riga di Vuoto a rendere, letta ad alta voce. Il resto è all’altezza.\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
+      "didascalia_fb": "La prima riga di Vuoto a rendere, letta ad alta voce. Il resto è all’altezza.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera",
+      "quando": "2026-12-06T20:36"
     },
     {
       "id": "n26-oblio-firma",
@@ -2689,12 +2788,25 @@
     {
       "id": "asmr2-aritmetica-mandarino",
       "tipo": "reel",
-      "segmento": "ASMR dei libri · Reel",
+      "segmento": "ASMR dei libri · Reel con voce narrante",
       "video": "social/video/asmr2-aritmetica-mandarino.mp4",
-      "miniatura_ms": 2600,
-      "didascalia": "ASMR da un romanzo noir: un mandarino solo su un piattino d’argento, la buccia che si apre, uno spicchio che si stacca.\n«Somiglia a qualcuno che ho pagato.» È una battuta de L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo e suono creati con l’IA.\n\n#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
-      "didascalia_fb": "ASMR da un romanzo noir: un mandarino solo su un piattino d’argento, la buccia che si apre, uno spicchio che si stacca.\n«Somiglia a qualcuno che ho pagato.» È una battuta de L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nVideo e suono creati con l’IA.\n\n#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino",
+      "miniatura_ms": 12500,
+      "didascalia": "ASMR da un romanzo noir, letto ad alta voce: un mandarino solo su un piattino d’argento, la buccia che si apre, uno spicchio che si stacca.\n«Somiglia a qualcuno che ho pagato.» È una battuta de L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
+      "didascalia_fb": "ASMR da un romanzo noir, letto ad alta voce: un mandarino solo su un piattino d’argento, la buccia che si apre, uno spicchio che si stacca.\n«Somiglia a qualcuno che ho pagato.» È una battuta de L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino",
       "quando": "2026-12-09T19:36"
+    },
+    {
+      "id": "tasmr2-aritmetica-mandarino",
+      "tipo": "reel",
+      "quando": "2026-12-09T21:05",
+      "segmento": "TikTok · ASMR dei libri con voce narrante",
+      "video": "social/video/asmr2-aritmetica-mandarino.mp4",
+      "miniatura_ms": 12500,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "ASMR da un romanzo noir, letto ad alta voce: un mandarino solo su un piattino d’argento, la buccia che si apre, uno spicchio che si stacca.\n«Somiglia a qualcuno che ho pagato.» È una battuta de L’Aritmetica del Consenso. Meglio in cuffia.\n\n«L’Aritmetica del Consenso» di D. Iasio: ebook su Amazon Kindle, anche in Kindle Unlimited. Cercalo su Amazon.\n\n#NoirItaliano #LetteraturaNoir #BookTokItalia #LibriDaLeggere #Ticino"
     },
     {
       "id": "mt8-ricevuta-ascensore",
@@ -2989,7 +3101,19 @@
       "immagine": "social/img/nuovi/x08-vuoto-puntualita.jpg",
       "alt": "Citazione su fondo scuro con l’impronta di Vuoto a rendere: «Il morto arrivò alle 10:40, con venti minuti d’anticipo. Per un defunto è il massimo della puntualità.»",
       "didascalia": "La prima riga di Vuoto a rendere. Il resto è all’altezza.\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
-      "didascalia_fb": "La prima riga di Vuoto a rendere. Il resto è all’altezza.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera"
+      "didascalia_fb": "La prima riga di Vuoto a rendere. Il resto è all’altezza.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera",
+      "sospeso": true,
+      "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
+    },
+    {
+      "id": "vn4-aritmetica-ministro",
+      "tipo": "reel",
+      "segmento": "Voce narrante · Reel",
+      "video": "social/video/vn4-aritmetica-ministro.mp4",
+      "miniatura_ms": 14500,
+      "didascalia": "La prima riga de L’Aritmetica del Consenso, letta ad alta voce: quanto costava un ministro.\n\nL’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
+      "didascalia_fb": "La prima riga de L’Aritmetica del Consenso, letta ad alta voce: quanto costava un ministro.\n\nL’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino",
+      "quando": "2026-12-23T19:36"
     },
     {
       "id": "d07-buone-feste",

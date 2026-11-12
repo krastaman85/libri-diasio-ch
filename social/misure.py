@@ -30,7 +30,7 @@ OUT_JSON, OUT_MD = ROOT / "misure.json", ROOT / "MISURE.md"
 GIORNI = 35
 COMUNI = ["reach", "likes", "comments", "shares", "saved", "total_interactions", "views"]
 REEL = COMUNI + ["ig_reels_avg_watch_time", "ig_reels_video_view_total_time"]
-SERIE = [("q", "Frase delle 23:10"), ("asmr", "ASMR"), ("mt", "Moduli ticinesi"), ("pb", "La puntata"), ("mu", "Musica"), ("vl", "Reel Vuoto"),
+SERIE = [("q", "Frase delle 23:10"), ("asmr", "ASMR"), ("vn", "Voce narrante"), ("mt", "Moduli ticinesi"), ("pb", "La puntata"), ("mu", "Musica"), ("vl", "Reel Vuoto"),
          ("r", "Reel dei libri"), ("c", "Caroselli"), ("x", "Aritmetica e Vuoto, dicembre"), ("n", "Grafiche Bug/Oblio"), ("d", "Grafiche di dicembre"),
          ("g", "Grafiche Vuoto"), ("a", "Aritmetica, lancio"), ("v", "Vuoto, lancio")]
 
@@ -41,7 +41,7 @@ class SenzaPermesso(Exception):
 
 def serie(pid):
     for pref, nome in SERIE:
-        if pid.startswith(pref) and (len(pid) == len(pref) or not pid[len(pref)].isalpha() or pref in ("asmr", "mt", "pb", "mu", "vl")):
+        if pid.startswith(pref) and (len(pid) == len(pref) or not pid[len(pref)].isalpha() or pref in ("asmr", "vn", "mt", "pb", "mu", "vl")):
             return nome
     return "Altro"
 

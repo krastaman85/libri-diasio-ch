@@ -65,7 +65,7 @@ class Misure(unittest.TestCase):
 
     def test_serie(self):
         self.assertEqual(misure.serie("q12-tritacarne"), "Frase delle 23:10"); self.assertEqual(misure.serie("mt1-sala"), "Moduli ticinesi")
-        self.assertEqual(misure.serie("asmr1-aritmetica-mandarino"), "ASMR"); self.assertEqual(misure.serie("vl5-vuoto-modulo"), "Reel Vuoto")
+        self.assertEqual(misure.serie("asmr1-aritmetica-mandarino"), "ASMR"); self.assertEqual(misure.serie("vn1-vuoto-wifi"), "Voce narrante"); self.assertEqual(misure.serie("vl5-vuoto-modulo"), "Reel Vuoto")
 
 
 if __name__ == "__main__":
