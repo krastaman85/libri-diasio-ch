@@ -1578,6 +1578,30 @@
         "link": "https://www.facebook.com/1377129402146055_122120000511500199",
         "ora_utc": "2026-11-13T17:07:48+00:00"
       }
+    },
+    "q22-telo": {
+      "instagram": {
+        "media_id": "18138946618698661",
+        "link": "https://www.instagram.com/reel/DfsrHEalL_h/",
+        "ora_utc": "2026-11-13T22:11:39+00:00"
+      },
+      "facebook": {
+        "post_id": "1718113133430608",
+        "link": "https://www.facebook.com/1718113133430608",
+        "ora_utc": "2026-11-13T22:11:44+00:00"
+      }
+    },
+    "q22s-telo": {
+      "instagram": {
+        "media_id": "17945239515389110",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4029785647195746185",
+        "ora_utc": "2026-11-13T22:11:55+00:00"
+      },
+      "facebook": {
+        "post_id": "1286493100317868",
+        "link": "https://www.facebook.com/1286493100317868",
+        "ora_utc": "2026-11-13T22:12:02+00:00"
+      }
     }
   }
 }
