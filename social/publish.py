@@ -320,8 +320,18 @@ BUFFER_CREATE = """mutation CreatePost($input: CreatePostInput!) {
 }"""
 
 
+# Canali TikTok in Buffer (14/11/2026): i post con "tiktok_canale": "musica" vanno SOLO sul profilo personale di Davide
+# (@d.diasio, variabile BUFFER_TIKTOK_CHANNEL_MUSICA); gli altri sul canale dei libri (BUFFER_TIKTOK_CHANNEL).
+CANALI_TIKTOK = {None: "BUFFER_TIKTOK_CHANNEL", "musica": "BUFFER_TIKTOK_CHANNEL_MUSICA"}
+
+
+def canale_tiktok(p):
+    """ID del canale Buffer del post, oppure stringa vuota se la variabile del suo canale non è impostata."""
+    return os.environ.get(CANALI_TIKTOK.get(p.get("tiktok_canale"), "-"), "").strip()
+
+
 def tiktok_attivo():
-    return bool(os.environ.get("BUFFER_API_KEY", "").strip() and os.environ.get("BUFFER_TIKTOK_CHANNEL", "").strip())
+    return bool(os.environ.get("BUFFER_API_KEY", "").strip() and any(os.environ.get(v, "").strip() for v in CANALI_TIKTOK.values()))
 
 
 class Incerto(Exception):
@@ -345,20 +355,20 @@ def buffer_call(query, variables=None):
 
 
 def check_buffer():
-    """Chiave valida e canale TikTok presente nell'account Buffer."""
-    canale = os.environ["BUFFER_TIKTOK_CHANNEL"].strip()
+    """Chiave valida e canali TikTok impostati presenti nell'account Buffer."""
+    attesi = {os.environ.get(v, "").strip(): v for v in CANALI_TIKTOK.values() if os.environ.get(v, "").strip()}
     orgs = buffer_call("query { account { organizations { id name } } }")["account"]["organizations"]
     for o in orgs:
         q = 'query { channels(input: {organizationId: "%s"}) { id name service } }' % o["id"]
         for c in buffer_call(q).get("channels", []):
-            if c.get("id") == canale:
-                print(f"Buffer: canale {c.get('service')} «{c.get('name')}»")
-                return
-    raise ApiError(f"Buffer: il canale {canale} non è nell'account")
+            if c.get("id") in attesi:
+                print(f"Buffer: {attesi.pop(c['id'])} = canale {c.get('service')} «{c.get('name')}»")
+    if attesi:
+        raise ApiError("Buffer: canali non presenti nell'account: " + ", ".join(f"{v}={k}" for k, v in attesi.items()))
 
 
 def tiktok_input(p, when, now):
-    inp = {"text": p["didascalia"], "channelId": os.environ["BUFFER_TIKTOK_CHANNEL"].strip(),
+    inp = {"text": p["didascalia"], "channelId": canale_tiktok(p),
            "schedulingType": "automatic", "needsApproval": False,
            "assets": [{"video": {"url": f"{SITE}/{p['video']}",
                                  "metadata": {"thumbnailOffset": int(p.get("miniatura_ms", 1000))}}}],
@@ -382,6 +392,8 @@ def tiktok_da_inviare(cal, state, now, forced=None):
             continue
         done = state["pubblicati"].get(p["id"], {})
         if "tiktok" in done or done.get("saltato") or p.get("sospeso"):
+            continue
+        if not canale_tiktok(p):   # canale non configurato: il post aspetta (nessun errore, nessun salto)
             continue
         when = datetime.fromisoformat(p["quando"]).replace(tzinfo=tz)
         if not forced:

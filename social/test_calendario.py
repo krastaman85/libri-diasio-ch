@@ -140,12 +140,17 @@ class TikTok(unittest.TestCase):
         for p in self.t:
             d = datetime.fromisoformat(p["quando"])
             self.assertTrue(7 <= d.hour <= 22, f"{p['id']}: {p['quando']}")
-            self.assertNotIn(d.date(), giorni, f"{p['id']} e {giorni.get(d.date())}: due TikTok lo stesso giorno")
-            giorni[d.date()] = p["id"]
+            k = (p.get("tiktok_canale"), d.date())   # un post al giorno per canale (libri / musica @d.diasio, 14/11/2026)
+            self.assertNotIn(k, giorni, f"{p['id']} e {giorni.get(k)}: due TikTok lo stesso giorno sullo stesso canale")
+            giorni[k] = p["id"]
 
     def test_ia_dichiarata_e_riga_kindle(self):
         for p in self.t:
             self.assertTrue(p.get("ia", True), f"{p['id']}: contenuto IA non dichiarato")
+            if p.get("tiktok_canale") == "musica":   # profilo personale @d.diasio: solo musica, niente pubblicità ai libri
+                self.assertNotIn("Amazon Kindle", p["didascalia"], f"{p['id']}: riga Kindle sul profilo musicale")
+                self.assertIn("ausilio di strumenti IA", p["didascalia"], f"{p['id']}: manca la dichiarazione IA di Davide")
+                continue
             self.assertIn("Amazon Kindle", p["didascalia"], f"{p['id']}: manca la riga Kindle")
             self.assertNotIn("link in bio", p["didascalia"], f"{p['id']}: su TikTok il link in bio non c'è")
 
@@ -162,6 +167,9 @@ VOCABOLARIO = {t.lower() for t in """#ThrillerItaliano #NoirItaliano #RomanzoNoi
 #CommediaNera #BookstagramItalia #BookTokItalia #ConsigliDiLettura #LibriDaLeggere #RecensioneLibro #IoLeggo
 #ScrittoriEmergenti #ScrittoriItaliani #SvizzeraItaliana #Ticino #ScrittoriSvizzeri #EditoriaItaliana
 #LeggereInSvizzera #CulturaTicino #BookstagramSvizzera""".split()}
+# Post musicali D.IAsio music (id mu*/mus*, campagna Quinta Muraria del 14/11/2026): vocabolario proprio della musica.
+VOCABOLARIO_MUSICA = {t.lower() for t in """#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio #QuintaMuraria
+#MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino""".split()}
 MAX_IG = 5      # Instagram: dal dicembre 2025 massimo 5 hashtag per post e Reel
 MAX_FB = 15     # Facebook: nessun tetto noto, 10-15 consigliati
 
@@ -197,7 +205,8 @@ class Hashtag(unittest.TestCase):
         for pid, piatt, testo in didascalie():
             t = [x.lower() for x in tag(testo)]
             self.assertEqual(len(t), len(set(t)), f"{pid} {piatt}: hashtag ripetuti")
-            fuori = [x for x in t if x not in VOCABOLARIO]
+            voc = VOCABOLARIO | VOCABOLARIO_MUSICA if pid.startswith("mu") else VOCABOLARIO
+            fuori = [x for x in t if x not in voc]
             self.assertFalse(fuori, f"{pid} {piatt}: fuori vocabolario {fuori}")
 
 
