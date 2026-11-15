@@ -119,6 +119,44 @@ TIKTOK.update({
 })
 
 
+# YouTube Shorts (15/11/2026): gli stessi video TikTok escono anche sul canale YouTube D.IAsio_music, con titolo e
+# descrizione propri. Negli Shorts i link della descrizione non sono cliccabili: il sito si scrive per esteso.
+YT_TITOLO = {  # id del Reel -> titolo dello Short (max 100 caratteri)
+    "mu6-vn-tre": "«E nessuna di quelle mani ha un nome» · Venerdì Nero · D.IAsio",
+    "mu7-vn-carrello": "Compra. Consuma. Dimentica. · Venerdì Nero · D.IAsio",
+    "mu8-vn-due": "Riempiamo le stanze per svuotare il cuore · Venerdì Nero · D.IAsio",
+    "mu9-vn-uno": "Cosa cerchi sul fondo del carrello? · Venerdì Nero · D.IAsio",
+    "mu10-vn-vigilia": "Domani. Aperto. · Venerdì Nero · D.IAsio",
+    "mu11-vn-oggi": "Buon Black Friday: Venerdì Nero è uscito · D.IAsio",
+    "mu12-vn-aperto": "Un uomo di vetro sepolto dai pacchi · Venerdì Nero · D.IAsio",
+    "mu13-vn-lyric": "Cyber Monday: l’offerta scade, la domanda resta · Venerdì Nero · D.IAsio",
+    "mu14-vn-alba": "Basta così. Io ho già abbastanza. · Venerdì Nero · D.IAsio",
+    "mu16-qm-sipario": "Sipario: la città appesa ai fili · Quinta Muraria · D.IAsio",
+    "mu17-qm-prologo": "Signore e signori, prendete posto · Quinta Muraria · D.IAsio",
+    "mu18-qm-maestro": "Maestro, mi dia il La · Quinta Muraria · D.IAsio",
+    "mu19-qm-labora": "Labora. Obedi. Tace. Il tiranno sei tu · Quinta Muraria · D.IAsio",
+    "mu20-qm-cielo": "Il cielo dipinto su una quinta di muro · Quinta Muraria · D.IAsio",
+    "mu21-qm-cade": "Hai murato tu la porta della tua prigione · Quinta Muraria · D.IAsio",
+}
+YT_PREMIERE = "2026-11-27T19:00"
+YT_PRIMA = "▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔."
+YT_DOPO = "▶ Il video ufficiale completo di Venerdì Nero è su questo canale."
+YT_ALBUM = "▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria»."
+YT_SITO = "Testo sincronizzato con la voce su musica.diasio.ch"
+YT_TAG = {"vn": "#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
+          "qm": "#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"}
+
+
+def testo_short(pid, quando_short, serie):
+    """Descrizione dello Short: gancio del video, invito adatto al momento, sito, crediti, hashtag."""
+    tt = TIKTOK[pid][1]
+    if quando_short < YT_PREMIERE:
+        cta = YT_PRIMA
+    else:
+        cta = YT_DOPO if serie == "vn" else YT_ALBUM
+    return f"{tt}\n\n{cta}\n{YT_SITO}\n\n{CRED}\n℗ © 2026 D.IAsio\n\n{YT_TAG[serie]}"
+
+
 def main():
     cal = json.loads(CAL.read_text(encoding="utf-8"))
     via = {"mu1-spirale-di-vetro", "mus1-spirale-di-vetro", "mu2-archivio-della-sete", "mus2-archivio-della-sete",
@@ -143,7 +181,9 @@ def main():
             cal["post"].append({"id": pid.replace("-", "t-", 1), "tipo": "reel", "quando": f"{quando[:10]}T{ora}",
                                 "segmento": "TikTok @d.diasio · " + seg, "video": f, "miniatura_ms": mini,
                                 "piattaforme": ["tiktok"], "tiktok_canale": "musica", "youtube": True, "ia": True,
-                                "didascalia": f"{tt}\n\n{cta}\n{CRED}\n\n{TT_TAG[serie]}"})
+                                "didascalia": f"{tt}\n\n{cta}\n{CRED}\n\n{TT_TAG[serie]}",
+                                "youtube_titolo": YT_TITOLO[pid],
+                                "youtube_testo": testo_short(pid, f"{quando[:10]}T{ora}", serie)})
         cal["post"].append({"id": sid, "tipo": "storia", "quando": f"{quando[:-2]}{sm:02d}",
                             "segmento": "Storia · D.IAsio music (highlight Musica)", "immagine": f"social/img/story/{sid}.jpg"})
     cal["post"].sort(key=lambda x: x["quando"])

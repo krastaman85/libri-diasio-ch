@@ -350,6 +350,13 @@ class YouTubeShorts(unittest.TestCase):
         self.assertNotIn("<", t)
         self.assertTrue(t.endswith(" · D.IAsio"))
 
+    def test_titolo_e_testo_dedicati(self):
+        p = dict(self.cal["post"][0], youtube_titolo="Titolo · D.IAsio", youtube_testo="Descrizione <Short>")
+        inp = publish.tiktok_input(p, self._dt(2026, 11, 19, 19, 34, tzinfo=self._tz.utc),
+                                   self._dt(2026, 11, 19, 10, 0, tzinfo=self._tz.utc), "youtube")
+        self.assertEqual(inp["metadata"]["youtube"]["title"], "Titolo · D.IAsio")
+        self.assertEqual(inp["text"], "Descrizione ‹Short›")
+
     def test_calendario_short_solo_musica_con_dichiarazione_ia(self):
         import json
         cal = json.loads((publish.CAL).read_text(encoding="utf-8"))
@@ -360,6 +367,14 @@ class YouTubeShorts(unittest.TestCase):
             self.assertEqual(p.get("tiktok_canale"), "musica", p["id"])
             self.assertTrue(p.get("ia", True), p["id"])
             self.assertIn("ausilio di strumenti IA", p["didascalia"], p["id"])
+            self.assertLessEqual(len(p["youtube_titolo"]), 100, p["id"])
+            self.assertLessEqual(len(p["youtube_testo"]), 5000, p["id"])
+            self.assertIn("ausilio di strumenti IA", p["youtube_testo"], p["id"])
+            self.assertTrue(p["youtube_testo"].rstrip().endswith("#DIAsio"), p["id"])
+            self.assertNotRegex(p["youtube_titolo"] + p["youtube_testo"], "[<>]")
+            self.assertNotIn("https://", p["youtube_testo"], p["id"])
+            prima = p["quando"] < "2026-11-27T19:00"
+            self.assertEqual("Premiere" in p["youtube_testo"], prima, p["id"])
 
 
 if __name__ == "__main__":

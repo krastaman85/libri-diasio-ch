@@ -360,8 +360,9 @@ def senza_parentesi_angolari(t):
 
 
 def titolo_short(p):
-    """Titolo dello Short (max 100 caratteri): "youtube_titolo" o la prima riga della didascalia, più · D.IAsio."""
-    coda = " · D.IAsio"
+    """Titolo dello Short (max 100 caratteri): "youtube_titolo" così com'è, altrimenti la prima riga della didascalia
+    più · D.IAsio."""
+    coda = "" if p.get("youtube_titolo") else " · D.IAsio"
     t = senza_parentesi_angolari((p.get("youtube_titolo") or p["didascalia"].strip().split("\n")[0]).strip())
     if len(t) + len(coda) > 100:
         t = t[:100 - len(coda) - 1].rstrip() + "…"
@@ -404,7 +405,7 @@ def check_buffer():
 
 def tiktok_input(p, when, now, dest="tiktok"):
     if dest == "youtube":
-        inp = {"text": senza_parentesi_angolari(p["didascalia"]), "channelId": canale_buffer(p, dest),
+        inp = {"text": senza_parentesi_angolari(p.get("youtube_testo") or p["didascalia"]), "channelId": canale_buffer(p, dest),
                "schedulingType": "automatic", "needsApproval": False,
                "assets": [{"video": {"url": f"{SITE}/{p['video']}"}}],
                "metadata": {"youtube": {"title": titolo_short(p), "categoryId": YOUTUBE_CATEGORIA,
