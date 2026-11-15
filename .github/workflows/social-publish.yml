@@ -37,6 +37,7 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}      # TikTok tramite Buffer (vuoto = TikTok disattivato)
           BUFFER_TIKTOK_CHANNEL: "6acce483778b240e2fe6f40e"  # canale TikTok d.iasio.libri in Buffer
           BUFFER_TIKTOK_CHANNEL_MUSICA: "6af8880762b70b94b02ef01b"  # canale TikTok personale @d.diasio in Buffer (SOLO musica, 14/11/2026)
+          BUFFER_YOUTUBE_CHANNEL: "6af9b817ece6dfde5fd25129"  # canale YouTube D.IAsio_music in Buffer: Shorts dei post con "youtube": true (15/11/2026)
           DRY: ${{ github.event.inputs.dry_run }}
           POST_ID: ${{ github.event.inputs.post_id }}
         run: |

@@ -285,5 +285,82 @@ class TikTokBuffer(unittest.TestCase):
         self.assertEqual(publish.pending(self.cal["post"][2], state, ["instagram", "facebook"]), ["instagram", "facebook"])
 
 
+class YouTubeShorts(unittest.TestCase):
+    """Post TikTok con "youtube": true: anche YouTube Shorts tramite Buffer (nessuna chiamata di rete)."""
+    from datetime import datetime as _dt, timezone as _tz
+
+    def setUp(self):
+        self.cal = {"fuso": "Europe/Rome", "max_ritardo_ore": 12, "post": [
+            {"id": "s1", "tipo": "reel", "quando": "2026-11-19T20:34", "video": "social/video/mu6.mp4",
+             "piattaforme": ["tiktok"], "tiktok_canale": "musica", "youtube": True, "ia": True,
+             "didascalia": "TRE.\n«E nessuna di quelle mani ha un nome.»\n\nTesti di D.IAsio."},
+            {"id": "s2", "tipo": "reel", "quando": "2026-11-19T21:10", "video": "social/video/x.mp4",
+             "piattaforme": ["tiktok"], "tiktok_canale": "musica", "didascalia": "senza short"}]}
+        self.env = mock.patch.dict(publish.os.environ, {"BUFFER_API_KEY": "K", "BUFFER_TIKTOK_CHANNEL_MUSICA": "TT",
+                                                         "BUFFER_YOUTUBE_CHANNEL": "YT"})
+        self.env.start()
+        self.state_file = mock.patch.object(publish, "STATE", mock.MagicMock())
+        self.state_file.start()
+
+    def tearDown(self):
+        self.env.stop()
+        self.state_file.stop()
+
+    def run_pass(self, state, dest):
+        calls = []
+
+        def fake(query, variables=None):
+            calls.append(variables)
+            return {"createPost": {"post": {"id": "Y1", "dueAt": "2026-11-19T19:34:00.000Z"}}}
+        now = self._dt(2026, 11, 19, 10, 0, tzinfo=self._tz.utc)
+        with mock.patch.object(publish, "buffer_call", fake), mock.patch.object(publish, "media_ok", return_value=True):
+            err = publish.tiktok_pass(self.cal, state, now, dest=dest)
+        return calls, err
+
+    def test_short_con_titolo_categoria_musica_e_ia(self):
+        state = {"pubblicati": {}}
+        calls, err = self.run_pass(state, "youtube")
+        self.assertEqual(err, [])
+        self.assertEqual(len(calls), 1)
+        inp = calls[0]["input"]
+        self.assertEqual(inp["channelId"], "YT")
+        self.assertEqual(inp["dueAt"], "2026-11-19T19:34:00.000Z")
+        yt = inp["metadata"]["youtube"]
+        self.assertEqual(yt["title"], "TRE. · D.IAsio")
+        self.assertEqual(yt["categoryId"], "10")
+        self.assertTrue(yt["isAiGenerated"])
+        self.assertFalse(yt["madeForKids"])
+        self.assertEqual(state["pubblicati"]["s1"]["youtube"]["buffer_post_id"], "Y1")
+
+    def test_tiktok_e_youtube_sono_indipendenti(self):
+        state = {"pubblicati": {"s1": {"tiktok": {"buffer_post_id": "B1"}}}}
+        calls, _ = self.run_pass(state, "youtube")
+        self.assertEqual(len(calls), 1)
+        calls, _ = self.run_pass(state, "youtube")
+        self.assertEqual(len(calls), 0)
+
+    def test_senza_canale_youtube_non_parte_nulla(self):
+        with mock.patch.dict(publish.os.environ, {"BUFFER_YOUTUBE_CHANNEL": ""}):
+            calls, _ = self.run_pass({"pubblicati": {}}, "youtube")
+        self.assertEqual(calls, [])
+
+    def test_titolo_lungo_tagliato_e_senza_parentesi_angolari(self):
+        t = publish.titolo_short({"didascalia": "<" + "x" * 150 + ">"})
+        self.assertLessEqual(len(t), 100)
+        self.assertNotIn("<", t)
+        self.assertTrue(t.endswith(" · D.IAsio"))
+
+    def test_calendario_short_solo_musica_con_dichiarazione_ia(self):
+        import json
+        cal = json.loads((publish.CAL).read_text(encoding="utf-8"))
+        shorts = [p for p in cal["post"] if p.get("youtube")]
+        self.assertTrue(shorts)
+        for p in shorts:
+            self.assertTrue(publish.is_tiktok(p), p["id"])
+            self.assertEqual(p.get("tiktok_canale"), "musica", p["id"])
+            self.assertTrue(p.get("ia", True), p["id"])
+            self.assertIn("ausilio di strumenti IA", p["didascalia"], p["id"])
+
+
 if __name__ == "__main__":
     unittest.main()

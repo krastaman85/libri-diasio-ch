@@ -142,7 +142,7 @@ def main():
             cta = {"prima": TT_PRIMA, "dopo": TT_DOPO, "album": TT_ALBUM}[fase]
             cal["post"].append({"id": pid.replace("-", "t-", 1), "tipo": "reel", "quando": f"{quando[:10]}T{ora}",
                                 "segmento": "TikTok @d.diasio · " + seg, "video": f, "miniatura_ms": mini,
-                                "piattaforme": ["tiktok"], "tiktok_canale": "musica", "ia": True,
+                                "piattaforme": ["tiktok"], "tiktok_canale": "musica", "youtube": True, "ia": True,
                                 "didascalia": f"{tt}\n\n{cta}\n{CRED}\n\n{TT_TAG[serie]}"})
         cal["post"].append({"id": sid, "tipo": "storia", "quando": f"{quando[:-2]}{sm:02d}",
                             "segmento": "Storia · D.IAsio music (highlight Musica)", "immagine": f"social/img/story/{sid}.jpg"})

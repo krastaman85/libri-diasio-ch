@@ -26,6 +26,8 @@ esatto ("customScheduled"): è Buffer a pubblicarli all'ora giusta, anche fuori 
 già inviato ha la voce "tiktok" in published.json e non viene mai reinviato. Servono le variabili d'ambiente
   BUFFER_API_KEY         chiave API di Buffer (Secret di GitHub)
   BUFFER_TIKTOK_CHANNEL  ID del canale TikTok in Buffer (non segreto)
+  BUFFER_YOUTUBE_CHANNEL ID del canale YouTube D.IAsio_music in Buffer (non segreto). I post TikTok con "youtube": true
+                         escono anche come YouTube Shorts, alla stessa ora (dal 15/11/2026).
 Senza, TikTok è semplicemente disattivato. Campo facoltativo "ia" (default vero): dichiara a TikTok il contenuto generato con IA.
 """
 import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
@@ -330,8 +332,40 @@ def canale_tiktok(p):
     return os.environ.get(CANALI_TIKTOK.get(p.get("tiktok_canale"), "-"), "").strip()
 
 
+# YouTube Shorts (15/11/2026): i post TikTok con "youtube": true escono anche sul canale YouTube D.IAsio_music.
+YOUTUBE_ENV = "BUFFER_YOUTUBE_CHANNEL"
+YOUTUBE_CATEGORIA = "10"   # Music
+DESTINAZIONI = ("tiktok", "youtube")
+
+
+def is_short(p):
+    return is_tiktok(p) and bool(p.get("youtube"))
+
+
+def canale_buffer(p, dest):
+    """ID del canale Buffer per la destinazione, oppure stringa vuota se non è impostato o il post non la prevede."""
+    if dest == "youtube":
+        return os.environ.get(YOUTUBE_ENV, "").strip() if is_short(p) else ""
+    return canale_tiktok(p) if is_tiktok(p) else ""
+
+
 def tiktok_attivo():
-    return bool(os.environ.get("BUFFER_API_KEY", "").strip() and any(os.environ.get(v, "").strip() for v in CANALI_TIKTOK.values()))
+    variabili = list(CANALI_TIKTOK.values()) + [YOUTUBE_ENV]
+    return bool(os.environ.get("BUFFER_API_KEY", "").strip() and any(os.environ.get(v, "").strip() for v in variabili))
+
+
+def senza_parentesi_angolari(t):
+    """YouTube rifiuta < e > in titolo e descrizione."""
+    return t.replace("<", "‹").replace(">", "›")
+
+
+def titolo_short(p):
+    """Titolo dello Short (max 100 caratteri): "youtube_titolo" o la prima riga della didascalia, più · D.IAsio."""
+    coda = " · D.IAsio"
+    t = senza_parentesi_angolari((p.get("youtube_titolo") or p["didascalia"].strip().split("\n")[0]).strip())
+    if len(t) + len(coda) > 100:
+        t = t[:100 - len(coda) - 1].rstrip() + "…"
+    return t + coda
 
 
 class Incerto(Exception):
@@ -356,7 +390,8 @@ def buffer_call(query, variables=None):
 
 def check_buffer():
     """Chiave valida e canali TikTok impostati presenti nell'account Buffer."""
-    attesi = {os.environ.get(v, "").strip(): v for v in CANALI_TIKTOK.values() if os.environ.get(v, "").strip()}
+    attesi = {os.environ.get(v, "").strip(): v for v in list(CANALI_TIKTOK.values()) + [YOUTUBE_ENV]
+              if os.environ.get(v, "").strip()}
     orgs = buffer_call("query { account { organizations { id name } } }")["account"]["organizations"]
     for o in orgs:
         q = 'query { channels(input: {organizationId: "%s"}) { id name service } }' % o["id"]
@@ -367,12 +402,20 @@ def check_buffer():
         raise ApiError("Buffer: canali non presenti nell'account: " + ", ".join(f"{v}={k}" for k, v in attesi.items()))
 
 
-def tiktok_input(p, when, now):
-    inp = {"text": p["didascalia"], "channelId": canale_tiktok(p),
-           "schedulingType": "automatic", "needsApproval": False,
-           "assets": [{"video": {"url": f"{SITE}/{p['video']}",
-                                 "metadata": {"thumbnailOffset": int(p.get("miniatura_ms", 1000))}}}],
-           "metadata": {"tiktok": {"isAiGenerated": bool(p.get("ia", True))}}}
+def tiktok_input(p, when, now, dest="tiktok"):
+    if dest == "youtube":
+        inp = {"text": senza_parentesi_angolari(p["didascalia"]), "channelId": canale_buffer(p, dest),
+               "schedulingType": "automatic", "needsApproval": False,
+               "assets": [{"video": {"url": f"{SITE}/{p['video']}"}}],
+               "metadata": {"youtube": {"title": titolo_short(p), "categoryId": YOUTUBE_CATEGORIA,
+                                        "madeForKids": False, "notifySubscribers": True, "embeddable": True,
+                                        "isAiGenerated": bool(p.get("ia", True))}}}
+    else:
+        inp = {"text": p["didascalia"], "channelId": canale_tiktok(p),
+               "schedulingType": "automatic", "needsApproval": False,
+               "assets": [{"video": {"url": f"{SITE}/{p['video']}",
+                                     "metadata": {"thumbnailOffset": int(p.get("miniatura_ms", 1000))}}}],
+               "metadata": {"tiktok": {"isAiGenerated": bool(p.get("ia", True))}}}
     if when - now <= timedelta(minutes=5):
         inp["mode"] = "shareNow"
     else:
@@ -381,8 +424,10 @@ def tiktok_input(p, when, now):
     return inp
 
 
-def tiktok_da_inviare(cal, state, now, forced=None):
-    """Post TikTok da inviare adesso a Buffer (al massimo TIKTOK_PER_ESECUZIONE). Segna quelli troppo in ritardo."""
+def tiktok_da_inviare(cal, state, now, forced=None, dest="tiktok"):
+    """Post da inviare adesso a Buffer per la destinazione (tiktok o youtube), al massimo TIKTOK_PER_ESECUZIONE.
+    Segna quelli troppo in ritardo."""
+    nome = "TikTok" if dest == "tiktok" else "YouTube Shorts"
     tz = ZoneInfo(cal.get("fuso", "Europe/Rome"))
     late = timedelta(hours=cal.get("max_ritardo_ore", 12))
     ahead = timedelta(hours=TIKTOK_ANTICIPO_ORE)
@@ -391,50 +436,51 @@ def tiktok_da_inviare(cal, state, now, forced=None):
         if not is_tiktok(p) or (forced and p["id"] != forced):
             continue
         done = state["pubblicati"].get(p["id"], {})
-        if "tiktok" in done or done.get("saltato") or p.get("sospeso"):
+        if dest in done or done.get("saltato") or p.get("sospeso"):
             continue
-        if not canale_tiktok(p):   # canale non configurato: il post aspetta (nessun errore, nessun salto)
+        if not canale_buffer(p, dest):   # canale non configurato o post senza questa destinazione: aspetta
             continue
         when = datetime.fromisoformat(p["quando"]).replace(tzinfo=tz)
         if not forced:
             if when - now > ahead:
                 continue
             if now - when > late:
-                entry(state, p["id"])["tiktok"] = {"saltato": "oltre la finestra di ritardo"}
-                print(f"TikTok: saltato {p['id']}, programmato {p['quando']}, troppo in ritardo.")
+                entry(state, p["id"])[dest] = {"saltato": "oltre la finestra di ritardo"}
+                print(f"{nome}: saltato {p['id']}, programmato {p['quando']}, troppo in ritardo.")
                 continue
         out.append((p, max(when, now)))
     return out[:TIKTOK_PER_ESECUZIONE]
 
 
-def tiktok_pass(cal, state, now, forced=None, dry=False):
-    """Invia a Buffer i post TikTok in scadenza. Restituisce l'elenco degli errori."""
+def tiktok_pass(cal, state, now, forced=None, dry=False, dest="tiktok"):
+    """Invia a Buffer i post in scadenza per la destinazione (tiktok o youtube). Restituisce l'elenco degli errori."""
+    nome = "TikTok" if dest == "tiktok" else "YouTube Shorts"
     errors = []
-    for p, when in tiktok_da_inviare(cal, state, now, forced):
+    for p, when in tiktok_da_inviare(cal, state, now, forced, dest):
         url = f"{SITE}/{p['video']}"
         if not media_ok(url, "video/"):
-            errors.append(f"tiktok: file non raggiungibile {url}")
-            print(f"::error::TikTok {p['id']}: file non raggiungibile o di tipo sbagliato: {url}")
+            errors.append(f"{dest}: file non raggiungibile {url}")
+            print(f"::error::{nome} {p['id']}: file non raggiungibile o di tipo sbagliato: {url}")
             continue
-        inp = tiktok_input(p, when, now)
+        inp = tiktok_input(p, when, now, dest)
         if dry:
-            print(f"TikTok (dry run): {p['id']} andrebbe a Buffer, modo {inp['mode']}, orario {p['quando']} → {url}")
+            print(f"{nome} (dry run): {p['id']} andrebbe a Buffer, modo {inp['mode']}, orario {p['quando']} → {url}")
             continue
         try:
             r = buffer_call(BUFFER_CREATE, {"input": inp}).get("createPost") or {}
             if not r.get("post"):
                 raise ApiError("Buffer: " + (r.get("message") or "risposta senza post"))
-            entry(state, p["id"])["tiktok"] = {"buffer_post_id": r["post"].get("id"), "dueAt": r["post"].get("dueAt"),
+            entry(state, p["id"])[dest] = {"buffer_post_id": r["post"].get("id"), "dueAt": r["post"].get("dueAt"),
                                                "modo": inp["mode"], "ora_utc": now.isoformat(timespec="seconds")}
-            print(f"TikTok: {p['id']} inviato a Buffer ({inp['mode']}, uscita {r['post'].get('dueAt')})")
+            print(f"{nome}: {p['id']} inviato a Buffer ({inp['mode']}, uscita {r['post'].get('dueAt')})")
         except Incerto as e:
             # meglio un post mancante che un doppione: si segna e si controlla a mano in Buffer
-            entry(state, p["id"])["tiktok"] = {"incerto": str(e)[:200], "ora_utc": now.isoformat(timespec="seconds")}
-            errors.append(f"tiktok: {e}")
-            print(f"::error::TikTok {p['id']}: esito incerto, controllare la coda di Buffer ({e})")
+            entry(state, p["id"])[dest] = {"incerto": str(e)[:200], "ora_utc": now.isoformat(timespec="seconds")}
+            errors.append(f"{dest}: {e}")
+            print(f"::error::{nome} {p['id']}: esito incerto, controllare la coda di Buffer ({e})")
         except ApiError as e:
-            errors.append(f"tiktok: {e}")
-            print(f"::error::TikTok {p['id']}: {e}")
+            errors.append(f"{dest}: {e}")
+            print(f"::error::{nome} {p['id']}: {e}")
         STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
     return errors
 
@@ -454,7 +500,10 @@ def main():
         print("Calendario in pausa (pausa: true). Nessuna pubblicazione.")
         return
 
-    print("Piattaforme attive:", ", ".join(plats + (["tiktok (Buffer)"] if tiktok_attivo() else [])))
+    extra = ["tiktok (Buffer)"] if tiktok_attivo() else []
+    if tiktok_attivo() and os.environ.get(YOUTUBE_ENV, "").strip():
+        extra.append("youtube shorts (Buffer)")
+    print("Piattaforme attive:", ", ".join(plats + extra))
     try:
         check_tokens(plats)
     except ApiError as e:
@@ -471,7 +520,10 @@ def main():
 
     now = datetime.now(timezone.utc)
     forced_tk = bool(a.id) and any(x["id"] == a.id and is_tiktok(x) for x in cal["post"])
-    tk_errors = tiktok_pass(cal, state, now, a.id if forced_tk else None, a.dry_run) if tk and (forced_tk or not a.id) else []
+    tk_errors = []
+    if tk and (forced_tk or not a.id):
+        for dest in DESTINAZIONI:
+            tk_errors += tiktok_pass(cal, state, now, a.id if forced_tk else None, a.dry_run, dest)
     if forced_tk:
         sys.exit(1 if tk_errors else 0)
     p, todo = pick(cal, state, plats, now, a.id)
