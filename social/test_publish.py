@@ -194,6 +194,40 @@ class Abbinati(unittest.TestCase):
         self.assertEqual(posts, [])
         self.assertEqual(st["pubblicati"], {})
 
+    def test_orario_esatto_prepara_prima_e_pubblica_alle_23_10(self):
+        """Avvio alle 23:04: il Reel viene preparato subito e pubblicato aspettando fino alle 23:10:00."""
+        attese = []
+        with mock.patch.object(publish, "attendi", lambda al: attese.append(al)):
+            st, posts, code = self.run_main({"pubblicati": {}}, ora="2026-10-23T21:04:00+00:00")
+        self.assertIsNone(code)
+        self.assertEqual(set(st["pubblicati"]["q01-x"]), {"instagram", "facebook"})
+        reel = [a for a in attese if a is not None]          # Reel: Instagram e Facebook aspettano le 23:10; la Storia no
+        self.assertEqual(len(reel), 2)
+        self.assertEqual(reel[0].astimezone(publish.timezone.utc).isoformat(), "2026-10-23T21:10:00+00:00")
+
+    def test_troppo_presto_non_parte(self):
+        st, posts, code = self.run_main({"pubblicati": {}}, ora="2026-10-23T20:58:00+00:00")   # 22:58, 12 minuti prima
+        self.assertEqual(posts, [])
+        self.assertNotIn("q01-x", st["pubblicati"])
+
+    def test_solo_la_rubrica_esce_in_anticipo(self):
+        p = {"id": "r05-x", "tipo": "reel", "quando": "2026-10-23T20:10"}
+        self.assertFalse(publish.esatto(p))
+        self.assertTrue(publish.esatto({"id": "q48-nord", "tipo": "reel"}))
+        self.assertFalse(publish.esatto({"id": "q48s-nord", "tipo": "storia"}))
+
+    def test_attendi_dorme_fino_all_istante(self):
+        from datetime import datetime as real_dt, timezone as tz
+        dorme = []
+        class Clock(real_dt):
+            @classmethod
+            def now(cls, z=None):
+                return real_dt(2026, 10, 23, 21, 9, 30, tzinfo=tz.utc)
+        with mock.patch.object(publish, "datetime", Clock), mock.patch.object(publish.time, "sleep", dorme.append):
+            publish.attendi(real_dt(2026, 10, 23, 21, 10, 0, tzinfo=tz.utc))
+            publish.attendi(real_dt(2026, 10, 23, 21, 9, 0, tzinfo=tz.utc))   # già passato: nessuna attesa
+        self.assertEqual(dorme, [30.0])
+
     def test_ripiego_la_storia_esce_da_sola_dopo_le_23_13(self):
         st0 = {"pubblicati": {"q01-x": {"instagram": {"link": "x"}, "facebook": {"link": "y"}}}}
         st, posts, code = self.run_main(st0, ora="2026-10-23T21:20:00+00:00")

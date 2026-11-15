@@ -87,6 +87,11 @@ def calendario(d):
         storia = {"id": sid, "tipo": "storia", "quando": f"{g.isoformat()}T{d['ora_storia']}",
                   "segmento": "Storia · Citazioni D. Iasio", "immagine": f"social/img/story/{pid}.jpg"}
         nuove += [reel, storia]
+    # la miniatura gia' fissata a mano (firma + 0,8 s) non va persa quando si rigenera
+    vecchie = {p["id"]: p["miniatura_ms"] for p in cal["post"] if "miniatura_ms" in p}
+    for p in nuove:
+        if p["id"] in vecchie:
+            p["miniatura_ms"] = vecchie[p["id"]]
     ids = {p["id"] for p in nuove}
     tenute = [p for p in cal["post"] if p["id"] not in ids or p["id"] in pub]
     gia = {p["id"] for p in tenute}

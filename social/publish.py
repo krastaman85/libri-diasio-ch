@@ -30,7 +30,7 @@ già inviato ha la voce "tiktok" in published.json e non viene mai reinviato. Se
                          escono anche come YouTube Shorts, alla stessa ora (dal 15/11/2026).
 Senza, TikTok è semplicemente disattivato. Campo facoltativo "ia" (default vero): dichiara a TikTok il contenuto generato con IA.
 """
-import argparse, json, os, sys, time, urllib.error, urllib.parse, urllib.request
+import argparse, json, os, re, sys, time, urllib.error, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -106,6 +106,27 @@ def pending(post, state, plats):
     return [p for p in plats if p in allowed and p not in done]
 
 
+# Uscita all'orario esatto (15/11/2026): per i Reel della rubrica delle 23:10 l'esecuzione parte qualche minuto prima
+# (cron-job.org alle 23:04), Instagram elabora il video in anticipo e la pubblicazione avviene alle 23:10:00 precise.
+ESATTO_ANTICIPO = timedelta(minutes=8)
+RUBRICA_REEL = re.compile(r"^q\d\d-")
+
+
+def esatto(p):
+    """Post da pubblicare al secondo: i Reel della rubrica (qNN-slug) o i post con "esatto": true."""
+    return bool(p.get("esatto")) or (RUBRICA_REEL.match(p["id"]) is not None and is_reel(p))
+
+
+def attendi(al):
+    """Aspetta fino all'istante `al` (datetime con fuso), se non è già passato."""
+    if al is None:
+        return
+    resto = (al - datetime.now(timezone.utc)).total_seconds()
+    if resto > 0:
+        print(f"In attesa dell'orario esatto: {resto:.0f} s")
+        time.sleep(resto)
+
+
 def pick(cal, state, plats, now, forced):
     """Primo post con almeno una piattaforma da fare. Segna come saltati quelli troppo in ritardo."""
     if forced:
@@ -118,7 +139,7 @@ def pick(cal, state, plats, now, forced):
         if not todo:
             continue
         when = datetime.fromisoformat(p["quando"]).replace(tzinfo=tz)
-        if when > now:
+        if when > now and not (esatto(p) and when - now <= ESATTO_ANTICIPO):
             continue
         if now - when > late:
             entry(state, p["id"])["saltato"] = "oltre la finestra di ritardo"
@@ -186,14 +207,16 @@ def check_media(p):
     return urls
 
 
-def publish_post(p, todo, urls, state):
-    """Pubblica `p` sulle piattaforme `todo`, salva lo stato dopo ognuna. Restituisce l'elenco degli errori."""
+def publish_post(p, todo, urls, state, al=None):
+    """Pubblica `p` sulle piattaforme `todo`, salva lo stato dopo ognuna. Restituisce l'elenco degli errori.
+    Con `al` (orario esatto) Instagram prepara il contenuto prima e pubblica a quell'istante; Facebook subito dopo."""
     errors = []
     for plat in todo:
         try:
             if plat == "instagram":
-                res = publish_instagram(p, urls if is_carousel(p) else urls[0], os.environ["IG_ACCESS_TOKEN"])
+                res = publish_instagram(p, urls if is_carousel(p) else urls[0], os.environ["IG_ACCESS_TOKEN"], al)
             else:
+                attendi(al)
                 res = publish_facebook(p, urls if is_carousel(p) else (urls[0] if urls else None), fb_token(), os.environ["FB_PAGE_ID"])
             res["ora_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
             entry(state, p["id"])[plat] = res
@@ -216,7 +239,7 @@ def wait_container(cid, token, tries, wait):
     raise ApiError(f"container {cid} non pronto in tempo")
 
 
-def publish_instagram(p, media_url, token):
+def publish_instagram(p, media_url, token, al=None):
     me = call(IG_API, "GET", "me", token, {"fields": "user_id,username"})
     uid = me.get("user_id") or me.get("id")
     if is_story(p):
@@ -250,6 +273,7 @@ def publish_instagram(p, media_url, token):
     c = call(IG_API, "POST", f"{uid}/media", token, params)
     cid = c["id"]
     wait_container(cid, token, tries, wait)
+    attendi(al)                                   # orario esatto: contenuto già elaborato, si pubblica al secondo
     media = call(IG_API, "POST", f"{uid}/media_publish", token, {"creation_id": cid})["id"]
     link = call(IG_API, "GET", media, token, {"fields": "permalink"}).get("permalink", "")
     return {"media_id": media, "link": link}
@@ -545,7 +569,14 @@ def main():
         print("Dry run riuscito: token validi, file raggiungibili. Non pubblico.")
         return
 
-    errors = publish_post(p, todo, urls, state)
+    al = None
+    if esatto(p) and not a.id:
+        al = datetime.fromisoformat(p["quando"]).replace(tzinfo=ZoneInfo(cal.get("fuso", "Europe/Rome")))
+        if al <= now:
+            al = None                                  # già in ritardo: si pubblica subito
+        else:
+            print(f"Orario esatto: {p['id']} esce alle {p['quando'][11:]}:00 ({cal.get('fuso', 'Europe/Rome')})")
+    errors = publish_post(p, todo, urls, state, al)
     if errors:
         if c and ctodo:
             print(f"{c['id']} non esce adesso: resta in calendario per le {c['quando'][11:]} (ripiego).")
