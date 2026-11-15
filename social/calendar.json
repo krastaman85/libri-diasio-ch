@@ -2452,13 +2452,13 @@
       "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
     },
     {
-      "id": "vn2-aritmetica-ghostwriter",
+      "id": "asmr6-aritmetica-registratore",
       "tipo": "reel",
-      "segmento": "Voce narrante · Reel",
-      "video": "social/video/vn2-aritmetica-ghostwriter.mp4",
-      "miniatura_ms": 8000,
-      "didascalia": "Il narratore de L’Aritmetica del Consenso fa un mestiere invisibile per definizione.\n«…nessuno ringrazia l’idraulico, si ringrazia il rubinetto.» Una voce legge l’inizio del romanzo.\n\nL’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
-      "didascalia_fb": "Il narratore de L’Aritmetica del Consenso fa un mestiere invisibile per definizione.\n«…nessuno ringrazia l’idraulico, si ringrazia il rubinetto.» Una voce legge l’inizio del romanzo.\n\nL’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino",
+      "segmento": "ASMR dei libri · Reel con voce narrante",
+      "video": "social/video/asmr6-aritmetica-registratore.mp4",
+      "miniatura_ms": 9000,
+      "didascalia": "ASMR da un noir dinastico, letto ad alta voce: una villa sul lago di notte, una giacca appesa, un registratore che si accende da solo nel taschino.\n«…nessuno ringrazia l’idraulico, si ringrazia il rubinetto.» È una riga de L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino",
+      "didascalia_fb": "ASMR da un noir dinastico, letto ad alta voce: una villa sul lago di notte, una giacca appesa, un registratore che si accende da solo nel taschino.\n«…nessuno ringrazia l’idraulico, si ringrazia il rubinetto.» È una riga de L’Aritmetica del Consenso. Meglio in cuffia.\n\nL’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\nVideo, voce e suono creati con l’IA.\n\n#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura #ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino",
       "quando": "2026-11-29T20:24"
     },
     {
@@ -3745,6 +3745,42 @@
       "youtube_testo": "Hai murato tu la porta della tua prigione. Poi la quinta cade.\n\n▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio",
       "ia": true,
       "didascalia": "Hai murato tu la porta della tua prigione. Poi la quinta cade.\n\nIl primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"
+    },
+    {
+      "id": "tasmr6-aritmetica-registratore",
+      "tipo": "reel",
+      "quando": "2026-12-16T21:05",
+      "segmento": "TikTok · ASMR dei libri con voce narrante",
+      "video": "social/video/asmr6-aritmetica-registratore.mp4",
+      "miniatura_ms": 9000,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "ASMR da un noir dinastico, letto ad alta voce: una villa sul lago di notte, una giacca appesa, un registratore che si accende da solo nel taschino.\n«…nessuno ringrazia l’idraulico, si ringrazia il rubinetto.» È una riga de L’Aritmetica del Consenso. Meglio in cuffia.\n\n«L’Aritmetica del Consenso» di D. Iasio: ebook su Amazon Kindle, anche in Kindle Unlimited. Cercalo su Amazon.\n\n#NoirItaliano #BookTokItalia #LetteraturaNoir #LibriDaLeggere #Ticino"
+    },
+    {
+      "id": "asmr5-vuoto-timbro",
+      "tipo": "reel",
+      "segmento": "ASMR dei libri · Reel con voce narrante",
+      "video": "social/video/asmr5-vuoto-timbro.mp4",
+      "miniatura_ms": 16000,
+      "didascalia": "ASMR da un romanzo satirico, letto ad alta voce: un timbro che si intinge da solo e lascia un ramo d’ulivo su un foglio vuoto.\n«Il campo hobby di Aldo Soldati era vuoto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere è su Amazon Kindle: link in bio. Anche in cartaceo.\nIncluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #UmorismoNero #BookstagramItalia #LibriDaLeggere #Ticino",
+      "didascalia_fb": "ASMR da un romanzo satirico, letto ad alta voce: un timbro che si intinge da solo e lascia un ramo d’ulivo su un foglio vuoto.\n«Il campo hobby di Aldo Soldati era vuoto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\nVuoto a rendere su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\nCartaceo: https://www.amazon.it/dp/B0HMFNKKJ2\nIncluso in Kindle Unlimited.\nL’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/vuoto/\nVideo, voce e suono creati con l’IA.\n\n#RomanzoSatirico #Satira #UmorismoNero #CommediaNera #BookstagramItalia #ConsigliDiLettura #LibriDaLeggere #ScrittoriItaliani #Ticino #LeggereInSvizzera",
+      "quando": "2026-12-30T19:31"
+    },
+    {
+      "id": "tasmr5-vuoto-timbro",
+      "tipo": "reel",
+      "quando": "2026-12-30T21:05",
+      "segmento": "TikTok · ASMR dei libri con voce narrante",
+      "video": "social/video/asmr5-vuoto-timbro.mp4",
+      "miniatura_ms": 16000,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "ASMR da un romanzo satirico, letto ad alta voce: un timbro che si intinge da solo e lascia un ramo d’ulivo su un foglio vuoto.\n«Il campo hobby di Aldo Soldati era vuoto.» È una riga di Vuoto a rendere. Meglio in cuffia.\n\n«Vuoto a rendere» di D. Iasio: ebook su Amazon Kindle (anche in Kindle Unlimited) e copertina flessibile. Cercalo su Amazon.\n\n#RomanzoSatirico #UmorismoNero #BookTokItalia #LibriDaLeggere #Ticino"
     }
   ]
 }
