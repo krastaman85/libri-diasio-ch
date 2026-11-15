@@ -68,6 +68,24 @@ POST = [
      "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nUn estratto dall’album Quinta Muraria, nel 2027.", "album", "qm",
      "D.IAsio music · Quinta Muraria · Sipario (estratto)", "mus16-qm-sipario", None),
 ]
+# Highlight della title track «Quinta Muraria» (approvati da Davide il 15/11/2026): uno a settimana a pranzo dal 13/12 (domenica; il 26/12 sabato, la domenica 27 è occupata).
+POST += [
+    ("mu17-qm-prologo", "2026-12-13T12:17", "reel", "social/video/mu17-qm-prologo.mp4", 14000,
+     "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, la title track del nuovo album di D.IAsio.", "album", "qm",
+     "D.IAsio music · Quinta Muraria · highlight 1 prologo", "mus17-qm-prologo", None),
+    ("mu18-qm-maestro", "2026-12-20T12:29", "reel", "social/video/mu18-qm-maestro.mp4", 15000,
+     "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\nQuinta Muraria, la title track. L’album nel 2027.", "album", "qm",
+     "D.IAsio music · Quinta Muraria · highlight 2 maestro", "mus18-qm-maestro", None),
+    ("mu19-qm-labora", "2026-12-26T12:33", "reel", "social/video/mu19-qm-labora.mp4", 8000,
+     "Labora. Obedi. Tace.\nBenvenuti nel Truman Show scritto da Machiavelli.\nIl tiranno sei tu.", "album", "qm",
+     "D.IAsio music · Quinta Muraria · highlight 3 labora", "mus19-qm-labora", None),
+    ("mu20-qm-cielo", "2027-01-03T12:36", "reel", "social/video/mu20-qm-cielo.mp4", 6500,
+     "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\nIl ritornello della title track di Quinta Muraria.", "album", "qm",
+     "D.IAsio music · Quinta Muraria · highlight 4 ritornello", "mus20-qm-cielo", None),
+    ("mu21-qm-cade", "2027-01-10T12:23", "reel", "social/video/mu21-qm-cade.mp4", 26000,
+     "Hai murato tu la porta della tua prigione.\nPoi la quinta cade, e dietro c’è il giorno.\nQuinta Muraria, l’album nel 2027.", "album", "qm",
+     "D.IAsio music · Quinta Muraria · highlight 5 cade la quinta", "mus21-qm-cade", None),
+]
 ALBUM_IG = "Venerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio."
 ALBUM_FB = f"Venerdì Nero, il primo estratto, è su YouTube: {YT}\nIl sito della musica: {SITO}"
 
@@ -90,6 +108,15 @@ TT_PRIMA = "Venerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su You
 TT_DOPO = "Venerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music)."
 TT_ALBUM = "Il primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music)."
 TT_TAG = {"vn": "#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio", "qm": "#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"}
+
+
+TIKTOK.update({
+    "mu17-qm-prologo": ("20:16", "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, l’album di D.IAsio nel 2027."),
+    "mu18-qm-maestro": ("20:28", "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca."),
+    "mu19-qm-labora": ("20:09", "Labora. Obedi. Tace.\nIl tiranno sei tu."),
+    "mu20-qm-cielo": ("20:35", "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte."),
+    "mu21-qm-cade": ("20:22", "Hai murato tu la porta della tua prigione. Poi la quinta cade."),
+})
 
 
 def main():
