@@ -1734,6 +1734,30 @@
         "link": "https://www.facebook.com/1894416278568167",
         "ora_utc": "2026-11-16T17:18:00+00:00"
       }
+    },
+    "q25-cappio": {
+      "instagram": {
+        "media_id": "18018433499751180",
+        "link": "https://www.instagram.com/reel/Df0Y31NmQ1Y/",
+        "ora_utc": "2026-11-16T22:10:08+00:00"
+      },
+      "facebook": {
+        "post_id": "1934467920858733",
+        "link": "https://www.facebook.com/1934467920858733",
+        "ora_utc": "2026-11-16T22:10:12+00:00"
+      }
+    },
+    "q25s-cappio": {
+      "instagram": {
+        "media_id": "18001977444045863",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4031959207619176336",
+        "ora_utc": "2026-11-16T22:10:22+00:00"
+      },
+      "facebook": {
+        "post_id": "1126089623737306",
+        "link": "https://www.facebook.com/1126089623737306",
+        "ora_utc": "2026-11-16T22:10:27+00:00"
+      }
     }
   }
 }
