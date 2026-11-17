@@ -1790,6 +1790,30 @@
         "link": "https://www.facebook.com/2239872883234013",
         "ora_utc": "2026-11-17T11:33:36+00:00"
       }
+    },
+    "pb1-bug-puntata-1": {
+      "instagram": {
+        "media_id": "18170753407482454",
+        "link": "https://www.instagram.com/p/Df2kUFSCcjP/",
+        "ora_utc": "2026-11-17T18:24:21+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122121097437500199",
+        "link": "https://www.facebook.com/1377129402146055_122121097437500199",
+        "ora_utc": "2026-11-17T18:24:32+00:00"
+      }
+    },
+    "pbs1-bug-puntata-1": {
+      "instagram": {
+        "media_id": "18178841206444469",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4032570398637399336",
+        "ora_utc": "2026-11-17T18:24:43+00:00"
+      },
+      "facebook": {
+        "post_id": "1071422002607406",
+        "link": "https://www.facebook.com/1071422002607406",
+        "ora_utc": "2026-11-17T18:24:48+00:00"
+      }
     }
   }
 }
