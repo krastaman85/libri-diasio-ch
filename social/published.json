@@ -1814,6 +1814,30 @@
         "link": "https://www.facebook.com/1071422002607406",
         "ora_utc": "2026-11-17T18:24:48+00:00"
       }
+    },
+    "q26-tregua": {
+      "instagram": {
+        "media_id": "18172753348462782",
+        "link": "https://www.instagram.com/reel/Df29i2tik6X/",
+        "ora_utc": "2026-11-17T22:10:09+00:00"
+      },
+      "facebook": {
+        "post_id": "1638669471335104",
+        "link": "https://www.facebook.com/1638669471335104",
+        "ora_utc": "2026-11-17T22:10:13+00:00"
+      }
+    },
+    "q26s-tregua": {
+      "instagram": {
+        "media_id": "17886429585628631",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4032683987789638264",
+        "ora_utc": "2026-11-17T22:10:23+00:00"
+      },
+      "facebook": {
+        "post_id": "1500474488898401",
+        "link": "https://www.facebook.com/1500474488898401",
+        "ora_utc": "2026-11-17T22:10:28+00:00"
+      }
     }
   }
 }
