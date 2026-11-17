@@ -1766,6 +1766,30 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-17T10:30:14+00:00"
       }
+    },
+    "mu5-vn-annuncio": {
+      "instagram": {
+        "media_id": "18155815327484202",
+        "link": "https://www.instagram.com/p/Df11Q8TlY9F/",
+        "ora_utc": "2026-11-17T11:33:12+00:00"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122121010575500199",
+        "link": "https://www.facebook.com/1377129402146055_122121010575500199",
+        "ora_utc": "2026-11-17T11:33:22+00:00"
+      }
+    },
+    "mus5-vn-annuncio": {
+      "instagram": {
+        "media_id": "18348064597254419",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4032363444758248758",
+        "ora_utc": "2026-11-17T11:33:31+00:00"
+      },
+      "facebook": {
+        "post_id": "2239872883234013",
+        "link": "https://www.facebook.com/2239872883234013",
+        "ora_utc": "2026-11-17T11:33:36+00:00"
+      }
     }
   }
 }
