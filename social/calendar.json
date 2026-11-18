@@ -4375,6 +4375,40 @@
       "quando": "2027-01-10T23:13",
       "segmento": "Storia · Citazioni D. Iasio",
       "immagine": "social/img/story/q80-lembo.jpg"
+    },
+    {
+      "id": "mu22-vn-asmr",
+      "tipo": "reel",
+      "quando": "2026-11-23T12:18",
+      "segmento": "D.IAsio music · Venerdì Nero · ASMR",
+      "video": "social/video/mu22-vn-asmr.mp4",
+      "miniatura_ms": 2000,
+      "didascalia": "Tre. Due. Uno. Silenzio.\nVenerdì Nero · 27.11\n\nVideo ufficiale venerdì 27 novembre alle 19:00 sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "poi": "mus22-vn-asmr"
+    },
+    {
+      "id": "mus22-vn-asmr",
+      "tipo": "storia",
+      "quando": "2026-11-23T12:21",
+      "segmento": "Storia · D.IAsio music (highlight Musica)",
+      "immagine": "social/img/story/mus22-vn-asmr.jpg"
+    },
+    {
+      "id": "mu22t-vn-asmr",
+      "tipo": "reel",
+      "quando": "2026-11-23T20:44",
+      "segmento": "TikTok · D.IAsio music · Venerdì Nero · ASMR",
+      "video": "social/video/mu22-vn-asmr.mp4",
+      "miniatura_ms": 2000,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "tiktok_canale": "musica",
+      "youtube": true,
+      "youtube_titolo": "Tre. Due. Uno. Silenzio · Venerdì Nero · D.IAsio",
+      "youtube_testo": "Tre. Due. Uno. Silenzio.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
+      "ia": true,
+      "didascalia": "Tre. Due. Uno. Silenzio.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
     }
   ]
 }
