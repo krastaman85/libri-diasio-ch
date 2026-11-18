@@ -1852,6 +1852,18 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-18T09:15:09+00:00"
       }
+    },
+    "asmr1-vuoto-fazzoletto": {
+      "instagram": {
+        "media_id": "18122524640077302",
+        "link": "https://www.instagram.com/reel/Df5KJy2idUH/",
+        "ora_utc": "2026-11-18T18:33:55+00:00"
+      },
+      "facebook": {
+        "post_id": "2124763651741256",
+        "link": "https://www.facebook.com/2124763651741256",
+        "ora_utc": "2026-11-18T18:34:04+00:00"
+      }
     }
   }
 }
