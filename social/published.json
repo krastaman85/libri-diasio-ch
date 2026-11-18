@@ -1838,6 +1838,20 @@
         "link": "https://www.facebook.com/1500474488898401",
         "ora_utc": "2026-11-17T22:10:28+00:00"
       }
+    },
+    "mu6t-vn-tre": {
+      "tiktok": {
+        "buffer_post_id": "6afd6c9f569b2ea6d67d6bdf",
+        "dueAt": "2026-11-19T19:34:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-18T09:15:09+00:00"
+      },
+      "youtube": {
+        "buffer_post_id": "6afd6ca012ff6bb81270db2e",
+        "dueAt": "2026-11-19T19:34:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-18T09:15:09+00:00"
+      }
     }
   }
 }
