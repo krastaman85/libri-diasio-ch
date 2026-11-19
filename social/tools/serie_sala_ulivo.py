@@ -17,6 +17,12 @@ PUNTATE = [
     ("tsu02-sala-ulivo-cane", "2026-11-27T21:05", "sala-ulivo-02-cane", 3000,
      "Sala Ulivo, parte 2 di 13. Nell’ultima foto il vecchio sorrideva a un cane. Il cane non era suo.",
      "Engagement anche al funerale. L'algoritmo non va mai in lutto."),
+    ("tsu03-sala-ulivo-ventitre", "2026-12-01T21:05", "sala-ulivo-03-ventitre", 3000,
+     "Sala Ulivo, parte 3 di 13. Aldo Soldati era morto da ventitré giorni. Se n'erano accorti per l'odore.",
+     "A telefonare non è stato un figlio: è stato il gerente, dopo undici giorni di reclami. Ventitré giorni, zero visite."),
+    ("tsu04-sala-ulivo-cose-semplici", "2026-12-04T21:05", "sala-ulivo-04-cose-semplici", 3000,
+     "Sala Ulivo, parte 4 di 13. «Aldo amava le cose semplici.» Lo scrive il sistema quando il campo hobby è vuoto.",
+     "Hobby: vuoto. Carattere: riservato, il valore predefinito. Nel vostro modulo, cosa ci finirebbe?"),
 ]
 
 
