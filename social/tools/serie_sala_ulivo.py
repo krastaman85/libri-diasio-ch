@@ -26,6 +26,9 @@ PUNTATE = [
     ("tsu05-sala-ulivo-ottavio", "2026-12-08T21:05", "sala-ulivo-05-ottavio", 3000,
      "Sala Ulivo, parte 5 di 13. Ottavio piange a comando, con un occhio solo. Tariffa lacrime: otto franchi in più.",
      "Il sinistro, perché dalle file dietro si nota di più. Anche il dolore ha il suo lato buono per la telecamera."),
+    ("tsu06-sala-ulivo-rotterdam", "2026-12-11T21:05", "sala-ulivo-06-rotterdam", 3000,
+     "Sala Ulivo, parte 6 di 13. Spettatori connessi: uno. Località: Rotterdam. Davanti alla bara di suo padre, ma da dietro un vetro.",
+     "Trentuno minuti di collegamento. In sala nove presenze pagate, a Rotterdam l'unico che c'era davvero."),
 ]
 
 
