@@ -1,3 +1,5 @@
+# ATTENZIONE (19/11/2026): NON RILANCIARE. Le date qui sotto sono quelle del 3/11; il calendario è stato poi riordinato
+# (asmr5/asmr6, quinta_muraria.py, riordino_2026_11_19.py). Rilanciarlo riporterebbe date vecchie e sospenderebbe post buoni.
 # Piano D.IAsio (approvato il 3/11/2026): dal 16/11 un post al giorno + la frase delle 23:10, in giorni fissi.
 #   Lun e Gio: Moduli ticinesi (mt*) · Mar e Ven: La puntata del Bug (pb*) · Mer e Dom: Il libro (post già pronti, uno per libro a settimana)
 #   Sab: D.IAsio music (mu*, Reel dai videoclip del canale YouTube @D.IAsio_music)
