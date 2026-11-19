@@ -1,0 +1,22 @@
+name: social-test
+# Controllo automatico del calendario e del motore a ogni push o PR (19/11/2026):
+# se un test fallisce, GitHub lo segnala prima che un errore arrivi ai post.
+on:
+  push:
+    branches: [main]
+    paths: ["social/**", ".github/workflows/social-*.yml"]
+  pull_request:
+    paths: ["social/**", ".github/workflows/social-*.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest social/test_calendario.py social/test_publish.py social/test_misure.py

@@ -309,3 +309,62 @@ class LancioVuoto(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CaricoEUnicita(unittest.TestCase):
+    """Prevenzione degli errori già visti (19/11/2026): troppi post nello stesso giorno, media doppi,
+    abbinamenti rotti, file mancanti, id ripetuti, lyric video separato annunciato nelle didascalie."""
+    DA = datetime(2026, 11, 20)   # regola dell'utente: 1 post di feed al giorno + la rubrica delle 23:10 (il 19/11 era già avviato)
+
+    def setUp(self):
+        cal = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))
+        self.pub = json.loads((DIR / "published.json").read_text(encoding="utf-8"))["pubblicati"]
+        self.tutti = cal["post"]
+        self.per_id = {p["id"]: p for p in self.tutti}
+        self.abbinati = {p["poi"] for p in self.tutti if p.get("poi")}
+        self.attivi = [p for p in self.tutti if not p.get("sospeso") and file_serve(p)]
+
+    def test_id_unici(self):
+        ids = [p["id"] for p in self.tutti]
+        doppi = sorted({i for i in ids if ids.count(i) > 1})
+        self.assertEqual(doppi, [], f"id ripetuti: {doppi}")
+
+    def test_un_post_di_feed_al_giorno(self):
+        giorni = {}
+        for p in self.attivi:
+            d = datetime.fromisoformat(p["quando"])
+            if d < self.DA or rubrica(p["id"]) or tiktok(p) or p["id"] in self.abbinati or p.get("tipo") == "storia":
+                continue
+            giorni.setdefault(d.date(), []).append(p["id"])
+        troppi = {str(g): v for g, v in giorni.items() if len(v) > 1}
+        self.assertEqual(troppi, {}, f"più di un post di feed nello stesso giorno: {troppi}")
+
+    def test_nessun_media_doppio(self):
+        visti = {}
+        for p in self.attivi:
+            if tiktok(p):   # i TikTok riusano di proposito il video del Reel
+                continue
+            for f in [p.get("video"), p.get("immagine"), *(p.get("immagini") or [])]:
+                if f:
+                    self.assertFalse(f in visti, f"{p['id']} e {visti.get(f)}: stesso file {f}")
+                    visti[f] = p["id"]
+
+    def test_abbinamenti_validi(self):
+        for p in self.tutti:
+            s = p.get("poi")
+            if not s or p.get("sospeso"):
+                continue
+            self.assertIn(s, self.per_id, f"{p['id']}: poi punta a {s}, che non esiste")
+            self.assertEqual(self.per_id[s]["quando"][:10], p["quando"][:10], f"{p['id']}: Storia {s} in un altro giorno")
+            self.assertFalse(self.per_id[s].get("sospeso"), f"{p['id']}: la Storia {s} è sospesa")
+
+    def test_file_presenti(self):
+        for p in self.attivi:
+            for f in [p.get("video"), p.get("immagine"), *(p.get("immagini") or [])]:
+                if f:
+                    self.assertTrue((DIR.parent / f).exists(), f"{p['id']}: manca {f}")
+
+    def test_niente_lyric_video_annunciato(self):
+        for p in self.attivi:
+            testo = " ".join(str(p.get(k, "")) for k in ("didascalia", "didascalia_fb", "youtube_titolo", "youtube_testo"))
+            self.assertNotRegex(testo.lower(), r"lyric video", f"{p['id']}: annuncia un lyric video separato (il testo è nei sottotitoli)")
