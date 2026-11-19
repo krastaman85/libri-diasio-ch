@@ -1725,10 +1725,10 @@
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "«E nessuna di quelle mani ha un nome» · Venerdì Nero · D.IAsio",
-      "youtube_testo": "TRE.\n«E nessuna di quelle mani ha un nome.»\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "TRE.\n«E nessuna di quelle mani ha un nome.»\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "TRE.\n«E nessuna di quelle mani ha un nome.»\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "«E nessuna di quelle mani ha un nome» · Venerdì Nero · D.IAsio",
+      "youtube_testo": "TRE.\n«E nessuna di quelle mani ha un nome.»\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q28-mezzogiorno",
@@ -1806,11 +1806,11 @@
       "id": "mu7-vn-carrello",
       "tipo": "reel",
       "quando": "2026-11-21T12:16",
-      "segmento": "D.IAsio music · Venerdì Nero · dietro il carrello",
+      "segmento": "D.IAsio music · Venerdì Nero · carrello pieno",
       "video": "social/video/mu7-vn-carrello.mp4",
-      "miniatura_ms": 2000,
-      "didascalia": "Compra. Consuma. Dimentica.\nDietro un carrello che viaggia in digitale c’è sempre qualcuno che lo spinge.\nVenerdì Nero · 27.11\n\nVideo ufficiale venerdì 27 novembre alle 19:00 sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
-      "didascalia_fb": "Compra. Consuma. Dimentica.\nDietro un carrello che viaggia in digitale c’è sempre qualcuno che lo spinge.\nVenerdì Nero · 27.11\n\nVideo ufficiale venerdì 27 novembre alle 19:00 su YouTube: https://www.youtube.com/@D.IAsio_music\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio #QuintaMuraria #MusicaItaliana #NuovaMusica #SymphonicMetal #ArtistiEmergenti #Ticino #SvizzeraItaliana",
+      "miniatura_ms": 13500,
+      "didascalia": "Carrello pieno, petto vuoto: e la chiamano festa.\nIl lyric video di Venerdì Nero, la prima strofa.\nVenerdì Nero · 27.11\n\nVideo ufficiale venerdì 27 novembre alle 19:00 sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "didascalia_fb": "Carrello pieno, petto vuoto: e la chiamano festa.\nIl lyric video di Venerdì Nero, la prima strofa.\nVenerdì Nero · 27.11\n\nVideo ufficiale venerdì 27 novembre alle 19:00 su YouTube: https://www.youtube.com/@D.IAsio_music\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio #QuintaMuraria #MusicaItaliana #NuovaMusica #SymphonicMetal #ArtistiEmergenti #Ticino #SvizzeraItaliana",
       "poi": "mus7-vn-carrello"
     },
     {
@@ -1836,18 +1836,18 @@
       "id": "mu7t-vn-carrello",
       "tipo": "reel",
       "quando": "2026-11-21T20:12",
-      "segmento": "TikTok @d.diasio · D.IAsio music · Venerdì Nero · dietro il carrello",
+      "segmento": "TikTok @d.diasio · D.IAsio music · Venerdì Nero · carrello pieno",
       "video": "social/video/mu7-vn-carrello.mp4",
-      "miniatura_ms": 2000,
+      "miniatura_ms": 13500,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Compra. Consuma. Dimentica. · Venerdì Nero · D.IAsio",
-      "youtube_testo": "Compra. Consuma. Dimentica.\nDietro un carrello che viaggia in digitale c’è sempre qualcuno che lo spinge.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "Compra. Consuma. Dimentica.\nDietro un carrello che viaggia in digitale c’è sempre qualcuno che lo spinge.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "Carrello pieno, petto vuoto: e la chiamano festa.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Carrello pieno, petto vuoto · Venerdì Nero · D.IAsio",
+      "youtube_testo": "Carrello pieno, petto vuoto: e la chiamano festa.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q30-buio",
@@ -1919,10 +1919,10 @@
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Riempiamo le stanze per svuotare il cuore · Venerdì Nero · D.IAsio",
-      "youtube_testo": "DUE.\nRiempiamo le stanze per svuotare il cuore.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "DUE.\nRiempiamo le stanze per svuotare il cuore.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "DUE.\nRiempiamo le stanze per svuotare il cuore.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Riempiamo le stanze per svuotare il cuore · Venerdì Nero · D.IAsio",
+      "youtube_testo": "DUE.\nRiempiamo le stanze per svuotare il cuore.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q31-citta",
@@ -2106,10 +2106,10 @@
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Cosa cerchi sul fondo del carrello? · Venerdì Nero · D.IAsio",
-      "youtube_testo": "UNO.\nCosa cerchi davvero sul fondo del carrello? Rispondi nei commenti.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "UNO.\nCosa cerchi davvero sul fondo del carrello? Rispondi nei commenti.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "UNO.\nCosa cerchi davvero sul fondo del carrello? Rispondi nei commenti.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Cosa cerchi sul fondo del carrello? · Venerdì Nero · D.IAsio",
+      "youtube_testo": "UNO.\nCosa cerchi davvero sul fondo del carrello? Rispondi nei commenti.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "tasmr3-aritmetica-lago",
@@ -2212,10 +2212,10 @@
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Domani. Aperto. · Venerdì Nero · D.IAsio",
-      "youtube_testo": "Domani. Aperto.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "Domani. Aperto.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "Domani. Aperto.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Domani. Aperto. · Venerdì Nero · D.IAsio",
+      "youtube_testo": "Domani. Aperto.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q35-colesterolo",
@@ -2241,9 +2241,9 @@
       "quando": "2026-11-27T12:33",
       "segmento": "D.IAsio music · Venerdì Nero · giorno d'uscita",
       "video": "social/video/mu11-vn-oggi.mp4",
-      "miniatura_ms": 3000,
-      "didascalia": "Oggi è Black Friday. Stasera alle 19:00 esce Venerdì Nero.\nVenerdì nero, l’eclissi del valore: e chiamalo sconto, chiamalo affare.\n\nVideo ufficiale venerdì 27 novembre alle 19:00 sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
-      "didascalia_fb": "Oggi è Black Friday. Stasera alle 19:00 esce Venerdì Nero.\nVenerdì nero, l’eclissi del valore: e chiamalo sconto, chiamalo affare.\n\nVideo ufficiale venerdì 27 novembre alle 19:00 su YouTube: https://www.youtube.com/@D.IAsio_music\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio #QuintaMuraria #MusicaItaliana #NuovaMusica #SymphonicMetal #ArtistiEmergenti #Ticino #SvizzeraItaliana",
+      "miniatura_ms": 9500,
+      "didascalia": "Oggi è Black Friday. Stasera alle 19:00 esce Venerdì Nero.\nHanno alzato il prezzo a ottobre per tagliarlo stanotte.\n\nVideo ufficiale venerdì 27 novembre alle 19:00 sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "didascalia_fb": "Oggi è Black Friday. Stasera alle 19:00 esce Venerdì Nero.\nHanno alzato il prezzo a ottobre per tagliarlo stanotte.\n\nVideo ufficiale venerdì 27 novembre alle 19:00 su YouTube: https://www.youtube.com/@D.IAsio_music\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio #QuintaMuraria #MusicaItaliana #NuovaMusica #SymphonicMetal #ArtistiEmergenti #Ticino #SvizzeraItaliana",
       "poi": "mus11-vn-oggi"
     },
     {
@@ -2304,16 +2304,16 @@
       "quando": "2026-11-27T20:06",
       "segmento": "TikTok @d.diasio · D.IAsio music · Venerdì Nero · giorno d'uscita",
       "video": "social/video/mu11-vn-oggi.mp4",
-      "miniatura_ms": 3000,
+      "miniatura_ms": 9500,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Buon Black Friday: Venerdì Nero è uscito · D.IAsio",
-      "youtube_testo": "Il video ufficiale di Venerdì Nero è uscito alle 19:00. Buon Black Friday.\nE chiamalo sconto, chiamalo affare.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "Il video ufficiale di Venerdì Nero è uscito alle 19:00. Buon Black Friday.\nE chiamalo sconto, chiamalo affare.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "Il video ufficiale di Venerdì Nero è uscito alle 19:00. Buon Black Friday.\nHanno alzato il prezzo a ottobre per tagliarlo stanotte.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Buon Black Friday: Venerdì Nero è uscito · D.IAsio",
+      "youtube_testo": "Il video ufficiale di Venerdì Nero è uscito alle 19:00. Buon Black Friday.\nHanno alzato il prezzo a ottobre per tagliarlo stanotte.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q36-ali",
@@ -2375,10 +2375,10 @@
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Un uomo di vetro sepolto dai pacchi · Venerdì Nero · D.IAsio",
-      "youtube_testo": "APERTO.\nUn uomo di vetro si riempie di pacchi fino a nascondere il cuore. Poi dice basta.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "APERTO.\nUn uomo di vetro si riempie di pacchi fino a nascondere il cuore. Poi dice basta.\n\nVenerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "APERTO.\nUn uomo di vetro si riempie di pacchi fino a nascondere il cuore. Poi dice basta.\n\nVenerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Un uomo di vetro sepolto dai pacchi · Venerdì Nero · D.IAsio",
+      "youtube_testo": "APERTO.\nUn uomo di vetro si riempie di pacchi fino a nascondere il cuore. Poi dice basta.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q37-mazzette",
@@ -2465,7 +2465,7 @@
       "quando": "2026-11-30T12:24",
       "segmento": "D.IAsio music · Venerdì Nero · lyric video",
       "video": "social/video/mu13-vn-lyric.mp4",
-      "miniatura_ms": 3000,
+      "miniatura_ms": 18000,
       "didascalia": "Cyber Monday. L’offerta scade, la domanda resta.\nDa oggi su YouTube anche il lyric video di Venerdì Nero, con il testo intero.\n\nIl video ufficiale è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
       "didascalia_fb": "Cyber Monday. L’offerta scade, la domanda resta.\nDa oggi su YouTube anche il lyric video di Venerdì Nero, con il testo intero.\n\nIl video ufficiale è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio #QuintaMuraria #MusicaItaliana #NuovaMusica #SymphonicMetal #ArtistiEmergenti #Ticino #SvizzeraItaliana",
       "poi": "mus13-vn-lyric"
@@ -2511,16 +2511,16 @@
       "quando": "2026-11-30T20:38",
       "segmento": "TikTok @d.diasio · D.IAsio music · Venerdì Nero · lyric video",
       "video": "social/video/mu13-vn-lyric.mp4",
-      "miniatura_ms": 3000,
+      "miniatura_ms": 18000,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Cyber Monday: l’offerta scade, la domanda resta · Venerdì Nero · D.IAsio",
-      "youtube_testo": "Cyber Monday. L’offerta scade, la domanda resta.\nVenerdì Nero, con il testo intero.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "Cyber Monday. L’offerta scade, la domanda resta.\nVenerdì Nero, con il testo intero.\n\nVenerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "Cyber Monday. L’offerta scade, la domanda resta.\nVenerdì Nero, con il testo intero.\n\nVenerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Cyber Monday: l’offerta scade, la domanda resta · Venerdì Nero · D.IAsio",
+      "youtube_testo": "Cyber Monday. L’offerta scade, la domanda resta.\nVenerdì Nero, con il testo intero.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q39-procura",
@@ -2650,10 +2650,10 @@
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Basta così. Io ho già abbastanza. · Venerdì Nero · D.IAsio",
-      "youtube_testo": "Basta così. Io ho già abbastanza.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
       "ia": true,
-      "didascalia": "Basta così. Io ho già abbastanza.\n\nVenerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
+      "didascalia": "Basta così. Io ho già abbastanza.\n\nVenerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Basta così. Io ho già abbastanza. · Venerdì Nero · D.IAsio",
+      "youtube_testo": "Basta così. Io ho già abbastanza.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "tasmr4-vuoto-diffusore",
@@ -2722,6 +2722,41 @@
       "quando": "2026-12-03T12:44",
       "segmento": "Storia · Moduli (highlight Moduli)",
       "immagine": "social/img/story/mts6-accettazione-nebbia.jpg"
+    },
+    {
+      "id": "mu22-vn-asmr",
+      "tipo": "reel",
+      "quando": "2026-12-03T19:24",
+      "segmento": "D.IAsio music · Venerdì Nero · ASMR",
+      "video": "social/video/mu22-vn-asmr.mp4",
+      "miniatura_ms": 2000,
+      "didascalia": "Tre. Due. Uno. Silenzio.\nVenerdì Nero, dopo il rumore: la clessidra, le monete che cadono, lo scontrino che non finisce.\n\nIl video ufficiale è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "didascalia_fb": "Tre. Due. Uno. Silenzio.\nVenerdì Nero, dopo il rumore: la clessidra, le monete che cadono, lo scontrino che non finisce.\n\nIl video ufficiale è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio #QuintaMuraria #MusicaItaliana #NuovaMusica #SymphonicMetal #ArtistiEmergenti #Ticino #SvizzeraItaliana",
+      "poi": "mus22-vn-asmr"
+    },
+    {
+      "id": "mus22-vn-asmr",
+      "tipo": "storia",
+      "quando": "2026-12-03T19:27",
+      "segmento": "Storia · D.IAsio music (highlight Musica)",
+      "immagine": "social/img/story/mus22-vn-asmr.jpg"
+    },
+    {
+      "id": "mu22t-vn-asmr",
+      "tipo": "reel",
+      "quando": "2026-12-03T20:44",
+      "segmento": "TikTok @d.diasio · D.IAsio music · Venerdì Nero · ASMR",
+      "video": "social/video/mu22-vn-asmr.mp4",
+      "miniatura_ms": 2000,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "tiktok_canale": "musica",
+      "youtube": true,
+      "ia": true,
+      "didascalia": "Tre. Due. Uno. Silenzio.\n\nVenerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
+      "youtube_titolo": "Tre. Due. Uno. Silenzio · Venerdì Nero · D.IAsio",
+      "youtube_testo": "Tre. Due. Uno. Silenzio.\n\n▶ Il video ufficiale completo di Venerdì Nero è su questo canale.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio"
     },
     {
       "id": "q42-coraggio",
@@ -2851,8 +2886,8 @@
         "social/img/nuovi/mu15-qm-album-09.jpg"
       ],
       "alt": "Carosello di nove slide: la copertina dell'album Quinta Muraria (un teatro all'italiana con il muro di quinta spaccato da una crepa di luce) e le copertine dei brani sullo stesso teatro.",
-      "didascalia": "Quinta Muraria. Il nuovo album di D.IAsio, nel 2027.\nUn solo teatro: la quinta muraria è la parete di fondo del palco, quella che regge la scena. Qui crolla.\nScorri le copertine. Il primo estratto, Venerdì Nero, è già fuori: quale aspetti dopo?\n\nVenerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
-      "didascalia_fb": "Quinta Muraria. Il nuovo album di D.IAsio, nel 2027.\nUn solo teatro: la quinta muraria è la parete di fondo del palco, quella che regge la scena. Qui crolla.\nScorri le copertine. Il primo estratto, Venerdì Nero, è già fuori: quale aspetti dopo?\n\nVenerdì Nero, il primo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
+      "didascalia": "Quinta Muraria. Il nuovo album di D.IAsio, nel 2027.\nUn solo teatro: la quinta muraria è la parete di fondo del palco, quella che regge la scena. Qui crolla.\nScorri le copertine. Spirale di vetro e Venerdì Nero sono già fuori: quale aspetti dopo?\n\nVenerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
+      "didascalia_fb": "Quinta Muraria. Il nuovo album di D.IAsio, nel 2027.\nUn solo teatro: la quinta muraria è la parete di fondo del palco, quella che regge la scena. Qui crolla.\nScorri le copertine. Spirale di vetro e Venerdì Nero sono già fuori: quale aspetti dopo?\n\nVenerdì Nero, il secondo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
       "poi": "mus15-qm-album"
     },
     {
@@ -3212,22 +3247,22 @@
       "immagine": "social/img/story/q50-gentilezza.jpg"
     },
     {
-      "id": "mu16-qm-sipario",
+      "id": "mu17-qm-prologo",
       "tipo": "reel",
       "quando": "2026-12-12T12:09",
-      "segmento": "D.IAsio music · Quinta Muraria · Sipario (estratto)",
-      "video": "social/video/mu16-qm-sipario.mp4",
-      "miniatura_ms": 22000,
-      "didascalia": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nUn estratto dall’album Quinta Muraria, nel 2027.\n\nVenerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
-      "didascalia_fb": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nUn estratto dall’album Quinta Muraria, nel 2027.\n\nVenerdì Nero, il primo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
-      "poi": "mus16-qm-sipario"
+      "segmento": "D.IAsio music · Quinta Muraria · highlight 1 prologo",
+      "video": "social/video/mu17-qm-prologo.mp4",
+      "miniatura_ms": 14000,
+      "didascalia": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, la title track del nuovo album di D.IAsio.\n\nVenerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
+      "didascalia_fb": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, la title track del nuovo album di D.IAsio.\n\nVenerdì Nero, il secondo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
+      "poi": "mus17-qm-prologo"
     },
     {
-      "id": "mus16-qm-sipario",
+      "id": "mus17-qm-prologo",
       "tipo": "storia",
       "quando": "2026-12-12T12:12",
       "segmento": "Storia · D.IAsio music (highlight Musica)",
-      "immagine": "social/img/story/mus16-qm-sipario.jpg"
+      "immagine": "social/img/story/mus17-qm-prologo.jpg"
     },
     {
       "id": "n28-oblio-strano",
@@ -3260,21 +3295,21 @@
       "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
     },
     {
-      "id": "mu16t-qm-sipario",
+      "id": "mu17t-qm-prologo",
       "tipo": "reel",
       "quando": "2026-12-12T20:31",
-      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · Sipario (estratto)",
-      "video": "social/video/mu16-qm-sipario.mp4",
-      "miniatura_ms": 22000,
+      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 1 prologo",
+      "video": "social/video/mu17-qm-prologo.mp4",
+      "miniatura_ms": 14000,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Sipario: la città appesa ai fili · Quinta Muraria · D.IAsio",
-      "youtube_testo": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nDall’album Quinta Muraria, nel 2027.\n\n▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio",
       "ia": true,
-      "didascalia": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nDall’album Quinta Muraria, nel 2027.\n\nIl primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"
+      "didascalia": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, l’album di D.IAsio nel 2027.\n\nIl secondo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana",
+      "youtube_titolo": "Signore e signori, prendete posto · Quinta Muraria · D.IAsio",
+      "youtube_testo": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, l’album di D.IAsio nel 2027.\n\n▶ Dall’album Quinta Muraria (2027). Il secondo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"
     },
     {
       "id": "q51-avvocati",
@@ -3295,22 +3330,22 @@
       "immagine": "social/img/story/q51-avvocati.jpg"
     },
     {
-      "id": "mu17-qm-prologo",
+      "id": "mu16-qm-sipario",
       "tipo": "reel",
       "quando": "2026-12-13T12:17",
-      "segmento": "D.IAsio music · Quinta Muraria · highlight 1 prologo",
-      "video": "social/video/mu17-qm-prologo.mp4",
-      "miniatura_ms": 14000,
-      "didascalia": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, la title track del nuovo album di D.IAsio.\n\nVenerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
-      "didascalia_fb": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, la title track del nuovo album di D.IAsio.\n\nVenerdì Nero, il primo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
-      "poi": "mus17-qm-prologo"
+      "segmento": "D.IAsio music · Quinta Muraria · Sipario (estratto)",
+      "video": "social/video/mu16-qm-sipario.mp4",
+      "miniatura_ms": 22000,
+      "didascalia": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nUn estratto dall’album Quinta Muraria, nel 2027.\n\nVenerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
+      "didascalia_fb": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nUn estratto dall’album Quinta Muraria, nel 2027.\n\nVenerdì Nero, il secondo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
+      "poi": "mus16-qm-sipario"
     },
     {
-      "id": "mus17-qm-prologo",
+      "id": "mus16-qm-sipario",
       "tipo": "storia",
       "quando": "2026-12-13T12:20",
       "segmento": "Storia · D.IAsio music (highlight Musica)",
-      "immagine": "social/img/story/mus17-qm-prologo.jpg"
+      "immagine": "social/img/story/mus16-qm-sipario.jpg"
     },
     {
       "id": "r19-oblio-brescia",
@@ -3325,21 +3360,21 @@
       "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
     },
     {
-      "id": "mu17t-qm-prologo",
+      "id": "mu16t-qm-sipario",
       "tipo": "reel",
       "quando": "2026-12-13T20:16",
-      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 1 prologo",
-      "video": "social/video/mu17-qm-prologo.mp4",
-      "miniatura_ms": 14000,
+      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · Sipario (estratto)",
+      "video": "social/video/mu16-qm-sipario.mp4",
+      "miniatura_ms": 22000,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Signore e signori, prendete posto · Quinta Muraria · D.IAsio",
-      "youtube_testo": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, l’album di D.IAsio nel 2027.\n\n▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio",
       "ia": true,
-      "didascalia": "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, l’album di D.IAsio nel 2027.\n\nIl primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"
+      "didascalia": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nDall’album Quinta Muraria, nel 2027.\n\nIl secondo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana",
+      "youtube_titolo": "Sipario: la città appesa ai fili · Quinta Muraria · D.IAsio",
+      "youtube_testo": "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nDall’album Quinta Muraria, nel 2027.\n\n▶ Dall’album Quinta Muraria (2027). Il secondo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"
     },
     {
       "id": "x04-aritmetica-due-mani",
@@ -3587,22 +3622,22 @@
       "immagine": "social/img/story/q58-palme.jpg"
     },
     {
-      "id": "mu18-qm-maestro",
+      "id": "mu19-qm-labora",
       "tipo": "reel",
       "quando": "2026-12-20T12:29",
-      "segmento": "D.IAsio music · Quinta Muraria · highlight 2 maestro",
-      "video": "social/video/mu18-qm-maestro.mp4",
-      "miniatura_ms": 15000,
-      "didascalia": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\nQuinta Muraria, la title track. L’album nel 2027.\n\nVenerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
-      "didascalia_fb": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\nQuinta Muraria, la title track. L’album nel 2027.\n\nVenerdì Nero, il primo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
-      "poi": "mus18-qm-maestro"
+      "segmento": "D.IAsio music · Quinta Muraria · highlight 2 labora",
+      "video": "social/video/mu19-qm-labora.mp4",
+      "miniatura_ms": 8000,
+      "didascalia": "Labora. Obedi. Tace.\nBenvenuti nel Truman Show scritto da Machiavelli.\nIl tiranno sei tu.\n\nVenerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
+      "didascalia_fb": "Labora. Obedi. Tace.\nBenvenuti nel Truman Show scritto da Machiavelli.\nIl tiranno sei tu.\n\nVenerdì Nero, il secondo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
+      "poi": "mus19-qm-labora"
     },
     {
-      "id": "mus18-qm-maestro",
+      "id": "mus19-qm-labora",
       "tipo": "storia",
       "quando": "2026-12-20T12:32",
       "segmento": "Storia · D.IAsio music (highlight Musica)",
-      "immagine": "social/img/story/mus18-qm-maestro.jpg"
+      "immagine": "social/img/story/mus19-qm-labora.jpg"
     },
     {
       "id": "c06-natale-albero",
@@ -3621,21 +3656,21 @@
       "didascalia_fb": "Se cerchi qualcosa da leggere nelle sere di festa: l’inizio di ognuno dei quattro romanzi è gratis, in PDF o EPUB (va bene anche su Kindle). Nessuna iscrizione.\nSe conosci qualcuno che ama noir, thriller o satira, basta girargli il link.\nTutti gli inizi gratis: https://libri.diasio.ch/\n\nI quattro romanzi su Amazon Kindle, inclusi in Kindle Unlimited:\nVuoto a rendere: https://www.amazon.it/dp/B0HM4HFK34\nL’Aritmetica del Consenso: https://www.amazon.it/dp/B0HM3Y19B6\nIl Bug della Trasparenza: https://www.amazon.it/dp/B0HLN2VSJP\nL’Economia dell’Oblio: https://www.amazon.it/dp/B0HLMKWJZ5\n\n#ThrillerPsicologico #ThrillerItaliano #NoirItaliano #RomanzoNoir #IoLeggo #LibriDaLeggere #EditoriaItaliana #BookstagramSvizzera #ScrittoriSvizzeri #Ticino"
     },
     {
-      "id": "mu18t-qm-maestro",
+      "id": "mu19t-qm-labora",
       "tipo": "reel",
       "quando": "2026-12-20T20:28",
-      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 2 maestro",
-      "video": "social/video/mu18-qm-maestro.mp4",
-      "miniatura_ms": 15000,
+      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 2 labora",
+      "video": "social/video/mu19-qm-labora.mp4",
+      "miniatura_ms": 8000,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Maestro, mi dia il La · Quinta Muraria · D.IAsio",
-      "youtube_testo": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\n\n▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio",
       "ia": true,
-      "didascalia": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\n\nIl primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"
+      "didascalia": "Labora. Obedi. Tace.\nIl tiranno sei tu.\n\nIl secondo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana",
+      "youtube_titolo": "Labora. Obedi. Tace. Il tiranno sei tu · Quinta Muraria · D.IAsio",
+      "youtube_testo": "Labora. Obedi. Tace.\nIl tiranno sei tu.\n\n▶ Dall’album Quinta Muraria (2027). Il secondo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"
     },
     {
       "id": "q59-siepe",
@@ -3860,22 +3895,22 @@
       "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
     },
     {
-      "id": "mu19-qm-labora",
+      "id": "mu20-qm-cielo",
       "tipo": "reel",
       "quando": "2026-12-26T12:33",
-      "segmento": "D.IAsio music · Quinta Muraria · highlight 3 labora",
-      "video": "social/video/mu19-qm-labora.mp4",
-      "miniatura_ms": 8000,
-      "didascalia": "Labora. Obedi. Tace.\nBenvenuti nel Truman Show scritto da Machiavelli.\nIl tiranno sei tu.\n\nVenerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
-      "didascalia_fb": "Labora. Obedi. Tace.\nBenvenuti nel Truman Show scritto da Machiavelli.\nIl tiranno sei tu.\n\nVenerdì Nero, il primo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
-      "poi": "mus19-qm-labora"
+      "segmento": "D.IAsio music · Quinta Muraria · highlight 3 ritornello",
+      "video": "social/video/mu20-qm-cielo.mp4",
+      "miniatura_ms": 6500,
+      "didascalia": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\nIl ritornello della title track di Quinta Muraria.\n\nVenerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
+      "didascalia_fb": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\nIl ritornello della title track di Quinta Muraria.\n\nVenerdì Nero, il secondo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
+      "poi": "mus20-qm-cielo"
     },
     {
-      "id": "mus19-qm-labora",
+      "id": "mus20-qm-cielo",
       "tipo": "storia",
       "quando": "2026-12-26T12:36",
       "segmento": "Storia · D.IAsio music (highlight Musica)",
-      "immagine": "social/img/story/mus19-qm-labora.jpg"
+      "immagine": "social/img/story/mus20-qm-cielo.jpg"
     },
     {
       "id": "sx2-aritmetica-lago",
@@ -3887,21 +3922,21 @@
       "nota": "piano D.IAsio 3/11/2026: fuori schema, da ricollocare"
     },
     {
-      "id": "mu19t-qm-labora",
+      "id": "mu20t-qm-cielo",
       "tipo": "reel",
       "quando": "2026-12-26T20:09",
-      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 3 labora",
-      "video": "social/video/mu19-qm-labora.mp4",
-      "miniatura_ms": 8000,
+      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 3 ritornello",
+      "video": "social/video/mu20-qm-cielo.mp4",
+      "miniatura_ms": 6500,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Labora. Obedi. Tace. Il tiranno sei tu · Quinta Muraria · D.IAsio",
-      "youtube_testo": "Labora. Obedi. Tace.\nIl tiranno sei tu.\n\n▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio",
       "ia": true,
-      "didascalia": "Labora. Obedi. Tace.\nIl tiranno sei tu.\n\nIl primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"
+      "didascalia": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\n\nIl secondo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana",
+      "youtube_titolo": "Il cielo dipinto su una quinta di muro · Quinta Muraria · D.IAsio",
+      "youtube_testo": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\n\n▶ Dall’album Quinta Muraria (2027). Il secondo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"
     },
     {
       "id": "q65-tradurti",
@@ -4143,39 +4178,39 @@
       "immagine": "social/img/story/q72-corridoio.jpg"
     },
     {
-      "id": "mu20-qm-cielo",
+      "id": "mu18-qm-maestro",
       "tipo": "reel",
       "quando": "2027-01-03T12:36",
-      "segmento": "D.IAsio music · Quinta Muraria · highlight 4 ritornello",
-      "video": "social/video/mu20-qm-cielo.mp4",
-      "miniatura_ms": 6500,
-      "didascalia": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\nIl ritornello della title track di Quinta Muraria.\n\nVenerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
-      "didascalia_fb": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\nIl ritornello della title track di Quinta Muraria.\n\nVenerdì Nero, il primo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
-      "poi": "mus20-qm-cielo"
+      "segmento": "D.IAsio music · Quinta Muraria · highlight 4 maestro",
+      "video": "social/video/mu18-qm-maestro.mp4",
+      "miniatura_ms": 15000,
+      "didascalia": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\nQuinta Muraria, la title track. L’album nel 2027.\n\nVenerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
+      "didascalia_fb": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\nQuinta Muraria, la title track. L’album nel 2027.\n\nVenerdì Nero, il secondo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
+      "poi": "mus18-qm-maestro"
     },
     {
-      "id": "mus20-qm-cielo",
+      "id": "mus18-qm-maestro",
       "tipo": "storia",
       "quando": "2027-01-03T12:39",
       "segmento": "Storia · D.IAsio music (highlight Musica)",
-      "immagine": "social/img/story/mus20-qm-cielo.jpg"
+      "immagine": "social/img/story/mus18-qm-maestro.jpg"
     },
     {
-      "id": "mu20t-qm-cielo",
+      "id": "mu18t-qm-maestro",
       "tipo": "reel",
       "quando": "2027-01-03T20:35",
-      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 4 ritornello",
-      "video": "social/video/mu20-qm-cielo.mp4",
-      "miniatura_ms": 6500,
+      "segmento": "TikTok @d.diasio · D.IAsio music · Quinta Muraria · highlight 4 maestro",
+      "video": "social/video/mu18-qm-maestro.mp4",
+      "miniatura_ms": 15000,
       "piattaforme": [
         "tiktok"
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Il cielo dipinto su una quinta di muro · Quinta Muraria · D.IAsio",
-      "youtube_testo": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\n\n▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio",
       "ia": true,
-      "didascalia": "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\n\nIl primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"
+      "didascalia": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\n\nIl secondo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana",
+      "youtube_titolo": "Maestro, mi dia il La · Quinta Muraria · D.IAsio",
+      "youtube_testo": "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\n\n▶ Dall’album Quinta Muraria (2027). Il secondo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"
     },
     {
       "id": "q73-bilinguismo",
@@ -4330,8 +4365,8 @@
       "segmento": "D.IAsio music · Quinta Muraria · highlight 5 cade la quinta",
       "video": "social/video/mu21-qm-cade.mp4",
       "miniatura_ms": 26000,
-      "didascalia": "Hai murato tu la porta della tua prigione.\nPoi la quinta cade, e dietro c’è il giorno.\nQuinta Muraria, l’album nel 2027.\n\nVenerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
-      "didascalia_fb": "Hai murato tu la porta della tua prigione.\nPoi la quinta cade, e dietro c’è il giorno.\nQuinta Muraria, l’album nel 2027.\n\nVenerdì Nero, il primo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
+      "didascalia": "Hai murato tu la porta della tua prigione.\nPoi la quinta cade, e dietro c’è il giorno.\nQuinta Muraria, l’album nel 2027.\n\nVenerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #Ticino",
+      "didascalia_fb": "Hai murato tu la porta della tua prigione.\nPoi la quinta cade, e dietro c’è il giorno.\nQuinta Muraria, l’album nel 2027.\n\nVenerdì Nero, il secondo estratto, è su YouTube: https://www.youtube.com/@D.IAsio_music\nIl sito della musica: https://musica.diasio.ch/\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, Vuoto a rendere è su Amazon Kindle: https://www.amazon.it/dp/B0HM4HFK34\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana #NuovaMusica #SymphonicMetal #RapConscious #ArtistiEmergenti #Ticino #SvizzeraItaliana #CulturaTicino",
       "poi": "mus21-qm-cade"
     },
     {
@@ -4353,10 +4388,10 @@
       ],
       "tiktok_canale": "musica",
       "youtube": true,
-      "youtube_titolo": "Hai murato tu la porta della tua prigione · Quinta Muraria · D.IAsio",
-      "youtube_testo": "Hai murato tu la porta della tua prigione. Poi la quinta cade.\n\n▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio",
       "ia": true,
-      "didascalia": "Hai murato tu la porta della tua prigione. Poi la quinta cade.\n\nIl primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"
+      "didascalia": "Hai murato tu la porta della tua prigione. Poi la quinta cade.\n\nIl secondo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana",
+      "youtube_titolo": "Hai murato tu la porta della tua prigione · Quinta Muraria · D.IAsio",
+      "youtube_testo": "Hai murato tu la porta della tua prigione. Poi la quinta cade.\n\n▶ Dall’album Quinta Muraria (2027). Il secondo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria».\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"
     },
     {
       "id": "q80-lembo",
@@ -4375,40 +4410,6 @@
       "quando": "2027-01-10T23:13",
       "segmento": "Storia · Citazioni D. Iasio",
       "immagine": "social/img/story/q80-lembo.jpg"
-    },
-    {
-      "id": "mu22-vn-asmr",
-      "tipo": "reel",
-      "quando": "2026-11-23T12:18",
-      "segmento": "D.IAsio music · Venerdì Nero · ASMR",
-      "video": "social/video/mu22-vn-asmr.mp4",
-      "miniatura_ms": 2000,
-      "didascalia": "Tre. Due. Uno. Silenzio.\nVenerdì Nero · 27.11\n\nVideo ufficiale venerdì 27 novembre alle 19:00 sul canale YouTube @D.IAsio_music: link in bio.\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\nE se ti piacciono le storie nere, i romanzi di D.IAsio sono su Amazon Kindle (link in bio).\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio",
-      "poi": "mus22-vn-asmr"
-    },
-    {
-      "id": "mus22-vn-asmr",
-      "tipo": "storia",
-      "quando": "2026-11-23T12:21",
-      "segmento": "Storia · D.IAsio music (highlight Musica)",
-      "immagine": "social/img/story/mus22-vn-asmr.jpg"
-    },
-    {
-      "id": "mu22t-vn-asmr",
-      "tipo": "reel",
-      "quando": "2026-11-23T20:44",
-      "segmento": "TikTok · D.IAsio music · Venerdì Nero · ASMR",
-      "video": "social/video/mu22-vn-asmr.mp4",
-      "miniatura_ms": 2000,
-      "piattaforme": [
-        "tiktok"
-      ],
-      "tiktok_canale": "musica",
-      "youtube": true,
-      "youtube_titolo": "Tre. Due. Uno. Silenzio · Venerdì Nero · D.IAsio",
-      "youtube_testo": "Tre. Due. Uno. Silenzio.\n\n▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔.\nTesto sincronizzato con la voce su musica.diasio.ch\n\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n℗ © 2026 D.IAsio\n\n#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
-      "ia": true,
-      "didascalia": "Tre. Due. Uno. Silenzio.\n\nVenerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music).\nTesti di D.IAsio. Musica e immagini create con l’ausilio di strumenti IA.\n\n#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio"
     }
   ]
 }

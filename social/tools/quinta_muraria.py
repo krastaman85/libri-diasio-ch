@@ -1,6 +1,6 @@
 # Campagna «Quinta Muraria» (richiesta di Davide del 14/11/2026): toglie i 4 Reel musicali del sabato
 # (Spirale di vetro e L'Archivio della Sete, mu1-mu4 con le Storie mus1-mus4) e inserisce il lancio di
-# «Venerdì Nero» (primo estratto, video ufficiale su YouTube il 27/11 alle 19:00, lyric video il 30/11)
+# «Venerdì Nero» (secondo estratto dopo Spirale di vetro, video ufficiale su YouTube il 27/11 alle 19:00, lyric video il 30/11)
 # e l'annuncio dell'album «Quinta Muraria» (2027, senza data precisa). Testi da «Venerdì Nero - caption.md».
 # Ogni Reel/carosello porta la sua Storia (campo "poi", id mus*: il promemoria serale ricorda l'highlight «Musica»).
 # Uso: python social/tools/quinta_muraria.py   (idempotente)
@@ -39,82 +39,87 @@ POST = [
      "Carosello di cinque slide: la copertina di Venerdì Nero (un teatro con un'eclissi sopra un carrello vuoto) e quattro scene del video con un verso del brano."),
     ("mu6-vn-tre", "2026-11-19T19:12", "reel", "social/video/mu6-vn-tre.mp4", 9000,
      "TRE.\n«E nessuna di quelle mani ha un nome.»\nVenerdì Nero · 27.11", "prima", "vn", "D.IAsio music · Venerdì Nero · TRE", "mus6-vn-tre", None),
-    ("mu7-vn-carrello", "2026-11-21T12:16", "reel", "social/video/mu7-vn-carrello.mp4", 2000,
-     "Compra. Consuma. Dimentica.\nDietro un carrello che viaggia in digitale c’è sempre qualcuno che lo spinge.\nVenerdì Nero · 27.11", "prima", "vn",
-     "D.IAsio music · Venerdì Nero · dietro il carrello", "mus7-vn-carrello", None),
+    ("mu7-vn-carrello", "2026-11-21T12:16", "reel", "social/video/mu7-vn-carrello.mp4", 13500,
+     "Carrello pieno, petto vuoto: e la chiamano festa.\nIl lyric video di Venerdì Nero, la prima strofa.\nVenerdì Nero · 27.11", "prima", "vn",
+     "D.IAsio music · Venerdì Nero · carrello pieno", "mus7-vn-carrello", None),
     ("mu8-vn-due", "2026-11-22T12:14", "reel", "social/video/mu8-vn-due.mp4", 10000,
      "DUE.\nRiempiamo le stanze per svuotare il cuore.\nVenerdì Nero · 27.11", "prima", "vn", "D.IAsio music · Venerdì Nero · DUE", "mus8-vn-due", None),
     ("mu9-vn-uno", "2026-11-25T12:41", "reel", "social/video/mu9-vn-uno.mp4", 6000,
      "UNO.\nCosa cerchi davvero sul fondo del carrello?\nRispondi qui sotto. Venerdì Nero · 27.11", "prima", "vn", "D.IAsio music · Venerdì Nero · UNO", "mus9-vn-uno", None),
     ("mu10-vn-vigilia", "2026-11-26T19:22", "reel", "social/video/mu10-vn-vigilia.mp4", 9000,
      "Domani. Aperto.\nVenerdì Nero, video ufficiale: 27.11 alle 19:00.", "prima", "vn", "D.IAsio music · Venerdì Nero · vigilia", "mus10-vn-vigilia", None),
-    ("mu11-vn-oggi", "2026-11-27T12:33", "reel", "social/video/mu11-vn-oggi.mp4", 3000,
-     "Oggi è Black Friday. Stasera alle 19:00 esce Venerdì Nero.\nVenerdì nero, l’eclissi del valore: e chiamalo sconto, chiamalo affare.", "prima", "vn",
+    ("mu11-vn-oggi", "2026-11-27T12:33", "reel", "social/video/mu11-vn-oggi.mp4", 9500,
+     "Oggi è Black Friday. Stasera alle 19:00 esce Venerdì Nero.\nHanno alzato il prezzo a ottobre per tagliarlo stanotte.", "prima", "vn",
      "D.IAsio music · Venerdì Nero · giorno d'uscita", "mus11-vn-oggi", None),
     ("mu12-vn-aperto", "2026-11-28T12:27", "reel", "social/video/mu12-vn-aperto.mp4", 8000,
      "APERTO.\nVenerdì Nero è fuori: un uomo di vetro si riempie di pacchi fino a nascondere il cuore. Poi dice basta.\nCi hanno venduto la fretta e l’abbiamo chiamata libertà.", "dopo", "vn",
      "D.IAsio music · Venerdì Nero · fuori ora", "mus12-vn-aperto", None),
-    ("mu13-vn-lyric", "2026-11-30T12:24", "reel", "social/video/mu13-vn-lyric.mp4", 3000,
+    ("mu13-vn-lyric", "2026-11-30T12:24", "reel", "social/video/mu13-vn-lyric.mp4", 18000,
      "Cyber Monday. L’offerta scade, la domanda resta.\nDa oggi su YouTube anche il lyric video di Venerdì Nero, con il testo intero.", "dopo", "vn",
      "D.IAsio music · Venerdì Nero · lyric video", "mus13-vn-lyric", None),
     ("mu14-vn-alba", "2026-12-02T12:18", "reel", "social/video/mu14-vn-alba.mp4", 6000,
      "Basta così. Io ho già abbastanza.\nIl finale di Venerdì Nero: l’uomo di vetro posa l’ultimo pacco e guarda l’alba.", "dopo", "vn",
      "D.IAsio music · Venerdì Nero · finale", "mus14-vn-alba", None),
+    ("mu22-vn-asmr", "2026-12-03T19:24", "reel", "social/video/mu22-vn-asmr.mp4", 2000,
+     "Tre. Due. Uno. Silenzio.\nVenerdì Nero, dopo il rumore: la clessidra, le monete che cadono, lo scontrino che non finisce.", "dopo", "vn",
+     "D.IAsio music · Venerdì Nero · ASMR", "mus22-vn-asmr", None),
     ("mu15-qm-album", "2026-12-05T12:38", "carosello", [f"social/img/nuovi/mu15-qm-album-{i:02d}.jpg" for i in range(1, 10)], None,
-     "Quinta Muraria. Il nuovo album di D.IAsio, nel 2027.\nUn solo teatro: la quinta muraria è la parete di fondo del palco, quella che regge la scena. Qui crolla.\nScorri le copertine. Il primo estratto, Venerdì Nero, è già fuori: quale aspetti dopo?",
+     "Quinta Muraria. Il nuovo album di D.IAsio, nel 2027.\nUn solo teatro: la quinta muraria è la parete di fondo del palco, quella che regge la scena. Qui crolla.\nScorri le copertine. Spirale di vetro e Venerdì Nero sono già fuori: quale aspetti dopo?",
      "album", "qm", "D.IAsio music · Quinta Muraria · annuncio dell'album", "mus15-qm-album",
      "Carosello di nove slide: la copertina dell'album Quinta Muraria (un teatro all'italiana con il muro di quinta spaccato da una crepa di luce) e le copertine dei brani sullo stesso teatro."),
-    ("mu16-qm-sipario", "2026-12-12T12:09", "reel", "social/video/mu16-qm-sipario.mp4", 22000,
+    ("mu16-qm-sipario", "2026-12-13T12:17", "reel", "social/video/mu16-qm-sipario.mp4", 22000,
      "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nUn estratto dall’album Quinta Muraria, nel 2027.", "album", "qm",
      "D.IAsio music · Quinta Muraria · Sipario (estratto)", "mus16-qm-sipario", None),
 ]
-# Highlight della title track «Quinta Muraria» (approvati da Davide il 15/11/2026): uno a settimana a pranzo dal 13/12 (domenica; il 26/12 sabato, la domenica 27 è occupata).
+# Highlight della title track «Quinta Muraria» (approvati da Davide il 15/11/2026), riordinati il 19/11/2026 nell'ordine del brano:
+# prologo (12/12), poi Sipario (13/12, il sipario dopo «prendete posto»), Labora (20/12), ritornello (26/12), Maestro (3/1), Cade la quinta (10/1).
 POST += [
-    ("mu17-qm-prologo", "2026-12-13T12:17", "reel", "social/video/mu17-qm-prologo.mp4", 14000,
+    ("mu17-qm-prologo", "2026-12-12T12:09", "reel", "social/video/mu17-qm-prologo.mp4", 14000,
      "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, la title track del nuovo album di D.IAsio.", "album", "qm",
      "D.IAsio music · Quinta Muraria · highlight 1 prologo", "mus17-qm-prologo", None),
-    ("mu18-qm-maestro", "2026-12-20T12:29", "reel", "social/video/mu18-qm-maestro.mp4", 15000,
+    ("mu18-qm-maestro", "2027-01-03T12:36", "reel", "social/video/mu18-qm-maestro.mp4", 15000,
      "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca.\nQuinta Muraria, la title track. L’album nel 2027.", "album", "qm",
-     "D.IAsio music · Quinta Muraria · highlight 2 maestro", "mus18-qm-maestro", None),
-    ("mu19-qm-labora", "2026-12-26T12:33", "reel", "social/video/mu19-qm-labora.mp4", 8000,
+     "D.IAsio music · Quinta Muraria · highlight 4 maestro", "mus18-qm-maestro", None),
+    ("mu19-qm-labora", "2026-12-20T12:29", "reel", "social/video/mu19-qm-labora.mp4", 8000,
      "Labora. Obedi. Tace.\nBenvenuti nel Truman Show scritto da Machiavelli.\nIl tiranno sei tu.", "album", "qm",
-     "D.IAsio music · Quinta Muraria · highlight 3 labora", "mus19-qm-labora", None),
-    ("mu20-qm-cielo", "2027-01-03T12:36", "reel", "social/video/mu20-qm-cielo.mp4", 6500,
+     "D.IAsio music · Quinta Muraria · highlight 2 labora", "mus19-qm-labora", None),
+    ("mu20-qm-cielo", "2026-12-26T12:33", "reel", "social/video/mu20-qm-cielo.mp4", 6500,
      "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte.\nIl ritornello della title track di Quinta Muraria.", "album", "qm",
-     "D.IAsio music · Quinta Muraria · highlight 4 ritornello", "mus20-qm-cielo", None),
+     "D.IAsio music · Quinta Muraria · highlight 3 ritornello", "mus20-qm-cielo", None),
     ("mu21-qm-cade", "2027-01-10T12:23", "reel", "social/video/mu21-qm-cade.mp4", 26000,
      "Hai murato tu la porta della tua prigione.\nPoi la quinta cade, e dietro c’è il giorno.\nQuinta Muraria, l’album nel 2027.", "album", "qm",
      "D.IAsio music · Quinta Muraria · highlight 5 cade la quinta", "mus21-qm-cade", None),
 ]
-ALBUM_IG = "Venerdì Nero, il primo estratto, è sul canale YouTube @D.IAsio_music: link in bio."
-ALBUM_FB = f"Venerdì Nero, il primo estratto, è su YouTube: {YT}\nIl sito della musica: {SITO}"
+ALBUM_IG = "Venerdì Nero, il secondo estratto, è sul canale YouTube @D.IAsio_music: link in bio."
+ALBUM_FB = f"Venerdì Nero, il secondo estratto, è su YouTube: {YT}\nIl sito della musica: {SITO}"
 
 
 # TikTok (14/11/2026): la musica va SOLO sul profilo personale @d.diasio, tramite Buffer (canale "musica").
 # Stesso video del Reel, la sera alle 20:xx; niente "link in bio" e niente riga Kindle (profilo personale, solo musica).
 TIKTOK = {  # id del Reel -> (orario, testo)
     "mu6-vn-tre": ("20:34", "TRE.\n«E nessuna di quelle mani ha un nome.»"),
-    "mu7-vn-carrello": ("20:12", "Compra. Consuma. Dimentica.\nDietro un carrello che viaggia in digitale c’è sempre qualcuno che lo spinge."),
+    "mu7-vn-carrello": ("20:12", "Carrello pieno, petto vuoto: e la chiamano festa."),
     "mu8-vn-due": ("20:41", "DUE.\nRiempiamo le stanze per svuotare il cuore."),
     "mu9-vn-uno": ("20:27", "UNO.\nCosa cerchi davvero sul fondo del carrello? Rispondi nei commenti."),
     "mu10-vn-vigilia": ("20:48", "Domani. Aperto."),
-    "mu11-vn-oggi": ("20:06", "Il video ufficiale di Venerdì Nero è uscito alle 19:00. Buon Black Friday.\nE chiamalo sconto, chiamalo affare."),
+    "mu11-vn-oggi": ("20:06", "Il video ufficiale di Venerdì Nero è uscito alle 19:00. Buon Black Friday.\nHanno alzato il prezzo a ottobre per tagliarlo stanotte."),
     "mu12-vn-aperto": ("20:19", "APERTO.\nUn uomo di vetro si riempie di pacchi fino a nascondere il cuore. Poi dice basta."),
     "mu13-vn-lyric": ("20:38", "Cyber Monday. L’offerta scade, la domanda resta.\nVenerdì Nero, con il testo intero."),
     "mu14-vn-alba": ("20:23", "Basta così. Io ho già abbastanza."),
-    "mu16-qm-sipario": ("20:31", "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nDall’album Quinta Muraria, nel 2027."),
+    "mu22-vn-asmr": ("20:44", "Tre. Due. Uno. Silenzio."),
+    "mu16-qm-sipario": ("20:16", "Sipario.\nUna città in miniatura appesa ai fili, e qualcuno in regia che decide cosa va in onda.\nDall’album Quinta Muraria, nel 2027."),
 }
 TT_PRIMA = "Venerdì Nero di D.IAsio: video ufficiale il 27.11 alle 19:00 su YouTube (cerca D.IAsio music)."
 TT_DOPO = "Venerdì Nero di D.IAsio: video ufficiale su YouTube (cerca D.IAsio music)."
-TT_ALBUM = "Il primo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music)."
+TT_ALBUM = "Il secondo estratto, Venerdì Nero, è su YouTube (cerca D.IAsio music)."
 TT_TAG = {"vn": "#VenerdiNero #BlackFriday #MetalItaliano #RapItaliano #DIAsio", "qm": "#QuintaMuraria #MetalItaliano #RapItaliano #DIAsio #MusicaItaliana"}
 
 
 TIKTOK.update({
-    "mu17-qm-prologo": ("20:16", "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, l’album di D.IAsio nel 2027."),
-    "mu18-qm-maestro": ("20:28", "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca."),
-    "mu19-qm-labora": ("20:09", "Labora. Obedi. Tace.\nIl tiranno sei tu."),
-    "mu20-qm-cielo": ("20:35", "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte."),
+    "mu17-qm-prologo": ("20:31", "Signore e signori, prendete posto.\nSpegnete i telefoni. Anzi, no: teneteli accesi.\nIl prologo di Quinta Muraria, l’album di D.IAsio nel 2027."),
+    "mu18-qm-maestro": ("20:35", "Maestro, mi dia il La.\nPoi il teatro si conta, si controlla, e la quinta si spacca."),
+    "mu19-qm-labora": ("20:28", "Labora. Obedi. Tace.\nIl tiranno sei tu."),
+    "mu20-qm-cielo": ("20:09", "Abbiamo dipinto il cielo su una quinta di muro e l’abbiamo chiamato orizzonte."),
     "mu21-qm-cade": ("20:22", "Hai murato tu la porta della tua prigione. Poi la quinta cade."),
 })
 
@@ -123,7 +128,7 @@ TIKTOK.update({
 # descrizione propri. Negli Shorts i link della descrizione non sono cliccabili: il sito si scrive per esteso.
 YT_TITOLO = {  # id del Reel -> titolo dello Short (max 100 caratteri)
     "mu6-vn-tre": "«E nessuna di quelle mani ha un nome» · Venerdì Nero · D.IAsio",
-    "mu7-vn-carrello": "Compra. Consuma. Dimentica. · Venerdì Nero · D.IAsio",
+    "mu7-vn-carrello": "Carrello pieno, petto vuoto · Venerdì Nero · D.IAsio",
     "mu8-vn-due": "Riempiamo le stanze per svuotare il cuore · Venerdì Nero · D.IAsio",
     "mu9-vn-uno": "Cosa cerchi sul fondo del carrello? · Venerdì Nero · D.IAsio",
     "mu10-vn-vigilia": "Domani. Aperto. · Venerdì Nero · D.IAsio",
@@ -131,6 +136,7 @@ YT_TITOLO = {  # id del Reel -> titolo dello Short (max 100 caratteri)
     "mu12-vn-aperto": "Un uomo di vetro sepolto dai pacchi · Venerdì Nero · D.IAsio",
     "mu13-vn-lyric": "Cyber Monday: l’offerta scade, la domanda resta · Venerdì Nero · D.IAsio",
     "mu14-vn-alba": "Basta così. Io ho già abbastanza. · Venerdì Nero · D.IAsio",
+    "mu22-vn-asmr": "Tre. Due. Uno. Silenzio · Venerdì Nero · D.IAsio",
     "mu16-qm-sipario": "Sipario: la città appesa ai fili · Quinta Muraria · D.IAsio",
     "mu17-qm-prologo": "Signore e signori, prendete posto · Quinta Muraria · D.IAsio",
     "mu18-qm-maestro": "Maestro, mi dia il La · Quinta Muraria · D.IAsio",
@@ -141,7 +147,7 @@ YT_TITOLO = {  # id del Reel -> titolo dello Short (max 100 caratteri)
 YT_PREMIERE = "2026-11-27T19:00"
 YT_PRIMA = "▶ Venerdì Nero, il video ufficiale: Premiere su questo canale venerdì 27 novembre alle 19:00. Iscriviti e attiva la 🔔."
 YT_DOPO = "▶ Il video ufficiale completo di Venerdì Nero è su questo canale."
-YT_ALBUM = "▶ Dall’album Quinta Muraria (2027). Il primo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria»."
+YT_ALBUM = "▶ Dall’album Quinta Muraria (2027). Il secondo estratto, Venerdì Nero, è su questo canale: playlist «Quinta Muraria»."
 YT_SITO = "Testo sincronizzato con la voce su musica.diasio.ch"
 YT_TAG = {"vn": "#Shorts #VenerdiNero #RapItaliano #MetalItaliano #BlackFriday #DIAsio",
           "qm": "#Shorts #QuintaMuraria #RapItaliano #MetalItaliano #MusicaItaliana #DIAsio"}
