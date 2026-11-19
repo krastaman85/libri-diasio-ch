@@ -14,6 +14,9 @@ PUNTATE = [
     ("tsu01-sala-ulivo-sedie", "2026-11-24T21:05", "sala-ulivo-01-sedie", 3000,
      "Sala Ulivo, parte 1 di 13. Quaranta sedie, nove persone, un morto in anticipo di venti minuti.",
      "Sei su nove, pagate a ore. Chi sono gli altri tre lo scopriamo strada facendo."),
+    ("tsu02-sala-ulivo-cane", "2026-11-27T21:05", "sala-ulivo-02-cane", 3000,
+     "Sala Ulivo, parte 2 di 13. Nell’ultima foto il vecchio sorrideva a un cane. Il cane non era suo.",
+     "Engagement anche al funerale. L'algoritmo non va mai in lutto."),
 ]
 
 
