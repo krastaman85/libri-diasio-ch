@@ -1,4 +1,4 @@
-"""TikTok @d.iasio.libri: calendario a 4 video la settimana (decisione di Davide del 19/11/2026).
+"""TikTok @d.iasio (ex @d.iasio.libri): calendario a 4 video la settimana (decisione di Davide del 19/11/2026).
 Mercoledì e domenica alle 21:05 i video già pronti (ASMR e voce narrante); martedì e venerdì la serie «Sala Ulivo»
 (aggiunta a parte quando le puntate sono pronte). Idempotente: si può rilanciare."""
 import json
