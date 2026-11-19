@@ -1944,6 +1944,30 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-19T18:38:06+00:00"
       }
+    },
+    "q28-mezzogiorno": {
+      "instagram": {
+        "media_id": "18018210185977173",
+        "link": "https://www.instagram.com/reel/Df8HQt6jE4z/",
+        "ora_utc": "2026-11-19T22:10:05+00:00"
+      },
+      "facebook": {
+        "post_id": "1059817043843609",
+        "link": "https://www.facebook.com/1059817043843609",
+        "ora_utc": "2026-11-19T22:10:11+00:00"
+      }
+    },
+    "q28s-mezzogiorno": {
+      "instagram": {
+        "media_id": "18116153027520765",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4034133520217846547",
+        "ora_utc": "2026-11-19T22:10:19+00:00"
+      },
+      "facebook": {
+        "post_id": "2080487619298775",
+        "link": "https://www.facebook.com/2080487619298775",
+        "ora_utc": "2026-11-19T22:10:23+00:00"
+      }
     }
   }
 }
