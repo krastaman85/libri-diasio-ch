@@ -25,6 +25,23 @@ PORTA = ("ASMR da un romanzo satirico, letto ad alta voce: una porta di faggio c
          "in una sala del commiato.\n«La porta si richiuse col suono ovattato che Dario aveva scelto dal catalogo dei fornitori.» "
          "È una riga di Vuoto a rendere. Meglio in cuffia.")
 
+ARIT_IG_FINE = ("L’Aritmetica del Consenso è su Amazon Kindle: link in bio.\n"
+                "Incluso in Kindle Unlimited. L’inizio è gratis su libri.diasio.ch.\n"
+                "Video, voce e suono creati con l’IA.\n\n"
+                "#NoirItaliano #LetteraturaNoir #BookstagramItalia #ScrittoriItaliani #Ticino")
+ARIT_FB_FINE = ("L’Aritmetica del Consenso su Amazon Kindle: https://www.amazon.it/dp/B0HM3Y19B6\n"
+                "Incluso in Kindle Unlimited.\n"
+                "L’inizio è gratis, in PDF o EPUB, senza iscrizione: https://libri.diasio.ch/aritmetica/\n"
+                "Video, voce e suono creati con l’IA.\n\n"
+                "#NoirItaliano #RomanzoNoir #LetteraturaNoir #GialloItaliano #BookstagramItalia #ConsigliDiLettura "
+                "#ScrittoriItaliani #Ticino #SvizzeraItaliana #CulturaTicino")
+ARIT_TT_FINE = ("«L’Aritmetica del Consenso» di D. Iasio: ebook su Amazon Kindle, anche in Kindle Unlimited. "
+                "Cercalo su Amazon.\n\n#NoirItaliano #LetteraturaNoir #BookTokItalia #LibriDaLeggere #Ticino")
+
+BUSTE = ("ASMR da un romanzo noir, letto ad alta voce: buste di carta sul tavolo di una cucina, sotto una lampada verde.\n"
+         "«Ogni primo del mese contava le buste con lei sul tavolo della cucina…» "
+         "È una riga de L’Aritmetica del Consenso. Meglio in cuffia.")
+
 VOCI = [
     {"id": "asmr7-vuoto-porta", "tipo": "reel", "segmento": "ASMR dei libri · Reel con voce narrante",
      "video": "social/video/asmr7-vuoto-porta.mp4", "miniatura_ms": 9500, "quando": "2027-01-13T19:41",
@@ -35,6 +52,15 @@ VOCI = [
      "video": "social/video/asmr7-vuoto-porta.mp4", "miniatura_ms": 9500, "piattaforme": ["tiktok"], "ia": True,
      "didascalia": PORTA + "\n\n" + VUOTO_TT_FINE,
      "commento": "C'è chi sceglie le porte dal catalogo. E c'è chi le usa per uscire prima della fine."},
+    {"id": "asmr8-aritmetica-buste", "tipo": "reel", "segmento": "ASMR dei libri · Reel con voce narrante",
+     "video": "social/video/asmr8-aritmetica-buste.mp4", "miniatura_ms": 1500, "quando": "2027-01-20T19:33",
+     "didascalia": BUSTE + "\n\n" + ARIT_IG_FINE, "didascalia_fb": BUSTE + "\n\n" + ARIT_FB_FINE,
+     "commento": "Una lampada che non faceva ombre: in quella casa era l’unica cosa che non nascondeva niente."},
+    {"id": "tasmr8-aritmetica-buste", "tipo": "reel", "quando": "2026-12-20T21:05",
+     "segmento": "TikTok · ASMR dei libri con voce narrante",
+     "video": "social/video/asmr8-aritmetica-buste.mp4", "miniatura_ms": 1500, "piattaforme": ["tiktok"], "ia": True,
+     "didascalia": BUSTE + "\n\n" + ARIT_TT_FINE,
+     "commento": "Il primo del mese, sul tavolo della cucina: in certe case il conto si fa ancora a mano."},
 ]
 
 
