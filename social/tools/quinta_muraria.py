@@ -1,6 +1,7 @@
 # Campagna «Quinta Muraria» (richiesta di Davide del 14/11/2026): toglie i 4 Reel musicali del sabato
 # (Spirale di vetro e L'Archivio della Sete, mu1-mu4 con le Storie mus1-mus4) e inserisce il lancio di
-# «Venerdì Nero» (secondo estratto dopo Spirale di vetro, video ufficiale su YouTube il 27/11 alle 19:00, lyric video il 30/11)
+# «Venerdì Nero» (secondo estratto dopo Spirale di vetro, video ufficiale su YouTube il 27/11 alle 19:00;
+# niente lyric video separato su YouTube: il testo è nei sottotitoli del video ufficiale, decisione di Davide)
 # e l'annuncio dell'album «Quinta Muraria» (2027, senza data precisa). Testi da «Venerdì Nero - caption.md».
 # Ogni Reel/carosello porta la sua Storia (campo "poi", id mus*: il promemoria serale ricorda l'highlight «Musica»).
 # Uso: python social/tools/quinta_muraria.py   (idempotente)
@@ -40,7 +41,7 @@ POST = [
     ("mu6-vn-tre", "2026-11-19T19:12", "reel", "social/video/mu6-vn-tre.mp4", 9000,
      "TRE.\n«E nessuna di quelle mani ha un nome.»\nVenerdì Nero · 27.11", "prima", "vn", "D.IAsio music · Venerdì Nero · TRE", "mus6-vn-tre", None),
     ("mu7-vn-carrello", "2026-11-21T12:16", "reel", "social/video/mu7-vn-carrello.mp4", 13500,
-     "Carrello pieno, petto vuoto: e la chiamano festa.\nIl lyric video di Venerdì Nero, la prima strofa.\nVenerdì Nero · 27.11", "prima", "vn",
+     "Carrello pieno, petto vuoto: e la chiamano festa.\nLa prima strofa di Venerdì Nero, con il testo che scorre.\nVenerdì Nero · 27.11", "prima", "vn",
      "D.IAsio music · Venerdì Nero · carrello pieno", "mus7-vn-carrello", None),
     ("mu8-vn-due", "2026-11-22T12:14", "reel", "social/video/mu8-vn-due.mp4", 10000,
      "DUE.\nRiempiamo le stanze per svuotare il cuore.\nVenerdì Nero · 27.11", "prima", "vn", "D.IAsio music · Venerdì Nero · DUE", "mus8-vn-due", None),
@@ -55,8 +56,8 @@ POST = [
      "APERTO.\nVenerdì Nero è fuori: un uomo di vetro si riempie di pacchi fino a nascondere il cuore. Poi dice basta.\nCi hanno venduto la fretta e l’abbiamo chiamata libertà.", "dopo", "vn",
      "D.IAsio music · Venerdì Nero · fuori ora", "mus12-vn-aperto", None),
     ("mu13-vn-lyric", "2026-11-30T12:24", "reel", "social/video/mu13-vn-lyric.mp4", 18000,
-     "Cyber Monday. L’offerta scade, la domanda resta.\nDa oggi su YouTube anche il lyric video di Venerdì Nero, con il testo intero.", "dopo", "vn",
-     "D.IAsio music · Venerdì Nero · lyric video", "mus13-vn-lyric", None),
+     "Cyber Monday. L’offerta scade, la domanda resta.\nIl testo intero di Venerdì Nero è nei sottotitoli del video ufficiale e su musica.diasio.ch, dove segue la voce parola per parola.", "dopo", "vn",
+     "D.IAsio music · Venerdì Nero · testo e sottotitoli", None, None),
     ("mu14-vn-alba", "2026-12-02T12:18", "reel", "social/video/mu14-vn-alba.mp4", 6000,
      "Basta così. Io ho già abbastanza.\nIl finale di Venerdì Nero: l’uomo di vetro posa l’ultimo pacco e guarda l’alba.", "dopo", "vn",
      "D.IAsio music · Venerdì Nero · finale", "mus14-vn-alba", None),
@@ -167,7 +168,7 @@ def main():
     cal = json.loads(CAL.read_text(encoding="utf-8"))
     via = {"mu1-spirale-di-vetro", "mus1-spirale-di-vetro", "mu2-archivio-della-sete", "mus2-archivio-della-sete",
            "mu3-spirale-di-vetro-2", "mus3-spirale-di-vetro-2", "mu4-archivio-della-sete-2", "mus4-archivio-della-sete-2"}
-    nuovi_id = {p[0] for p in POST} | {p[9] for p in POST} | {p[0].replace("-", "t-", 1) for p in POST}
+    nuovi_id = {p[0] for p in POST} | {p[9] for p in POST if p[9]} | {"mus13-vn-lyric"} | {p[0].replace("-", "t-", 1) for p in POST}
     cal["post"] = [p for p in cal["post"] if p["id"] not in via and p["id"] not in nuovi_id]
     for pid, quando, tipo, f, mini, testo, fase, serie, seg, sid, alt in POST:
         cta = {"prima": (PRIMA_IG, PRIMA_FB), "dopo": (DOPO_IG, DOPO_FB), "album": (ALBUM_IG, ALBUM_FB)}[fase]
@@ -178,7 +179,9 @@ def main():
             p["video"] = f; p["miniatura_ms"] = mini
         else:
             p["immagini"] = f; p["alt"] = alt
-        p.update({"didascalia": ig, "didascalia_fb": fb, "poi": sid})
+        p.update({"didascalia": ig, "didascalia_fb": fb})
+        if sid:
+            p["poi"] = sid
         cal["post"].append(p)
         sm = int(quando[-2:]) + 3
         if pid in TIKTOK:
@@ -190,6 +193,8 @@ def main():
                                 "didascalia": f"{tt}\n\n{cta}\n{CRED}\n\n{TT_TAG[serie]}",
                                 "youtube_titolo": YT_TITOLO[pid],
                                 "youtube_testo": testo_short(pid, f"{quando[:10]}T{ora}", serie)})
+        if not sid:
+            continue
         cal["post"].append({"id": sid, "tipo": "storia", "quando": f"{quando[:-2]}{sm:02d}",
                             "segmento": "Storia · D.IAsio music (highlight Musica)", "immagine": f"social/img/story/{sid}.jpg"})
     cal["post"].sort(key=lambda x: x["quando"])
