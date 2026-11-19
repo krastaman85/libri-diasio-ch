@@ -3959,7 +3959,7 @@
     {
       "id": "tasmr5-vuoto-timbro",
       "tipo": "reel",
-      "quando": "2026-12-30T21:05",
+      "quando": "2026-11-25T21:05",
       "segmento": "TikTok · ASMR dei libri con voce narrante",
       "video": "social/video/asmr5-vuoto-timbro.mp4",
       "miniatura_ms": 16000,
@@ -4176,7 +4176,7 @@
     {
       "id": "tasmr3-aritmetica-lago",
       "tipo": "reel",
-      "quando": "2027-01-05T21:05",
+      "quando": "2026-12-02T21:05",
       "segmento": "TikTok · ASMR dei libri con voce narrante",
       "video": "social/video/asmr3-aritmetica-lago.mp4",
       "miniatura_ms": 16000,
@@ -4244,7 +4244,7 @@
     {
       "id": "tasmr4-vuoto-diffusore",
       "tipo": "reel",
-      "quando": "2027-01-07T21:05",
+      "quando": "2026-11-20T21:05",
       "segmento": "TikTok · ASMR dei libri con voce narrante",
       "video": "social/video/asmr4-vuoto-diffusore.mp4",
       "miniatura_ms": 7000,
@@ -4402,6 +4402,45 @@
       "miniatura_ms": 9600,
       "didascalia": "Nadia Colombo ha perso la carriera per un articolo. Ora vive nel palazzo dove tutto è cominciato, sotto copertura.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: link in bio.\nIl romanzo completo è su Amazon Kindle: link in bio.\nIncluso in Kindle Unlimited.\n\n#ThrillerItaliano #GialloItaliano #IoLeggo #BookTokItalia #CulturaTicino",
       "didascalia_fb": "Nadia Colombo ha perso la carriera per un articolo. Ora vive nel palazzo dove tutto è cominciato, sotto copertura.\nL’inizio di ogni romanzo è gratis in PDF ed EPUB, senza iscrizione: https://libri.diasio.ch/\nIl romanzo completo è su Amazon Kindle: https://www.amazon.it/dp/B0HLN2VSJP\nIncluso in Kindle Unlimited.\n\n#RomanzoNoir #GialloItaliano #LetteraturaNoir #AltaTensione #BookstagramItalia #LibriDaLeggere #BookTokItalia #CulturaTicino #SvizzeraItaliana #Ticino"
+    },
+    {
+      "id": "tvn3-vuoto-puntualita",
+      "tipo": "reel",
+      "quando": "2026-11-22T21:05",
+      "segmento": "TikTok · Voce narrante",
+      "video": "social/video/vn3-vuoto-puntualita.mp4",
+      "miniatura_ms": 3500,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "La prima riga di un romanzo satirico, letta ad alta voce: un morto in anticipo di venti minuti, quaranta sedie, nove persone.\nÈ l’inizio di Vuoto a rendere. Meglio in cuffia.\n\n«Vuoto a rendere» di D. Iasio: ebook su Amazon Kindle (anche in Kindle Unlimited) e copertina flessibile. Cercalo su Amazon.\n\n#RomanzoSatirico #UmorismoNero #BookTokItalia #LibriDaLeggere #Ticino"
+    },
+    {
+      "id": "tvn1-vuoto-wifi",
+      "tipo": "reel",
+      "quando": "2026-12-06T21:05",
+      "segmento": "TikTok · Voce narrante",
+      "video": "social/video/vn1-vuoto-wifi.mp4",
+      "miniatura_ms": 3500,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "Il commiato laico, pacchetto base: senza ostie e con il wifi. Letto ad alta voce, da Vuoto a rendere.\nMeglio in cuffia.\n\n«Vuoto a rendere» di D. Iasio: ebook su Amazon Kindle (anche in Kindle Unlimited) e copertina flessibile. Cercalo su Amazon.\n\n#RomanzoSatirico #UmorismoNero #BookTokItalia #LibriDaLeggere #Ticino"
+    },
+    {
+      "id": "tvn4-aritmetica-ministro",
+      "tipo": "reel",
+      "quando": "2026-12-13T21:05",
+      "segmento": "TikTok · Voce narrante",
+      "video": "social/video/vn4-aritmetica-ministro.mp4",
+      "miniatura_ms": 3500,
+      "piattaforme": [
+        "tiktok"
+      ],
+      "ia": true,
+      "didascalia": "«La vecchia mi ha appena chiesto quanto costava un ministro, ai suoi tempi…» La prima riga de L’Aritmetica del Consenso, letta ad alta voce.\nMeglio in cuffia.\n\n«L’Aritmetica del Consenso» di D. Iasio: ebook su Amazon Kindle, anche in Kindle Unlimited. Cercalo su Amazon.\n\n#NoirItaliano #BookTokItalia #LetteraturaNoir #LibriDaLeggere #Ticino"
     }
   ]
 }
