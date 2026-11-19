@@ -127,6 +127,32 @@ class PublishTests(unittest.TestCase):
                 self.assertLessEqual(p["didascalia"].count("#"), 5, p["id"])
 
 
+class Commenti(unittest.TestCase):
+    """Primo commento dell'autore dopo la pubblicazione (19/11/2026)."""
+
+    def test_commento_su_instagram_e_facebook(self):
+        f = Fake()
+        p = {"id": "r", "tipo": "reel", "commento": "IG", "commento_fb": "FB"}
+        with mock.patch.object(publish, "call", f), mock.patch.object(publish, "fb_token", lambda: "P"), \
+                mock.patch.dict(publish.os.environ, {"IG_ACCESS_TOKEN": "T"}):
+            self.assertEqual(publish.commenta("instagram", p, {"media_id": "M1"}), "scritto")
+            self.assertEqual(publish.commenta("facebook", p, {"post_id": "F1"}), "scritto")
+        self.assertEqual([(c[1], c[2]["message"]) for c in f.calls], [("M1/comments", "IG"), ("F1/comments", "FB")])
+
+    def test_senza_commento_o_storia_non_scrive(self):
+        f = Fake()
+        with mock.patch.object(publish, "call", f):
+            self.assertIsNone(publish.commenta("instagram", {"id": "x"}, {"media_id": "M"}))
+            self.assertIsNone(publish.commenta("instagram", {"id": "s", "tipo": "storia", "commento": "c"}, {"media_id": "M"}))
+        self.assertEqual(f.calls, [])
+
+    def test_errore_del_commento_non_ferma_la_pubblicazione(self):
+        def rotto(*a, **k):
+            raise publish.ApiError("permesso mancante")
+        with mock.patch.object(publish, "call", rotto), mock.patch.dict(publish.os.environ, {"IG_ACCESS_TOKEN": "T"}):
+            self.assertEqual(publish.commenta("instagram", {"id": "r", "commento": "c"}, {"media_id": "M"}), "errore")
+
+
 class Abbinati(unittest.TestCase):
     """Campo "poi": il Reel delle 23:10 porta con sé la sua Storia nella stessa esecuzione."""
 

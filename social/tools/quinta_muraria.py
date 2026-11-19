@@ -169,6 +169,8 @@ def main():
     via = {"mu1-spirale-di-vetro", "mus1-spirale-di-vetro", "mu2-archivio-della-sete", "mus2-archivio-della-sete",
            "mu3-spirale-di-vetro-2", "mus3-spirale-di-vetro-2", "mu4-archivio-della-sete-2", "mus4-archivio-della-sete-2"}
     nuovi_id = {p[0] for p in POST} | {p[9] for p in POST if p[9]} | {"mus13-vn-lyric"} | {p[0].replace("-", "t-", 1) for p in POST}
+    # i commenti dell'autore (campo "commento", 19/11/2026) non nascono qui: si conservano a ogni rilancio
+    conserva = {p["id"]: {k: p[k] for k in ("commento", "commento_fb") if k in p} for p in cal["post"]}
     cal["post"] = [p for p in cal["post"] if p["id"] not in via and p["id"] not in nuovi_id]
     for pid, quando, tipo, f, mini, testo, fase, serie, seg, sid, alt in POST:
         cta = {"prima": (PRIMA_IG, PRIMA_FB), "dopo": (DOPO_IG, DOPO_FB), "album": (ALBUM_IG, ALBUM_FB)}[fase]
@@ -197,6 +199,8 @@ def main():
             continue
         cal["post"].append({"id": sid, "tipo": "storia", "quando": f"{quando[:-2]}{sm:02d}",
                             "segmento": "Storia · D.IAsio music (highlight Musica)", "immagine": f"social/img/story/{sid}.jpg"})
+    for p in cal["post"]:
+        p.update(conserva.get(p["id"], {}))
     cal["post"].sort(key=lambda x: x["quando"])
     nl = "\r\n" if b"\r\n" in CAL.read_bytes()[:200] else "\n"
     CAL.write_bytes((json.dumps(cal, indent=2, ensure_ascii=False) + "\n").replace("\n", nl).encode("utf-8"))

@@ -221,11 +221,34 @@ def publish_post(p, todo, urls, state, al=None):
             res["ora_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
             entry(state, p["id"])[plat] = res
             print(f"Pubblicato su {plat}: {res['link']}")
+            esito = commenta(plat, p, res)
+            if esito:
+                res["commento"] = esito
         except ApiError as e:
             errors.append(f"{plat}: {e}")
             print(f"::error::Errore su {plat} ({p['id']}): {e}")
         STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
     return errors
+
+
+def commenta(plat, p, res):
+    """Primo commento dell'autore (campo "commento", dal 19/11/2026), scritto subito dopo la pubblicazione.
+    Instagram: POST /{media}/comments (permesso instagram_business_manage_comments); Facebook: POST /{post}/comments
+    (pages_manage_engagement). Fissarlo in cima resta un gesto dall'app: le API non lo prevedono.
+    Un errore qui non ferma nulla: il post è già uscito; si annota «errore» e si avvisa nel log."""
+    testo = (p.get("commento_fb") if plat == "facebook" else None) or p.get("commento")
+    if not testo or is_story(p):
+        return None
+    try:
+        if plat == "instagram":
+            r = call(IG_API, "POST", f"{res['media_id']}/comments", os.environ["IG_ACCESS_TOKEN"], {"message": testo})
+        else:
+            r = call(FB_API, "POST", f"{res['post_id']}/comments", fb_token(), {"message": testo})
+        print(f"Commento su {plat}: scritto ({r.get('id')})")
+        return "scritto"
+    except (ApiError, KeyError) as e:
+        print(f"::warning::Commento su {plat} ({p['id']}) non scritto: {str(e)[:200]}")
+        return "errore"
 
 
 def wait_container(cid, token, tries, wait):

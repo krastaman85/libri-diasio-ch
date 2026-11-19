@@ -368,3 +368,46 @@ class CaricoEUnicita(unittest.TestCase):
         for p in self.attivi:
             testo = " ".join(str(p.get(k, "")) for k in ("didascalia", "didascalia_fb", "youtube_titolo", "youtube_testo"))
             self.assertNotRegex(testo.lower(), r"lyric video", f"{p['id']}: annuncia un lyric video separato (il testo è nei sottotitoli)")
+
+
+class Commenti(unittest.TestCase):
+    """Commento dell'autore (19/11/2026): breve, nella sua voce, mai ripetuto né generico. Regole in social/commenti/REGOLE.md."""
+    GENERICI = ("che ne pensate", "cosa ne pensate", "fatemi sapere", "fammi sapere", "seguimi", "segui per", "link in bio",
+                "non dimenticare", "lascia un like", "metti like", "condividi se")
+
+    def setUp(self):
+        self.tutti = json.loads((DIR / "calendar.json").read_text(encoding="utf-8"))["post"]
+        self.con = [p for p in self.tutti if p.get("commento")]
+
+    def test_forma(self):
+        for p in self.con:
+            for k in ("commento", "commento_fb"):
+                t = p.get(k)
+                if not t:
+                    continue
+                self.assertLessEqual(len(t), 150, f"{p['id']}: commento oltre 150 caratteri")
+                self.assertNotIn("#", t, f"{p['id']}: niente hashtag nel commento")
+                self.assertNotRegex(t, r"https?://|www\.", f"{p['id']}: niente link nel commento")
+                for g in self.GENERICI:
+                    self.assertNotIn(g, t.lower(), f"{p['id']}: formula generica «{g}»")
+
+    def test_non_si_ripete(self):
+        visti, inizi = {}, {}
+        for p in self.con:
+            t = p["commento"].strip()
+            self.assertNotIn(t, visti, f"{p['id']} e {visti.get(t)}: stesso commento")
+            visti[t] = p["id"]
+            inizio = " ".join(re.findall(r"\w+", t.lower())[:4])
+            self.assertNotIn(inizio, inizi, f"{p['id']} e {inizi.get(inizio)}: stesso inizio «{inizio}»")
+            inizi[inizio] = p["id"]
+
+    def test_non_su_storie_e_rubrica(self):
+        for p in self.con:
+            self.assertNotEqual(p.get("tipo"), "storia", f"{p['id']}: le Storie non hanno commenti")
+            self.assertFalse(rubrica(p["id"]), f"{p['id']}: la rubrica delle 23:10 non ha commento")
+
+    def test_i_video_tiktok_dei_libri_hanno_il_commento(self):
+        """Da qui in avanti ogni video del TikTok dei libri ha il suo commento da fissare."""
+        for p in self.tutti:
+            if tiktok(p) and not p.get("tiktok_canale") and p["quando"] >= "2026-11-20" and not p.get("sospeso") and file_serve(p):
+                self.assertTrue(p.get("commento"), f"{p['id']}: manca il commento da fissare")
