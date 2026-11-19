@@ -23,6 +23,9 @@ PUNTATE = [
     ("tsu04-sala-ulivo-cose-semplici", "2026-12-04T21:05", "sala-ulivo-04-cose-semplici", 3000,
      "Sala Ulivo, parte 4 di 13. «Aldo amava le cose semplici.» Lo scrive il sistema quando il campo hobby è vuoto.",
      "Hobby: vuoto. Carattere: riservato, il valore predefinito. Nel vostro modulo, cosa ci finirebbe?"),
+    ("tsu05-sala-ulivo-ottavio", "2026-12-08T21:05", "sala-ulivo-05-ottavio", 3000,
+     "Sala Ulivo, parte 5 di 13. Ottavio piange a comando, con un occhio solo. Tariffa lacrime: otto franchi in più.",
+     "Il sinistro, perché dalle file dietro si nota di più. Anche il dolore ha il suo lato buono per la telecamera."),
 ]
 
 
