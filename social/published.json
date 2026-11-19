@@ -1936,6 +1936,14 @@
         "link": "https://www.facebook.com/1479911727437600",
         "ora_utc": "2026-11-19T18:13:45+00:00"
       }
+    },
+    "tasmr4-vuoto-diffusore": {
+      "tiktok": {
+        "buffer_post_id": "6aff420f87aa33b10ee36076",
+        "dueAt": "2026-11-20T20:05:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-19T18:38:06+00:00"
+      }
     }
   }
 }
