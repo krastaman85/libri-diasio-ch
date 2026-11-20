@@ -1982,6 +1982,32 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-20T11:03:06+00:00"
       }
+    },
+    "pb2-bug-puntata-2": {
+      "instagram": {
+        "media_id": "18112175465631499",
+        "link": "https://www.instagram.com/p/Df-KoB1CaAQ/",
+        "ora_utc": "2026-11-20T17:13:50+00:00",
+        "commento": "scritto"
+      },
+      "facebook": {
+        "post_id": "1377129402146055_122121867525500199",
+        "link": "https://www.facebook.com/1377129402146055_122121867525500199",
+        "ora_utc": "2026-11-20T17:14:02+00:00",
+        "commento": "errore"
+      }
+    },
+    "pbs2-bug-puntata-2": {
+      "instagram": {
+        "media_id": "18348578821278394",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4034709240609860468",
+        "ora_utc": "2026-11-20T17:14:13+00:00"
+      },
+      "facebook": {
+        "post_id": "1177195608592738",
+        "link": "https://www.facebook.com/1177195608592738",
+        "ora_utc": "2026-11-20T17:14:17+00:00"
+      }
     }
   }
 }
