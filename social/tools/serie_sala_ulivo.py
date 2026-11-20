@@ -32,6 +32,9 @@ PUNTATE = [
     ("tsu07-sala-ulivo-signora", "2026-12-15T21:05", "sala-ulivo-07-signora", 3000,
      "Sala Ulivo, parte 7 di 13. In ultima fila, fuori lista: una signora col cappotto di lana a ventisei gradi, che guarda lo schermo come una fattura.",
      "Non ha firmato il registro e non piange. In una sala dove piangere ha una tariffa, è lei quella fuori posto."),
+    ("tsu08-sala-ulivo-fazzoletto", "2026-12-18T21:05", "sala-ulivo-08-fazzoletto", 3000,
+     "Sala Ulivo, parte 8 di 13. La foto del cane, un no con la testa, una porta che si richiude senza rumore. Sulla sedia restò un fazzoletto.",
+     "In Sala Ulivo ci si alza prima della fine una volta su duecento. Lei l'ha fatto, e ha lasciato qualcosa sulla sedia."),
 ]
 
 
