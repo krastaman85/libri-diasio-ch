@@ -38,6 +38,18 @@ PUNTATE = [
     ("tsu09-sala-ulivo-fila", "2026-12-22T21:05", "sala-ulivo-09-fila", 3000,
      "Sala Ulivo, parte 9 di 13. In Ticino, all'uscita, si fa la fila e si stringono le mani. Quel giorno di parenti non ce n'erano.",
      "Sei comparse, uno stagista e un gerente spinto in testa alla fila. Alla terza mano gli tremò il labbro: non era commozione."),
+    ("tsu10-sala-ulivo-orelli", "2026-12-25T21:05", "sala-ulivo-10-orelli", 3000,
+     "Sala Ulivo, parte 10 di 13. Il gerente dello stabile ha seguito la procedura. Ventisei anni di affitto puntuale, e nessuno se n'è accorto dal tre al quattordici settembre.",
+     "Il signor Soldati era sempre in regola. È proprio per questo che nessuno è andato a bussare."),
+    ("tsu11-sala-ulivo-pagato", "2026-12-29T21:05", "sala-ulivo-11-pagato", 3000,
+     "Sala Ulivo, parte 11 di 13. Quaranta sedie, trentuno vuote dall'inizio. Indice di decoro percepito: novantaquattro.",
+     "Il defunto aveva un Piano Sordina Plus. Il contratto prevedeva la Sala Piena. Tutto in regola, tranne la sala."),
+    ("tsu12-sala-ulivo-listino", "2027-01-01T21:05", "sala-ulivo-12-listino", 3000,
+     "Sala Ulivo, parte 12 di 13. Stato: non presente. Per dirlo c'è un'icona, un omino grigio barrato. Il rosso risultava aggressivo.",
+     "Non c'era malizia. C'era una casella spuntata. Quale casella spuntereste voi?"),
+    ("tsu13-sala-ulivo-fuori-sala", "2027-01-05T21:05", "sala-ulivo-13-fuori-sala", 3000,
+     "Sala Ulivo, parte 13 di 13. Un clic e la pratica sparisce. Il pollice era già sopra lo schermo. Fine del primo capitolo di Vuoto a rendere.",
+     "Chi siederebbe in prima fila al vostro funerale? Rispondete qui sotto, anche solo con un nome."),
 ]
 
 
