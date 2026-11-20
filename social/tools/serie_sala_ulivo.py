@@ -35,6 +35,9 @@ PUNTATE = [
     ("tsu08-sala-ulivo-fazzoletto", "2026-12-18T21:05", "sala-ulivo-08-fazzoletto", 3000,
      "Sala Ulivo, parte 8 di 13. La foto del cane, un no con la testa, una porta che si richiude senza rumore. Sulla sedia restò un fazzoletto.",
      "In Sala Ulivo ci si alza prima della fine una volta su duecento. Lei l'ha fatto, e ha lasciato qualcosa sulla sedia."),
+    ("tsu09-sala-ulivo-fila", "2026-12-22T21:05", "sala-ulivo-09-fila", 3000,
+     "Sala Ulivo, parte 9 di 13. In Ticino, all'uscita, si fa la fila e si stringono le mani. Quel giorno di parenti non ce n'erano.",
+     "Sei comparse, uno stagista e un gerente spinto in testa alla fila. Alla terza mano gli tremò il labbro: non era commozione."),
 ]
 
 
