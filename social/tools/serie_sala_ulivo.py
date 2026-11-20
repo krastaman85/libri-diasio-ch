@@ -29,6 +29,9 @@ PUNTATE = [
     ("tsu06-sala-ulivo-rotterdam", "2026-12-11T21:05", "sala-ulivo-06-rotterdam", 3000,
      "Sala Ulivo, parte 6 di 13. Spettatori connessi: uno. Località: Rotterdam. Davanti alla bara di suo padre, ma da dietro un vetro.",
      "Trentuno minuti di collegamento. In sala nove presenze pagate, a Rotterdam l'unico che c'era davvero."),
+    ("tsu07-sala-ulivo-signora", "2026-12-15T21:05", "sala-ulivo-07-signora", 3000,
+     "Sala Ulivo, parte 7 di 13. In ultima fila, fuori lista: una signora col cappotto di lana a ventisei gradi, che guarda lo schermo come una fattura.",
+     "Non ha firmato il registro e non piange. In una sala dove piangere ha una tariffa, è lei quella fuori posto."),
 ]
 
 
