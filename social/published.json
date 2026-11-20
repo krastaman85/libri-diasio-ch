@@ -1968,6 +1968,20 @@
         "link": "https://www.facebook.com/2080487619298775",
         "ora_utc": "2026-11-19T22:10:23+00:00"
       }
+    },
+    "mu7t-vn-carrello": {
+      "tiktok": {
+        "buffer_post_id": "6b0028ecc1f33e2aa5b969d8",
+        "dueAt": "2026-11-21T19:12:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-20T11:03:06+00:00"
+      },
+      "youtube": {
+        "buffer_post_id": "6b0028ec0c6d6b90527eab8b",
+        "dueAt": "2026-11-21T19:12:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-20T11:03:06+00:00"
+      }
     }
   }
 }
