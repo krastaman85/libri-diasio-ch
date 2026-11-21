@@ -2032,6 +2032,28 @@
         "link": "https://www.facebook.com/4689516351332683",
         "ora_utc": "2026-11-20T22:10:27+00:00"
       }
+    },
+    "mu8t-vn-due": {
+      "tiktok": {
+        "buffer_post_id": "6b015b7ed9cbb430a1311e24",
+        "dueAt": "2026-11-22T19:41:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-21T08:51:09+00:00"
+      },
+      "youtube": {
+        "buffer_post_id": "6b015b80d9cbb430a1311e89",
+        "dueAt": "2026-11-22T19:41:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-21T08:51:09+00:00"
+      }
+    },
+    "tvn3-vuoto-puntualita": {
+      "tiktok": {
+        "buffer_post_id": "6b015b80d9cbb430a1311e5e",
+        "dueAt": "2026-11-22T20:05:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-21T08:51:09+00:00"
+      }
     }
   }
 }
