@@ -2054,6 +2054,32 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-21T08:51:09+00:00"
       }
+    },
+    "mu7-vn-carrello": {
+      "instagram": {
+        "media_id": "18122807549056208",
+        "link": "https://www.instagram.com/reel/DgAGxcBE1mF/",
+        "ora_utc": "2026-11-21T11:18:56+00:00",
+        "commento": "scritto"
+      },
+      "facebook": {
+        "post_id": "1510241644382117",
+        "link": "https://www.facebook.com/1510241644382117",
+        "ora_utc": "2026-11-21T11:19:03+00:00",
+        "commento": "errore"
+      }
+    },
+    "mus7-vn-carrello": {
+      "instagram": {
+        "media_id": "18435518590148029",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4035255360072029861",
+        "ora_utc": "2026-11-21T11:19:14+00:00"
+      },
+      "facebook": {
+        "post_id": "3324179497777772",
+        "link": "https://www.facebook.com/3324179497777772",
+        "ora_utc": "2026-11-21T11:19:22+00:00"
+      }
     }
   }
 }
