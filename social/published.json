@@ -2080,6 +2080,30 @@
         "link": "https://www.facebook.com/3324179497777772",
         "ora_utc": "2026-11-21T11:19:22+00:00"
       }
+    },
+    "q30-buio": {
+      "instagram": {
+        "media_id": "18110424239206082",
+        "link": "https://www.instagram.com/reel/DgBQw7mDitz/",
+        "ora_utc": "2026-11-21T22:10:09+00:00"
+      },
+      "facebook": {
+        "post_id": "932876263124934",
+        "link": "https://www.facebook.com/932876263124934",
+        "ora_utc": "2026-11-21T22:10:14+00:00"
+      }
+    },
+    "q30s-buio": {
+      "instagram": {
+        "media_id": "18137162659707987",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4035583093339970362",
+        "ora_utc": "2026-11-21T22:10:24+00:00"
+      },
+      "facebook": {
+        "post_id": "1626641848592582",
+        "link": "https://www.facebook.com/1626641848592582",
+        "ora_utc": "2026-11-21T22:10:29+00:00"
+      }
     }
   }
 }
