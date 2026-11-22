@@ -2130,6 +2130,30 @@
         "link": "https://www.facebook.com/1130228276597600",
         "ora_utc": "2026-11-22T11:18:46+00:00"
       }
+    },
+    "q31-citta": {
+      "instagram": {
+        "media_id": "17915872665485089",
+        "link": "https://www.instagram.com/reel/DgD1khCDRlR/",
+        "ora_utc": "2026-11-22T22:10:10+00:00"
+      },
+      "facebook": {
+        "post_id": "1121897837111176",
+        "link": "https://www.facebook.com/1121897837111176",
+        "ora_utc": "2026-11-22T22:10:15+00:00"
+      }
+    },
+    "q31s-citta": {
+      "instagram": {
+        "media_id": "18065881349561727",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4036307881352731629",
+        "ora_utc": "2026-11-22T22:10:26+00:00"
+      },
+      "facebook": {
+        "post_id": "1791363342086931",
+        "link": "https://www.facebook.com/1791363342086931",
+        "ora_utc": "2026-11-22T22:10:31+00:00"
+      }
     }
   }
 }
