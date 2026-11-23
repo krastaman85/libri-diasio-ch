@@ -2188,6 +2188,30 @@
         "link": "https://www.facebook.com/2376107133159737",
         "ora_utc": "2026-11-23T17:28:37+00:00"
       }
+    },
+    "q32-tinello": {
+      "instagram": {
+        "media_id": "18030920864699906",
+        "link": "https://www.instagram.com/reel/DgGaZOTmTHU/",
+        "ora_utc": "2026-11-23T22:10:10+00:00"
+      },
+      "facebook": {
+        "post_id": "1161880542965766",
+        "link": "https://www.facebook.com/1161880542965766",
+        "ora_utc": "2026-11-23T22:10:15+00:00"
+      }
+    },
+    "q32s-tinello": {
+      "instagram": {
+        "media_id": "17982379196925253",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4037032656731584974",
+        "ora_utc": "2026-11-23T22:10:26+00:00"
+      },
+      "facebook": {
+        "post_id": "1170097102023176",
+        "link": "https://www.facebook.com/1170097102023176",
+        "ora_utc": "2026-11-23T22:10:32+00:00"
+      }
     }
   }
 }
