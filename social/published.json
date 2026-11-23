@@ -2154,6 +2154,14 @@
         "link": "https://www.facebook.com/1791363342086931",
         "ora_utc": "2026-11-22T22:10:31+00:00"
       }
+    },
+    "tsu01-sala-ulivo-sedie": {
+      "tiktok": {
+        "buffer_post_id": "6b041d98a8420aaa335366c8",
+        "dueAt": "2026-11-24T20:05:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-23T11:03:50+00:00"
+      }
     }
   }
 }
