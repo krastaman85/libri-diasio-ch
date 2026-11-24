@@ -2212,6 +2212,28 @@
         "link": "https://www.facebook.com/1170097102023176",
         "ora_utc": "2026-11-23T22:10:32+00:00"
       }
+    },
+    "mu9t-vn-uno": {
+      "tiktok": {
+        "buffer_post_id": "6b055bbce5a6d75c0307dd0b",
+        "dueAt": "2026-11-25T19:27:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-24T09:41:15+00:00"
+      },
+      "youtube": {
+        "buffer_post_id": "6b055bbe946079b5548d6a7e",
+        "dueAt": "2026-11-25T19:27:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-24T09:41:15+00:00"
+      }
+    },
+    "tasmr5-vuoto-timbro": {
+      "tiktok": {
+        "buffer_post_id": "6b055bbdb4eef65a7ba5c80b",
+        "dueAt": "2026-11-25T20:05:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-24T09:41:15+00:00"
+      }
     }
   }
 }
