@@ -2284,6 +2284,20 @@
         "link": "https://www.facebook.com/997284219594931",
         "ora_utc": "2026-11-24T22:10:32+00:00"
       }
+    },
+    "mu10t-vn-vigilia": {
+      "tiktok": {
+        "buffer_post_id": "6b06c066e47d92fb97711f92",
+        "dueAt": "2026-11-26T19:48:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-25T11:03:00+00:00"
+      },
+      "youtube": {
+        "buffer_post_id": "6b06c06754905beab83ba587",
+        "dueAt": "2026-11-26T19:48:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-25T11:03:00+00:00"
+      }
     }
   }
 }
