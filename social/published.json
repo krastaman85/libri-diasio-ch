@@ -2324,6 +2324,30 @@
         "link": "https://www.facebook.com/1160635869799289",
         "ora_utc": "2026-11-25T11:44:30+00:00"
       }
+    },
+    "q34-wifi": {
+      "instagram": {
+        "media_id": "18124471387997364",
+        "link": "https://www.instagram.com/reel/DgLj8y0Beig/",
+        "ora_utc": "2026-11-25T22:10:12+00:00"
+      },
+      "facebook": {
+        "post_id": "1038829959249957",
+        "link": "https://www.facebook.com/1038829959249957",
+        "ora_utc": "2026-11-25T22:10:16+00:00"
+      }
+    },
+    "q34s-wifi": {
+      "instagram": {
+        "media_id": "18113017844240364",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4038482220314885223",
+        "ora_utc": "2026-11-25T22:10:27+00:00"
+      },
+      "facebook": {
+        "post_id": "1676558344103633",
+        "link": "https://www.facebook.com/1676558344103633",
+        "ora_utc": "2026-11-25T22:10:31+00:00"
+      }
     }
   }
 }
