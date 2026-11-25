@@ -2298,6 +2298,32 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-25T11:03:00+00:00"
       }
+    },
+    "mu9-vn-uno": {
+      "instagram": {
+        "media_id": "18203243110375708",
+        "link": "https://www.instagram.com/reel/DgKc0vITe3S/",
+        "ora_utc": "2026-11-25T11:44:06+00:00",
+        "commento": "scritto"
+      },
+      "facebook": {
+        "post_id": "2226017255020091",
+        "link": "https://www.facebook.com/2226017255020091",
+        "ora_utc": "2026-11-25T11:44:13+00:00",
+        "commento": "errore"
+      }
+    },
+    "mus9-vn-uno": {
+      "instagram": {
+        "media_id": "18645933862035576",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4038167122018411672",
+        "ora_utc": "2026-11-25T11:44:25+00:00"
+      },
+      "facebook": {
+        "post_id": "1160635869799289",
+        "link": "https://www.facebook.com/1160635869799289",
+        "ora_utc": "2026-11-25T11:44:30+00:00"
+      }
     }
   }
 }
