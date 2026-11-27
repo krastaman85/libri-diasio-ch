@@ -2420,6 +2420,20 @@
         "link": "https://www.facebook.com/1161676009749383",
         "ora_utc": "2026-11-26T22:10:30+00:00"
       }
+    },
+    "mu12t-vn-aperto": {
+      "tiktok": {
+        "buffer_post_id": "6b096369062ed764a80a90c1",
+        "dueAt": "2026-11-28T19:19:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-27T11:03:03+00:00"
+      },
+      "youtube": {
+        "buffer_post_id": "6b09636a658222306c072be6",
+        "dueAt": "2026-11-28T19:19:00.000Z",
+        "modo": "customScheduled",
+        "ora_utc": "2026-11-27T11:03:03+00:00"
+      }
     }
   }
 }
