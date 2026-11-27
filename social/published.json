@@ -2434,6 +2434,32 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-27T11:03:03+00:00"
       }
+    },
+    "mu11-vn-oggi": {
+      "instagram": {
+        "media_id": "17895691422447355",
+        "link": "https://www.instagram.com/reel/DgPlOF9IWRN/",
+        "ora_utc": "2026-11-27T11:33:38+00:00",
+        "commento": "scritto"
+      },
+      "facebook": {
+        "post_id": "1139263359096578",
+        "link": "https://www.facebook.com/1139263359096578",
+        "ora_utc": "2026-11-27T11:33:45+00:00",
+        "commento": "errore"
+      }
+    },
+    "mus11-vn-oggi": {
+      "instagram": {
+        "media_id": "18142758949726773",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4039611400653445180",
+        "ora_utc": "2026-11-27T11:33:55+00:00"
+      },
+      "facebook": {
+        "post_id": "2546045699249385",
+        "link": "https://www.facebook.com/2546045699249385",
+        "ora_utc": "2026-11-27T11:33:58+00:00"
+      }
     }
   }
 }
