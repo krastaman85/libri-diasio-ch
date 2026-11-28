@@ -2492,6 +2492,32 @@
         "modo": "customScheduled",
         "ora_utc": "2026-11-28T11:03:05+00:00"
       }
+    },
+    "mu12-vn-aperto": {
+      "instagram": {
+        "media_id": "17979002793191513",
+        "link": "https://www.instagram.com/reel/DgSJbB2Muq8/",
+        "ora_utc": "2026-11-28T11:28:29+00:00",
+        "commento": "scritto"
+      },
+      "facebook": {
+        "post_id": "1156184850650043",
+        "link": "https://www.facebook.com/1156184850650043",
+        "ora_utc": "2026-11-28T11:28:35+00:00",
+        "commento": "errore"
+      }
+    },
+    "mus12-vn-aperto": {
+      "instagram": {
+        "media_id": "18040443851908113",
+        "link": "https://www.instagram.com/stories/_d.iasio_/4040333574716949269",
+        "ora_utc": "2026-11-28T11:28:44+00:00"
+      },
+      "facebook": {
+        "post_id": "1706500754452203",
+        "link": "https://www.facebook.com/1706500754452203",
+        "ora_utc": "2026-11-28T11:28:48+00:00"
+      }
     }
   }
 }
